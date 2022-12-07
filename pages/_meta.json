@@ -1,17 +1,9 @@
 {
   "index": "Introduction",
-  "another": "Another Page",
-  "module": {
-    "title": "Module"
-  },
-  "about": {
-    "title": "About",
-    "type": "page"
-  },
   "contact": {
     "title": "Contact ↗",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
+    "href": "https://www.theripper93.com/#contact",
     "newWindow": true
   }
 }
