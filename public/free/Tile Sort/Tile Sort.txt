@@ -1,0 +1,18 @@
+Easly sort how tiles are stacked, hide tiles for easier management of stacked tiles and highlight tiles on hover.
+[[File:Tsoverview.png|thumb|The Tile Sort Interface]]
+[[File:Tsbtn.png|thumb|The Button to open Tile Sort]]
+
+== How to use ==
+
+=== Sorting Tiles ===
+To sort the tiles, simply drag and drop in the list
+
+=== Hiding Tiles ===
+Hovering over the image of the tile in the tile sort window an eye icon will appear, clicking it will hide the tile until you close the tile sort window or click the button again. This will allow you to work and move tiles that are overlapping the hidden tile more easly.
+
+=== Opening the tile configuration ===
+Double clicking a tile in the Tile Sort interface will open it's config, this will allow you to open a tile configuration without moving other tiles that could overlap it.
+
+=== Highlihting ===
+Hovering over a tile in Tile Sort will create a colored highlight of the tile that will make spotting overlapping tiles easier
+[[Category:Module]]

@@ -1,0 +1,242 @@
+Levels is a Foundry VTT module for creating maps with multiple vertical levels.
+
+== Basics ==
+
+=== Dependencies ===
+* [https://github.com/ruipin/fvtt-lib-wrapper libWrapper]
+* [[Wall Height]]
+
+=== Recommended ===
+* [https://foundryvtt.com/packages/perfect-vision Perfect Vision]
+
+=== Before we Begin ===
+Levels heavly relies on vision. If vision is disabled on the map or you have selected a token without vision, you might experience undesired effects!
+
+=== Your First Levels Map ===
+While Levels is capable of handling full multilevel maps, we will start with something simple: Adding a multilevel barn to an existing map. This approach is scalable to any map you might want to build in the future.
+
+# Open any scene or create a new scene and set a background. This tutorial assumes you have a standard grid size of 5ft, if that is not the case adjust the Levels size accordingly (usually 2 times the size of 1 square). Setting a background is not strictly required and you can use a blank map if you prefer.
+# Open the Levels UI (also known as the ''Levels Layer Tool'') by pressing the {{#fas:layer-group}} button.
+# Press the {{#far:pen-to-square}}button to go into edit mode, extend the window vertically to have some extra space
+# Press the <code>+</code> button two times to add two levels.
+# Set the bottom one at 0/10 elevation and the top one at 10/20. Name your Levels <code>Ground Floor</code> and <code>First Floor</code>. Giving a name to your Levels is not strictly required.
+# Head out of edit mode by pressing the button again and select the 0/10 Level by clicking on it. Your UI should now match the Levels UI screenshot below.
+# While you have a Level selected in the UI, anything you place will be placed on that Level. Now head to the <code>Tiles Layer</code>.
+# Open the <code>Tile Browser</code> and navigate to <code>modules/levels/sample-maps/baileywiki/</code>, drag and drop the <code>barn-lvl1.webp</code> file onto the scene.
+# Head to the <code>Walls Layer</code> and wall this ground floor tile appropriatelly.
+# Now select the First Floor (10/20) in the Levels UI. In the <code>Tile Browser</code> grab the <code>barn-lvl2.webp</code> file from the same folder and drag it on top of the other tile alligning them correctly. As before, head to the <code>Walls Layer</code> and wall this floor appropriatelly.
+# We will enable an additional settings on this floor so we can see it when we are on the Ground Floor. Double click the First Floor tile to open it's configuration, head to the Levels Tab and enable <code>Show Even When Below?</code> and save your changes 
+# Let's add a roof! Toggle roof view\placement by clicking '''{{#fas:archway}}'''
+# Drag and drop the roof tile <code>barn-roof.webp</code> i the correct position
+# Head back to the Ground Floor with the Roof mode still enabled and place <code>barn-shed-roof.webp</code> on top of the shed on the left side of the barn.
+# Last step is connecting the floors. Toggle the Roof View\Placement off, and on the ground floor head to the <code>Drawings Layer</code>
+# Place a square drawing where the ladder is located on the top of the barn. This will create a stair.
+# Done! Place a token and move around to explore the barn! Remember to use Tokens with vision and have vision enabled in the scene settings! Feel free to play with multiple tokens (selecting one at a time) to see how floors block vision. While we don't have Stairs to connect us to the roofs, you can manually change the elevation of your tokens to 10 or 20 to explore them. Maybe experiment by creating your own star connections to the roofs!
+
+=== Levels UI ===
+[[File:Levels UI.png|right|frameless|A screenshot of the Levels UI]]
+Open the Levels UI (also known as the ''Levels Layer Tool'') by pressing the {{#fas:layer-group}} button. 
+
+You will see a small semi-transparent black box open in the top-right of Foundry. 
+
+Layers can be manually created with the {{#fas:plus}} button on the bottom of the row or automatically generated from entities with elevation values with the {{#far:map}} button on the bottom row.
+
+While the Levels UI is open, the view will show all tiles and entities in the elevation range of the layer. Any tiles or tokens added to the scene while on a layer in the UI will automatically set the tile or token to its height.
+
+To rename or change the elevation values of a layer, press the {{#far:pen-to-square}}button. You will now be in edit mode for the Levels UI window. Click on the layer you wish to edit, then modify the name or values. The downwards arrow represents the lowest elevation and the upwards arrow represents the highest for the layer. Click the button again to confirm and save your edit.
+
+There are 3 additional toggles at the leftmost of the bottom row:
+
+'''{{#fas:users}} Show Players in the UI'''
+
+Shows icons of the players in the UI, the icons will be placed in the corresponding level. You can click the icons to select the corresponding player.
+
+'''{{#fas:fa-sort-amount-up-alt}} Place Drawings as Stairs'''
+
+While toggled on, place drawings as stairs, toggle it off to create labels or descriptions to place in your levels.
+
+'''{{#fas:archway}} Enable Levels Roofs View/Placement'''
+
+Displays roofs above the current level. Placing tiles while this toggle is active will place them as roofs above the current level. 
+
+'''{{#fas:tree}} Place Tiles as Overhead Tiles Inside the Current Level'''
+
+Tiles placed with this toggle active will be placed as overhead tiles inside the level. For example you could use this to place a chandelier inside the current level.
+
+To view every tile and token or exit the layers view, close the Levels UI. You can also clear all levels layers with the {{#fas:trash}} button. This will not delete tiles or tokens.
+
+If you create a drawing while the Levels UI is active, the drawing will be set automatically as a Stair and it will be set as Hidden. The Stair will be configured to move you from the current Level to the one above it and vice versa.
+
+The Levels UI is a tool to help you place and visualize your Levels setup. Levels does not require levels in the UI to be defined to work, for example if you deleted all your levels in the UI after building your map, the map will still work exactly the same. Removing levels from the UI or changing their range will not modify or remove entities in the scene.
+
+=== Tiles ===
+Tiles are a core aspect of Levels. Every tile can be assigned an elevation and sight is based on tile transparency.
+
+It is generally recommended for Levels tiles to be overhead tiles. Tiles not set as overhead will all be placed at the background elevation.
+
+The background is counted as a solid plane (i.e. a single overhead tile at a defined elevation) with a default elevation of 0. The elevation of the background can be adjusted in scene settings. Keep in mind that the background layer and it's tiles will not account for transparency and will count instead as a solid scene sized plane.
+
+=== Tokens ===
+Token height is handled by [[Wall Height]]. It's higly suggested to read the <code>Token Height</code> section of the Wall Height page before using Levels.
+
+=== Drawings ===
+[[File:Drawing config menu.png|thumb|399x399px]]
+In Levels, drawings are used to create stairs and elevators. Their purpose is to allow travel between elevations. However, ''how'' they handle travel between elevations is handled differently.
+
+To create or edit a stair or elevator, double click on an existing drawing to open the drawing configuration menu. 
+
+You will see a few settings added by Levels. 
+
+<code>Levels Drawing Mode</code> determines the purpose of the drawing. <code>None</code> treats it as a vanilla Foundry drawing, <code>Stair</code> sets it as a stair, and <code>Elevator</code> sets it as an elevator.  
+
+<code>One Way Stairs</code> follow the same rules as regular Stairs but work only One Way  
+
+Before V10, there was the <code>Hole</code> option as well. However, holes have been deprecated from V10 onwards in favour of tile transparency. 
+
+<code>Elevator Floors</code> set the floors an elevator can transport entities between. The syntax for it is <code>elevation,name|elevation,name</code> (e.g. <code>0,Ground Floor|10, First Floor</code>). 
+
+<code>Height (Top)</code> sets the top height (i.e. highest point) of the drawing. 
+
+<code>Height (Bottom)</code> sets the bottom height (i.e. lowest point) of the drawing. 
+
+==== Stairs ====
+Stairs allow tokens to travel '''from''' and '''to''' two set elevations.
+
+* Stairs can only move tokens to its set elevations
+* The token must be on one of the two elevations exactly (e.g. 0 or 10) to trigger
+* Stairs will move tokens one value higher than its top elevation if entering from below
+
+For example: a stair with a bottom of 0 and a top of 9. A token at an elevation of 0 that enters the stair will now have an elevation of 10. If they re-enter the stair while at an elevation of 10, they will then have an elevation of 0. Any other elevation will not trigger the Stair.
+
+==== One Way Stairs ====
+One way stairs function the same way as regular stairs but don't allow two-way movement.
+
+For example: a one way stair with a bottom of 0 and a top of 9. If set to <code>One Way - Down</code> will bring any token that enters it while at an elevation of 10 to 0, and entering with an elevation of 0 will do nothing. <code>One Way - Up</code> will do the opposite
+
+==== Elevators ====
+Elevators allow tokens to travel between multiple set elevations.
+
+Tokens that enter an elevator can freely travel between the elevations set in <code>Elevator Floors</code> via a pop-up menu.
+
+Elevators will trigger on any elevation in the range of the drawing. For example an elevator set to 0 / 40 as it's top and bottom values will trigger on any elevation between those (e.g. 25). The options you define in the elevator don't affect the triggering range.
+
+=== Vision ===
+[[File:How sight work.jpg|thumb|331x331px|A simple diagram visualizing sight concepts]]
+Token vision is best understood three dimensionally ala our own physical world. 
+
+Imagine 3 tokens. Let's call them '''Token A''', '''B''', and '''C'''. '''Token A''' is on top of a tower that is 60 units high. '''Tokens B''' and '''C''' are at an elevation of 0.  
+
+However, '''Token B''' is 60 (horizontal) units away from '''Token A''' and '''Token C''' is 10 (horizontal) units away from '''Token A'''. 
+
+'''Token A''' can see farther outwards than '''Tokens B''' and '''C''' because it is viewing from a higher vantage point. It will also be able to look over any tiles at an elevation of less than 60. In addition, '''Token A''' and '''Token B''' can see each other.  
+
+However, '''Token A''' and '''Token C''' cannot see each other. This is because the line of sight between '''Token B''' and '''Token C''' is blocked by the tower. If '''Token C''' moves farther away from '''Token A''' and the tower, then the two tokens will be visible to each other. 
+
+=== Fog of War & Advanced Fog Exploration ===
+Fog in foundry is monodimensional, the system itself is not build to handle multiple layers of fog, for that reason, by default, if you explored any elevation, all areas in that zone (independent of elevation) will also be explored. For example if a player explored a first floor of a building then went to the second floor, it would be already fully explored.
+
+Since the only way to make it work correctly would be to completely rewrite the fog exploration system and even then there would be issues of storing multiple fogs (as it would take up load time on startup). Outside of this problem there would be even more issues because 'fog layers' could not be completely separate as exploring an area open to the sky would make it dark once you changed elevation.
+
+Due to all this issues that currently have no solution levels implements what's called 'Advanced Fog Exploration'.
+
+What this does is simple, when a player is in the elevation range of a tile, levels imposes a black shape of that tile onto the fog layer which basically means that it disables fog exploration for that tile only.
+
+Unfortunately there is no solution currently to solve this problem.
+
+This is enabled by default, but you can globally disable it or even toggle it per tile.
+
+== Settings ==
+
+=== Scene Settings ===
+
+==== Light Masking ====
+[[File:Light Masking Fine.jpg|thumb|261x261px|In this example the lighting looks correct at first glance]]
+<code>Light Masking</code> can be toggled in the <code>Lighting</code> tab in the scene settings. By enabling this feature all lights below the current point of view will be visible and masked with the tiles that are above them.
+
+Disabling this setting will only show lights on the current level.[[File:Light masking broken.jpg|thumb|214x214px|Here we can see, by moving the roof slightly, that while the roof is covering the "green" coloration of the light, the vision portion of the light is still visible.]]If you are '''not''' using the '''[https://foundryvtt.com/packages/perfect-vision Perfect Vision]''' module you will encounter the limitations listed below:
+
+*Light masking will mask the "visual" part of the light, as in it's color and animation. Unfortunatelly the "vision" part of the light cannot be masked at this point withouth radical changes to Foundry codebase. See images for an example.
+*While this visual "glitch" will reveal the map in those locations, it will not reveal tokens.
+
+==== Weather Elevation ====
+Elevation for weather can be adjusted
+
+==== Background Elevation ====
+You can set the elevation for the background layer in the scene settings. Default is 0.
+
+Keep in mind that due to limitations and performance issues, the whole Background layer will disregard any transparency vision calculations, and count as a scene-sized vision blocking plane.
+
+Example: If you make a blank new scene with no tiles or background image, then place a token at 0 elevation and one at -10 you will notice that they cannot see each other.
+
+This works well for most use cases (eg. have your map as the background of the scene, then add floors above and\or basements below) but might be a problem in some specific scenes that require transparency at 0 elevation.
+
+In these cases, simply set the Background Elevation to an arbitrary large negative number (eg -99999), ignore the background layer and just use overhead tiles placed through the Levels UI. For example, after creating your scene with your background image (so that the scene is auto sized properly) remove the bakground image from the scene configuration and set the background elevation to -99999. Then place your "baground" image through the Levels UI at 0 elevation.
+
+== Handling Multiple Tokens ==
+When having multiple tokens selected, Levels needs to decide a single point of view, for this reason, multiple tokens handling is not supported.
+
+While having multiple tokens selected will still merge their vision, Levels will not be able to decide which floor to show if the tokens are at different elevations. At the moment there is no solution to this so stick with one selected token at a time if you have multiple at different elevations.
+
+== API ==
+The API is available for viewing by entering <code>CONFIG.Levels.API</code> in the Foundry console or in [https://github.com/theripper93/Levels/blob/v9/scripts/API.js API.js].
+
+=== Hooks ===
+<code>levelsInit(levelsConfig)</code>
+
+A hook that fires when levels has finished initializing, you should use this hook if you want to subclass/wrap/override the levels handlers levelsConfig.handlers. This fires before the levels Wrappers are registered, giving you a chance to wrap or change said functions.
+
+<code>levelsReady(levelsConfig)</code>
+
+A hook that fires after levels has initialized all it's classes and register wrappers and hooks.
+
+<code>levelsUiChangeLevel()</code>
+
+A hook that fires when a different level is selected in the Levels Layers Tool, you can access the Layers Tool in CONFIG.Levels.UI
+
+<code>levelsPerspectiveChanged(currentToken)</code>
+
+A hook that fires when the token that Levels is using to render the current point of view changes. Can be <code>null</code> for GMs when no token is selected.
+
+=== Overrides ===
+Levels overrides <code>MeasuredTemplate#_refreshRulerText</code>, <code>Wall#identifyInteriorState,</code> <code>DetectionMode#_testRange</code> and <code>CanvasOcclusionMask#_identifyOccludedTiles</code> if your module or system overrides them as well, there could be conflicts.
+
+If you wish to Override or Wrap the overrides you can do so in the <code>levelsInit(levelsConfig)</code> hook.
+
+== Other ==
+
+=== Submodules ===
+
+==== [[Automatic Cover Calculator]] ====
+
+==== [[Depth Blur]] ====
+
+==== [[Volumetric Templates]] ====
+
+=== Tutorials ===
+Levels 3.0 Tutorial
+
+=== V9 to V10 ===
+
+==== Changes ====
+
+* Polygons and holes are deprecated 
+** Levels will now automatically handle visibility based on the tile transparency. You can leave old holes in your maps, they simply won't do anything.
+* [[Better Roofs]] is no longer a required dependency
+* Light masking is now better but the [https://foundryvtt.com/packages/perfect-vision Perfect Vision] module is highly reccomended.
+* New <code>Allow Sight</code> option for tiles. If enabled on a tile, the tile will not block sight.
+* New <code>Background Elevation</code> option in scene configuration. The background is now a Levels entity with a default elevation of 0. 
+** This means you can now go under the background.
+* New <code>Weather Elevation</code> option in scene settings. Allows for changing the elevation of weather effects.
+* UI Revamp
+** Scene controls no longer have buttons
+** UI now has all the required buttons
+** Bug button removed
+* Top Elevation Collision
+** Tiles will now only perform collision checks at their bottom elevation
+
+==== Migration ====
+
+* Tiles placed as overhead tiles inside Levels (aka tree icon) from V9 will now render on the floor.
+** A macro is included to fix them, but you will need to select them and select the level they belong to. No automatic migration is possible for this issue.
+
+[[Category: Module]][[Category: Free]][[Category: Levels]]

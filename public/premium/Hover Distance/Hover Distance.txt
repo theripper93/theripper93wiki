@@ -1,0 +1,14 @@
+Show distance to a token when hovering it.
+[[File:Hdsingle.png|thumb|Hovering a single token]]
+
+== How to use ==
+Hover a token while having a token selected to show the distance to that token
+[[File:Hdmasshighlight.png|thumb|Holding ALT to highlight all tokens]]
+Hold <code>ALT</code> to highlight all visible tokens and show the distance to all of them
+
+== Customization ==
+You can decide when the distance is shown (eg. only in combat) and other smaller tweaks in the module settings.
+
+== Measurements ==
+Keep in mind that due to the calculation beeing not possible, if two tokens are at a different elevation, the distance mesurement will be switched from your preferred method to <code>Euclidean</code>
+[[Category:Module]]

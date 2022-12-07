@@ -1,0 +1,42 @@
+Maxwell's Manual of Malicious Maladies (MMMM) contains 208 lingering injuries based on the 13 different damage types. All with different severities, durations, and consequences. Based on the titular [https://www.reddit.com/r/DnDBehindTheScreen/comments/l4ags0/maxwells_manual_of_malicious_maladies_a_34_page/ Maxwell's Manual of Malicious Maladies].
+
+The module contains compendiums of the injuries, effects, items, and tables for rolling. Rolling for injuries can be automated through settings, chat commands, and/or [https://foundryvtt.com/packages/midi-qol MidiQoL].
+[[File:Mmminjury.png|thumb|Example Injury with Virus button location]]
+
+== Basics ==
+
+=== Compendiums ===
+Items and journals with the full content of the original homebrew are available in compendiums. Injury tables are accessible and importable in the tables compendium.
+
+=== Chat Commands ===
+
+==== Rolling Injuries ====
+* <code>/mmmm</code> will bring up a dialog with all the tables
+* Specify a damage type to auto roll that table (e.g. <code>/mmmm radiant</code>)
+
+==== Adding Injuries ====
+The GM can click on the Red Virus button in the name of the injury (in chat) to add it as an item to the target's character sheet.
+
+Active effects will be added to items with the appropriate duration. Note that these effects just serve as a reminder of the injury.
+
+=== Injury Automation ===
+Injuries can be automated as well. Some will require [https://foundryvtt.com/packages/midi-qol MidiQoL].
+
+MMMM can automatically prompt for injuries on:
+
+* Critically failed saving throw ([https://foundryvtt.com/packages/midi-qol '''MidiQoL'''] required)
+* Critical hit ([https://foundryvtt.com/packages/midi-qol '''MidiQoL'''] required)
+* More than half hp of damage
+* HP reaches 0
+
+== Customization ==
+This module will search tables by name, if the table is not found in your sidebar the one in the compendium will be used.
+
+You can import the tables and modify the injuries as you like, as long as the name of the table remains the same.
+
+== Credit ==
+Based on the [https://www.reddit.com/r/DnDBehindTheScreen/comments/l4ags0/maxwells_manual_of_malicious_maladies_a_34_page/ original homebrew] by [https://www.reddit.com/r/DnDBehindTheScreen/comments/l4ags0/maxwells_manual_of_malicious_maladies_a_34_page/ u/almostlucid]. Reading it (from the included journal entries or from the original PDF) is highly suggested as it includes extra rules for healing injuries!
+
+Special thanks to ButtersTheNinja for the help in setting up the tables!
+
+[[Category: Module]] [[Category: Free]]

@@ -1,0 +1,61 @@
+[[File:Gatherertale.png|thumb|Example Table]]
+
+== Recommended Modules ==
+
+* [https://foundryvtt.com/packages/foundryvtt-simple-calendar Simple Calendar] will allow the automatic reset of gathering spots depending on time passed, without it this feature will not work
+===Premade Content===
+Want to start with some already made recipes and gathering points? Download the DnD5e [https://github.com/action-jay/potion-crafting-gathering Potion Crafting & Gathering] module by [http://www.actionjay.com/ Action_Jay] using [https://github.com/action-jay/potion-crafting-gathering/releases/latest/download/module.json this ManifestURL]! The module leverages both the [[Mastercrafted]] and [[Gatherer]] modules, make sure you install both!
+== Creating a Gathering spot ==
+[[File:Gatherersheetselect.png|thumb|Selecting the Gatherer Sheet]]
+[[File:Gatherersheetfilled.png|thumb|A Fully setup Gatherer Sheet]]
+[[File:Gatherersview.png|thumb|Gatherer Sheet in View Mode]]
+Gatherer works with <code>Roll Tables</code>, so before you start create a roll table and drag and drop the items you want for your Gathering Spot in it. To create a gathering spot, follow this steps.
+
+* Create a new <code>Journal</code> and create a new <code>Text Journal Page</code> in it (or add a Text Journal Page in an existing Journal)
+* In the Page header, click the <code>Sheet button</code> and in <code>This Sheet</code> select <code>Gatherer Sheet</code>
+* Select a Roll table from the drop down menu.
+* Set the extra options you want, for this first tutorial we will use just the basics. We will give this gathering spot a 15 hours reset time and 10 draws (or pulls).
+* The sheet should look like the one in the <code>A Fully setup Gatherer Sheet</code> image
+* <code>Note</code>: Due to a [https://github.com/foundryvtt/foundryvtt/issues/8299 Bug] with the new V10 Journals, you might need to refresh the browser (F5) after your first setup of a Gatherer Sheet
+* Once you saved and refreshed (if needed) your Journal Page should look like this when in view mode <code>Gatherer Sheet in View Mode</code>
+
+You can now gather from this sheet, remember that you need either a token selected or a character assigned to gather! As a GM you can manually reset a spot with the Reset button!
+
+== Options ==
+You can configure multiple options for the Gatherer Sheet
+
+=== Time ===
+Specify the time in hours after which the timer and draws are reset. For example, a time of 48 will reset the spot every 2 days. You can use decimal values.
+
+=== Draws ===
+The number of Pulls that can be made from this spot. Draws\Pulls will reset automatically with time or when pressing the Reset button.
+
+=== Quantity ===
+The amount of items that will be gathered from this spot. This value is the same for all items and cannot be customized per item. If you wish to change item chances, you can always weight the table differently. Quantity also evaluates roll expressions. For example <code>1d6+3</code> and <code>3</code> will both work.
+
+If you want to set per-item quantities, see the Better Rolltables integration section.
+
+=== Require ===
+Specify item requirements for this gathering, the parameters can be a comma separated list of item names. The actor doing the gathering will need to have ALL the Required items if multiple are specified. Example <code>Fishing Rod,Bait</code>
+[[File:Gathererminigame.png|thumb|Gatherer Minigame]]
+
+=== Minigame ===
+The minigame tag will let the user pick the item to gather instead of leaving it to chance! When using this tag, instead of a table roll, the user will be prompted with a window with items appearing in a random sequence, when the user clicks the button the currently displayed item will be awarded! The time is in milliseconds, e.g. <code>800</code>.
+
+Remember that the time you chose is then multiplied by the chance an item has to be drawn from the table, so for example, if an item has 20% chance of being drawn, it's display timer will be <code>800ms*0.2 = 160ms</code> so make sure to pick an appropriate amount of time!
+
+And remember, the more you wait to pick the item the faster the minigame will get!
+
+Note: Leaving this field empty will disable the minigame and use standard table rolling.
+
+=== Expression ===
+A Macro expression that will be evaluated before the gathering. If the expression resolves to <code>false</code>, a Pull will be consumed but no items will be gathered. Example <code>const res = await actor.rollSkill("inv"); return res.total > 15;</code> will roll an investigation check, if the result is higher than 16 the pull will succeed.
+
+If you wish to cancel a gathering alltogether, return <code>null</code> instead and no pulls will be consumed.
+
+=== Checks (DND5E Only) ===
+For the DnD5e system, a dropdown with ability/skill checks and tool checks are available with corresponding DC! The tool name is Case Sensitive! Failing the check will result in a consumed Pull but no rewards.
+
+== Better Rolltables Integration ==
+If you have the Better Rolltables module installed, and you set <code>Better Tables Type</code> to <code>Better Table</code> you will be able to set a <code>formula</code> for each item. In this instance, Gatherer will use that formula instead of the quantity specified in the Gatherer Sheet.
+[[Category:Module]]

@@ -1,0 +1,105 @@
+![Argon Combat HUD](Argon_main_hud.png "Argon Combat HUD")A Solasta
+inspired HUD to make your games easier for your players and for teaching
+new players without a hitch. It is only D&D 5e compatible.
+
+## Basics
+
+### Opening the HUD
+
+![Spells Panel](Hudspells.png "Spells Panel") To open the HUD, click the
+crossed swords icon in the token controls (top left buttons) or click
+the same button in the token hud (right click on a token). A macro is
+also included to toggle the hud.
+
+### Spells
+
+Expanding the spells panel will show you how many maximum and remaining
+spell slots you have for each level. You can customize visibility of
+prepared spells in the module settings. ![Action
+Tracking](Argonactiontracking.png "Action Tracking")
+
+### Action Tracking
+
+Argon provides a basic action tracking, there is no option to undo or
+manually change the tracking, opening and closing the hud will reset the
+action tracking. The action tracking will **not** prevent you from using
+actions. ![Weapon Sets](Weapon_Sets.png "Weapon Sets")
+![Tooltips](Argontooltips.png "Tooltips")
+
+### Save/Skills/Tools
+
+This panel provides easy access to the respective checks and tools.
+
+### Weapon Sets
+
+Above the portrait are 3 sets of 2 boxes. The left boxes represents the
+action and the right boxes represents bonus actions.
+
+NPCs will have their sets created automatically. For PCs simply drag &
+drop items from the character sheet to the weapon sets boxes.
+
+To remove an item drag it from the weapon sets box to the character
+portrait (a trash can will appear). Weapon sets are not limited to
+weapons, for example a caster could use it for frequently used cantrips.
+
+By default switching sets will also equip or unequip the items.
+
+### Movement Tracker
+
+A basic movement tracker will track remaining squares of movement during
+a round. The tracker will turn yellow when getting to dash and turn red
+when it's exceeded (the third red bar could be used for the rogue double
+dash as well)
+
+### Tooltips
+
+Tooltips provide useful information on the items, you can change which
+tooltips are shown (including no tooltips) in the module settings, these
+are client side settings.
+
+## Common Issues
+
+![Saves/Skills/Tools
+Panel](Saveskilltoolshud.png "Saves/Skills/Tools Panel") Argon was made
+for Chrome. If you experience weird UI issues consider switching
+browser.
+
+### Portraits not showing
+
+If your image path has parenthesis "(" or ")" the image will fail to
+load, this might be true for other special characters as well
+
+## FAQs
+
+### Can you add compatibility for X system?
+
+No, Argon is hardcoded for dnd5e. If you want you can make a fork for a
+specific system. You have to include the licence section and credit the
+original authors (theripper93, Mouse0270) and include links to our
+patreon page\website (if provided).
+
+### Why is xyz type of item not in the HUD?
+
+We had to make a choice on what to include, anything that's not on those
+categories is not included (a 1 minute cast time spell for example, or a
+consumable that is used as bonus action). Those items will not be added.
+You can use Sets for any item.
+
+### Why the items in the HUD are not updating correctly?
+
+Only a select number of elements are dynamically updated. To manually
+update the HUD simply close and reopen the Argon HUD.
+
+## Other
+
+### Credits
+
+UI/UX Design by [mouse0270](https://github.com/mouse0270)
+
+### Licensing
+
+All images used are from
+[ttps://game-icons.net/](https://game-icons.net/)
+
+[Category: Module](Category:_Module "wikilink") [Category:
+Free](Category:_Free "wikilink")

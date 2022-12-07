@@ -1,0 +1,25 @@
+Take quick notes for combat or other pourpouse on tokens.
+
+== How to use ==
+[[File:Tnhudbtn.png|thumb|Token Notes button in the Token HUD]]
+
+=== Opening the token notes ===
+If the option to automatically open token notes is enabled in the module settings, the Token Notes window will automatically open when selecting a token, otherwise you can open it buy clicking the token notes button in the token hud
+
+=== Editing the notes ===
+[[File:Tnwindow.png|thumb|Token Notes window in the top right position]]
+When opened, the Token Notes window will appear in the bottom left corner of the screen (or in another location if you changed it in the module settings)
+[[File:Tnedit.png|thumb|Token Notes Edit mode]]
+Click the <code>Edit</code> button to edit the notes.
+
+Click the button again to save your changes.
+
+New lines will be separated by a line while not in edit mode.
+
+=== Counters ===
+[[File:Tnnumbers.png|thumb|Number turned into a counter]]
+If you type any number in the notes, it will turn into a counter while not in edit mode. You can use these to keep track of durations or other effects!
+
+== Permissions ==
+By default players will not be able to see or edit the notes, if you wish you can change this behaviour in the module settings.
+[[Category:Module]]
