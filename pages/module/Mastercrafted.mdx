@@ -1,0 +1,123 @@
+### Premade Content
+
+Want to start with some already made recipes and gathering points?
+Download the DnD5e [Potion Crafting &
+Gathering](https://github.com/action-jay/potion-crafting-gathering)
+module by [Action\_Jay](http://www.actionjay.com/) using [this
+ManifestURL](https://github.com/action-jay/potion-crafting-gathering/releases/latest/download/module.json)\!
+The module leverages both the [Mastercrafted](Mastercrafted "wikilink")
+and [Gatherer](Gatherer "wikilink") modules, make sure you install
+both\!
+
+### Creating and Editing Recipes
+
+![The Recipe Manager button located in the Items Sidebar
+Tab](Recipemanagerbtn.png
+"The Recipe Manager button located in the Items Sidebar Tab") ![The Main
+Mastercrafted Window](Mastercraftedwindowedit.png
+"The Main Mastercrafted Window")
+
+#### Creating a new Book and Recipe
+
+  - To open the Recipe Manager, click the button located in the Items
+    Sidebar Tab
+  - Use the "Add Recipe Book" button to create a new book, configure as
+    needed
+  - Right click a book to add a recipe, left click a book to expand it
+  - Click the newly created recipe to open it
+
+#### Configuring a recipe
+
+  - Drag and Drop ingredients in the **+** panels. Dragging multiple
+    ingredients in the same panel will let the player chose which one to
+    use from that panel for the crafting
+  - Having multiple ingredient panels means that at least one item from
+    each panel will be required for the crafting.
+  - You can edit the required quantity in on the top right of the
+    ingredient
+  - Left click an ingridient to inspect, right click to remove it from
+    the recipe
+
+![The Recipe panel in Edit Mode](Recipeedit.png
+"The Recipe panel in Edit Mode") ![Crafting Button in the Actor Sheet
+header](Craftingbutton.png "Crafting Button in the Actor Sheet header")
+
+#### Creating a crafting result
+
+  - Drag and drop items in the result **+** panels
+  - Having multiple items in a single result panel will award the player
+    with all the items when crafting
+  - If you have multiple result panels, the player will be able to chose
+    which panel will be the result of the crafting
+  - Left click a result to inspect, right click to remove it from the
+    recipe
+
+#### Importing\\Exporting
+
+  - Right click a recipe or book to export it
+  - Right click a recipe or book to import from a json and overwrite it
+
+### Community Recipe Books
+
+If you want to share or download Books made by the community, you can do
+so here:
+
+[Mastercrafted: Community
+Books](Mastercrafted:_Community_Books "wikilink")
+
+### Crafting
+
+  - Open an Actor Sheet
+  - Click the Crafting button in the window header
+  - Select a Recipe (Keep in mind that as a GM you will always see all
+    recipes, make sure you give the correct permissions to players in
+    the book/recipe configuration)
+  - Left click to inspect ingredients\\results
+  - Right click to select a different ingredient from an ingredient
+    panel
+  - Left click a result panel to select the desired result
+  - Click the Craft button on the top right to craft, hold `ctrl` to
+    skip confirmation
+
+![The crafting window. Ingredients are Red since the Actor does not own
+them.|203x203px](Craftwindownoitem.png
+"The crafting window. Ingredients are Red since the Actor does not own them.|203x203px")
+
+### Advanced: Adding conditions to crafting
+
+Adding conditions will allow you to add custom checks to crafting, for
+example making a strength check in order to make an item (in addition to
+other conditions). We will use the DND5E System in this example but it
+will work with any system, refer to your system discord channel or macro
+polo to know the correct macro commands for checks.
+
+  - Create a new script macro, for this example we will call it
+    `StrengthCheck`
+  - Edit the recipe and type the exact macro name in the `Condition`
+    field
+  - The macro will need to return an object `{ success: Boolean,
+    consume: Boolean }`
+  - `success` determines if the crafting is successfull or not while
+    `consume` determines if the ingredients are consumed in the event of
+    a failed craft
+  - In the context of the macro, `actor` is the Actor doing the
+    crafting.
+  - You can copy paste this sample macro to use as a template for your
+    own
+  - Note: You can also copy paste the macro code directly in the
+    `Condition` field, but make sure your lines correctly end with `;`
+    as the code will be collapsed to a single line\!
+
+<!-- end list -->
+
+``` javascript numberLines
+const roll = await actor.rollAbilityTest("str");
+
+return {
+   success: roll.total > 12,
+   consume: true,
+}
+```
+
+[Category: Module](Category:_Module "wikilink") [Category:
+Premium](Category:_Premium "wikilink")

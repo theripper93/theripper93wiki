@@ -1,0 +1,62 @@
+Show 3D Files as actor portraits and items
+
+## How to use
+
+![3D Portraits header button](3dpheader.png
+"3D Portraits header button") ![3D Portraits Configuration
+Window](3dpconfig.png "3D Portraits Configuration Window")
+
+### Setting a 3D file as actor or item portrait
+
+  - Open the 3D Portraits configuration in the Window Header
+  - In the configuration window select a 3D File, only `glb` and `gltf`
+    are supported. If you have setup the Heroforge integration, you can
+    use the Heroforge Browser to select a mini from your Heroforge
+    Collection
+  - If you wish set a background image for the 3D Portrait
+
+### Hero Forge Integration
+
+Accepting the Terms of Services via enabling the respective option in
+the module settings is required for Hero Forge integration. It is also
+required to input the Hero Forge authentication key in the module
+settings. ![Filepicker+ integration](3dpfilepickerplus.png
+"Filepicker+ integration")
+
+### Filepicker+ Integration
+
+If you have Filepicker+ installed you can preview 3D Files directly in
+the Filepicker by hovering over them. ![Argon Combat HUD
+integration](3dpargon.png "Argon Combat HUD integration")
+
+### Argon Integration
+
+If you have Argon Combat HUD installed, the 3D Portrait will show in the
+HUD as well ![3D Canvas integration](3dp3dc.png "3D Canvas integration")
+
+### 3D Canvas Integration
+
+If you have 3D Canvas installed, you can use the Heroforge Browser for
+3D Tokens
+
+## Generating Thumbnails for 3D Files
+
+If you have a folder of your own 3D Models, you can generate Thumbnails
+that will be used by Filepicker+ to display. To do so, simply run this
+in the console or as a script macro replacing the path accordingly.
+
+`game.threeportrait.ThreePortraitPreview.generateThumbnails("your/path/")`
+
+Example:
+
+`game.threeportrait.ThreePortraitPreview.generateThumbnails("assets/3dModels")`
+
+By default this command will skip generating a thumbnail if it already
+exists, if you wish to generate anyways (for example to replace old
+thumbnails) you can set the second argument to false
+
+`game.threeportrait.ThreePortraitPreview.generateThumbnails("your/path/",
+false)`
+
+Thubnail generation requires **Chrome** or the **Desktop App**, it won't
+work in other browsers\!

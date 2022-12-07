@@ -1,0 +1,106 @@
+Add blood and gore to your games
+
+# V10 Data Path update
+
+![Token Bleeding from a hit](Splatteronhit.png
+"Token Bleeding from a hit") When updating to V10 you will probably need
+to update your datapaths, this basically means removing any `data` from
+the path, for example for dnd5e it would be `attributes.hp.value` as you
+can see the `data.` is no longer in the path.
+
+## ATTENTION\!
+
+On some systems the `Creature Type` and `Custom Creature Type` options
+might cause Splatter to not work correctly, simply go into the module
+settings for Splatter and empty both those settings leaving them blank.
+![Creature Type Blood Color Macro](Splatterbloodsheet.png
+"Creature Type Blood Color Macro")
+
+## CONFIGURATIONS
+
+If you manually added the data paths for your System to splatter, please
+send in a PR for
+[config.js](https://github.com/theripper93/Splatter/blob/main/scripts/config.js)
+
+For information on how to configure Splatter for your system please read
+[this](https://github.com/theripper93/Splatter/blob/main/CONFIGURATIONS.MD)
+
+You are also free to send in PRs with configurations for missing
+systems\!
+
+## Add blood and gore to your games
+
+Give that extra touch to your game, compatible with most game systems
+(minor configuration required)
+
+### Blood on hit
+
+The bigger the hit, the more the blood. Configure manual blood scale,
+violence level, and blood trails
+
+### Blood by creature type
+
+Set up a configuration for blood color and creature type, by default one
+for dnd5e is included ![Customize Blood Color per
+token](Splattertokenblood.png "Customize Blood Color per token") ![Data
+Path settings](Splatterdatapath.png "Data Path settings")
+
+### Per Token Blood color
+
+Set the blood color differently for each token, if you want a token to
+not bleed, you can set the color to transparent\!
+
+### Custom Data Path
+
+Set the data path of relevant data to adjust Splatter for your game
+system
+
+### 3D Canvas Integration
+
+If you use 3D Canvas, Splatter will make tokens bleed also in 3D\!
+
+## Manually Configuring Splatter for your System
+
+Some systems are supported out of the box, others will require manual
+configuration of the data paths, follow these instructions to configure
+splatter for your system.
+
+  - Place a Token on a scene, any scene and any token will do
+  - Select the token
+  - Open the Console using the F12 Key
+  - On the Top Tabs, make sure you are in the Console Tab
+  - In the console, type `_token.actor.system` and press Enter
+  - You will see some data displayed, click the Expand Arrow to see all
+    the data
+  - Browse the data tree using the Expand arrows to locate the data path
+    of your Current\\Max hp.
+  - Once you have located the data path, right click on the name of the
+    property and click "Copy Property Path"
+  - Paste it in the Splatter Module settings appropriate field.
+
+## NOTICE: FEATURE REQUESTS
+
+I know that this implementation doesen't have all the features BnG had
+BUT i feel like it has enough customization for most people. Because the
+point of this module is to keep it streamlined to avoid making it
+impossible to mantain no feature requests will be implemented. Unless is
+something that all the users of this module would greatly benfit from,
+please refrain from asking. Thanks for your understanding :)
+
+## FAQ
+
+Blood and guts exists, why make a new one?: Blood and guts was a massive
+project and while it was amazing, with a lot of code comes a lot of
+issues and it's extremely difficult to mantain and fix. This
+implementation is simpler and more streamlined, and while it has less
+features, it will be much easier to mantain or adopt if it ever gets
+abandoned
+
+## Licensing
+
+The included Splatter font was created by Codin Repsh
+
+Original concept by edzillion
+
+[Category: Module](Category:_Module "wikilink") [Category:
+Free](Category:_Free "wikilink")

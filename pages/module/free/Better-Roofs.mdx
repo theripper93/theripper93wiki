@@ -1,0 +1,64 @@
+**Betters Roofs** is a module for enhancing Foundry's overhead tile
+functionality.
+
+## Required Modules
+
+-   [libWrapper](https://foundryvtt.com/packages/lib-wrapper)
+
+## Features
+
+### Reveal in Fog
+
+When this option is enabled, the full tile will be revealed in the Fog
+of War and display as "explored". Keep in mind that this settings works
+of the vision radius of the token, if the token has no vision radius the
+roof will not show. This features uses the image itself for detection,
+so if your roof tile is completely enclosed in walls, the roof will not
+be revealed. In the same way, if a roof is illuminated by a light it
+will not be revealed.
+
+Note: If you are using `Levels`, the `Top` of the tile needs to be set
+to `Infinity` for the tile to count as a roof (**an this feature to
+work**)
+
+``` javascript
+Due to V10 Core Changes, the Revealed roof (while still visible) will look darkened compared to V9.
+```
+
+![Overhead Tile
+Settings](Overhead_Tile_Settings_Better_Roofs.png "Overhead Tile Settings")
+
+### Occlusion ID
+
+This id is used to create "groups" of tiles, imagine it as a tag, it can
+be any text you wish, such as "house-1-canopy"
+
+### Occlusion Links
+
+With Occlusion Link you can link the occlusion state of tiles.
+
+A tile marked as Occlusion Link Source will set all the tiles with
+matching Occlusion Link ID to its occluded state
+
+For example, let's say you have trees that are overlapping with the roof
+of a building, when you are inside the building and the roof is occluded
+(not visible) you don't want the trees to be visible inside the house.
+Simply assign the same occlusion link id to the trees and the roof, then
+set the roof as occlusion link source. When the roof is occluded, the
+trees outside will disappear as well. Keep in mind that if you were to
+enable Occlusion link source on the trees as well, going under one tree
+will make all trees and the roof occluded.
+
+### Occlusion Radius
+
+This token setting will determine the size of the revealed radius when a
+token is under a tile with "Radial" occlusion mode.![A screenshot of
+Occlusion Radius
+settings](Occlusion_Radius.png "A screenshot of Occlusion Radius settings")
+
+## External Links
+
+-   [Github](https://github.com/theripper93/Better-Roofs/)
+
+[Category: Module](Category:_Module "wikilink") [Category:
+Free](Category:_Free "wikilink")
