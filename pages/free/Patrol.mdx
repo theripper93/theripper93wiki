@@ -1,3 +1,4 @@
+# Patrol
 Automatic Patrol Routes for NPCs.
 
 ## Basics
@@ -93,39 +94,36 @@ rotating patrols\!
 
 ## Issues
 
-### Patrol is not working\!
+### Patrol is not working\
 
 If patrol is not working, check this steps before opening an issue:
 
-  - If a token is selected it will stop patroling
-  - If you create a combat encounter the patrol will stop
-  - If you have the game paused, the patrol will stop
-  - If you haven't toggled the patrol button the patrol will not start
-  - If path patrol mode tokens will not spot players
+- If a token is selected it will stop patroling
+- If you create a combat encounter the patrol will stop
+- If you have the game paused, the patrol will stop
+- If you haven't toggled the patrol button the patrol will not start
+- If path patrol mode tokens will not spot players
 
 ### Integration
 
 You can use Patrol's hooks to enable additional features. Use the hooks:
 
-  - "prePatrolSpotted", (spotter, spotted)
-  - "patrolSpotted", (spotter, spotted)
-  - "prePatrolAlerted", (spotter, spotted)
-  - "patrolAlerted", (spotter, spotted)
+- "prePatrolSpotted", (spotter, spotted)
+- "patrolSpotted", (spotter, spotted)
+- "prePatrolAlerted", (spotter, spotted)
+- "patrolAlerted", (spotter, spotted)
 
 Example:
 
 `Hooks.on("prePatrolSpotted", (spotter, spotted) => {`  
-`  // Only actually spotted if the Spotter has a higher passive perception than the target's DC`  
-`  return spotter.passivePerception >= spotted.passiveDC;`  
+`// Only actually spotted if the Spotter has a higher passive perception than the target's DC`  
+`return spotter.passivePerception >= spotted.passiveDC;`  
 `});`
 
 `Hooks.on("patrolSpotted", (spotter, spotted) => {`  
-`  // Start a new combat if needed, then add the spotter to the spotted with a surprise round`  
+`// Start a new combat if needed, then add the spotter to the spotted with a surprise round`  
 `});`
 
 ## Tutorials
 
 ### [Video Tutorial by *Check the Rulebook*](https://youtu.be/Izx441zjtBs)
-
-[Category: Module](Category:_Module "wikilink") [Category:
-Free](Category:_Free "wikilink")

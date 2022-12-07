@@ -9,6 +9,10 @@ const config: DocsThemeConfig = {
   chat: {
     link: 'https://discord.com',
   },
-}
+  footer: {
+    text: "Created by theripper93 and apriltaoyvr with nextra"
+  },
+  primaryHue: 47
+};
 
 export default config

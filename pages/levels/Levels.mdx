@@ -1,3 +1,5 @@
+# Levels
+
 Levels is a Foundry VTT module for creating maps with multiple vertical
 levels.
 
@@ -5,16 +7,16 @@ levels.
 
 ### Dependencies
 
-  - [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper)
-  - [Wall Height](Wall_Height "wikilink")
+- [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper)
+- [Wall Height](Wall_Height 'wikilink')
 
 ### Recommended
 
-  - [Perfect Vision](https://foundryvtt.com/packages/perfect-vision)
+- [Perfect Vision](https://foundryvtt.com/packages/perfect-vision)
 
 ### Before we Begin
 
-Levels heavly relies on vision. If vision is disabled on the map or you
+Levels heavily relies on vision. If vision is disabled on the map or you
 have selected a token without vision, you might experience undesired
 effects\!
 
@@ -24,38 +26,38 @@ While Levels is capable of handling full multilevel maps, we will start
 with something simple: Adding a multilevel barn to an existing map. This
 approach is scalable to any map you might want to build in the future.
 
-1.  Open any scene or create a new scene and set a background. This
-    tutorial assumes you have a standard grid size of 5ft, if that is
-    not the case adjust the Levels size accordingly (usually 2 times the
-    size of 1 square). Setting a background is not strictly required and
-    you can use a blank map if you prefer.
-2.  Open the Levels UI (also known as the *Levels Layer Tool*) by
-    pressing the {{\#fas:layer-group}} button.
-3.  Press the {{\#far:pen-to-square}}button to go into edit mode, extend
-    the window vertically to have some extra space
-4.  Press the `+` button two times to add two levels.
-5.  Set the bottom one at 0/10 elevation and the top one at 10/20. Name
-    your Levels `Ground Floor` and `First Floor`. Giving a name to your
-    Levels is not strictly required.
-6.  Head out of edit mode by pressing the button again and select the
-    0/10 Level by clicking on it. Your UI should now match the Levels UI
-    screenshot below.
-7.  While you have a Level selected in the UI, anything you place will
-    be placed on that Level. Now head to the `Tiles Layer`.
-8.  Open the `Tile Browser` and navigate to
-    `modules/levels/sample-maps/baileywiki/`, drag and drop the
-    `barn-lvl1.webp` file onto the scene.
-9.  Head to the `Walls Layer` and wall this ground floor tile
-    appropriatelly.
+1. Open any scene or create a new scene and set a background. This
+   tutorial assumes you have a standard grid size of 5ft, if that is
+   not the case adjust the Levels size accordingly (usually 2 times the
+   size of 1 square). Setting a background is not strictly required and
+   you can use a blank map if you prefer.
+2. Open the Levels UI (also known as the _Levels Layer Tool_) by
+   pressing the {{\#fas:layer-group}} button.
+3. Press the {{\#far:pen-to-square}}button to go into edit mode, extend
+   the window vertically to have some extra space
+4. Press the `+` button two times to add two levels.
+5. Set the bottom one at 0/10 elevation and the top one at 10/20. Name
+   your Levels `Ground Floor` and `First Floor`. Giving a name to your
+   Levels is not strictly required.
+6. Head out of edit mode by pressing the button again and select the
+   0/10 Level by clicking on it. Your UI should now match the Levels UI
+   screenshot below.
+7. While you have a Level selected in the UI, anything you place will
+   be placed on that Level. Now head to the `Tiles Layer`.
+8. Open the `Tile Browser` and navigate to
+   `modules/levels/sample-maps/baileywiki/`, drag and drop the
+   `barn-lvl1.webp` file onto the scene.
+9. Head to the `Walls Layer` and wall this ground floor tile
+   appropriately.
 10. Now select the First Floor (10/20) in the Levels UI. In the `Tile
-    Browser` grab the `barn-lvl2.webp` file from the same folder and
+Browser` grab the `barn-lvl2.webp` file from the same folder and
     drag it on top of the other tile alligning them correctly. As
     before, head to the `Walls Layer` and wall this floor
-    appropriatelly.
+    appropriately.
 11. We will enable an additional settings on this floor so we can see it
     when we are on the Ground Floor. Double click the First Floor tile
     to open it's configuration, head to the Levels Tab and enable `Show
-    Even When Below?` and save your changes
+Even When Below?` and save your changes
 12. Let's add a roof\! Toggle roof view\\placement by clicking
     **{{\#fas:archway}}**
 13. Drag and drop the roof tile `barn-roof.webp` i the correct position
@@ -76,9 +78,8 @@ approach is scalable to any map you might want to build in the future.
 
 ### Levels UI
 
-![A screenshot of the Levels UI](Levels_UI.png
-"A screenshot of the Levels UI") Open the Levels UI (also known as the
-*Levels Layer Tool*) by pressing the {{\#fas:layer-group}} button.
+![A screenshot of the Levels UI](/public/free/Levels/Levels_UI.png 'A screenshot of the Levels UI') Open the Levels UI (also known as the
+_Levels Layer Tool_) by pressing the {{\#fas:layer-group}} button.
 
 You will see a small semi-transparent black box open in the top-right of
 Foundry.
@@ -156,16 +157,15 @@ will count instead as a solid scene sized plane.
 
 ### Tokens
 
-Token height is handled by [Wall Height](Wall_Height "wikilink"). It's
+Token height is handled by [Wall Height](Wall_Height 'wikilink'). It's
 higly suggested to read the `Token Height` section of the Wall Height
 page before using Levels.
 
 ### Drawings
 
-![Drawing\_config\_menu.png](Drawing_config_menu.png
-"Drawing_config_menu.png") In Levels, drawings are used to create stairs
+![Drawing_config_menu.png](Drawing_config_menu.png 'Drawing_config_menu.png') In Levels, drawings are used to create stairs
 and elevators. Their purpose is to allow travel between elevations.
-However, *how* they handle travel between elevations is handled
+However, _how_ they handle travel between elevations is handled
 differently.
 
 To create or edit a stair or elevator, double click on an existing
@@ -196,11 +196,10 @@ drawing.
 
 Stairs allow tokens to travel **from** and **to** two set elevations.
 
-  - Stairs can only move tokens to its set elevations
-  - The token must be on one of the two elevations exactly (e.g. 0 or
-    10) to trigger
-  - Stairs will move tokens one value higher than its top elevation if
-    entering from below
+- Stairs can only move tokens to its set elevations
+- The token must be on one of the two elevations exactly (e.g. 0 or 10) to trigger
+- Stairs will move tokens one value higher than its top elevation if
+  entering from below
 
 For example: a stair with a bottom of 0 and a top of 9. A token at an
 elevation of 0 that enters the stair will now have an elevation of 10.
@@ -231,8 +230,7 @@ in the elevator don't affect the triggering range.
 
 ### Vision
 
-![A simple diagram visualizing sight concepts](How_sight_work.jpg
-"A simple diagram visualizing sight concepts") Token vision is best
+![A simple diagram visualizing sight concepts](How_sight_work.jpg 'A simple diagram visualizing sight concepts') Token vision is best
 understood three dimensionally ala our own physical world.
 
 Imagine 3 tokens. Let's call them **Token A**, **B**, and **C**. **Token
@@ -254,7 +252,7 @@ tower, then the two tokens will be visible to each other.
 
 ### Fog of War & Advanced Fog Exploration
 
-Fog in foundry is monodimensional, the system itself is not build to
+Fog in foundry is unidimensional, the system itself is not build to
 handle multiple layers of fog, for that reason, by default, if you
 explored any elevation, all areas in that zone (independent of
 elevation) will also be explored. For example if a player explored a
@@ -287,8 +285,7 @@ toggle it per tile.
 #### Light Masking
 
 ![In this example the lighting looks correct at first
-glance](Light_Masking_Fine.jpg
-"In this example the lighting looks correct at first glance") `Light
+glance](Light_Masking_Fine.jpg 'In this example the lighting looks correct at first glance') `Light
 Masking` can be toggled in the `Lighting` tab in the scene settings. By
 enabling this feature all lights below the current point of view will be
 visible and masked with the tiles that are above them.
@@ -296,18 +293,17 @@ visible and masked with the tiles that are above them.
 Disabling this setting will only show lights on the current level.![Here
 we can see, by moving the roof slightly, that while the roof is covering
 the "green" coloration of the light, the vision portion of the light is
-still visible.](Light_masking_broken.jpg
-"Here we can see, by moving the roof slightly, that while the roof is covering the \"green\" coloration of the light, the vision portion of the light is still visible.")If
+still visible.](Light_masking_broken.jpg 'Here we can see, by moving the roof slightly, that while the roof is covering the "green" coloration of the light, the vision portion of the light is still visible.')If
 you are **not** using the **[Perfect
 Vision](https://foundryvtt.com/packages/perfect-vision)** module you
 will encounter the limitations listed below:
 
-  - Light masking will mask the "visual" part of the light, as in it's
-    color and animation. Unfortunatelly the "vision" part of the light
-    cannot be masked at this point withouth radical changes to Foundry
-    codebase. See images for an example.
-  - While this visual "glitch" will reveal the map in those locations,
-    it will not reveal tokens.
+- Light masking will mask the "visual" part of the light, as in it's
+  color and animation. Unfortunately the "vision" part of the light
+  cannot be masked at this point without radical changes to Foundry
+  codebase. See images for an example.
+- While this visual "glitch" will reveal the map in those locations,
+  it will not reveal tokens.
 
 #### Weather Elevation
 
@@ -335,9 +331,9 @@ In these cases, simply set the Background Elevation to an arbitrary
 large negative number (eg -99999), ignore the background layer and just
 use overhead tiles placed through the Levels UI. For example, after
 creating your scene with your background image (so that the scene is
-auto sized properly) remove the bakground image from the scene
+auto sized properly) remove the background image from the scene
 configuration and set the background elevation to -99999. Then place
-your "baground" image through the Levels UI at 0 elevation.
+your "background" image through the Levels UI at 0 elevation.
 
 ## Handling Multiple Tokens
 
@@ -396,11 +392,11 @@ If you wish to Override or Wrap the overrides you can do so in the
 
 ### Submodules
 
-#### [Automatic Cover Calculator](Automatic_Cover_Calculator "wikilink")
+#### [Automatic Cover Calculator](Automatic_Cover_Calculator 'wikilink')
 
-#### [Depth Blur](Depth_Blur "wikilink")
+#### [Depth Blur](Depth_Blur 'wikilink')
 
-#### [Volumetric Templates](Volumetric_Templates "wikilink")
+#### [Volumetric Templates](Volumetric_Templates 'wikilink')
 
 ### Tutorials
 
@@ -410,38 +406,34 @@ Levels 3.0 Tutorial
 
 #### Changes
 
-  - Polygons and holes are deprecated
-      - Levels will now automatically handle visibility based on the
-        tile transparency. You can leave old holes in your maps, they
-        simply won't do anything.
-  - [Better Roofs](Better_Roofs "wikilink") is no longer a required
-    dependency
-  - Light masking is now better but the [Perfect
-    Vision](https://foundryvtt.com/packages/perfect-vision) module is
-    highly reccomended.
-  - New `Allow Sight` option for tiles. If enabled on a tile, the tile
-    will not block sight.
-  - New `Background Elevation` option in scene configuration. The
-    background is now a Levels entity with a default elevation of 0.
-      - This means you can now go under the background.
-  - New `Weather Elevation` option in scene settings. Allows for
-    changing the elevation of weather effects.
-  - UI Revamp
-      - Scene controls no longer have buttons
-      - UI now has all the required buttons
-      - Bug button removed
-  - Top Elevation Collision
-      - Tiles will now only perform collision checks at their bottom
-        elevation
+- Polygons and holes are deprecated
+  - Levels will now automatically handle visibility based on the
+    tile transparency. You can leave old holes in your maps, they
+    simply won't do anything.
+- [Better Roofs](Better_Roofs 'wikilink') is no longer a required
+  dependency
+- Light masking is now better but the [Perfect
+  Vision](https://foundryvtt.com/packages/perfect-vision) module is
+  highly recommended.
+- New `Allow Sight` option for tiles. If enabled on a tile, the tile
+  will not block sight.
+- New `Background Elevation` option in scene configuration. The
+  background is now a Levels entity with a default elevation of 0.
+  - This means you can now go under the background.
+- New `Weather Elevation` option in scene settings. Allows for
+  changing the elevation of weather effects.
+- UI Revamp
+  - Scene controls no longer have buttons
+  - UI now has all the required buttons
+  - Bug button removed
+- Top Elevation Collision
+  - Tiles will now only perform collision checks at their bottom
+    elevation
 
 #### Migration
 
-  - Tiles placed as overhead tiles inside Levels (aka tree icon) from V9
-    will now render on the floor.
-      - A macro is included to fix them, but you will need to select
-        them and select the level they belong to. No automatic migration
-        is possible for this issue.
-
-[Category: Module](Category:_Module "wikilink") [Category:
-Free](Category:_Free "wikilink") [Category:
-Levels](Category:_Levels "wikilink")
+- Tiles placed as overhead tiles inside Levels (aka tree icon) from V9
+  will now render on the floor.
+  - A macro is included to fix them, but you will need to select
+    them and select the level they belong to. No automatic migration
+    is possible for this issue.
