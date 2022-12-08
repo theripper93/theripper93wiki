@@ -1,5 +1,8 @@
 import React from 'react';
 import { DocsThemeConfig, useConfig } from 'nextra-theme-docs';
+import { config as faConfig, dom } from '@fortawesome/fontawesome-svg-core';
+
+faConfig.autoAddCss = false;
 
 const config: DocsThemeConfig = {
   logo: <span>theripper93</span>,
@@ -26,6 +29,7 @@ const config: DocsThemeConfig = {
           property='og:description'
           content={frontMatter.description || 'The wiki for theripper93'}
         />
+        <style>{dom.css()}</style>
       </>
     );
   },
