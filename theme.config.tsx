@@ -26,10 +26,6 @@ const config: DocsThemeConfig = {
           property='og:description'
           content={frontMatter.description || 'The wiki for theripper93'}
         />
-        <script
-          src='https://kit.fontawesome.com/fc91175617.js'
-          crossOrigin='anonymous'
-        ></script>
       </>
     );
   },

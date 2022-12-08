@@ -1,4 +1,12 @@
 import Image from 'next/image';
+import { Callout } from 'nextra-theme-docs';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faCube,
+  faUser,
+  faSort,
+  faFileImport,
+} from '@fortawesome/free-solid-svg-icons';
 import styles from '../globals.module.css';
 
 # 3D Canvas
@@ -21,7 +29,7 @@ Playlist\] with the most recent 3D Canvas Video guides
 
 ## Tools
 
-`[httpstheripper93.comterrascape Terrascape] A Tool to Sculpt and Paint 3D Terrain in an intuitive way`
+[httpstheripper93.comterrascape Terrascape] A Tool to Sculpt and Paint 3D Terrain in an intuitive way
 
 ## Controls
 
@@ -31,7 +39,7 @@ All controls can be rebinded in the configure controls menu.
 
 Actions marked GC are only availeble when Game Camera is enabled
 
-!!!!! REDO CONTROLS TABLES
+TODO: CONTROLS TABLES
 
 ### Navigator
 
@@ -45,17 +53,15 @@ the top range for its clipping planes
 To cut to a specific Level, simply move the slider to the Level you
 prefer, the slider will automatically snap to the closest Level.
 
-**`Sync`**`If you are a GM, you will see a Sync button on top of the slider, by pressing the button you will sync your current level with all players.`  
-**`Camera`**` If you are a Player or GM you will see a Camera button, by pressing it the camera will focus on the currently selected token (the same as ```Shift``` + ```X```). Doing this will automatically set the navigator to the closest level. `  
-**` Follow``
- ``Mode `**`Click to toggle. Selecting a token or changing elevation will automatically set the navigator to the closest level while enabled. It is enabled on scene load for players and disabled for GMs by default. You can change this behaviour in the module settings under the misc tab.`
+**Sync** If you are a GM, you will see a Sync button on top of the slider, by pressing the button you will sync your current level with all players.  
+**Camera** If you are a Player or GM you will see a Camera button, by pressing it the camera will focus on the currently selected token (the same as Shift + X ). Doing this will automatically set the navigator to the closest level.  
+**Follow Mode** Click to toggle. Selecting a token or changing elevation will automatically set the navigator to the closest level while enabled. It is enabled on scene load for players and disabled for GMs by default. You can change this behaviour in the module settings under the misc tab.
 
 ## Scene Setup
 
 ### Module Settings
 
-[File3D Canvas Module
-Settings.pngthumb](File3D_Canvas_Module_Settings.pngthumb 'wikilink')
+[File3D Canvas Module Settings.pngthumb](File3D_Canvas_Module_Settings.pngthumb 'wikilink')
 
 #### Enable Screen Space Panning
 
@@ -92,8 +98,7 @@ Sets the resolution scale.
 
 ### Global Settings
 
-[FileGlobal 3D Canvas
-Settings.pngthumb](FileGlobal_3D_Canvas_Settings.pngthumb 'wikilink')
+[FileGlobal 3D Canvas Settings.pngthumb](FileGlobal_3D_Canvas_Settings.pngthumb 'wikilink')
 Global 3D Canvas settings are accessed from the module settings.
 
 ### Canvas
@@ -108,9 +113,7 @@ The style for measured templates. Options are wireframe or solid.
 
 #### Grid Draw Mode
 
-How the grid is drawn. Fast is better in general, but only supports
-square grids. Mirror will mirror the foundry grid 11 but will be more
-expensive to render.
+How the grid is drawn. Fast is better in general, but only supports square grids. Mirror will mirror the foundry grid 11 but will be more expensive to render.
 
 #### Range Finder
 
@@ -178,8 +181,7 @@ Enables the ability to send the camera position for players (Default
 
 ### Game Camera
 
-Enable the 'video game'-like camera. Enabled for players by default; GM
-is able to toggle it.
+Enable the 'video game'-like camera. Enabled for players by default; GM is able to toggle it.
 
 #### Min Angle
 
@@ -237,8 +239,7 @@ Shows helpful debug info for troubleshooting.
 
 ### Scene Configuration
 
-[File3D Canvas Scene
-Settings.pngthumb](File3D_Canvas_Scene_Settings.pngthumb 'wikilink') The
+[File3D Canvas Scene Settings.pngthumb](File3D_Canvas_Scene_Settings.pngthumb 'wikilink') The
 scene configuration provides basic and advanced settings that you can
 tweak to make your scene look the way you want. Most scene configuration
 options are in the 3D Canvas tab of scene settings.
@@ -247,9 +248,7 @@ options are in the 3D Canvas tab of scene settings.
 
 ##### Enable for Players
 
-Allow players to open the 3D View by clicking the 3D Mode button
-
-<i class='fas fa-cube'></i>
+Allow players to open the 3D View by clicking the 3D Mode button <FontAwesomeIcon icon={faCube} />
 
 ##### Enable 3D on Load
 
@@ -310,16 +309,13 @@ Adds filter effects to the scene. Available filters are
 
 Custom will create an input box under filter intensity. You can create
 your custom filter with CSS Filters and the syntax will be the same. See
-the \[httpsdeveloper.mozilla.orgen-USdocsWebCSSfilter MDN page\] on CSS
-Filter for more information.
+the [MDN Page](https://developer.mozilla.org/en-US/docs/WebCSSfilter) on CSS Filter for more information.
 
 #### Particles
 
 ##### Particle Preset
 
-Set the weather or effect for the scene, you can have up of 2 effects at
-the same time and one of them can be custom (Particle Preset 2 has the
-custom option).
+Set the weather or effect for the scene, you can have up of 2 effects at the same time and one of them can be custom (Particle Preset 2 has the custom option).
 
 #### Visibility
 
@@ -360,7 +356,7 @@ Auto Targeting and 3D Cover Calculations.
 ### 2D Tiles
 
 Tiles are placed at the bottom elevation via the
-[Levels](Levels 'wikilink') module. Background tiles are rendered but
+[Levels](Levels 'Levels') module. Background tiles are rendered but
 it's highly suggested to instead use a single background image or
 popping and flickering issues may occur.
 
@@ -388,15 +384,13 @@ clear that you have 3D Tiles on the map, you can change this placeholder
 image but it's not suggested to leave it Blank.
 
 If you wish to see 3D Models previews in the file picker, you will need
-the [Filepicker+](Filepicker+ 'wikilink') and [3D
-Portraits](3D_Portraits 'wikilink') modules.
+the [Filepicker+](Filepicker) and [3D Portraits](3D-Portraits) modules.
 
 #### Tile Editor
 
 Once a Tile is on the scene you can select it and use the quick tile
 editor controls to manipulate the tile. All the shortcuts are documented
-in the [3D
-CanvasControlscontrols](3D_Canvas#Controlscontrols 'wikilink').
+in the [3D Canvas Controls](3D-Canvas#controls).
 
 ### Tile Configuration
 
@@ -404,10 +398,9 @@ The 3D Tab contains all the settings to manipulate the tile manually
 through numbers, although most of these settings are self explanatory,
 we will focus on some that could be confusing
 
-#### Block SightMovement
+#### Block Sight or Movement
 
-This option tells 3D Canvas if the tile should be included in collision
-andor vision calculations.
+This option tells 3D Canvas if the tile should be included in collision and or vision calculations.
 
 For example, if one of your tiles represents water, you would need to
 disable both options.
@@ -422,8 +415,8 @@ square away from the door to be able to open it.
 
 This will change how the tile is displayed
 
-**`Single`**`Will stretch the 3D Model to fill the box defined by the tile.`  
-**`Repeat`**` Will make multiple copies of this tile, tiling it inside the tile bounds. This option is considerably more performant than having multiple copies of a ```Single``` fill tile. `
+- **Single** will stretch the 3D Model to fill the box defined by the tile.
+- **Repeat** will make multiple copies of this tile, tiling it inside the tile bounds. This option is considerably more performant than having multiple copies of a Single fill tile.
 
 #### Gap
 
@@ -441,6 +434,7 @@ some arbitrary characters if you want to re randomize the tile.
 
 #### Supported Properties
 
+FIXME: Table
 class=wikitable sortable - !Property Name !Type !Value - collision
 Integer 01 - sight Integer 01 - isDoor Integer 012 - doorId String Any
 Unique Name - ds Integer 012
@@ -451,16 +445,16 @@ Unique Name - ds Integer 012
 
 #### Creating Lights
 
-[FileCreating Lights
-Video.webmthumb](FileCreating_Lights_Video.webmthumb 'wikilink') To
+FIXME: Photo
+[FileCreating Lights Video.webmthumb](FileCreating_Lights_Video.webmthumb 'wikilink') To
 create a light, simply go to the light layer and drag to create a light,
 all the standard foundry interactions are the same.
 
 #### Particle Effects
 
+TODO: Missing link for Particle Effects
 You can enable Particle Effect emission on Lights in the 3D Tab, if you
-want more information on what every option does, check the Particle
-Effects wiki page!
+want more information on what every option does, check the Particle Effects wiki page!
 
 ### Sun
 
@@ -468,25 +462,24 @@ The sun's position and lighting is determined by the time of day.
 
 #### Limitations
 
-3D Lights will not be blocked by walls or cast shadows because of a
-WebGL limitation. It's also incredibly expensive on performance.
+3D Lights will not be blocked by walls or cast shadows because of a WebGL limitation. It's also incredibly expensive on performance.
 
-You can enable Shadow CastingWall Blocking in the 3D Tab for specific
-lights, but it's highly suggested to not use more than 2-3 lights per
-scene while enabled. Enabling this option on a large number of lights
+You can enable Shadow CastingWall Blocking in the 3D Tab for specific lights, but it's highly suggested to not use more than 2-3 lights per scene while enabled. Enabling this option on a large number of lights
 will crash the scene.
 
-If the scene crashes because of the settings, and you are not able to
-access the 3D or 2D Scene, disable 3D Canvas (or launch your world in
-safe mode) and delete the shadow casting lights.
+If the scene crashes because of the settings, and you are not able to access the 3D or 2D Scene, disable 3D Canvas (or launch your world in safe mode) and delete the shadow casting lights.
 
 ### Fog of War
 
 #### Shared Context
 
+<Callout type='warning' emoji='⚠️'>
+  {' '}
+  It is **not recommended** to be disabled.{' '}
+</Callout>
+
 Shared Context is a global setting. If enabled, it allows for fog of war
 to be rendered in real-time with better performance and better quality.
-It is **not recommended** to be disabled.
 
 #### Fog Exploration
 
@@ -494,17 +487,13 @@ If you have both **Token Vision** and **Fog Exploration** enabled in the
 scene settings, 3D Canvas will mirror the 2D Canvas fog. This means that
 fog bounds are solely determined by walls in the scene.
 
-If you have **Token Vision** enabled but **Fog Exploration** disabled,
-the whole scene will be revealed but walls and geometry (if set in the
-scene settings) will prevent tokens from seeing each other if blocked by
+If you have **Token Vision** enabled but **Fog Exploration** disabled, the whole scene will be revealed but walls and geometry (if set in the scene settings) will prevent tokens from seeing each other if blocked by
 obstacles.
 
 #### Limitations
 
 **Fog is not 3D!** Fog exploration is 2 dimensional. Exploring any
-space will explore the full vertical space of that location. There are
-no current plans for 'true' 3D fog exploration because of performance
-costs.
+space will explore the full vertical space of that location. There are no current plans for 'true' 3D fog exploration because of performance costs.
 
 #### Manual Fog of War
 
@@ -513,11 +502,10 @@ templates to create Fog of War boxes. It will mimic the use a piece of
 paper to cover the map table experience—but in 3D.
 
 Simply place a Box Measured Template, open it's configuration, and
-enable **Is Fog of War Box**
+enable `Is Fog of War Box`
 
 Players will see this box as solid black. GMs will see it semi
-transparent. Moving the camera inside the box will obscure the view. The
-GM can move or remove these boxes during the exploration.
+transparent. Moving the camera inside the box will obscure the view. The GM can move or remove these boxes during the exploration.
 
 ### Measured Templates
 
@@ -530,9 +518,7 @@ placement, check the Controls Wiki Page
 #### Making a Cylinder
 
 Since this is not obvious, to create a cylinder, head over to the Token
-Controls <i class="fas fa-user"></i> and click the **Set Elevation for next placed
-Template** button <i class="fas fa-sort"></i>. In the **Special** field, set the
-height of the cylinder (in grid units). Then place a circle template.
+Controls <FontAwesomeIcon icon={faUser} /> and click the `Set Elevation for next placed Template` button <FontAwesomeIcon icon={faSort} />. In the **Special** field, set the height of the cylinder (in grid units). Then place a circle template.
 
 ## Special Effects
 
@@ -544,9 +530,7 @@ height of the cylinder (in grid units). Then place a circle template.
 You can access Token Animations by right clicking your token to open the
 Token Hud. You will see a Magic Wand icon on the right.
 
-Click it to open the available animations. Clicking on an animation will
-play the animation for all clients. Some animations might not work if
-the token is _Prone_ or _Defeated_.
+Click it to open the available animations. Clicking on an animation will play the animation for all clients. Some animations might not work if the token is _Prone_ or _Defeated_.
 
 #### Start an Animation with Macros
 
@@ -681,8 +665,7 @@ this Id later to stop the effect. You can also execute
 ##### Try it yourself\
 
 These are several examples showcasing the `Particle3D` system that
-are a good starting point for understanding the system and creating your
-own custom effects.
+are a good starting point for understanding the system and creating your own custom effects.
 
 Create new `Script Macros` in your game with the ``` blocks [3D Canvas Animation Macros on this page](3D_Canvas_Animation_Macroson_this_page 'wikilink') to try them out
 in 3D Canvas and see the different effects. You can adjust the variables
@@ -710,8 +693,7 @@ projectile will curve before reaching its destination. Default is 0.
 `.color(start,end)`
 
 This will determine the starting and ending color of the effect, only
-start can be provided. start and end can also be arrays of colors (eg
-`.color(\[color1,color2\],\[color3,color4\])`.
+start can be provided. start and end can also be arrays of colors (e.g `.color(\[color1,color2\],\[color3,color4\]`).
 
 If an array of colors is provided for start andor end, the system will
 pick one of those colors randomly as the startingending color—it will
@@ -783,15 +765,15 @@ when the effect is terminated by `.stop()`
 
 Play a 3D Animation, the animation data is formatted as follows.
 
-`from {  The from property specifies which animation should be played on the origin of the particle effect (usually the caster or attacker)`  
-`id twirl,  The id of the animation to play`  
-`start true, If the animation should be played on start of the effect`  
-`end false,  If the animation should be played when the effect ends (like a projectile reaching it's target)`  
+`from {  The from property specifies which animation should be played on the origin of the particle effect (usually the caster or attacker)`  
+`id twirl,  The id of the animation to play`  
+`start true, If the animation should be played on start of the effect`  
+`end false,  If the animation should be played when the effect ends (like a projectile reaching it's target)`  
 `},`  
-`to {  The from property specifies which animation should be played on the origin of the particle effect (usually the caster or attacker)`  
-`id shake,`  
-`start true,`  
-`end false,`  
+`to {  The from property specifies which animation should be played on the origin of the particle effect (usually the caster or attacker)`  
+`id shake,`  
+`start true,`  
+`end false,`  
 `},`
 
 syntaxhighlight`.push(dx,dy,dz)`
@@ -877,50 +859,34 @@ if they don't work for you, try to switch browser or disable extensions.
 
 #### Material Browser
 
-If you installed the 3D Canvas Mapmaking Pack, you will have access to
-more than 1000 Materials and the Material Browser.
+FIXME: Broken image
 
-To access the material browser simply click the circular icon left of
-the Filepicker+ icon (<i class="fas fa-file-import"></i>). [FileMaterial Browser
-Icon.pngnonethumb958x958px](FileMaterial_Browser_Icon.pngnonethumb958x958px 'wikilink')
-You will then be welcomed by the material browser. To apply the material
-simply click on the desired one. Keep in mind that if you intend to use
-these materials on tokens, you need to select PBR in the material
+If you installed the 3D Canvas Mapmaking Pack, you will have access to more than 1000 Materials and the Material Browser.
+
+To access the material browser simply click the circular icon left of the [Filepicker+](Filepicker) icon (<FontAwesomeIcon icon={faFileImport} />). [FileMaterial Browser Icon.pngnonethumb958x958px](FileMaterial_Browser_Icon.pngnonethumb958x958px 'wikilink')
+You will then be welcomed by the material browser. To apply the material simply click on the desired one. Keep in mind that if you intend to use these materials on tokens, you need to select PBR in the material
 option.
 
 #### Loading a PBR Material
 
-[FileMaterial
-Browser.pngthumb](FileMaterial_Browser.pngthumb 'wikilink') Tokens,
-walls, tiles and the scene table support PBR Materials. To load a pbr
-material you need a specific file naming stuctures. The files must be
-named as follows and be all in the same folder.
+FIXME: Broken image
 
-Exampleblockquote`Wood077_1K_AmbientOcclusion.jpg`
+[FileMaterial Browser.pngthumb](FileMaterial_Browser.pngthumb 'wikilink') Tokens, walls, tiles and the scene table support PBR Materials. To load a pbr material you need a specific file naming stuctures. The files must be named as follows and be all in the same folder.
 
-`Wood077_1K_Color.jpg`
+> `Wood077_1K_AmbientOcclusion.jpg` > `Wood077_1K_Color.jpg` > `Wood077_1K_Emissive.jpg` > `Wood077_1K_Metalness.jpg` > `Wood077_1K_NormalGL.jpg` > `Wood077_1K_Roughness.jpg`
 
-`Wood077_1K_Emissive.jpg`
+As you can see all the files share a root name then keywords to differentiate the different textures. You can find materials already set up this way here AmbientCG.
 
-`Wood077_1K_Metalness.jpg`
-
-`Wood077_1K_NormalGL.jpg`
-
-`Wood077_1K_Roughness.jpg`blockquoteAs you can see all the files
-share a root name then keywords to differentiate the different textures.
-You can find materials already set up this way here AmbientCG.
-
-You need to select one of the files in the image field to use them in 3D
-Canvas. **For the full material to be loaded you can pick any of the
+You need to select one of the files in the image field to use them in 3D Canvas. **For the full material to be loaded you can pick any of the
 images but _not_ color, otherwise only the color texture will be used.**
 
-For walls you can load the image in it's texture field, same for tokens,
-tiles and the scene table. Tokens also require that the material is set
-to PBR.
+For walls you can load the image in it's texture field, same for tokens, tiles and the scene table. Tokens also require that the material is set to PBR.
 
 Displacement maps are not supported due to performance and optimization.
 
 ## Other
+
+FIXME: Tons of broken links
 
 ### Resources
 
@@ -929,10 +895,9 @@ Displacement maps are not supported due to performance and optimization.
 If you wish to purchase premade content for 3D Canvas, some content
 creators have it available on their Patreons
 
-**` [https://www.patreon.com/baileywiki``
- ``Baileywiki] `**`has a vast collection of 3D Prefabs, Heightmaps, and Maps with heavy use of built in tools from the Mapmaking Pack.`  
-**` [https://www.patreon.com/Swift``   ``Swift``
- ``Cartography] `**`has 3D Models of complete maps and Props.`
+- [https://www.patreon.com/baileywiki Baileywiki] has dadvastdcollectiondofd3DdPrefabs,dHeightmaps,danddMapsdwithdheavydusedofdbuiltdindtoolsdfromdthedMapmakingdPack.  
+  [https://www.patreon.com/Swift Swift
+- Cartography] hasd3DdModelsdofdcompletedmapsdanddProps.
 
 #### 3D Canvas Compendium
 
@@ -950,36 +915,36 @@ per month.
 
 #### 3D Models
 
-`[httpsquaternius.comindex.html Quaternius] has a lot of great models, require conversion to gltf nowikihttpsquaternius.comindex.htmlnowiki`  
-`[httpswww.shapeways.comshopsdmworkshop Shapeways] has free miniatures (account required). Only the 3D Printing models are paid materials.`  
-`[httpsyoutu.be2UwQ5v1uQy0 How to convert STLs]`
+[httpsquaternius.comindex.htmldQuaternius]dhasdadlotdofdgreatdmodels,drequiredconversiondtodgltfdnowikihttpsquaternius.comindex.htmlnowiki  
+ [httpswww.shapeways.comshopsdmworkshopdShapeways]dhasdfreedminiaturesd(accountdrequired).dOnlydthed3DdPrintingdmodelsdaredpaiddmaterials.  
+ [httpsyoutu.be2UwQ5v1uQy0dHowdtodconvertdSTLs]
 
 #### HDRIs
 
-`[httpspolyhaven.comhdris Polyhaven]`  
-`[httpswww.ihdri.comhdri-skies-outdoor iHDRI]`  
-`[httpshdrmaps.com HDRMaps]`  
-`[httpslocationtextures.companoramas Location Textures]`
+[httpspolyhaven.comhdrisdPolyhaven]  
+ [httpswww.ihdri.comhdri-skies-outdoordiHDRI]  
+ [httpshdrmaps.comdHDRMaps]  
+ [httpslocationtextures.companoramasdLocationdTextures]
 
 #### Skyboxes
 
-`[httpsopengameart.orgcontentskiingpenguins-skybox-pack Skyboxes by Zachery “skiingpenguins” Slocum]`
+[httpsopengameart.orgcontentskiingpenguins-skybox-packdSkyboxesdbydZacheryd“skiingpenguins”dSlocum]
 
 #### HDRI
 
-`[httpspolyhaven.comhdris Polyhaven]`  
-`[httpswww.ihdri.comhdri-skies-outdoor iHDRI]`  
-`[httpshdrmaps.com HDRMaps]`  
-`[httpslocationtextures.companoramas Location Textures]`
+[httpspolyhaven.comhdrisdPolyhaven]  
+ [httpswww.ihdri.comhdri-skies-outdoordiHDRI]  
+ [httpshdrmaps.comdHDRMaps]  
+ [httpslocationtextures.companoramasdLocationdTextures]
 
 #### Utility
 
-`[httpsproducts.aspose.app3dconversionfbx-to-gltf Model Converter]`  
-`[httpsthreejs.orgeditor Model Editor]`
+[httpsproducts.aspose.app3dconversionfbx-to-gltfdModeldConverter]  
+ [httpsthreejs.orgeditordModeldEditor]
 
 #### Other
 
-`[httpssketchfab.com Sketchfab] has tons of free 3D assets that you can download already in the correct format`
+[httpssketchfab.comdSketchfab]dhasdtonsdofdfreed3Ddassetsdthatdyoudcanddownloaddalreadydindthedcorrectdformat
 
 ### Modules
 
@@ -988,12 +953,11 @@ per month.
 The following modules are all required for 3D Canvas to function, you
 must install them or you will not be able to enable 3D Canvas
 
-`[httpsfoundryvtt.compackageslib-wrapper Lib Wrapper] Library module for multi module interaction`  
-`[httpsfoundryvtt.compackagessocketlib Socketlib] Library module for sending commands between clients`  
-[` Wall``   ``Height `](Wall_Height 'wikilink')`To handle wall size`  
-[` Better``
- ``Roofs `](Better_Roofs 'wikilink')`For tile logic and for Levels to function`  
-[`Levels`](Levels 'wikilink')`To handle 3D vision and other 3D logic`
+[httpsfoundryvtt.compackageslib-wrapperdLibdWrapper]dLibrarydmoduledfordmultidmoduledinteraction  
+ [httpsfoundryvtt.compackagessocketlibdSocketlib]dLibrarydmoduledfordsendingdcommandsdbetweendclients  
+[ Wall Height ](Wall_Height 'wikilink') Todhandledwalldsize  
+[ Better Roofs ](Better_Roofs 'wikilink') FordtiledlogicdanddfordLevelsdtodfunction  
+[ Levels ](Levels 'wikilink') Todhandled3Ddvisiondanddotherd3Ddlogic
 
 #### Supported Modules
 
@@ -1001,22 +965,22 @@ Modules that are [Levels](Levels 'wikilink') compatible will likely be
 compatible with 3D Canvas as well. There are a few modules that have
 specific 3D Canvas integration.
 
-`[httpsgithub.comironmonk88monks-active-tiles Monk's Active Tile Triggers] 3D Canvas supports MATT click and double click events on tiles.`
+[httpsgithub.comironmonk88monks-active-tilesdMonk'sdActivedTiledTriggers]d3DdCanvasdsupportsdMATTdclickdandddoubledclickdeventsdondtiles.
 
 #### Recommended Modules
 
 The following modules are not strictly required but all provide
 enhancements to the 3D Experience
 
-[httpsgithub.comtheripper93canvas3dcompendium 3D Canvas Compendium] Highly Recommended. Contains assets that you can use in 3D Canvas, such as 3D Tiles, Skyboxes, HDRIs and Miniatures.  
-[httpsgithub.comtheripper93canvas3dtokencompendium 3D Canvas Token Collection] Highly Recommended.  A collection with 1000+ Hero tokens and every DnD5e creature and more.  
-[ 3D Portraits ](3D_Portraits 'wikilink')With this module you can have 3D Portraits on your sheets, Import HeroForge miniatures both in portraits and as tokens on the board and enable 3D Models previews in the filepicker (if you have[Filepicker+](Filepicker+ 'wikilink')).  
-[ Levels#Automatic Cover CalculatorLevels - Automatic Cover Calculator ](Levels#Automatic_Cover_CalculatorLevels_-_Automatic_Cover_Calculator 'wikilink')With this module you will be able to calculate cover in 3D, the module is customizable and compatible with all systems.  
-[ Levels#Volumetric TemplatesLevels - Volumetric Templates ](Levels#Volumetric_TemplatesLevels_-_Volumetric_Templates 'wikilink')This module will automatically target in 3D when you place a template (AoE) calculating spheres, cones etc...  
-[httpsgithub.com Varriountfvtt-autorotate Auto-Rotate] This module will automatically set the rotation of tokens when moving or targeting, this will reflect in 3D and give your minis the correct orientation.  
-[httpsgithub.comotigonautomated-jb2a-animations Automated Animations] Set up Special Effects on item use without the need to fiddle with macros.  
-[httpsgithub.commanuelVofoundryvtt-drag-rulertreemaster Drag Ruler] Change the 3D Ruler color based on how much movement that specific token has.  
-[Splatter](Splatter 'wikilink')Adds special effects (e.g. blood splatters) when a token is damaged.
+[httpsgithub.comtheripper93canvas3dcompendiumd3DdCanvasdCompendium]dHighlydRecommended.dContainsdassetsdthatdyoudcandusedind3DdCanvas,dsuchdasd3DdTiles,dSkyboxes,dHDRIsdanddMiniatures.  
+[httpsgithub.comtheripper93canvas3dtokencompendiumd3DdCanvasdTokendCollection]dHighlydRecommended.ddAdcollectiondwithd1000+dHerodtokensdanddeverydDnD5edcreaturedanddmore.  
+[ 3D Portraits ](3D_Portraits 'wikilink')Withdthisdmoduledyoudcandhaved3DdPortraitsdondyour sheets, Import HeroForge miniatures both in portraits and as tokens on the board and enable 3D Models previews in the filepicker (if you have[Filepicker+](Filepicker+ 'wikilink')).  
+[ Levels#Automatic Cover CalculatorLevels - Automatic Cover Calculator ](Levels#Automatic_Cover_CalculatorLevels_-_Automatic_Cover_Calculator 'wikilink')With this module you will be able to calculate cover in 3D, the module is customizable and compatible with all systems.  
+[ Levels#Volumetric TemplatesLevels - Volumetric Templates ](Levels#Volumetric_TemplatesLevels_-_Volumetric_Templates 'wikilink')This module will automatically target in 3D when you place a template (AoE) calculating spheres, cones etc...  
+[httpsgithub.com Varriountfvtt-autorotate Auto-Rotate] This module will automatically set the rotation of tokens when moving or targeting, this will reflect in 3D and give your minis the correct orientation.  
+[httpsgithub.comotigonautomated-jb2a-animations Automated Animations] Set up Special Effects on item use without the need to fiddle with macros.  
+[httpsgithub.commanuelVofoundryvtt-drag-rulertreemaster Drag Ruler] Change the 3D Ruler color based on how much movement that specific token has.  
+[Splatter](Splatter 'wikilink')Adds special effects (e.g. blood splatters) when a token is damaged.
 
 #### Incompatible Modules
 
@@ -1044,31 +1008,31 @@ future versions of 3D Canvas.
 
 _A guide by `@simulacrum`_
 
-Go to httpsmatheowis.github.ioHDRI-to-CubeMap  
- Upload you image. It doesn't take EXR so you'll have to convert those to HDRI's, PNG or JPEG.  
-Once it's uploaded it will appear in the 3D view. You can now see how the Cube map will look.  
-It's possible to move the image by dragging on it but**don't**or it won't line up with your HDRI.  
-Adjust the Exposure. Make it darker.  
-The HDRI lights the cube map so you will have to compensate for this, either now or in your image editor later.  
- Choose Export and choose the bottom option export as PNG choosing the size you want for the individual sides  
-2k is normally enough but you can try 4k if your machine can handle it or 1k if not  
- Click Process  
- Once it's finished, download them  
-The names of the files don't match up with 3D Canvas so use a file renamer to swap them.  
-Remember that your prefix must match on every file (i.e. **name_bk** , **name_ft** , etc.)  
-All the images will need to be flipped horizontally.  
-You will also have to rotate the **\_up** and **\_dn** images clockwise 90 degrees.  
-Altering the images in an editor like Photoshop or Gimp is recommended.  
-Save all of the files.  
-You can get the file size down by changing them to  JPEG  
-Don't use much, if any, compression as it shows.  
-webp  looks very compressed so I don't use it.  
-That's it. You now have an 8bit cube map that matches you 32 bit HDRI that will be a much smaller file size that the equivalent HDRI. Now you can use a 1k hdri to give you the lighting and reflections and use the 8bit Cube Map as the background image.
+- Go to httpsmatheowis.github.ioHDRI-to-CubeMap
+  - Upload you image. It doesn't take EXR so you'll have to convert those to HDRI's, PNG or JPEG.
+- Once it's uploaded it will appear in the 3D view. You can now see how the Cube map will look.
+- It's possible to move the image by dragging on it but**don't**or it won't line up with your HDRI.
+- Adjust the Exposure. Make it darker.
+- The HDRI lights the cube map so you will have to compensate for this, either now or in your image editor later.
+  - Choose Export and choose the bottom option export as PNG choosing the size you want for the individual sides
+- 2k is normally enough but you can try 4k if your machine can handle it or 1k if not
+  - Click Process
+  - Once it's finished, download them
+- The names of the files don't match up with 3D Canvas so use a file renamer to swap them.
+- Remember that your prefix must match on every file (i.e. **name_bk** , **name_ft** , etc.)
+- All the images will need to be flipped horizontally.
+- You will also have to rotate the **\_up** and **\_dn** images clockwise 90 degrees.
+- Altering the images in an editor like Photoshop or Gimp is recommended.
+- Save all of the files.
+- You can get the file size down by changing them to JPEG
+- Don't use much, if any, compression as it shows.  
+  webp looks very compressed so I don't use it.  
+  That's it. You now have an 8bit cube map that matches you 32 bit HDRI that will be a much smaller file size that the equivalent HDRI. Now you can use a 1k hdri to give you the lighting and reflections and use the 8bit Cube Map as the background image.
 
-#### [TownscaperImporting Maps from Townscaper by Chryron\#3457](TownscaperImporting_Maps_from_Townscaper_by_Chryron#3457 'wikilink')
+#### [Importing Maps from Townscaper by Chryron](TownscaperImporting_Maps_from_Townscaper_by_Chryron#3457 'wikilink')
 
 #### Special Mentions
 
-- **@dev7355608** for tons of help and suggestions on many parts of the 3D Canvas dzvelopement
-- **@Otigon#2010** for the wonderful Automated Animations integration ([httpswww.patreon.comotigon Patreon])
-- **@arcanist#4317** for testing and tips ([https://www.patreon.com/arcanistzed Patreon])`
+- **@dev7355608** for tons of help and suggestions on many parts of the 3D Canvas dzvelopement
+- **@Otigon#2010** for the wonderful Automated Animations integration ([httpswww.patreon.comotigon Patreon])
+- **@arcanist#4317** for testing and tips ([https://www.patreon.com/arcanistzed Patreon])
