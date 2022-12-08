@@ -19,11 +19,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": ".",
-    "paths": {
-      "@/images/*": [
-        "public/images/*"
-      ]
-    }
+    "paths": {}
   },
   "include": [
     "next-env.d.ts",
