@@ -1,15 +1,21 @@
 {
   "index": "Introduction",
+  "----": {
+    "type": "separator"
+  },
   "3D": {
     "title": "3D Canvas"
   },
   "levels": {
     "title": "Levels"
   },
+  "---": {
+    "type": "separator"
+  },
   "contact": {
-    "title": "Contact ↗",
+    "title": "Main Site",
     "type": "page",
-    "href": "https://www.theripper93.com/#contact",
+    "href": "https://www.theripper93.com/",
     "newWindow": true
   }
 }
