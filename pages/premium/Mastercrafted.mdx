@@ -4,16 +4,16 @@ Want to start with some already made recipes and gathering points?
 Download the DnD5e [Potion Crafting &
 Gathering](https://github.com/action-jay/potion-crafting-gathering)
 module by [Action\_Jay](http://www.actionjay.com/) using [this
-ManifestURL](https://github.com/action-jay/potion-crafting-gathering/releases/latest/download/module.json)\!
+ManifestURL](https://github.com/action-jay/potion-crafting-gathering/releases/latest/download/module.json)!
 The module leverages both the [Mastercrafted](Mastercrafted "wikilink")
 and [Gatherer](Gatherer "wikilink") modules, make sure you install
-both\!
+both!
 
 ### Creating and Editing Recipes
 
-![The Recipe Manager button located in the Items Sidebar
+[The Recipe Manager button located in the Items Sidebar
 Tab](Recipemanagerbtn.png
-"The Recipe Manager button located in the Items Sidebar Tab") ![The Main
+"The Recipe Manager button located in the Items Sidebar Tab") [The Main
 Mastercrafted Window](Mastercraftedwindowedit.png
 "The Main Mastercrafted Window")
 
@@ -35,11 +35,11 @@ Mastercrafted Window](Mastercraftedwindowedit.png
     each panel will be required for the crafting.
   - You can edit the required quantity in on the top right of the
     ingredient
-  - Left click an ingridient to inspect, right click to remove it from
+  - Left click an ingredient to inspect, right click to remove it from
     the recipe
 
-![The Recipe panel in Edit Mode](Recipeedit.png
-"The Recipe panel in Edit Mode") ![Crafting Button in the Actor Sheet
+[The Recipe panel in Edit Mode](Recipeedit.png
+"The Recipe panel in Edit Mode") [Crafting Button in the Actor Sheet
 header](Craftingbutton.png "Crafting Button in the Actor Sheet header")
 
 #### Creating a crafting result
@@ -79,7 +79,7 @@ Books](Mastercrafted:_Community_Books "wikilink")
   - Click the Craft button on the top right to craft, hold `ctrl` to
     skip confirmation
 
-![The crafting window. Ingredients are Red since the Actor does not own
+[The crafting window. Ingredients are Red since the Actor does not own
 them.|203x203px](Craftwindownoitem.png
 "The crafting window. Ingredients are Red since the Actor does not own them.|203x203px")
 
@@ -97,7 +97,7 @@ polo to know the correct macro commands for checks.
     field
   - The macro will need to return an object `{ success: Boolean,
     consume: Boolean }`
-  - `success` determines if the crafting is successfull or not while
+  - `success` determines if the crafting is successful or not while
     `consume` determines if the ingredients are consumed in the event of
     a failed craft
   - In the context of the macro, `actor` is the Actor doing the
@@ -106,9 +106,8 @@ polo to know the correct macro commands for checks.
     own
   - Note: You can also copy paste the macro code directly in the
     `Condition` field, but make sure your lines correctly end with `;`
-    as the code will be collapsed to a single line\!
+    as the code will be collapsed to a single line!
 
-<!-- end list -->
 
 ``` javascript numberLines
 const roll = await actor.rollAbilityTest("str");
