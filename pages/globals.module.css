@@ -2,6 +2,7 @@
     border-radius: 5px;
     margin: 1rem;
     max-height: 30vh;
+    max-width: 20vw;
     object-fit: contain;
     width: auto;
     float: right;
