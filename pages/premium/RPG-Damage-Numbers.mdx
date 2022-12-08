@@ -1,17 +1,18 @@
 import Image from 'next/image'
 import styles from '../globals.module.css'
+import { Callout } from 'nextra-theme-docs';
 
 # RPG Damage Numbers
-
-Damage numbers, with style. https://youtu.be/BTfQKNCP_HM
+Damage numbers, with style.
 
 ## How to use
 
 ### With Midi-QoL
+<Image src="/../public/images/RPG-Damage-Numbers/Rdnsettings.png" alt="Module Settings" width={2000} height={2000} className={styles.wikiimage}/>
 
 If you have Midi-QoL in use, RPG Damage Numbers will automatically show
-colored damage numbers whenever a creature is damaged. ![Module
-Settings|519x519px](Rdnsettings.png 'Module Settings|519x519px')
+colored damage numbers whenever a creature is damaged.
+
 
 ### Without Midi-QoL
 
@@ -19,7 +20,8 @@ If you are not using Midi-QoL, RPG Damage numbers will still display
 it's own custom animation for status effects and damage numbers, but
 color will not be shown for different damage types.
 
+<Callout type='warning' emoji='⚠️'>
 Make sure that `Override Core Bouncing Text` is enabled in the module
 settings
+</Callout>
 
-[Category:Module](Category:Module 'wikilink')
