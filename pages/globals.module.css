@@ -6,7 +6,10 @@
     object-fit: contain;
     width: auto;
     float: right;
-    transition: all 0.2s ease-in-out; 
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 2px hsl(var(--nextra-primary-hue)100% 45%/var(--tw-text-opacity));
+    border: 1px solid hsl(var(--nextra-primary-hue)100% 45%/0.65);
+    transform-origin: center right;
 }
 
 .wikiimage:hover{
