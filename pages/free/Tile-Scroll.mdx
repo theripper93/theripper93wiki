@@ -1,8 +1,10 @@
+# Tile Scroll
+
 Scroll, rotate, and repeat tiles over time.
 
 ## How to use
 
-![Tile Configuration](Tsconfiguration.png "Tile Configuration") You can
+![Tile Configuration](Tsconfiguration.png 'Tile Configuration') You can
 set all the tile animation parameters in the Animation tab of the tile
 configuration.
 
@@ -51,8 +53,8 @@ the scene and run this macro to fix it (refresh after)
 You can recognize this problem by the error `Canvas drawing failed:
 this.mesh.setShaderClass is not a function`
 
-``` javascript
-canvas.tiles.updateAll({"flags.core.isTilingSprite" : false})
+```javascript
+canvas.tiles.updateAll({ 'flags.core.isTilingSprite': false });
 ```
 
 ## Limitations
@@ -60,4 +62,4 @@ canvas.tiles.updateAll({"flags.core.isTilingSprite" : false})
 Tile scroll will not work with tiles with an `Occlusion Mode` of
 `Radial` or `Vision`
 
-[Category:Module](Category:Module "wikilink")
+[Category:Module](Category:Module 'wikilink')

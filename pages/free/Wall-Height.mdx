@@ -1,3 +1,5 @@
+# Wall Height
+
 Wall Height is a module that allows setting vertical heights to walls.
 It allows tokens to look over or under walls and to move over or under
 them according to relative heights as well.
@@ -6,20 +8,18 @@ them according to relative heights as well.
 
 ### Required Modules
 
-  - [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper)
+- [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper)
 
 ### Settings
 
-![The scene setting for Wall Height](Scene_Config_Wall_Height.png
-"The scene setting for Wall Height") `Enable Wall Height for Scene` in
+![The scene setting for Wall Height](Scene_Config_Wall_Height.png 'The scene setting for Wall Height') `Enable Wall Height for Scene` in
 scene settings is enabled by default. If you wish to disable it, it can
 be done in scene settings. However, this will mean Wall Height's
 features cannot be used in the scene.
 
 ### Tokens
 
-![Token\_Height\_Adjustment.gif](Token_Height_Adjustment.gif
-"Token_Height_Adjustment.gif") Tokens are able to see over walls which
+![Token_Height_Adjustment.gif](Token_Height_Adjustment.gif 'Token_Height_Adjustment.gif') Tokens are able to see over walls which
 are below them in elevation. Likewise, tokens cannot see through walls
 that are higher than them in.
 
@@ -30,8 +30,7 @@ elevation for the token.
 
 #### Token Height
 
-![Token height input in token settings](Token_Height_Setting.png
-"Token height input in token settings") The height of a token, which is
+![Token height input in token settings](Token_Height_Setting.png 'Token height input in token settings') The height of a token, which is
 different than the elevation of it. It represents how tall a token is
 and is used in sight calculation.
 
@@ -44,8 +43,7 @@ determine the default for all tokens.
 
 ### Walls
 
-![The wall configuration menu](Wall_Config_Menu.png
-"The wall configuration menu") Walls can be assigned a top elevation and
+![The wall configuration menu](Wall_Config_Menu.png 'The wall configuration menu') Walls can be assigned a top elevation and
 a bottom elevation, representing the highest and lowest point of the
 wall respectively.
 
@@ -61,14 +59,12 @@ and `Wall Height (Bottom)`. The default values are `Infinity` and
 
 ### Enable Tooltip
 
-![The wall height tooltip](Wall_Height_Tooltip.png
-"The wall height tooltip") The tooltip will display when a wall is
+![The wall height tooltip](Wall_Height_Tooltip.png 'The wall height tooltip') The tooltip will display when a wall is
 hovered, showing its lowest and highest elevation.
 
 ### Display Height on Walls
 
-![Display Height on Walls|115x115px](Wall_Height_Display_Value.png
-"Display Height on Walls|115x115px") While enabled, displays the
+![Display Height on Walls|115x115px](Wall_Height_Display_Value.png 'Display Height on Walls|115x115px') While enabled, displays the
 elevation values of a wall on the wall itself.
 
 ### Vaulting
@@ -81,11 +77,11 @@ height.
 Imagine a token at 0 elevation, with a token height of 5, and a 0, 3
 Wall
 
-  - **Vaulting Enabled**: The movement of the token is not blocked
-    because with a height of 5 the token can see over the wall.
-  - **Vaulting Disabled**: The movement of the token is blocked because
-    its elevation (or its feet if you will) is at 0 and the wall blocks
-    movement at 0 elevation.
+- **Vaulting Enabled**: The movement of the token is not blocked
+  because with a height of 5 the token can see over the wall.
+- **Vaulting Disabled**: The movement of the token is blocked because
+  its elevation (or its feet if you will) is at 0 and the wall blocks
+  movement at 0 elevation.
 
 ### Automatic Token Height
 
@@ -120,23 +116,23 @@ the page if you need to run it again.
 ### Elevation Helpers
 
 To avoid data duplication, Wall Height uses a data path belonging to the
-[Levels](Levels "wikilink") module to store it's elevation. If
-[Levels](Levels "wikilink") is not enabled you can use these helpers to
+[Levels](Levels 'wikilink') module to store it's elevation. If
+[Levels](Levels 'wikilink') is not enabled you can use these helpers to
 read and set the elevation of a sound or light document.
 
-``` js
-WallHeight.setSourceElevationTop(document, value)
-WallHeight.getSourceElevationTop(document)
+```js
+WallHeight.setSourceElevationTop(document, value);
+WallHeight.getSourceElevationTop(document);
 
-WallHeight.setSourceElevationBottom(document, value)
-WallHeight.getSourceElevationBottom(document)
+WallHeight.setSourceElevationBottom(document, value);
+WallHeight.getSourceElevationBottom(document);
 ```
 
 Or, if you want to set/get both at the same time:
 
-``` js
-WallHeight.setSourceElevationBounds(document, bottom, top)
-WallHeight.getSourceElevationBounds(document)
+```js
+WallHeight.setSourceElevationBounds(document, bottom, top);
+WallHeight.getSourceElevationBounds(document);
 ```
 
 ## Other
@@ -165,8 +161,8 @@ To manually migrate content with the old data structure:
 3.  In the Wall Height Macro compendium `Wall Height Macros` run the
     `Wall Height - Migrate Everything` macro
 4.  In the Token Attacher Macro compendium `Example Macros` run `(TA)
-    Migrate Actors for Wall Height` and `(TA) Migrate Compendiums for
-    Wall Height` macros
+Migrate Actors for Wall Height` and `(TA) Migrate Compendiums for
+Wall Height` macros
 5.  It is now migrated to the new data structure
 
 ### Modules
@@ -176,18 +172,18 @@ token vision.
 
 #### Compatible
 
-  - Perfect Vision
+- Perfect Vision
 
 ## Credits
 
-  - Cole Schultz (cole\#9640) for the original implementation of the
-    module
-  - Erithtotl (Erithtotl\#5139) for maintaining the module
-  - dev7355608 (EBER\#7243) for help on the 4.0 update
+- Cole Schultz (cole\#9640) for the original implementation of the
+  module
+- Erithtotl (Erithtotl\#5139) for maintaining the module
+- dev7355608 (EBER\#7243) for help on the 4.0 update
 
 ## External
 
-  - [Github Page](https://github.com/theripper93/wall-height)
+- [Github Page](https://github.com/theripper93/wall-height)
 
-[Category:Module](Category:Module "wikilink")
-[Category:Free](Category:Free "wikilink")
+[Category:Module](Category:Module 'wikilink')
+[Category:Free](Category:Free 'wikilink')
