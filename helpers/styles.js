@@ -1,1 +1,0 @@
-export const imgCss = {width: '100%',  height:'unset' };
