@@ -15,3 +15,21 @@
 .wikiimage:hover{
     transform: scale(2);
 }
+
+.wikiimagesmall {
+    border-radius: 5px;
+    margin: 1rem;
+    max-height: 20vh;
+    max-width: 10vw;
+    object-fit: contain;
+    width: auto;
+    float: right;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 2px hsl(var(--nextra-primary-hue)100% 45%/var(--tw-text-opacity));
+    border: 1px solid hsl(var(--nextra-primary-hue)100% 45%/0.65);
+    transform-origin: center right;
+}
+
+.wikiimagesmall:hover{
+    transform: scale(2);
+}
