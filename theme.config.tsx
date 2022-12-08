@@ -1,6 +1,5 @@
 import React from 'react';
-import { DocsThemeConfig } from 'nextra-theme-docs';
-import { useConfig } from 'nextra-theme-docs';
+import { DocsThemeConfig, useConfig } from 'nextra-theme-docs';
 
 const config: DocsThemeConfig = {
   logo: <span>theripper93</span>,

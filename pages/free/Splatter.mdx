@@ -1,22 +1,10 @@
-Add blood and gore to your games
+import { Callout } from 'nextra-theme-docs'
 
-# V10 Data Path update
+# Splatter
 
-![Token Bleeding from a hit](Splatteronhit.png
-"Token Bleeding from a hit") When updating to V10 you will probably need
-to update your datapaths, this basically means removing any `data` from
-the path, for example for dnd5e it would be `attributes.hp.value` as you
-can see the `data.` is no longer in the path.
+Give that extra touch to your game, compatible with most game systems.
 
-## ATTENTION\!
-
-On some systems the `Creature Type` and `Custom Creature Type` options
-might cause Splatter to not work correctly, simply go into the module
-settings for Splatter and empty both those settings leaving them blank.
-![Creature Type Blood Color Macro](Splatterbloodsheet.png
-"Creature Type Blood Color Macro")
-
-## CONFIGURATIONS
+## Configuration
 
 If you manually added the data paths for your System to splatter, please
 send in a PR for
@@ -28,10 +16,6 @@ For information on how to configure Splatter for your system please read
 You are also free to send in PRs with configurations for missing
 systems\!
 
-## Add blood and gore to your games
-
-Give that extra touch to your game, compatible with most game systems
-(minor configuration required)
 
 ### Blood on hit
 
@@ -42,8 +26,8 @@ violence level, and blood trails
 
 Set up a configuration for blood color and creature type, by default one
 for dnd5e is included ![Customize Blood Color per
-token](Splattertokenblood.png "Customize Blood Color per token") ![Data
-Path settings](Splatterdatapath.png "Data Path settings")
+token](/public/image/Splatter/Splatterbloodsheet.png) ![Data
+Path settings](/public/image/Splatter/Splatterdatapath.png )
 
 ### Per Token Blood color
 
@@ -59,7 +43,7 @@ system
 
 If you use 3D Canvas, Splatter will make tokens bleed also in 3D\!
 
-## Manually Configuring Splatter for your System
+### Manually Configuring Splatter for your System
 
 Some systems are supported out of the box, others will require manual
 configuration of the data paths, follow these instructions to configure
@@ -78,29 +62,41 @@ splatter for your system.
     property and click "Copy Property Path"
   - Paste it in the Splatter Module settings appropriate field.
 
-## NOTICE: FEATURE REQUESTS
 
-I know that this implementation doesen't have all the features BnG had
-BUT i feel like it has enough customization for most people. Because the
-point of this module is to keep it streamlined to avoid making it
-impossible to mantain no feature requests will be implemented. Unless is
-something that all the users of this module would greatly benfit from,
-please refrain from asking. Thanks for your understanding :)
+## V10 Data Path update
 
-## FAQ
+![Token Bleeding from a hit](/public/image/Splatter/Splatteronhit.png) When updating to V10 you will probably need
+to update your datapaths, this basically means removing any `data` from
+the path, for example for dnd5e it would be `attributes.hp.value` as you
+can see the `data.` is no longer in the path.
 
-Blood and guts exists, why make a new one?: Blood and guts was a massive
-project and while it was amazing, with a lot of code comes a lot of
-issues and it's extremely difficult to mantain and fix. This
-implementation is simpler and more streamlined, and while it has less
-features, it will be much easier to mantain or adopt if it ever gets
-abandoned
+<Callout type="warning" emoji="⚠️">
+  On some systems the **Creature Type** and **Custom Creature Type** options might cause Splatter to not work correctly
+</Callout>
+
+To fix this, imply go into the module
+settings for Splatter and empty both those settings leaving them blank.
+![Creature Type Blood Color Macro](/public/image/Splatter/Splatterbloodsheet.png)
+
+
+## Additional Information
+
+**Blood and guts exists, why make a new one?**
+Blood and guts was a massive project and while it was amazing, with a lot of code comes a lot of issues and it's extremely difficult to mantain and fix. 
+This implementation is simpler and more streamlined, and while it has less features, it will be much easier to mantain or adopt if it ever gets abandoned.
+
+<Callout type="info" emoji="ℹ️">
+  Feature Requests
+</Callout>
+
+I know that this implementation doesen't have all the features BnG had but it has enough customization for most. 
+
+**No feature requests will be implemented** because the point of this module is to keep it streamlined to avoid making it impossible to mantain. Unless it is something that all the users of this module would greatly benefit from. 
+
+Please refrain from asking. Thank you for understanding :)
 
 ## Licensing
 
 The included Splatter font was created by Codin Repsh
 
 Original concept by edzillion
-
-[Category: Module](Category:_Module "wikilink") [Category:
-Free](Category:_Free "wikilink")
