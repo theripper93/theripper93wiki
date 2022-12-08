@@ -14,8 +14,14 @@ them according to relative heights as well.
 - [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper)
 
 ### Tokens
-
-![Token_Height_Adjustment.gif](Token_Height_Adjustment.gif 'Token_Height_Adjustment.gif') Tokens are able to see over walls which
+<Image
+  src='/../public/images/Wall-Height/Token_Height_Adjustment.gif'
+  alt='Token Height Adjustment Menu'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+Tokens are able to see over walls which
 are below them in elevation. Likewise, tokens cannot see through walls
 that are higher than them in.
 
@@ -25,8 +31,14 @@ elevation. Modify it by selecting the box and entering the desired
 elevation for the token.
 
 #### Token Height
-
-![Token height input in token settings](Token_Height_Setting.png 'Token height input in token settings') The height of a token, which is
+<Image
+  src='/../public/images/Wall-Height/Token_Height_Setting.png'
+  alt='Token height input in token settings'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+The height of a token, which is
 different than the elevation of it. It represents how tall a token is
 and is used in sight calculation.
 
@@ -38,8 +50,14 @@ for the token.
 determine the default for all tokens.
 
 ### Walls
-
-![The wall configuration menu](Wall_Config_Menu.png 'The wall configuration menu') Walls can be assigned a top elevation and
+<Image
+  src='/../public/images/Wall-Height/Wall_Config_Menu.png'
+  alt='The wall configuration menu'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+Walls can be assigned a top elevation and
 a bottom elevation, representing the highest and lowest point of the
 wall respectively.
 
@@ -52,21 +70,38 @@ and `Wall Height (Bottom)`. The default values are `Infinity` and
 `-Infinity` respectively.
 
 ## Settings
-
-![The scene setting for Wall Height](Scene_Config_Wall_Height.png 'The scene setting for Wall Height') `Enable Wall Height for Scene` in
+<Image
+  src='/../public/images/Wall-Height/Scene_Config_Wall_Height.png'
+  alt='The scene setting for Wall Height'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+`Enable Wall Height for Scene` in
 scene settings is enabled by default. If you wish to disable it, it can
 be done in scene settings. However, this will mean Wall Height's
 features cannot be used in the scene.
 
 ### Enable Tooltip
-
-![The wall height tooltip](Wall_Height_Tooltip.png 'The wall height tooltip') The tooltip will display when a wall is
+<Image
+  src='/../public/images/Wall-Height/Wall_Height_Tooltip.png'
+  alt='The wall height tooltip'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+The tooltip will display when a wall is
 hovered, showing its lowest and highest elevation.
 
 ### Display Height on Walls
-
-![Display Height on Walls|115x115px](Wall_Height_Display_Value.png 'Display Height on Walls|115x115px') While enabled, displays the
-elevation values of a wall on the wall itself.
+<Image
+  src='/../public/images/Wall-Height/Wall_Height_Display_Value.png'
+  alt='Display Height on Walls'
+  width={115}
+  height={115}
+  className={styles.wikiimage}
+/>
+While enabled, displays the elevation values of a wall on the wall itself.
 
 ### Vaulting
 
@@ -88,7 +123,7 @@ Wall
 
 Calculates the token's height by via token size and scale.
 
-#### Example
+#### Example Heights
 
 A 1x1 token on a 5ft grid would be 5ft tall, a 2x2 token would be 10ft,
 and a 1x1 token with a 0.75 scale would be 3.75 ft.
@@ -117,8 +152,8 @@ the page if you need to run it again.
 ### Elevation Helpers
 
 To avoid data duplication, Wall Height uses a data path belonging to the
-[Levels](Levels 'wikilink') module to store it's elevation. If
-[Levels](Levels 'wikilink') is not enabled you can use these helpers to
+[Levels](Levels) module to store it's elevation. If
+[Levels](Levels) is not enabled you can use these helpers to
 read and set the elevation of a sound or light document.
 
 ```js
