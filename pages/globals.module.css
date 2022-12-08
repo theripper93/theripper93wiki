@@ -1,11 +1,13 @@
 .wikiimage {
     border-radius: 5px;
     margin: 1rem;
-    width: 100%;
-    height: unset;
+    max-height: 30vh;
+    object-fit: contain;
+    width: auto;
+    float: right;
     transition: all 0.2s ease-in-out; 
 }
 
 .wikiimage:hover{
-    transform: scale(1.02);
+    transform: scale(2);
 }
