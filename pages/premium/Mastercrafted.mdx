@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import styles from '../globals.module.css'
+import { Callout } from 'nextra-theme-docs';
 
 # Mastercrafted
 
-### Premade Content
-
+<Callout type='info' emoji='ℹ️'>
 Want to start with some already made recipes and gathering points?
 Download the DnD5e [Potion Crafting &
 Gathering](https://github.com/action-jay/potion-crafting-gathering)
@@ -13,14 +13,16 @@ ManifestURL](https://github.com/action-jay/potion-crafting-gathering/releases/la
 The module leverages both the [Mastercrafted](Mastercrafted 'wikilink')
 and [Gatherer](Gatherer 'wikilink') modules, make sure you install
 both!
+</Callout>
+A simple yet effective crafting module for any system, create books, recipes, export and share! Make recipes with different outcomes or that can require alternate ingredients! Set permissions to specific players, require tools to craft and more!
+
 
 ### Creating and Editing Recipes
 
-[The Recipe Manager button located in the Items Sidebar
-Tab](Recipemanagerbtn.png 'The Recipe Manager button located in the Items Sidebar Tab') [The Main
-Mastercrafted Window](Mastercraftedwindowedit.png 'The Main Mastercrafted Window')
+
 
 #### Creating a new Book and Recipe
+<Image src="/../public/images/Mastercrafted/Recipemanagerbtn.png" alt="The Recipe Manager button located in the Items Sidebar Tab" width={2000} height={2000} className={styles.wikiimage}/>
 
 - To open the Recipe Manager, click the button located in the Items
   Sidebar Tab
@@ -30,6 +32,8 @@ Mastercrafted Window](Mastercraftedwindowedit.png 'The Main Mastercrafted Window
 - Click the newly created recipe to open it
 
 #### Configuring a recipe
+<Image src="/../public/images/Mastercrafted/Mastercraftedwindowedit.png" alt="The Main Mastercrafted Window" width={2000} height={2000} className={styles.wikiimage}/>
+<Image src="/../public/images/Mastercrafted/Recipeedit.png" alt="The Recipe panel in Edit Mode" width={2000} height={2000} className={styles.wikiimage}/>
 
 - Drag and Drop ingredients in the **+** panels. Dragging multiple
   ingredients in the same panel will let the player chose which one to
@@ -41,10 +45,10 @@ Mastercrafted Window](Mastercraftedwindowedit.png 'The Main Mastercrafted Window
 - Left click an ingredient to inspect, right click to remove it from
   the recipe
 
-[The Recipe panel in Edit Mode](Recipeedit.png 'The Recipe panel in Edit Mode') [Crafting Button in the Actor Sheet
-header](Craftingbutton.png 'Crafting Button in the Actor Sheet header')
+
 
 #### Creating a crafting result
+<Image src="/../public/images/Mastercrafted/Craftingbutton.png" alt="Crafting Button in the Actor Sheet header" width={2000} height={2000} className={styles.wikiimage}/>
 
 - Drag and drop items in the result **+** panels
 - Having multiple items in a single result panel will award the player
@@ -58,14 +62,6 @@ header](Craftingbutton.png 'Crafting Button in the Actor Sheet header')
 
 - Right click a recipe or book to export it
 - Right click a recipe or book to import from a json and overwrite it
-
-### Community Recipe Books
-
-If you want to share or download Books made by the community, you can do
-so here:
-
-[Mastercrafted: Community
-Books](Mastercrafted:_Community_Books 'wikilink')
 
 ### Crafting
 
@@ -81,8 +77,8 @@ Books](Mastercrafted:_Community_Books 'wikilink')
 - Click the Craft button on the top right to craft, hold `ctrl` to
   skip confirmation
 
-[The crafting window. Ingredients are Red since the Actor does not own
-them.|203x203px](Craftwindownoitem.png 'The crafting window. Ingredients are Red since the Actor does not own them.|203x203px')
+<Image src="/../public/images/Mastercrafted/craftwindownoitem.png" alt="The crafting window. Ingredients are Red since the Actor does not own
+them." width={2000} height={2000} className={styles.wikiimage}/>
 
 ### Advanced: Adding conditions to crafting
 
@@ -117,6 +113,3 @@ return {
   consume: true,
 };
 ```
-
-[Category: Module](Category:_Module 'wikilink') [Category:
-Premium](Category:_Premium 'wikilink')
