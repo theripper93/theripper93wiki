@@ -1,4 +1,5 @@
 # 3D Canvas
+
 3D Canvas is a module for viewing and creating maps in 3D.
 
 Turn your maps into true 3D, load in 3D models, and play your games in
@@ -29,7 +30,6 @@ Actions marked GC are only availeble when Game Camera is enabled
 
 !!!!! REDO CONTROLS TABLES
 
-
 ### Navigator
 
 The 3D navigator is a new way for you and your players to navigate the
@@ -43,7 +43,7 @@ To cut to a specific Level, simply move the slider to the Level you
 prefer, the slider will automatically snap to the closest Level.
 
 **`Sync`**`If you are a GM, you will see a Sync button on top of the slider, by pressing the button you will sync your current level with all players.`  
-**`Camera`**`If you are a Player or GM you will see a Camera button, by pressing it the camera will focus on the currently selected token (the same as ```Shift``` + ```X```). Doing this will automatically set the navigator to the closest level.`  
+**`Camera`**` If you are a Player or GM you will see a Camera button, by pressing it the camera will focus on the currently selected token (the same as ```Shift``` + ```X```). Doing this will automatically set the navigator to the closest level. `  
 **` Follow``
  ``Mode `**`Click to toggle. Selecting a token or changing elevation will automatically set the navigator to the closest level while enabled. It is enabled on scene load for players and disabled for GMs by default. You can change this behaviour in the module settings under the misc tab.`
 
@@ -61,7 +61,7 @@ Settings.pngthumb](File3D_Canvas_Module_Settings.pngthumb 'wikilink')
 Adds damping to camera movements. Disabling this option is recommended
 for people who experience motion sickness easily.
 
-Press ```Shift``` + ```R``` in 3D View to reset the camera and apply
+Press `Shift` + `R` in 3D View to reset the camera and apply
 changes.
 
 #### Soft Shadows
@@ -70,7 +70,7 @@ Adds softer shadows. Minor performance impact.
 
 #### Shadow Quality
 
-Affects the resolution of shadows. Set to ```Disabled``` to disable
+Affects the resolution of shadows. Set to `Disabled` to disable
 shadows.
 
 #### Anti-Aliasing
@@ -118,8 +118,8 @@ Shows the distance to tokens while hovering over them.
 Hooks the 3D Camera panning to the 2D one (i.e. moving a token will have
 the camera follow it).
 
-While disabled, you can pan to the selected token with ```CRTL``` +
-```X```.
+While disabled, you can pan to the selected token with `CRTL` +
+`X`.
 
 ### Token
 
@@ -156,7 +156,7 @@ top of the base. Merge will not move the original model.
 #### Solid Base Color
 
 Color of the solid base. Can be a hex value or a color name (e.g. any
-CSS color). Default is #1C1C1C.
+CSS color). Default is `#1C1C1C`.
 
 #### Rotate Base
 
@@ -166,12 +166,12 @@ Rotate the 3D Base to match token rotation.
 
 #### Players Can Ping
 
-Enables the ability to ping location for players (Default Shift + E).
+Enables the ability to ping location for players (Default `Shift + E`).
 
 #### Players Can Send Camera Position
 
 Enables the ability to send the camera position for players (Default
-Shift + Q).
+`Shift + Q`).
 
 ### Game Camera
 
@@ -245,7 +245,8 @@ options are in the 3D Canvas tab of scene settings.
 ##### Enable for Players
 
 Allow players to open the 3D View by clicking the 3D Mode button
-<i class="fas fa-cube"></i>
+
+<i class='fas fa-cube'></i>
 
 ##### Enable 3D on Load
 
@@ -262,7 +263,7 @@ Show the ruler when dragging and placing objects
 ##### Initial view position
 
 Set the default camera position when the scene loads, to properly set
-the target for the view, use the ping option (```Shift``` + ```Q```)
+the target for the view, use the ping option (`Shift` + `Q`)
 to set the camera before saving the initial view position.
 
 ##### Lock Camera Perspective
@@ -284,8 +285,8 @@ highly suggested for Metallic and Reflective surfaces to look correct.
 
 Set the skybox (or 3D background) for this scene. The file needs to be
 in the same folder of 6 total files, files must contain
-**```_ft```**, **```_bk```**, **```_up```**, **```_dn```**,
-**```_rt```**, or **```_lf```** in their name.
+**`_ft`**, **`_bk`**, **`_up`**, **`_dn`**,
+**`_rt`**, or **`_lf`** in their name.
 
 ##### Enable Bloom
 
@@ -400,7 +401,7 @@ The 3D Tab contains all the settings to manipulate the tile manually
 through numbers, although most of these settings are self explanatory,
 we will focus on some that could be confusing
 
-##### Block SightMovement
+#### Block SightMovement
 
 This option tells 3D Canvas if the tile should be included in collision
 andor vision calculations.
@@ -408,38 +409,38 @@ andor vision calculations.
 For example, if one of your tiles represents water, you would need to
 disable both options.
 
-##### Door Options
+#### Door Options
 
 These options behave the same as core foundry. Tile Doors also do a
 range check against players so they will need to be no more than 1
 square away from the door to be able to open it.
 
-##### Fill Type
+#### Fill Type
 
 This will change how the tile is displayed
 
 **`Single`**`Will stretch the 3D Model to fill the box defined by the tile.`  
-**`Repeat`**`Will make multiple copies of this tile, tiling it inside the tile bounds. This option is considerably more performant than having multiple copies of a ```Single``` fill tile.`
+**`Repeat`**` Will make multiple copies of this tile, tiling it inside the tile bounds. This option is considerably more performant than having multiple copies of a ```Single``` fill tile. `
 
-##### Gap
+#### Gap
 
 This option will set the Gap between the repeated 3D Models. Will only
 work with Repeat Fill Type
 
-##### Randomization Options
+#### Randomization Options
 
 All this options will only affect the Repeat Fill Type
 
-##### Random Seed
+#### Random Seed
 
 The seed used to generate the randomization, you can change this seed to
 some arbitrary characters if you want to re randomize the tile.
 
 #### Supported Properties
 
- class=wikitable sortable - !Property Name !Type !Value - collision
+class=wikitable sortable - !Property Name !Type !Value - collision
 Integer 01 - sight Integer 01 - isDoor Integer 012 - doorId String Any
-Unique Name - ds Integer 012 
+Unique Name - ds Integer 012
 
 ## 3D Entities
 
@@ -536,8 +537,7 @@ height of the cylinder (in grid units). Then place a circle template.
 
 #### Start an Animation with the UI
 
-[FileToken HUD for Token
-Animations.pngthumb183x183px](FileToken_HUD_for_Token_Animations.pngthumb183x183px 'wikilink')
+[FileToken HUD for Token Animations.pngthumb183x183px](FileToken_HUD_for_Token_Animations.pngthumb183x183px 'wikilink')
 You can access Token Animations by right clicking your token to open the
 Token Hud. You will see a Magic Wand icon on the right.
 
@@ -554,31 +554,31 @@ animationId, options)syntaxhighlight
 
 ##### Arguments
 
-```tokens```
+`tokens`
 
 This parameter can be a single token object, an array of token objects,
 a single token ID or an array of token IDs, the animation will play on
 all these targets.
 
-```animationId```
+`animationId`
 
 The identifier for the animation, you can find all the animation IDs by
 typing syntaxhighlight
 lang=javascriptgame.Levels3DPreview.CONFIG.tokenAnimationssyntaxhighlight
 in the console and hitting Enter.
 
-```options```
+`options`
 
 This argument is optional, an object containing additional parameters.
 
-syntaxhighlight lang=js 
+syntaxhighlight lang=js
 
 repeats 1, How many times you want the animation to play
 
 resetTime milliseconds, Force the time that the animation takes to reset
 to the original position once it ends
 
- syntaxhighlight
+syntaxhighlight
 
 ##### Example Macro
 
@@ -608,37 +608,37 @@ provides a graphical interface to setup 3D Canvas Particle Effects.
 
 #### Creating an Effect
 
-First create a ```Script Macro```, then to start creating your effect
+First create a `Script Macro`, then to start creating your effect
 simply callsyntaxhighlight lang=javascript new Particle3D(type)
-syntaxhighlight```type``` is the type of particle effect, at the
-moment the options are  class=wikitable sortable +Options !Effect
+syntaxhighlight`type` is the type of particle effect, at the
+moment the options are class=wikitable sortable +Options !Effect
 !type !type (short) - Projectile projectile p - Sprite sprite s - Ray
-ray r - Explosion explosion e  If no type is provided the default is
-```p```
+ray r - Explosion explosion e If no type is provided the default is
+`p`
 
 Note that Sprite also accepts 3D Models as particles!
 
 Now you can start chaining properties, similar to how Sequencer works.
-Every time you call a ```.method()``` on a ```Particle3D``` it will
-always return the ```Particle3D``` object, allowing for chaining. The
-only exception is the ```.start()``` method that will return the ID if
-the ```Particle3D``` First we must provide an origin and a
+Every time you call a `.method()` on a `Particle3D` it will
+always return the `Particle3D` object, allowing for chaining. The
+only exception is the `.start()` method that will return the ID if
+the `Particle3D` First we must provide an origin and a
 destination.syntaxhighlight lang=python new Particle3D(type)
 
 `.from(origin)`  
 `.to(destination)`
 
-syntaxhighlight```.from()``` & ```.to()```
+syntaxhighlight`.from()` & `.to()`
 
 These two methods are required on every effects, each one can take a
-single ```Token``` or an array of ```Tokens``` or a single
-```Position``` or an array of them. Non ```Token``` placeables are
-also supported. A ```Position``` is defined by \{ x0, y0, z0 \}
-where ```z``` is in elevation units. ```Explosion``` effects are the
-exception as they do not require a ```.from()```
+single `Token` or an array of `Tokens` or a single
+`Position` or an array of them. Non `Token` placeables are
+also supported. A `Position` is defined by \{ x0, y0, z0 \}
+where `z` is in elevation units. `Explosion` effects are the
+exception as they do not require a `.from()`
 
-Note You can omit both ```.from()``` and ```.to()``` when creating
-an effect inside ```.onEnd()```. In that case the ```.to()``` will
+Note You can omit both `.from()` and `.to()` when creating
+an effect inside `.onEnd()`. In that case the `.to()` will
 be set as the target of that particular effect (useful for exploding
 bolts for example)
 
@@ -648,8 +648,8 @@ targets.syntaxhighlight lang=javascript new Particle3D(type)
 `.from(token)`  
 `.to(Array.from(game.user.targets))`
 
-syntaxhighlightAt this point we can ```.start()``` our
-```Particle3D``` to play the effect and the default settings will be
+syntaxhighlightAt this point we can `.start()` our
+`Particle3D` to play the effect and the default settings will be
 used (it will look like a firebolt).syntaxhighlight lang=javascript new
 Particle3D(type)
 
@@ -658,37 +658,35 @@ Particle3D(type)
 
 .start()
 
-syntaxhighlight```.start()```
+syntaxhighlight`.start()`
 
-The ```.start()``` method takes no arguments and will simply start the
+The `.start()` method takes no arguments and will simply start the
 effect. After using this method you should **NOT** interact with the
-```Particle3D``` anymore. Use the returned ID instead if you wish to
-stop the effect, see the ```Stopping an Effect``` section below. If
-you wish you can call ```.start(false)``` to only play the effect
+`Particle3D` anymore. Use the returned ID instead if you wish to
+stop the effect, see the `Stopping an Effect` section below. If
+you wish you can call `.start(false)` to only play the effect
 locally.
 
 ##### Stopping an effect
 
 When creating an effect, the effect will return it's id. You can use
 this Id later to stop the effect. You can also execute
-```Particle3D.stop(all)``` to stop all effects. If you used the
-```.name()``` property on effect creation you can also
-```.stop(name)``` to stop all effects with that name.
+`Particle3D.stop(all)` to stop all effects. If you used the
+`.name()` property on effect creation you can also
+`.stop(name)` to stop all effects with that name.
 
 ##### Try it yourself\
 
-These are several examples showcasing the ```Particle3D``` system that
+These are several examples showcasing the `Particle3D` system that
 are a good starting point for understanding the system and creating your
 own custom effects.
 
-Create new ```Script Macros``` in your game with the ``` blocks [3D
-Canvas Animation Macroson this
-page](3D_Canvas_Animation_Macroson_this_page 'wikilink') to try them out
+Create new `Script Macros` in your game with the ``` blocks [3D Canvas Animation Macros on this page](3D_Canvas_Animation_Macroson_this_page 'wikilink') to try them out
 in 3D Canvas and see the different effects. You can adjust the variables
 to see how those influence the effects.
 
-These macros are also all available to import directly in the ```3D
-Canvas Particle Effects``` macro compendium! Simply select a token,
+These macros are also all available to import directly in the `3D
+Canvas Particle Effects` macro compendium! Simply select a token,
 target some tokens and run the macros, you will see them in action!
 
 #### Particles Properties & Behaviours
@@ -696,92 +694,91 @@ target some tokens and run the macros, you will see them in action!
 We can now add properties to the effect in any order to alter it's
 appearance
 
-```.alpha(start,end)```
+`.alpha(start,end)`
 
 This property requires start and end to be numbers between 0 and 1 -
 sets the starting and ending opacity of particles
 
-```.arc(integer)```
+`.arc(integer)`
 
 This property takes an integer and indicates how many times the
 projectile will curve before reaching its destination. Default is 0.
 
-```.color(start,end)```
+`.color(start,end)`
 
 This will determine the starting and ending color of the effect, only
 start can be provided. start and end can also be arrays of colors (eg
-```.color(\[color1,color2\],\[color3,color4\])```.
+`.color(\[color1,color2\],\[color3,color4\])`.
 
 If an array of colors is provided for start andor end, the system will
 pick one of those colors randomly as the startingending color—it will
 NOT create a multicolor gradient.
 
 The colors can be in any format, HEX is recommended but you can use any
-CSS compatible color—even using ```red``` will work.
+CSS compatible color—even using `red` will work.
 
-```.delay(milliseconds)```
+`.delay(milliseconds)`
 
-If ```.repeat()``` is set, this will be the delay between each repeat.
+If `.repeat()` is set, this will be the delay between each repeat.
 
-```.duration(milliseconds)```
+`.duration(milliseconds)`
 
 Duration in milliseconds of the effect, valid only for ray. Default is
 300 milliseconds
 
-```.emitterSize(number)```
+`.emitterSize(number)`
 
 Radius of the area of emission in grid squares (so 1 would be 1 grid
 square), the larger the number the more spread out the particles will be
 in their starting point. Default is 0
 
-```.force(number)```
+`.force(number)`
 
 If using an explosion, set the force of the explosion, default is 15.
 This will determine the force with which the particles are propelled
 from the origin. Higher numbers will result in faster particles.
 
-```.gravity(number)```
+`.gravity(number)`
 
 Gravity affecting the particles - 1 is Earth gravity. Higher numbers
 means particles will travel down faster depending on their mass.
 Negative gravity is also possible if you want particles to go up
 instead.
 
-```.life(min, max)```
+`.life(min, max)`
 
 Range in milliseconds of the lifetime of a particle, bigger numbers will
 equal to longer trails. default (100,500). A single value is also
 accepted.
 
-```.mass(number)```
+`.mass(number)`
 
 The Mass of the particle, this will affect how much gravity pulls down
 the particle. Default is 100.
 
-```.miss()```
+`.miss()`
 
 If added to the effect, it will miss the target. You can also call
-```.miss(Boolean)``` if you prefer.
+`.miss(Boolean)` if you prefer.
 
-```.name(string)```
+`.name(string)`
 
 You can give a name to an effect, if you do so, you can call the
-```.stop()``` method using this name and all effects with this name
+`.stop()` method using this name and all effects with this name
 will be stopped.
 
-```.onEnd(particle3D)```
+`.onEnd(particle3D)`
 
-You can pass another ```particle3D``` or an array of
-```particle3d``` to the ```.onEnd``` method, if you do so, these
+You can pass another `particle3D` or an array of
+`particle3d` to the `.onEnd` method, if you do so, these
 effects will be played when the main effect ends, you can nest this how
-many times you want but DO NOT call the ```.start()``` method on
-```Particle3D``` inside the ```.onEnd()``` method. Does not trigger
-when the effect is terminated by ```.stop()```
+many times you want but DO NOT call the `.start()` method on
+`Particle3D` inside the `.onEnd()` method. Does not trigger
+when the effect is terminated by `.stop()`
 
-```.playAnimation(animationData)```
+`.playAnimation(animationData)`
 
-Play a 3D Animation, the animation data is formatted as
-followssyntaxhighlight lang=js 
+Play a 3D Animation, the animation data is formatted as follows.
 
 `from {  The from property specifies which animation should be played on the origin of the particle effect (usually the caster or attacker)`  
 `id twirl,  The id of the animation to play`  
@@ -794,55 +791,55 @@ followssyntaxhighlight lang=js
 `end false,`  
 `},`
 
- syntaxhighlight```.push(dx,dy,dz)```
+syntaxhighlight`.push(dx,dy,dz)`
 
 The pushing force affecting the particles, this is a method generally
 used internally for fixed emitters - it will create an effect on the
 particles as if a force was pushing them in a specific direction.
 Default is (0,0,0).
 
-```.rate(particles,milliseconds)```
+`.rate(particles,milliseconds)`
 
 The Rate of the emitter, where particles is the amount of particles in
 the system and milliseconds is how often the system creates a particle.
 Default (12, 16)
 
-```.repeat(integer)```
+`.repeat(integer)`
 
 The number of times to repeat the effect
 
-```.rotation(x,y,z)```
+`.rotation(x,y,z)`
 
 Rotation in degrees of the particle, only used if using a 3D Model as
 particle
 
-```.up(x,y,z)```
+`.up(x,y,z)`
 
-A unit vector (eg ```.up(1,0,1)``` ) representing the direction of the
+A unit vector (eg `.up(1,0,1)` ) representing the direction of the
 tip of the model (eg, an arrow or a dagger), only used if using a 3D
 Model as particle
 
-```.rotateTowards()```
+`.rotateTowards()`
 
 Instead of a projectile, do a swinging motion, only used if using a 3D
 Model as particle
 
-```.scale(min,max)```
+`.scale(min,max)`
 
 The starting and ending size in in grid squares of a single particle.
 Default is (0.8,0)
 
-```.speed(number)```
+`.speed(number)`
 
 The speed of the projectile. Default is 10.
 
-```.sprite(pathToFile)```
+`.sprite(pathToFile)`
 
 The path to the image to be used as particle. Default is
-```moduleslevels-3d-previewassetsparticlesemberssmall.png``` you can
+`moduleslevels-3d-previewassetsparticlesemberssmall.png` you can
 find many particles in that same folder.
 
-```.startAfter(milliseconds)```
+`.startAfter(milliseconds)`
 
 Delay the start of the effect by the specified milliseconds
 
@@ -852,14 +849,14 @@ Delay the start of the effect by the specified milliseconds
 
 #### 3D File Formats
 
-You can use **```GLB```**, **```GLTF```** and **```FBX```** files,
+You can use **`GLB`**, **`GLTF`** and **`FBX`** files,
 other formats can be easily converted, Blender is suggested to perform
 this operation.
 
 #### 2D File Formats
 
 3D Canvas supports all the file formats supported by Foundry, including
-animated **```webm```** files. Due to how 3D Canvas handles
+animated **`webm`** files. Due to how 3D Canvas handles
 transparency, semi-transparent images might be completely cut of by the
 processing.
 
@@ -896,17 +893,17 @@ walls, tiles and the scene table support PBR Materials. To load a pbr
 material you need a specific file naming stuctures. The files must be
 named as follows and be all in the same folder.
 
-Exampleblockquote```Wood077_1K_AmbientOcclusion.jpg```
+Exampleblockquote`Wood077_1K_AmbientOcclusion.jpg`
 
-```Wood077_1K_Color.jpg```
+`Wood077_1K_Color.jpg`
 
-```Wood077_1K_Emissive.jpg```
+`Wood077_1K_Emissive.jpg`
 
-```Wood077_1K_Metalness.jpg```
+`Wood077_1K_Metalness.jpg`
 
-```Wood077_1K_NormalGL.jpg```
+`Wood077_1K_NormalGL.jpg`
 
-```Wood077_1K_Roughness.jpg```blockquoteAs you can see all the files
+`Wood077_1K_Roughness.jpg`blockquoteAs you can see all the files
 share a root name then keywords to differentiate the different textures.
 You can find materials already set up this way here AmbientCG.
 
@@ -1008,19 +1005,15 @@ specific 3D Canvas integration.
 The following modules are not strictly required but all provide
 enhancements to the 3D Experience
 
-`[httpsgithub.comtheripper93canvas3dcompendium 3D Canvas Compendium] Highly Recommended. Contains assets that you can use in 3D Canvas, such as 3D Tiles, Skyboxes, HDRIs and Miniatures.`  
-`[httpsgithub.comtheripper93canvas3dtokencompendium 3D Canvas Token Collection] Highly Recommended.  A collection with 1000+ Hero tokens and every DnD5e creature and more.`  
-[` 3D``
- ``Portraits `](3D_Portraits 'wikilink')`With this module you can have 3D Portraits on your sheets, Import HeroForge miniatures both in portraits and as tokens on the board and enable 3D Models previews in the filepicker (if you have`[`Filepicker+`](Filepicker+ 'wikilink')`).`  
-[` Levels#Automatic``   ``Cover``   ``CalculatorLevels``   ``-``
- ``Automatic``   ``Cover``
- ``Calculator `](Levels#Automatic_Cover_CalculatorLevels_-_Automatic_Cover_Calculator 'wikilink')`With this module you will be able to calculate cover in 3D, the module is customizable and compatible with all systems.`  
-[` Levels#Volumetric``   ``TemplatesLevels``   ``-``   ``Volumetric``
- ``Templates `](Levels#Volumetric_TemplatesLevels_-_Volumetric_Templates 'wikilink')`This module will automatically target in 3D when you place a template (AoE) calculating spheres, cones etc...`  
-`[httpsgithub.comVarriountfvtt-autorotate Auto-Rotate] This module will automatically set the rotation of tokens when moving or targeting, this will reflect in 3D and give your minis the correct orientation.`  
-`[httpsgithub.comotigonautomated-jb2a-animations Automated Animations] Set up Special Effects on item use without the need to fiddle with macros.`  
-`[httpsgithub.commanuelVofoundryvtt-drag-rulertreemaster Drag Ruler] Change the 3D Ruler color based on how much movement that specific token has.`  
-[`Splatter`](Splatter 'wikilink')`Adds special effects (e.g. blood splatters) when a token is damaged.`
+[httpsgithub.comtheripper93canvas3dcompendium 3D Canvas Compendium] Highly Recommended. Contains assets that you can use in 3D Canvas, such as 3D Tiles, Skyboxes, HDRIs and Miniatures.  
+[httpsgithub.comtheripper93canvas3dtokencompendium 3D Canvas Token Collection] Highly Recommended.  A collection with 1000+ Hero tokens and every DnD5e creature and more.  
+[ 3D Portraits ](3D_Portraits 'wikilink')With this module you can have 3D Portraits on your sheets, Import HeroForge miniatures both in portraits and as tokens on the board and enable 3D Models previews in the filepicker (if you have[Filepicker+](Filepicker+ 'wikilink')).  
+[ Levels#Automatic Cover CalculatorLevels - Automatic Cover Calculator ](Levels#Automatic_Cover_CalculatorLevels_-_Automatic_Cover_Calculator 'wikilink')With this module you will be able to calculate cover in 3D, the module is customizable and compatible with all systems.  
+[ Levels#Volumetric TemplatesLevels - Volumetric Templates ](Levels#Volumetric_TemplatesLevels_-_Volumetric_Templates 'wikilink')This module will automatically target in 3D when you place a template (AoE) calculating spheres, cones etc...  
+[httpsgithub.com Varriountfvtt-autorotate Auto-Rotate] This module will automatically set the rotation of tokens when moving or targeting, this will reflect in 3D and give your minis the correct orientation.  
+[httpsgithub.comotigonautomated-jb2a-animations Automated Animations] Set up Special Effects on item use without the need to fiddle with macros.  
+[httpsgithub.commanuelVofoundryvtt-drag-rulertreemaster Drag Ruler] Change the 3D Ruler color based on how much movement that specific token has.  
+[Splatter](Splatter 'wikilink')Adds special effects (e.g. blood splatters) when a token is damaged.
 
 #### Incompatible Modules
 
@@ -1046,33 +1039,33 @@ future versions of 3D Canvas.
 
 #### Converting a Spherical HDRI map to a Cube Map for 3D Canvas
 
-_A guide by ```@simulacrum```_
+_A guide by `@simulacrum`_
 
-`Go to httpsmatheowis.github.ioHDRI-to-CubeMap`  
-`Upload you image. It doesn't take ```EXR``` so you'll have to convert those to HDRI's, ```PNG``` or ```JPEG```.`  
-`Once it's uploaded it will appear in the 3D view. You can now see how the Cube map will look.`  
-`It's possible to move the image by dragging on it but`**`don't`**`or it won't line up with your HDRI.`  
-`Adjust the Exposure. Make it darker.`  
-`The HDRI lights the cube map so you will have to compensate for this, either now or in your image editor later.`  
-`Choose ```Export``` and choose the bottom option ```export as PNG``` choosing the size you want for the individual sides`  
-`2k is normally enough but you can try 4k if your machine can handle it or 1k if not`  
-`Click ```Process````  
-`Once it's finished, download them`  
-`The names of the files don't match up with 3D Canvas so use a file renamer to swap them.`  
-`Remember that your prefix must match on every file (i.e.`**````name_bk````**`,`**````name_ft````**`, etc.)`  
-`All the images will need to be flipped horizontally.`  
-`You will also have to rotate the`**````_up````**`and`**````_dn````**`images clockwise 90 degrees.`  
-`Altering the images in an editor like Photoshop or Gimp is recommended.`  
-`Save all of the files.`  
-`You can get the file size down by changing them to ```JPEG````  
-`Don't use much, if any, compression as it shows.`  
-````webp``` looks very compressed so I don't use it.`  
-`That's it. You now have an 8bit cube map that matches you 32 bit HDRI that will be a much smaller file size that the equivalent HDRI. Now you can use a 1k hdri to give you the lighting and reflections and use the 8bit Cube Map as the background image.`
+Go to httpsmatheowis.github.ioHDRI-to-CubeMap  
+ Upload you image. It doesn't take EXR so you'll have to convert those to HDRI's, PNG or JPEG.  
+Once it's uploaded it will appear in the 3D view. You can now see how the Cube map will look.  
+It's possible to move the image by dragging on it but**don't**or it won't line up with your HDRI.  
+Adjust the Exposure. Make it darker.  
+The HDRI lights the cube map so you will have to compensate for this, either now or in your image editor later.  
+ Choose Export and choose the bottom option export as PNG choosing the size you want for the individual sides  
+2k is normally enough but you can try 4k if your machine can handle it or 1k if not  
+ Click Process  
+ Once it's finished, download them  
+The names of the files don't match up with 3D Canvas so use a file renamer to swap them.  
+Remember that your prefix must match on every file (i.e. **name_bk** , **name_ft** , etc.)  
+All the images will need to be flipped horizontally.  
+You will also have to rotate the **\_up** and **\_dn** images clockwise 90 degrees.  
+Altering the images in an editor like Photoshop or Gimp is recommended.  
+Save all of the files.  
+You can get the file size down by changing them to  JPEG  
+Don't use much, if any, compression as it shows.  
+webp  looks very compressed so I don't use it.  
+That's it. You now have an 8bit cube map that matches you 32 bit HDRI that will be a much smaller file size that the equivalent HDRI. Now you can use a 1k hdri to give you the lighting and reflections and use the 8bit Cube Map as the background image.
 
-#### [TownscaperImporting Maps from Townscaper by '''Chryron\#3457'''](TownscaperImporting_Maps_from_Townscaper_by_'''Chryron#3457''' 'wikilink')
+#### [TownscaperImporting Maps from Townscaper by Chryron\#3457](TownscaperImporting_Maps_from_Townscaper_by_Chryron#3457 'wikilink')
 
 #### Special Mentions
 
-````@dev7355608``` for tons of help and suggestions on many parts of the 3D Canvas developement`  
-````@Otigon#2010``` for the wonderful Automated Animations integration ([httpswww.patreon.comotigon Patreon])`  
-````@arcanist#4317``` for testing and ``` tips ([httpswww.patreon.comarcanistzed Patreon])`
+- **@dev7355608** for tons of help and suggestions on many parts of the 3D Canvas dzvelopement
+- **@Otigon#2010** for the wonderful Automated Animations integration ([httpswww.patreon.comotigon Patreon])
+- **@arcanist#4317** for testing and tips ([https://www.patreon.com/arcanistzed Patreon])`
