@@ -23,7 +23,7 @@ levels.
 ### Dependencies
 
 - [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper)
-- [Wall Height](Wall_Height)
+- [Wall Height](Wall-Height)
 
 ### Recommended
 
@@ -92,8 +92,9 @@ Even When Below?` and save your changes
 
 ### Levels UI
 
-![A screenshot of the Levels UI](/public/free/Levels/Levels_UI.png 'A screenshot of the Levels UI') Open the Levels UI (also known as the
-_Levels Layer Tool_) by pressing the <FontAwesomeIcon icon={faLayerGroup} /> button.
+<Image src="/../public/images/Levels/Levels_UI.png" alt="A screenshot of the Levels UI" width={2000} height={2000} className={styles.wikiimagesmall}/>
+
+Open the Levels UI (also known as the _Levels Layer Tool_) by pressing the <FontAwesomeIcon icon={faLayerGroup} /> button.
 
 You will see a small semi-transparent black box open in the top-right of
 Foundry.
@@ -172,11 +173,12 @@ will count instead as a solid scene sized plane.
 
 ### Tokens
 
-Token height is handled by [Wall Height](Wall_Height 'wikilink'). It's highly suggested to read the `Token Height` section of the Wall Height page before using Levels.
+Token height is handled by [Wall Height](Wall-Height). It's highly suggested to read the `Token Height` section of the Wall Height page before using Levels.
 
 ### Drawings
 
-![Drawing_config_menu.png](Drawing_config_menu.png 'Drawing_config_menu.png') In Levels, drawings are used to create stairs
+<Image src="/../public/images/Levels/Drawing_config_menu.png" alt="Config Menu" width={2000} height={2000} className={styles.wikiimagesmall}/>
+In Levels, drawings are used to create stairs
 and elevators. Their purpose is to allow travel between elevations.
 However, _how_ they handle travel between elevations is handled
 differently.
@@ -238,9 +240,9 @@ trigger on any elevation between those (e.g. 25). The options you define
 in the elevator don't affect the triggering range.
 
 ### Vision
+<Image src="/../public/images/Levels/How_sight_work.jpg" alt="A simple diagram visualizing sight concepts" width={2000} height={2000} className={styles.wikiimagesmall}/>
 
-![A simple diagram visualizing sight concepts](How_sight_work.jpg 'A simple diagram visualizing sight concepts') Token vision is best
-understood three dimensionally ala our own physical world.
+Token vision is best understood three dimensionally ala our own physical world.
 
 Imagine 3 tokens. Let's call them **Token A**, **B**, and **C**. **Token
 A** is on top of a tower that is 60 units high. **Tokens B** and **C**
@@ -292,15 +294,15 @@ toggle it per tile.
 ### Scene Settings
 
 #### Light Masking
+<Image src="/../public/images/Levels/Light_Masking_Fine.jpg" alt="In this example the lighting looks correct at first glance" width={2000} height={2000} className={styles.wikiimagesmall}/>
 
-![In this example the lighting looks correct at first glance](Light_Masking_Fine.jpg 'In this example the lighting looks correct at first glance') `Light
-Masking` can be toggled in the `Lighting` tab in the scene settings. By
-enabling this feature all lights below the current point of view will be
-visible and masked with the tiles that are above them.
+In this example the lighting looks correct at first glance. `Light Masking` can be toggled in the `Lighting` tab in the scene settings. By enabling this feature all lights below the current point of view will be visible and masked with the tiles that are above them.
 
-Disabling this setting will only show lights on the current level.![Here we can see, by moving the roof slightly, that while the roof is covering the "green" coloration of the light, the vision portion of the light is still visible.](Light_masking_broken.jpg 'Here we can see, by moving the roof slightly, that while the roof is covering the "green" coloration of the light, the vision portion of the light is still visible.')If
-you are **not** using the **[Perfect Vision](https://foundryvtt.com/packages/perfect-vision)** module you
-will encounter the limitations listed below:
+<Image src="/../public/images/Levels/Light_masking_broken.jpg" alt="the vision portion of the light is still visible in this screenshot" width={2000} height={2000} className={styles.wikiimagesmall}/>
+
+Disabling this setting will only show lights on the current level. Here we can see, by moving the roof slightly, that while the roof is covering the "green" coloration of the light, the vision portion of the light is still visible. 
+
+If you are **not** using the **[Perfect Vision](https://foundryvtt.com/packages/perfect-vision)** module you will encounter the limitations listed below:
 
 - Light masking will mask the "visual" part of the light, as in it's
   color and animation. Unfortunately the "vision" part of the light
@@ -353,8 +355,7 @@ different elevations.
 
 ## API
 
-The API is available for viewing by entering `CONFIG.Levels.API` in the Foundry console or in
-[API.js](https://github.com/theripper93/Levels/blob/v9/scripts/API.js).
+The API is available for viewing by entering `CONFIG.Levels.API` in the Foundry console or in [API.js](https://github.com/theripper93/Levels/blob/v9/scripts/API.js).
 
 ### Hooks
 
@@ -395,11 +396,11 @@ If you wish to Override or Wrap the overrides you can do so in the
 
 ### Submodules
 
-#### [Automatic Cover Calculator](Automatic_Cover_Calculator 'wikilink')
+#### [Automatic Cover Calculator](Automatic-Cover-Calculator)
 
-#### [Depth Blur](Depth_Blur 'wikilink')
+#### [Depth Blur](Depth-Blur)
 
-#### [Volumetric Templates](Volumetric_Templates 'wikilink')
+#### [Volumetric Templates](Volumetric-Templates)
 
 ### Tutorials
 
@@ -413,7 +414,7 @@ Levels 3.0 Tutorial
   - Levels will now automatically handle visibility based on the
     tile transparency. You can leave old holes in your maps, they
     simply won't do anything.
-- [Better Roofs](Better_Roofs 'wikilink') is no longer a required
+- [Better Roofs](Better-Roofs) is no longer a required
   dependency
 - Light masking is now better but the [Perfect Vision](https://foundryvtt.com/packages/perfect-vision) module is highly recommended.
 - New `Allow Sight` option for tiles. If enabled on a tile, the tile
