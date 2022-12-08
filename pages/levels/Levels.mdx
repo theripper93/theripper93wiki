@@ -1,5 +1,17 @@
-import Image from 'next/image'
-import styles from '../globals.module.css'
+import Image from 'next/image';
+import { Callout } from 'nextra-theme-docs';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faLayerGroup,
+  faPenToSquare,
+  faArchway,
+  faPlus,
+  faUsers,
+  faSortAmountUpAlt,
+  faTree,
+  faTrash,
+} from '@fortawesome/free-solid-svg-icons';
+import styles from '../globals.module.css';
 
 # Levels
 
@@ -11,7 +23,7 @@ levels.
 ### Dependencies
 
 - [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper)
-- [Wall Height](Wall_Height 'wikilink')
+- [Wall Height](Wall_Height)
 
 ### Recommended
 
@@ -35,8 +47,8 @@ approach is scalable to any map you might want to build in the future.
    size of 1 square). Setting a background is not strictly required and
    you can use a blank map if you prefer.
 2. Open the Levels UI (also known as the _Levels Layer Tool_) by
-   pressing the <i class="fas fa-layer-group"></i> button.
-3. Press the <i class="fas fa-pen-to-square"></i>button to go into edit mode, extend
+   pressing the <FontAwesomeIcon icon={faLayerGroup} /> button.
+3. Press the <FontAwesomeIcon icon={faPenToSquare} /> button to go into edit mode, extend
    the window vertically to have some extra space
 4. Press the `+` button two times to add two levels.
 5. Set the bottom one at 0/10 elevation and the top one at 10/20. Name
@@ -54,15 +66,14 @@ approach is scalable to any map you might want to build in the future.
    appropriately.
 10. Now select the First Floor (10/20) in the Levels UI. In the `Tile
 Browser` grab the `barn-lvl2.webp` file from the same folder and
-    drag it on top of the other tile alligning them correctly. As
+    drag it on top of the other tile aligning them correctly. As
     before, head to the `Walls Layer` and wall this floor
     appropriately.
 11. We will enable an additional settings on this floor so we can see it
     when we are on the Ground Floor. Double click the First Floor tile
     to open it's configuration, head to the Levels Tab and enable `Show
 Even When Below?` and save your changes
-12. Let's add a roof\! Toggle roof view\\placement by clicking
-    **<i class="fas fa-archway"></i>**
+12. Let's add a roof\! Toggle roof view\\placement by clicking <FontAwesomeIcon icon={faArchway} />
 13. Drag and drop the roof tile `barn-roof.webp` i the correct position
 14. Head back to the Ground Floor with the Roof mode still enabled and
     place `barn-shed-roof.webp` on top of the shed on the left side of
@@ -82,14 +93,14 @@ Even When Below?` and save your changes
 ### Levels UI
 
 ![A screenshot of the Levels UI](/public/free/Levels/Levels_UI.png 'A screenshot of the Levels UI') Open the Levels UI (also known as the
-_Levels Layer Tool_) by pressing the <i class="fas fa-layer-group"></i> button.
+_Levels Layer Tool_) by pressing the <FontAwesomeIcon icon={faLayerGroup} /> button.
 
 You will see a small semi-transparent black box open in the top-right of
 Foundry.
 
-Layers can be manually created with the <i class="fas fa-plus"></i> button on the
+Layers can be manually created with the <FontAwesomeIcon icon={faPlus} /> button on the
 bottom of the row or automatically generated from entities with
-elevation values with the <i class="fas fa-map"></i> button on the bottom row.
+elevation values with the<FontAwesomeIcon icon={faMap} /> button on the bottom row.
 
 While the Levels UI is open, the view will show all tiles and entities
 in the elevation range of the layer. Any tiles or tokens added to the
@@ -97,31 +108,32 @@ scene while on a layer in the UI will automatically set the tile or
 token to its height.
 
 To rename or change the elevation values of a layer, press the
-<i class="fas fa-pen-to-square"></i>button. You will now be in edit mode for the
-Levels UI window. Click on the layer you wish to edit, then modify the
-name or values. The downwards arrow represents the lowest elevation and
-the upwards arrow represents the highest for the layer. Click the button
-again to confirm and save your edit.
+
+<FontAwesomeIcon icon={faPenToSquare} /> button. You will now be in edit mode for
+the Levels UI window. Click on the layer you wish to edit, then modify the name or
+values. The downwards arrow represents the lowest elevation and the upwards arrow
+represents the highest for the layer. Click the button again to confirm and save
+your edit.
 
 There are 3 additional toggles at the leftmost of the bottom row:
 
-**<i class="fas fa-users"></i> Show Players in the UI**
+**<FontAwesomeIcon icon={faUsers} /> Show Players in the UI**
 
 Shows icons of the players in the UI, the icons will be placed in the
 corresponding level. You can click the icons to select the corresponding
 player.
 
-**<i class="fas fa-sort-amount-up-alt"></i> Place Drawings as Stairs**
+**<FontAwesomeIcon icon={faSortAmountUpAlt} /> Place Drawings as Stairs**
 
 While toggled on, place drawings as stairs, toggle it off to create
 labels or descriptions to place in your levels.
 
-**<i class="fas fa-archway"></i> Enable Levels Roofs View/Placement**
+**<FontAwesomeIcon icon={faArchway} /> Enable Levels Roofs View/Placement**
 
 Displays roofs above the current level. Placing tiles while this toggle
 is active will place them as roofs above the current level.
 
-**<i class="fas fa-tree"></i> Place Tiles as Overhead Tiles Inside the Current
+**<FontAwesomeIcon icon={faTree} /> Place Tiles as Overhead Tiles Inside the Current
 Level**
 
 Tiles placed with this toggle active will be placed as overhead tiles
@@ -129,7 +141,7 @@ inside the level. For example you could use this to place a chandelier
 inside the current level.
 
 To view every tile and token or exit the layers view, close the Levels
-UI. You can also clear all levels layers with the <i class="fas fa-trash"></i>
+UI. You can also clear all levels layers with the <FontAwesomeIcon icon={faTrash} />
 button. This will not delete tiles or tokens.
 
 If you create a drawing while the Levels UI is active, the drawing will
@@ -160,9 +172,7 @@ will count instead as a solid scene sized plane.
 
 ### Tokens
 
-Token height is handled by [Wall Height](Wall_Height 'wikilink'). It's
-higly suggested to read the `Token Height` section of the Wall Height
-page before using Levels.
+Token height is handled by [Wall Height](Wall_Height 'wikilink'). It's highly suggested to read the `Token Height` section of the Wall Height page before using Levels.
 
 ### Drawings
 
@@ -204,20 +214,16 @@ Stairs allow tokens to travel **from** and **to** two set elevations.
 - Stairs will move tokens one value higher than its top elevation if
   entering from below
 
-For example: a stair with a bottom of 0 and a top of 9. A token at an
-elevation of 0 that enters the stair will now have an elevation of 10.
-If they re-enter the stair while at an elevation of 10, they will then
-have an elevation of 0. Any other elevation will not trigger the Stair.
+For example: a stair with a bottom of 0 and a top of 9. A token at an elevation of 0 that enters the stair will now have an elevation of 10.
+If they re-enter the stair while at an elevation of 10, they will then have an elevation of 0. Any other elevation will not trigger the Stair.
 
 #### One Way Stairs
 
 One way stairs function the same way as regular stairs but don't allow
 two-way movement.
 
-For example: a one way stair with a bottom of 0 and a top of 9. If set
-to `One Way - Down` will bring any token that enters it while at an
-elevation of 10 to 0, and entering with an elevation of 0 will do
-nothing. `One Way - Up` will do the opposite
+For example: a one way stair with a bottom of 0 and a top of 9. If set to `One Way - Down` will bring any token that enters it while at an
+elevation of 10 to 0, and entering with an elevation of 0 will do nothing. `One Way - Up` will do the opposite
 
 #### Elevators
 
@@ -287,18 +293,13 @@ toggle it per tile.
 
 #### Light Masking
 
-![In this example the lighting looks correct at first
-glance](Light_Masking_Fine.jpg 'In this example the lighting looks correct at first glance') `Light
+![In this example the lighting looks correct at first glance](Light_Masking_Fine.jpg 'In this example the lighting looks correct at first glance') `Light
 Masking` can be toggled in the `Lighting` tab in the scene settings. By
 enabling this feature all lights below the current point of view will be
 visible and masked with the tiles that are above them.
 
-Disabling this setting will only show lights on the current level.![Here
-we can see, by moving the roof slightly, that while the roof is covering
-the "green" coloration of the light, the vision portion of the light is
-still visible.](Light_masking_broken.jpg 'Here we can see, by moving the roof slightly, that while the roof is covering the "green" coloration of the light, the vision portion of the light is still visible.')If
-you are **not** using the **[Perfect
-Vision](https://foundryvtt.com/packages/perfect-vision)** module you
+Disabling this setting will only show lights on the current level.![Here we can see, by moving the roof slightly, that while the roof is covering the "green" coloration of the light, the vision portion of the light is still visible.](Light_masking_broken.jpg 'Here we can see, by moving the roof slightly, that while the roof is covering the "green" coloration of the light, the vision portion of the light is still visible.')If
+you are **not** using the **[Perfect Vision](https://foundryvtt.com/packages/perfect-vision)** module you
 will encounter the limitations listed below:
 
 - Light masking will mask the "visual" part of the light, as in it's
@@ -352,8 +353,7 @@ different elevations.
 
 ## API
 
-The API is available for viewing by entering `CONFIG.Levels.API` in the
-Foundry console or in
+The API is available for viewing by entering `CONFIG.Levels.API` in the Foundry console or in
 [API.js](https://github.com/theripper93/Levels/blob/v9/scripts/API.js).
 
 ### Hooks
@@ -415,16 +415,12 @@ Levels 3.0 Tutorial
     simply won't do anything.
 - [Better Roofs](Better_Roofs 'wikilink') is no longer a required
   dependency
-- Light masking is now better but the [Perfect
-  Vision](https://foundryvtt.com/packages/perfect-vision) module is
-  highly recommended.
+- Light masking is now better but the [Perfect Vision](https://foundryvtt.com/packages/perfect-vision) module is highly recommended.
 - New `Allow Sight` option for tiles. If enabled on a tile, the tile
   will not block sight.
-- New `Background Elevation` option in scene configuration. The
-  background is now a Levels entity with a default elevation of 0.
+- New `Background Elevation` option in scene configuration. The background is now a Levels entity with a default elevation of 0.
   - This means you can now go under the background.
-- New `Weather Elevation` option in scene settings. Allows for
-  changing the elevation of weather effects.
+- New `Weather Elevation` option in scene settings. Allows for changing the elevation of weather effects.
 - UI Revamp
   - Scene controls no longer have buttons
   - UI now has all the required buttons
@@ -437,6 +433,4 @@ Levels 3.0 Tutorial
 
 - Tiles placed as overhead tiles inside Levels (aka tree icon) from V9
   will now render on the floor.
-  - A macro is included to fix them, but you will need to select
-    them and select the level they belong to. No automatic migration
-    is possible for this issue.
+  - A macro is included to fix them, but you will need to select them and select the level they belong to.  No automatic migration is possible for this issue.
