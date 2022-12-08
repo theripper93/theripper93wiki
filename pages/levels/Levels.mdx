@@ -92,7 +92,13 @@ Even When Below?` and save your changes
 
 ### Levels UI
 
-<Image src="/../public/images/Levels/Levels_UI.png" alt="A screenshot of the Levels UI" width={2000} height={2000} className={styles.wikiimagesmall}/>
+<Image
+  src='/../public/images/Levels/Levels_UI.png'
+  alt='A screenshot of the Levels UI'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
 
 Open the Levels UI (also known as the _Levels Layer Tool_) by pressing the <FontAwesomeIcon icon={faLayerGroup} /> button.
 
@@ -177,11 +183,16 @@ Token height is handled by [Wall Height](Wall-Height). It's highly suggested to 
 
 ### Drawings
 
-<Image src="/../public/images/Levels/Drawing_config_menu.png" alt="Config Menu" width={2000} height={2000} className={styles.wikiimagesmall}/>
-In Levels, drawings are used to create stairs
-and elevators. Their purpose is to allow travel between elevations.
-However, _how_ they handle travel between elevations is handled
-differently.
+<Image
+  src='/../public/images/Levels/Drawing_config_menu.png'
+  alt='Config Menu'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
+In Levels, drawings are used to create stairs and elevators. Their purpose is to
+allow travel between elevations. However, _how_ they handle travel between elevations
+is handled differently.
 
 To create or edit a stair or elevator, double click on an existing
 drawing to open the drawing configuration menu.
@@ -240,7 +251,14 @@ trigger on any elevation between those (e.g. 25). The options you define
 in the elevator don't affect the triggering range.
 
 ### Vision
-<Image src="/../public/images/Levels/How_sight_work.jpg" alt="A simple diagram visualizing sight concepts" width={2000} height={2000} className={styles.wikiimagesmall}/>
+
+<Image
+  src='/../public/images/Levels/How_sight_work.jpg'
+  alt='A simple diagram visualizing sight concepts'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
 
 Token vision is best understood three dimensionally ala our own physical world.
 
@@ -294,13 +312,26 @@ toggle it per tile.
 ### Scene Settings
 
 #### Light Masking
-<Image src="/../public/images/Levels/Light_Masking_Fine.jpg" alt="In this example the lighting looks correct at first glance" width={2000} height={2000} className={styles.wikiimagesmall}/>
+
+<Image
+  src='/../public/images/Levels/Light_Masking_Fine.jpg'
+  alt='In this example the lighting looks correct at first glance'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
 
 In this example the lighting looks correct at first glance. `Light Masking` can be toggled in the `Lighting` tab in the scene settings. By enabling this feature all lights below the current point of view will be visible and masked with the tiles that are above them.
 
-<Image src="/../public/images/Levels/Light_masking_broken.jpg" alt="the vision portion of the light is still visible in this screenshot" width={2000} height={2000} className={styles.wikiimagesmall}/>
+<Image
+  src='/../public/images/Levels/Light_masking_broken.jpg'
+  alt='the vision portion of the light is still visible in this screenshot'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
 
-Disabling this setting will only show lights on the current level. Here we can see, by moving the roof slightly, that while the roof is covering the "green" coloration of the light, the vision portion of the light is still visible. 
+Disabling this setting will only show lights on the current level. Here we can see, by moving the roof slightly, that while the roof is covering the "green" coloration of the light, the vision portion of the light is still visible.
 
 If you are **not** using the **[Perfect Vision](https://foundryvtt.com/packages/perfect-vision)** module you will encounter the limitations listed below:
 
@@ -434,4 +465,4 @@ Levels 3.0 Tutorial
 
 - Tiles placed as overhead tiles inside Levels (aka tree icon) from V9
   will now render on the floor.
-  - A macro is included to fix them, but you will need to select them and select the level they belong to.  No automatic migration is possible for this issue.
+  - A macro is included to fix them, but you will need to select them and select the level they belong to. No automatic migration is possible for this issue.
