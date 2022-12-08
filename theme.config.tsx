@@ -12,7 +12,8 @@ const config: DocsThemeConfig = {
   footer: {
     text: "Created by theripper93 and apriltaoyvr with nextra"
   },
-  primaryHue: 47
+  primaryHue: 47,
+  head: <script src="https://kit.fontawesome.com/fc91175617.js" crossOrigin="anonymous"></script>
 };
 
 export default config
