@@ -19,17 +19,13 @@ you don't have 3D models don't worry! 3D canvas will turn your 2D
 tokens into stand-up figures in 3D mode.
 
 For people who want a quick and simple guide to get started with 3D
-Canvas, read the [3D Canvas Getting StartedGetting
-Started](3D_Canvas_Getting_StartedGetting_Started 'wikilink') guide.
+Canvas, read the [Getting Started](3D-Canvas-Getting-Started) guide.
 
-If you prefer Video Guides, you can check \[httpsyoutu.beeHzUG64EMJk 3D
-Canvas Installation\] and the
-\[httpsyoutube.complaylistlist=PLbNUuLLqMgaCpFyHQnTuOGLnljT22XWVp
-Playlist\] with the most recent 3D Canvas Video guides
+If you prefer Video Guides, you can check [3D Canvas Installation](https://youtu.be/eHzUG64EMJk) and the [Playlist](https://youtube.com/playlistlist=PLbNUuLLqMgaCpFyHQnTuOGLnljT22XWVp) with the most recent 3D Canvas Video guides
 
 ## Tools
 
-[httpstheripper93.comterrascape Terrascape] A Tool to Sculpt and Paint 3D Terrain in an intuitive way
+[https://theripper93.com/terrascape](Terrascape): A tool to sculpt and paint 3D Terrain in an intuitive way
 
 ## Controls
 
@@ -37,7 +33,7 @@ While loading into a 3D scene, you will see a pop-up of the basic controls. It c
 
 All controls can be rebinded in the configure controls menu.
 
-Actions marked GC are only availeble when Game Camera is enabled
+Actions marked GC are only available when Game Camera is enabled
 
 TODO: CONTROLS TABLES
 
@@ -53,9 +49,12 @@ the top range for its clipping planes
 To cut to a specific Level, simply move the slider to the Level you
 prefer, the slider will automatically snap to the closest Level.
 
-**Sync** If you are a GM, you will see a Sync button on top of the slider, by pressing the button you will sync your current level with all players.  
-**Camera** If you are a Player or GM you will see a Camera button, by pressing it the camera will focus on the currently selected token (the same as Shift + X ). Doing this will automatically set the navigator to the closest level.  
-**Follow Mode** Click to toggle. Selecting a token or changing elevation will automatically set the navigator to the closest level while enabled. It is enabled on scene load for players and disabled for GMs by default. You can change this behaviour in the module settings under the misc tab.
+- **Sync**
+  If you are a GM, you will see a Sync button on top of the slider, by pressing the button you will sync your current level with all players.
+- **Camera**
+  If you are a Player or GM you will see a Camera button, by pressing it the camera will focus on the currently selected token (the same as Shift + X ). Doing this will automatically set the navigator to the closest level.
+- **Follow Mode**
+  Click to toggle. Selecting a token or changing elevation will automatically set the navigator to the closest level while enabled. It is enabled on scene load for players and disabled for GMs by default. You can change this behaviour in the module settings under the misc tab.
 
 ## Scene Setup
 
@@ -98,7 +97,14 @@ Sets the resolution scale.
 
 ### Global Settings
 
-[FileGlobal 3D Canvas Settings.pngthumb](FileGlobal_3D_Canvas_Settings.pngthumb 'wikilink')
+<Image
+  src='/../public/images/Levels/Global_3D_Canvas_Settings.png'
+  alt='Global 3D Canvas Settings'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+
 Global 3D Canvas settings are accessed from the module settings.
 
 ### Canvas
@@ -239,10 +245,16 @@ Shows helpful debug info for troubleshooting.
 
 ### Scene Configuration
 
-[File3D Canvas Scene Settings.pngthumb](File3D_Canvas_Scene_Settings.pngthumb 'wikilink') The
-scene configuration provides basic and advanced settings that you can
-tweak to make your scene look the way you want. Most scene configuration
-options are in the 3D Canvas tab of scene settings.
+<Image
+  src='/../public/images/Levels/3D_Canvas_Scene_Settings.png'
+  alt='3D Canvas Scene Settings'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+The scene configuration provides basic and advanced settings that you can tweak to
+make your scene look the way you want. Most scene configuration options are in the
+3D Canvas tab of scene settings.
 
 #### Basics
 
@@ -347,31 +359,36 @@ Instead of mirroring the 2D Canvas token visibility, use the 3D Geometry
 of the scene. This means that if you simply load a 3D Model into the
 scene, it's geometry will be used to block token visibility, meaning you
 do not need to wall the scene and it will just work. This setting also
-applies to [LevelsVolumetric TemplatesVolumetric
-Templates](Levels#Volumetric_TemplatesVolumetric_Templates 'wikilink')
-Auto Targeting and 3D Cover Calculations.
+applies to [Levels - Volumetric Templates](../levels/Levels-Volumetric-Templates) Auto Targeting and 3D Cover Calculations.
 
 ## Tiles
 
 ### 2D Tiles
 
 Tiles are placed at the bottom elevation via the
-[Levels](Levels 'Levels') module. Background tiles are rendered but
+[Levels](Levels) module. Background tiles are rendered but
 it's highly suggested to instead use a single background image or
 popping and flickering issues may occur.
 
-\[httpsgithub.comflamewave000dragonflagon-arch DF Architect\] has an
+[DF Architect](https://github.com/flamewave000/dragonflagon-arch) has an
 option to merge all your background tiles and background image into a
 single image.
 
 ### 3D Tiles
 
-[File3D Tile Menu.pngthumb](File3D_Tile_Menu.pngthumb 'wikilink') For
-props or entire 3D Maps, use 3D Tiles!
+<Image
+  src='/../public/images/Levels/3D_Tile_Menu.png'
+  alt='3D Tile Menu'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+
+For props or entire 3D Maps, use 3D Tiles!
 
 You can add metadata to your 3D Models in a way that 3D Canvas will be
 able to read it and automatically make parts of your Mesh Doors or set
-collisionsight blocking on submeshes separately.
+collision sight blocking on submeshes separately.
 
 #### Placing 3D Tiles
 
@@ -445,9 +462,7 @@ Unique Name - ds Integer 012
 
 #### Creating Lights
 
-FIXME: Photo
-[FileCreating Lights Video.webmthumb](FileCreating_Lights_Video.webmthumb 'wikilink') To
-create a light, simply go to the light layer and drag to create a light,
+To create a light, simply go to the light layer and drag to create a light,
 all the standard foundry interactions are the same.
 
 #### Particle Effects
@@ -474,8 +489,7 @@ If the scene crashes because of the settings, and you are not able to access the
 #### Shared Context
 
 <Callout type='warning' emoji='⚠️'>
-  {' '}
-  It is **not recommended** to be disabled.{' '}
+  It is **not recommended** to disable Shared Context.
 </Callout>
 
 Shared Context is a global setting. If enabled, it allows for fog of war
@@ -490,7 +504,7 @@ fog bounds are solely determined by walls in the scene.
 If you have **Token Vision** enabled but **Fog Exploration** disabled, the whole scene will be revealed but walls and geometry (if set in the scene settings) will prevent tokens from seeing each other if blocked by
 obstacles.
 
-#### Limitations
+#### Fog Limitations
 
 **Fog is not 3D!** Fog exploration is 2 dimensional. Exploring any
 space will explore the full vertical space of that location. There are no current plans for 'true' 3D fog exploration because of performance costs.
@@ -526,7 +540,14 @@ Controls <FontAwesomeIcon icon={faUser} /> and click the `Set Elevation for next
 
 #### Start an Animation with the UI
 
-[FileToken HUD for Token Animations.pngthumb183x183px](FileToken_HUD_for_Token_Animations.pngthumb183x183px 'wikilink')
+<Image
+  src='/../public/images/Levels/Token_HUD_for_Token_Animations.png'
+  alt='Token HUD for Token Animations'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+
 You can access Token Animations by right clicking your token to open the
 Token Hud. You will see a Magic Wand icon on the right.
 
@@ -535,9 +556,12 @@ Click it to open the available animations. Clicking on an animation will play th
 #### Start an Animation with Macros
 
 To play an animation with a macro, first create a script macro, then use
-the following commands to play your desired animation. syntaxhighlight
-lang=javascriptgame.Levels3DPreview.playTokenAnimation(tokens,
-animationId, options)syntaxhighlight
+the following commands to play your desired animation.
+
+```
+game.Levels3DPreview.playTokenAnimation(tokens, animationId, options)
+
+```
 
 ##### Arguments
 
