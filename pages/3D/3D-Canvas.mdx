@@ -7,6 +7,7 @@ import {
   faSort,
   faFileImport,
 } from '@fortawesome/free-solid-svg-icons';
+import { faDiscord, faPatreon } from '@fortawesome/free-brands-svg-icons';
 import styles from '../globals.module.css';
 
 # 3D Canvas
@@ -1029,12 +1030,20 @@ Play a 3D Animation, the animation data is formatted as follows
 
 ```js copy
 {
-  from: { // The from property specifies which animation should be played on the origin of the particle effect (usually the caster or attacker)
-    id: "twirl", // The id of the animation to play
-    start: true, //If the animation should be played on start of the effect
-    end: false, // If the animation should be played when the effect ends (like a projectile reaching it's target)
+  // The from property specifies which animation should be played
+  // on the origin of the particle effect (usually the caster or attacker)
+  from: {
+    // The id of the animation to play
+    id: "twirl",
+    //If the animation should be played on start of the effect
+    start: true,
+    // If the animation should be played when the effect ends (like a projectile reaching it's target)
+    end: false,
   },
-  to: { // The from property specifies which animation should be played on the origin of the particle effect (usually the caster or attacker)
+  // The from property specifies which animation should be played
+  // on the origin of the particle effect
+  // (usually the caster or attacker)
+  to: {
     id: "shake",
     start: true,
     end: false,
@@ -1129,13 +1138,13 @@ option.
 
 [FileMaterial Browser.pngthumb](FileMaterial_Browser.pngthumb 'wikilink') Tokens, walls, tiles and the scene table support PBR Materials. To load a pbr material you need a specific file naming stuctures. The files must be named as follows and be all in the same folder.
 
-```js copy
-Wood077_1K_AmbientOcclusion.jpg;
-Wood077_1K_Color.jpg;
-Wood077_1K_Emissive.jpg;
-Wood077_1K_Metalness.jpg;
-Wood077_1K_NormalGL.jpg;
-Wood077_1K_Roughness.jpg;
+```postcss
+Wood077_1K_AmbientOcclusion.jpg
+Wood077_1K_Color.jpg
+Wood077_1K_Emissive.jpg
+Wood077_1K_Metalness.jpg
+Wood077_1K_NormalGL.jpg
+Wood077_1K_Roughness.jpg
 ```
 
 As you can see all the files share a root name then keywords to differentiate the different textures. You can find materials already set up this way here AmbientCG.
@@ -1193,7 +1202,7 @@ per month.
 
 #### Skyboxes
 
-[httpsopengameart.orgcontentskiingpenguins-skybox-packdSkyboxesdbydZacheryd“skiingpenguins”dSlocum]
+- [Skyboxes by Zachery “skiingpenguins” Slocum](https://opengameart.org/content/skiingpenguins-skybox-pack)
 
 #### Model Editors
 
@@ -1242,6 +1251,11 @@ Townscaper Importing_Maps_from_Townscaper_by_Chryron#3457
 
 #### Special Mentions
 
-- **@dev7355608** for tons of help and suggestions on many parts of the 3D Canvas development
-- **@Otigon#2010** for the wonderful Automated Animations integration [Patreon](https://www.patreon.com/otigon)
-- **@arcanist#4317** for testing and tips [Patreon](https://www.patreon.com/arcanistzed)
+- **dev7355608** for tons of help and suggestions on many parts of the 3D Canvas development
+  - <FontAwesomeIcon icon={faDiscord} /> `@dev7355608`
+- **Otigon** for the wonderful Automated Animations integration
+  - <FontAwesomeIcon icon={faPatreon} /> [Patreon](https://www.patreon.com/otigon)
+  - <FontAwesomeIcon icon={faDiscord} /> `@Otigon#2010`
+- **arcanist** for testing and tips
+  - <FontAwesomeIcon icon={faPatreon} /> [Patreon](https://www.patreon.com/arcanistzed)
+  - <FontAwesomeIcon icon={faDiscord} /> `@arcanist#4317`
