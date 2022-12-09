@@ -1,0 +1,84 @@
+# Townscaper
+
+[Townscaper](https://store.steampowered.com/app/1291340/Townscaper/) is
+a steam game that can be used to algorithmically create towns with
+colored blocks of houses on an irregular grid. Towns created using
+Townscaper can be exported and retextured using Blender for use in [3D
+Canvas]().
+
+This guide outlines the steps required to do so.
+
+## Creating & exporting a town in Townscaper
+
+Creating a town in Townscaper simply involves selecting a color from the
+color palette and clicking on the canvas to place paths and houses. Once
+a town has been created, expand the settings by clicking on the cogwheel
+in the top-right corner of the screen. Click the "Export .OBJ" button
+(only available on PC) to export the town mesh and texture models to a
+folder of your choice.
+
+## Importing & retexturing the .obj model in blender
+
+Download & open ![this .blend file]() in
+Blender. Once loaded, delete everything in the scene, by clicking on all
+the objects in the outliner panel, on the right, and pressing the
+`delete` key on your keyboard.
+
+Next, import the .obj model you created with Townscaper by navigating to
+File \> Import \> Wavefront(.obj).
+
+**When importing your .obj model, expand the Geometry options on the
+right-hand pane and check the "Split by Group" checkbox.**
+
+Once your model has been imported, locate and delete the object named
+Water from the outliner panel on the right. There are better water
+textures & shaders available for use within 3D Canvas and hence this
+mesh has not been retextured.
+
+In the original Townscaper game the doors and windows are inset, in
+order to get a similar effect do the following:
+
+  - Flip the normals of all the windows \[Select Windows (in the
+    outliner panel) -\> Go into edit mode (tab) -\> Open the normals
+    menu (Alt + N) -\> Click "Flip"\]
+  - Add a boolean modifier to the House object \[Select House (in the
+    outliner panel) -\> Click modifier properties (the wrench
+    icon along the right panel) -\> Add Modifier -\> Boolean\], set to
+    difference and within the Object field select Windows.
+  - Press `Ctrl` + `A` to apply the modifier to House
+  - Delete the windows object.
+  - You may either want to set the house to shade flat (right-click -\>
+    Shade Flat) or add an edge split modifier, your choice.
+
+
+After correcting the House mesh to include doors and windows, click
+through each remaining object (Birds, Fencing, House, Plants, Props,
+Sand) in your scene, with the outliner, navigate to the material
+properties panel, and replace the material named Town with the one named
+TownCombined, as shown in the image.
+
+Once all the objects have been set to the same material, click on the UV
+editing tab along the top of your blender window to change your active
+workspace. Press `Tab` on your keyboard to go into object mode. Hover
+your cursor over the 3D viewport on the right and press `A` on your
+keyboard to select all objects. Then press `Tab` again to toggle back
+into edit mode, having selected all remaining meshes in your scene.
+
+Next, hover your cursor on the UV editor panel on the left. Press `A` to
+select the entire UV unwrap. Press `S` followed by `X` and then type
+0.0625, to scale your selection in the X-axis by a factor of 0.0625.
+
+After scaling the UV unwrap it needs to be translated to the correct
+position for retexturing. This is the most difficult step as the amount
+of translation needed varies from model to model. The steps to do this
+involve hovering your cursor on the UV editor panel, pressing `A` to
+select the entire UV unwrap, press `G` followed by `X` and then the
+necessary translation amount for your model. The translation amount is
+always negative and it varies from model to model, try translating until
+the door triangles are all correctly positioned on the leftmost corner
+of the texture. This is shown in more detail below:
+
+
+Your Townscape model is now retextured using Principled BSDF materials.
+To use this model in 3D Canvas, go to File \> Export \> glTF 2.0
+(.glb/.gltf).
