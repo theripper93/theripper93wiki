@@ -1,12 +1,17 @@
-import Image from 'next/image'
-import styles from '../globals.module.css'
+import Image from 'next/image';
+import styles from '../globals.module.css';
 
 # Hurry Up
 
-A simple timer to hurry up your players in combat\! Tired of those pesky
-players taking forever to then just swing a longsword after a 10 minute
-wait? ![The Hurry Up! Timer](Hutimer.png 'The Hurry Up! Timer')
-![Circle Style Timer going critical](Hucirclecrit.png 'Circle Style Timer going critical') ![Sand style timer](Husand.png 'Sand style timer')
+<Image
+  src='/../public/images/Hurry-Up/Hutimer.png'
+  alt='The Hurry Up! Timer'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
+A simple timer to hurry up your players in combat\! Tired of those pesky players
+taking forever to then just swing a longsword after a 10 minute wait?
 
 ## Features
 
@@ -24,6 +29,13 @@ the progress bar will turn red and start blinking.
 
 Play a looping sound when the timer goes critical (defaults to ticking)
 and a sound when the time is over.
+<Image
+  src='/../public/images/Hurry-Up/Hucirclecrit.png'
+  alt='Circle Style Timer going critical'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
 
 ### Go Next
 
@@ -32,11 +44,18 @@ Automatically advance the turn tracker when a timer ends.
 ### Styles
 
 Choose between 3 Styles of timers.
+<Image
+  src='/../public/images/Hurry-Up/Husand.png'
+  alt='Sand style timer'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
 
 ### Custom Timer
 
 You can create a timer out of combat with this simple script macro
-`CombatTimer.Create(seconds)` with the desired amount of seconds.
+`CombatTimer.Create(seconds){:jsx}` with the desired amount of seconds.
 
 ## Credits
 

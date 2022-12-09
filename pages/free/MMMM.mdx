@@ -1,5 +1,9 @@
-import Image from 'next/image'
-import styles from '../globals.module.css'
+import Image from 'next/image';
+import styles from '../globals.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faViruses,
+} from '@fortawesome/free-solid-svg-icons';
 
 # Maxwell's Manual of Malicious Maladies
 
@@ -10,7 +14,16 @@ severities, durations, and consequences. Based on the titular [Maxwell's Manual 
 The module contains compendiums of the injuries, effects, items, and
 tables for rolling. Rolling for injuries can be automated through
 settings, chat commands, and/or
-[MidiQoL](https://foundryvtt.com/packages/midi-qol). ![Example Injury with Virus button location](Mmminjury.png 'Example Injury with Virus button location')
+[MidiQoL](https://foundryvtt.com/packages/midi-qol).
+
+<Image
+  src='/../public/images/MMMM/Mmminjury.png'
+  alt='Example Injury with Virus button location'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
+
 
 ## Basics
 
@@ -29,7 +42,7 @@ the tables compendium.
 
 #### Adding Injuries
 
-The GM can click on the Red Virus button in the name of the injury (in
+The GM can click on the Red Virus <FontAwesome icon={faViruses} style={{color: 'red'}} /> button in the name of the injury (in
 chat) to add it as an item to the target's character sheet.
 
 Active effects will be added to items with the appropriate duration.
