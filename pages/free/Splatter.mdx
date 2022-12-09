@@ -6,7 +6,20 @@ import styles from '../globals.module.css';
 
 Give that extra touch to your game, compatible with most game systems.
 
+<Callout type='warning' emoji='⚠️'>
+  {' '}
+  On some systems the **Creature Type** and **Custom Creature Type** options might
+  cause Splatter to not work correctly{' '}
+To fix this, imply go into the module settings for Splatter and empty both those settings leaving them blank.
+</Callout>
 ## Configuration
+<Image
+  src='/../public/images/Splatter/Splatteronhit.png'
+  alt='Token Bleeding from a hit'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
 
 If you manually added the data paths for your System to splatter, please
 send in a PR for
@@ -20,16 +33,29 @@ systems\!
 
 ### Blood on hit
 
+<Image
+  src='/../public/images/Splatter/Splatterbloodsheet.png'
+  alt='Customize Blood Color per token'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
 The bigger the hit, the more the blood. Configure manual blood scale,
 violence level, and blood trails
 
 ### Blood by creature type
 
 Set up a configuration for blood color and creature type, by default one
-for dnd5e is included ![Customize Blood Color per token](/public/image/Splatter/Splatterbloodsheet.png) ![Data Path settings](/public/image/Splatter/Splatterdatapath.png)
-
+for dnd5e is included
 ### Per Token Blood color
 
+<Image
+  src='/../public/images/Splatter/Splatterdatapath.png'
+  alt='Data Path settings'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
 Set the blood color differently for each token, if you want a token to
 not bleed, you can set the color to transparent\!
 
@@ -62,21 +88,19 @@ splatter for your system.
 - Paste it in the Splatter Module settings appropriate field.
 
 ## V10 Data Path update
-
-![Token Bleeding from a hit](/public/image/Splatter/Splatteronhit.png) When updating to V10 you will probably need
+When updating to V10 you will probably need
 to update your datapaths, this basically means removing any `data` from
 the path, for example for dnd5e it would be `attributes.hp.value` as you
 can see the `data.` is no longer in the path.
 
-<Callout type='warning' emoji='⚠️'>
-  {' '}
-  On some systems the **Creature Type** and **Custom Creature Type** options might
-  cause Splatter to not work correctly{' '}
-</Callout>
 
-To fix this, imply go into the module settings for Splatter and empty both those settings leaving them blank.
-![Creature Type Blood Color Macro](/public/image/Splatter/Splatterbloodsheet.png)
-
+<Image
+  src='/../public/images/Splatter/Splatterbloodsheet.png'
+  alt='Creature Type Blood Color Macro'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
 ## Additional Information
 
 **Blood and guts exists, why make a new one?**
