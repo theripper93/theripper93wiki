@@ -5,7 +5,6 @@ import { Callout } from 'nextra-theme-docs';
 <ImageButBetter src="/../public/images/Foundry-Taskbar/Taskbarmain.png" alt="Taskbar Interface" width={2000} height={2000} className={styles.wikiimage}/>
 A Windows Style Taskbar to manage windows and shortcuts easly.
 
-
 ## How to use
 
 The instructions will follow the refrerence Taskbar Interface image on
@@ -79,14 +78,14 @@ minimized windows.
 To minimize a window, ether click on it's corresponding button in the
 Taskbar or click on the Minimize button in the window header
 
-# Taskbar
+## The Taskbar
 
 ### Customization
 
 You can customize the aspect and behaviour of Taskbar in the module
 settings, all options are described in detail there.
 
-### Module Sinergy
+### Module Synergy
 
 <ImageButBetter src="/../public/images/Foundry-Taskbar/Tssmalltime.png" alt="SmallTime Integration" width={2000} height={2000} className={styles.wikiimage}/>
 
@@ -102,26 +101,27 @@ If you have [GM Screen](https://foundryvtt.com/packages/gm-screen)
 enabled, Taskbar will add a Tray Icon to open\\close GM Screen
 <ImageButBetter src="/../public/images/Foundry-Taskbar/Tbquickinserts.png" alt="Quick Inserts Integration" width={2000} height={2000} className={styles.wikiimage}/>
 
-
 #### Quick Inserts
 
 If you have
 [Quick Inserts](https://foundryvtt.com/packages/quick-insert) enabled, Taskbar will add a search icon next to the
 Start Button to bring up Quick Inserts
 
-## Advanced: Custom Docking
+## Advanced
+
+### Custom Docking
+
+<Callout type='warning' emoji='⚠️'>
+  This feature is provided as-is and not all applications will
+dock correctly
+</Callout>
 
 Custom Docking will allow you to dock arbitrary windows to the taskbar,
 you can configure it in the module settings. For example, if we want to
 dock Monk's tokenbar, the macro bar and token notes we can set the
 setting as follows:
 
-`Hotbar,TokenBar,TokenNotes,AlwaysHP`
-
-<Callout type='warning' emoji='⚠️'>
-  This feature is provided as-is and not all applications will
-dock correctly
-</Callout>
+`Hotbar,TokenBar,TokenNotes,AlwaysHP{:jsx}`
 
 Known module application ids
 
@@ -132,4 +132,3 @@ Known module application ids
 | Token Notes      | `TokenNotes`                              |
 | Always HP        | `AlwaysHP`                                |
 | Alpha Hud        | `SelectedWidgetApp` `CharactersWidgetApp` |
-
