@@ -3,9 +3,6 @@ import styles from '../globals.module.css'
 
 # Argon Combat HUD
 
-A Solasta
-inspired HUD to make your games easier for your players and for teaching
-new players without a hitch. It is only D&D 5e compatible.
 <ImageButBetter
   src='/images/Argon/Argon_main_hud.png'
   alt='Argon Main HUD'
@@ -13,6 +10,10 @@ new players without a hitch. It is only D&D 5e compatible.
   height={2000}
   className={styles.wikiimagesmall}
 />
+
+A Solasta
+inspired HUD to make your games easier for your players and for teaching
+new players without a hitch. It is only D&D 5e compatible.
 
 ## Basics
 
@@ -45,6 +46,13 @@ prepared spells in the module settings.
 
 ### Action Tracking
 
+Argon provides a basic action tracking, there is no option to undo or
+manually change the tracking, opening and closing the hud will reset the
+action tracking. The action tracking will **not** prevent you from using
+actions.
+
+### Save/Skills/Tools
+
 <ImageButBetter
   src='/images/Argon/Weapon_Sets.png'
   alt='A screenshot of the weapon sets menu'
@@ -52,21 +60,6 @@ prepared spells in the module settings.
   height={2000}
   className={styles.wikiimagesmall}
 />
-
-Argon provides a basic action tracking, there is no option to undo or
-manually change the tracking, opening and closing the hud will reset the
-action tracking. The action tracking will **not** prevent you from using
-actions.
-
-<ImageButBetter
-  src='/images/Argon/Argontooltips.png'
-  alt='Tooltips'
-  width={2000}
-  height={2000}
-  className={styles.wikiimagesmall}
-/>
-
-### Save/Skills/Tools
 
 This panel provides easy access to the respective checks and tools.
 
@@ -78,6 +71,13 @@ action and the right boxes represents bonus actions.
 NPCs will have their sets created automatically. For PCs simply drag &
 drop items from the character sheet to the weapon sets boxes.
 
+<ImageButBetter
+  src='/images/Argon/Saveskilltoolshud.png'
+  alt='Saves/Skills/Tools Panel'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
 To remove an item drag it from the weapon sets box to the character
 portrait (a trash can will appear). Weapon sets are not limited to
 weapons, for example a caster could use it for frequently used cantrips.
@@ -86,7 +86,15 @@ By default switching sets will also equip or unequip the items.
 
 ### Movement Tracker
 
+
 A basic movement tracker will track remaining squares of movement during
+<ImageButBetter
+  src='/images/Argon/Argontooltips.png'
+  alt='Tooltips'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
 a round. The tracker will turn yellow when getting to dash and turn red
 when it's exceeded (the third red bar could be used for the rogue double
 dash as well)
@@ -99,14 +107,6 @@ are client side settings.
 
 ## Common Issues
 
-<ImageButBetter
-  src='/images/Argon/Saveskilltoolshud.png'
-  alt='Saves/Skills/Tools Panel'
-  width={2000}
-  height={2000}
-  className={styles.wikiimagesmall}
-/>
-
 Argon was made
 for Chrome. If you experience weird UI issues, consider switching
 browsers.
@@ -117,6 +117,7 @@ If your image path has parenthesis "(" or ")" the image will fail to
 load, this might be true for other special characters as well
 
 ## FAQs
+
 
 ### Can you add compatibility for X system?
 
