@@ -5,6 +5,7 @@
     display: flex;
     transition: filter 0.2s ease-in-out;
     font-weight: 700;
+    width: 190px;
 }
 
 .card:hover{
@@ -13,8 +14,9 @@
 }
 
 .cardcontainer{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 200px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 2rem 0;
-    gap: 2rem;
+    gap: 1rem;
 }
