@@ -1,13 +1,25 @@
 import Image from 'next/image'
 import styles from '../globals.module.css'
+import { Callout } from 'nextra-theme-docs';
 
 # Tile Scroll
 
 Scroll, rotate, and repeat tiles over time.
 
-## How to use
+<Callout type='warning' emoji='⚠️'>
+Tile scroll will not work with tiles with an `Occlusion Mode` of
+`Radial` or `Vision`
+</Callout>
 
-![Tile Configuration](Tsconfiguration.png 'Tile Configuration') You can
+## How to use
+<Image
+  src='/../public/images/Tile-Scroll/Tsconfiguration.png'
+  alt='Tile Configuration'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+You can
 set all the tile animation parameters in the Animation tab of the tile
 configuration.
 
@@ -46,21 +58,3 @@ the top left corner, 1,1 along the bottom right and so on.
 
 The offset is also percentage based and works with the same logic as the
 pivot.
-
-## Parallaxia Fix
-
-If you have a scene that used Parallaxia tiles in V9, chances are that
-in v10 that scene will be broken and display as black, simply activate
-the scene and run this macro to fix it (refresh after)
-
-You can recognize this problem by the error `Canvas drawing failed:
-this.mesh.setShaderClass is not a function`
-
-```javascript
-canvas.tiles.updateAll({ 'flags.core.isTilingSprite': false });
-```
-
-## Limitations
-
-Tile scroll will not work with tiles with an `Occlusion Mode` of
-`Radial` or `Vision`
