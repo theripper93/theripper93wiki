@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import { Callout } from 'nextra-theme-docs'
+
 import styles from '../globals.module.css'
 
 # Betters Roofs
@@ -26,12 +28,17 @@ Note: If you are using `Levels`, the `Top` of the tile needs to be set
 to `Infinity` for the tile to count as a roof (**an this feature to
 work**)
 
-```javascript
+<Callout type="info" emoji="ℹ️">
 Due to V10 Core Changes, the Revealed roof (while still visible) will look darkened compared to V9.
-```
+</Callout>
 
-![Overhead Tile
-Settings](Overhead_Tile_Settings_Better_Roofs.png 'Overhead Tile Settings')
+<Image
+  src='/../public/images/Better-Roofs/Overhead_Tile_Settings_Better_Roofs.png'
+  alt='Overhead Tile Settings'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
 
 ### Occlusion ID
 
@@ -64,6 +71,3 @@ settings](Occlusion_Radius.png 'A screenshot of Occlusion Radius settings')
 ## External Links
 
 - [Github](https://github.com/theripper93/Better-Roofs/)
-
-[Category:
-Free](Category:_Free 'wikilink')
