@@ -1,19 +1,15 @@
 {
-  "index": "Introduction",
+  "index": "Home",
   "levels3d-separator": {
-    "title": "Specific Modules",
     "type": "separator"
   },
-  "3D": {
-    "title": "3D Canvas"
-  },
-  "levels": {
-    "title": "Levels"
-  },
+  "levels": "Levels",
+  "3D-Canvas": "3D Canvas",
   "other-separator": {
-    "title": "All Modules",
     "type": "separator"
   },
+  "free": "Free",
+  "premium": "Premium",
   "contact": {
     "title": "Main Site",
     "type": "page",
