@@ -3,8 +3,7 @@
 [Townscaper](https://store.steampowered.com/app/1291340/Townscaper/) is
 a steam game that can be used to algorithmically create towns with
 colored blocks of houses on an irregular grid. Towns created using
-Townscaper can be exported and retextured using Blender for use in [3D
-Canvas]().
+Townscaper can be exported and retextured using Blender for use in [3D Canvas](./3D-Canvas).
 
 This guide outlines the steps required to do so.
 
@@ -38,18 +37,17 @@ mesh has not been retextured.
 In the original Townscaper game the doors and windows are inset, in
 order to get a similar effect do the following:
 
-  - Flip the normals of all the windows \[Select Windows (in the
+- Flip the normals of all the windows \[Select Windows (in the
     outliner panel) -\> Go into edit mode (tab) -\> Open the normals
     menu (Alt + N) -\> Click "Flip"\]
-  - Add a boolean modifier to the House object \[Select House (in the
+- Add a boolean modifier to the House object \[Select House (in the
     outliner panel) -\> Click modifier properties (the wrench
     icon along the right panel) -\> Add Modifier -\> Boolean\], set to
     difference and within the Object field select Windows.
-  - Press `Ctrl` + `A` to apply the modifier to House
-  - Delete the windows object.
-  - You may either want to set the house to shade flat (right-click -\>
+- Press `Ctrl` + `A` to apply the modifier to House
+- Delete the windows object.
+- You may either want to set the house to shade flat (right-click -\>
     Shade Flat) or add an edge split modifier, your choice.
-
 
 After correcting the House mesh to include doors and windows, click
 through each remaining object (Birds, Fencing, House, Plants, Props,
@@ -77,7 +75,6 @@ necessary translation amount for your model. The translation amount is
 always negative and it varies from model to model, try translating until
 the door triangles are all correctly positioned on the leftmost corner
 of the texture. This is shown in more detail below:
-
 
 Your Townscape model is now retextured using Principled BSDF materials.
 To use this model in 3D Canvas, go to File \> Export \> glTF 2.0
