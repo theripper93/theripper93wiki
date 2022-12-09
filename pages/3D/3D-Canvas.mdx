@@ -29,13 +29,14 @@ If you prefer Video Guides, you can check [3D Canvas Installation](https://youtu
   <Tab>
     <>
       These modules are **required** for Levels to run.
-      
+
       - [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper)
       - [socketLib](https://github.com/manuelVo/foundryvtt-socketlib)
       - [Levels](../levels/Levels)
       - [Wall Height](../free/Wall-Height)
       - [Better Roofs](../free/Better-Roofs)
     </>
+
   </Tab>
   <Tab>
     <>
@@ -67,7 +68,8 @@ If you prefer Video Guides, you can check [3D Canvas Installation](https://youtu
 
 There are no known modules that will cause issues.
 
-However, modules that create visual effects in 2D will likely not carry over effects to 3D. Other types of modules will likely be compatible with 3D Canvas.
+However, modules that create visual effects in 2D will likely not carry over
+effects to 3D. Other types of modules will likely be compatible with 3D Canvas.
 
 ## Tools
 
@@ -75,7 +77,9 @@ However, modules that create visual effects in 2D will likely not carry over eff
 
 ## Controls
 
-While loading into a 3D scene, you will see a pop-up of the basic controls. It can be closed or re-opened by selecting the **?** button on the left of the Foundry sidebar. All controls can be rebinded in the configure controls menu.
+While loading into a 3D scene, you will see a pop-up of the basic controls.
+It can be closed or re-opened by selecting the **?** button on the left of the
+Foundry sidebar. All controls can be rebinded in the configure controls menu.
 
 Actions marked GC are only available when Game Camera is enabled.
 
@@ -93,12 +97,17 @@ the top range for its clipping planes
 To cut to a specific Level, simply move the slider to the Level you
 prefer, the slider will automatically snap to the closest Level.
 
-- **Sync**:
-  If you are a GM, you will see a Sync button on top of the slider, by pressing the button you will sync your current level with all players.
-- **Camera**:
-  If you are a Player or GM you will see a Camera button, by pressing it the camera will focus on the currently selected token (the same as Shift + X ). Doing this will automatically set the navigator to the closest level.
-- **Follow Mode**:
-  Click to toggle. Selecting a token or changing elevation will automatically set the navigator to the closest level while enabled. It is enabled on scene load for players and disabled for GMs by default. You can change this behaviour in the module settings under the misc tab.
+**Sync**:
+If you are a GM, you will see a Sync button on top of the slider, by pressing
+the button you will sync your current level with all players.
+**Camera**:
+If you are a Player or GM you will see a Camera button, by pressing it
+the camera will focus on the currently selected token (the same as Shift + X ).
+Doing this will automatically set the navigator to the closest level.
+**Follow Mode**:
+Click to toggle. Selecting a token or changing elevation will automatically
+set the navigator to the closest level while enabled. It is enabled on scene
+load for players and disabled for GMs by default. You can change this behaviour in the module settings under the misc tab.
 
 ## Scene Setup
 
@@ -161,7 +170,8 @@ The style for measured templates. Options are wireframe or solid.
 
 ##### Grid Draw Mode
 
-How the grid is drawn. Fast is better in general, but only supports square grids. Mirror will mirror the foundry grid 11 but will be more expensive to render.
+How the grid is drawn. Fast is better in general, but only supports square grids.
+Mirror will mirror the foundry grid 11 but will be more expensive to render.
 
 ##### Range Finder
 
@@ -228,7 +238,8 @@ Enables the ability to send the camera position for players (Default
 
 ##### Game Camera
 
-Enable the 'video game'-like camera. Enabled for players by default; GM is able to toggle it.
+Enable the 'video game'-like camera. Enabled for players by default; GM is able
+to toggle it.
 
 ##### Min Angle
 
@@ -301,7 +312,8 @@ make your scene look the way you want. Most scene configuration options are in t
 
 ##### Enable for Players
 
-Allow players to open the 3D View by clicking the 3D Mode button <FontAwesomeIcon icon={faCube} />
+Allow players to open the 3D View
+by clicking the 3D Mode button <FontAwesomeIcon icon={faCube} />
 
 ##### Enable 3D on Load
 
@@ -362,13 +374,15 @@ Adds filter effects to the scene. Available filters are
 
 Custom will create an input box under filter intensity. You can create
 your custom filter with CSS Filters and the syntax will be the same. See
-the [MDN Page](https://developer.mozilla.org/en-US/docs/WebCSSfilter) on CSS Filter for more information.
+the [MDN Page](https://developer.mozilla.org/en-US/docs/WebCSSfilter) on
+CSS Filter for more information.
 
 #### Particles
 
 ##### Particle Preset
 
-Set the weather or effect for the scene, you can have up of 2 effects at the same time and one of them can be custom (Particle Preset 2 has the custom option).
+Set the weather or effect for the scene, you can have up of 2 effects at the same
+time and one of them can be custom (Particle Preset 2 has the custom option).
 
 #### Visibility
 
@@ -399,8 +413,9 @@ above tokens disappear automatically for easier navigation.
 Instead of mirroring the 2D Canvas token visibility, use the 3D Geometry
 of the scene. This means that if you simply load a 3D Model into the
 scene, it's geometry will be used to block token visibility, meaning you
-do not need to wall the scene and it will just work. This setting also
-applies to [Levels - Volumetric Templates](../levels/Levels-Volumetric-Templates) Auto Targeting and 3D Cover Calculations.
+do not need to wall the scene and it will just work. This setting also applies to
+[Levels - Volumetric Templates](../levels/Levels-Volumetric-Templates)
+Auto Targeting and 3D Cover Calculations.
 
 ### Tiles
 
@@ -592,7 +607,7 @@ You can access the Token Animations by Right clicking your token to open the Tok
 
 To play an animation with a macro, first create a script macro, then use the following commands to play your desired animation.
 
-```js
+```js copy
 game.Levels3DPreview.playTokenAnimation(tokens, animationId, options);
 ```
 
@@ -608,7 +623,7 @@ The identifier for the animation, you can find all the animation IDs by typing `
 
 This is optional, an object containing additional parameters
 
-```js
+```js copy
 {
   repeats: 1, // How many times you want the animation to play
   resetTime: milliseconds, // Force the time that the animation takes to reset to the original position once it ends
@@ -619,7 +634,7 @@ This is optional, an object containing additional parameters
 
 This macro will play the Twirl animation, 3 Times, on all Selected Tokens
 
-```js
+```js copy
 game.Levels3DPreview.playTokenAnimation(canvas.tokens.controlled, 'twirl', {
   repeats: 3,
 });
@@ -643,7 +658,7 @@ If you don't want to dig into the scripting aspect, the module [Automated Animat
 
 First create a `Script Macro`, then to start creating your effect simply call
 
-```js
+```js copy
 new Particle3D(type);
 ```
 
@@ -665,7 +680,7 @@ If no type is provided the default is `"p"`
 Now you can start chaining properties, similar to how Sequencer works. Every time you call a `.method()` on a `Particle3D` it will always return the `Particle3D` object, allowing for chaining. The only exception is the `.start()` method that will return the ID if the `Particle3D`
 First we must provide an origin and a destination.
 
-```js
+```js copy
 new Particle3D(type).from(origin).to(destination);
 ```
 
@@ -683,13 +698,13 @@ A `Position` is defined by `{ x:0, y:0, z:0 }` where `z` is in elevation units.
 
 Let's set up our origin as the selected token and the destination as our targets
 
-```js
+```js copy
 new Particle3D(type).from(token).to(Array.from(game.user.targets));
 ```
 
 At this point we can `.start()` our Particle3D to play the effect and the default settings will be used (it will look like a firebolt)
 
-```js
+```js copy /start/
 new Particle3D(type).from(token).to(Array.from(game.user.targets)).start();
 ```
 
@@ -717,7 +732,7 @@ Simply select a token, target some tokens and run the macros, you will see them 
 
 ##### Frostbolt
 
-```js
+```js copy
 new Particle3D('p')
   .from(token)
   .to(Array.from(game.user.targets))
@@ -731,15 +746,15 @@ new Particle3D('p')
 ##### Bouncing Frostbolt (onEnd)
 
 <Callout type='info' emoji='ℹ️'>
-  The .onEnd() parameter accepts another Particle3D)
+  The `.onEnd()` parameter accepts another `Particle3D`
 </Callout>
 <Callout type='error' emoji='️🚫'>
-  You must not call .start() on the Particle3D inside the .onEnd(). The
-  Particle3D insde the .onEnd() can have an .onEnd() as well, allowing for
+  You must not call `.start()` on the `Particle3D` inside the `.onEnd()`. The
+  Particle3D inside the `.onEnd()` can have an `.onEnd()` as well, allowing for
   infinite chaining.
 </Callout>
 
-```js
+```js copy /onEnd/
 new Particle3D('p')
   .from(canvas.tokens.controlled)
   .to(Array.from(game.user.targets))
@@ -760,10 +775,11 @@ new Particle3D('p')
 ##### Magic Missile
 
 <Callout type='info' emoji='ℹ️'>
-  The .arc() parameter will make each projectile curve in a different direction!
+  The `.arc()` parameter will make each projectile curve in a different
+  direction!
 </Callout>
 
-```js
+```js copy /arc/
 new Particle3D('p')
   .from(token)
   .to(Array.from(game.user.targets))
@@ -780,10 +796,10 @@ new Particle3D('p')
 
 <Callout type='info' emoji='ℹ️'>
   Ray Effects tend to require a larger amount of particles, don't forget to set
-  .rate()
+  `.rate()`
 </Callout>
 
-```js
+```js copy /rate/
 new Particle3D('r')
   .from(token)
   .to(Array.from(game.user.targets))
@@ -796,7 +812,7 @@ new Particle3D('r')
 
 ##### Scorching Ray
 
-```js
+```js copy
 new Particle3D('r')
   .from(token)
   .to(Array.from(game.user.targets))
@@ -813,10 +829,10 @@ new Particle3D('r')
 ##### Dubstep Gun
 
 <Callout type='info' emoji='ℹ️'>
-  The .color() parameter can accept Arrays of colors.
+  The `.color()` parameter can accept Arrays of colors.
 </Callout>
 
-```js
+```js copy /color/
 new Particle3D('p')
   .from(token)
   .to(Array.from(game.user.targets))
@@ -831,10 +847,10 @@ new Particle3D('p')
 ##### Fireball Explosion
 
 <Callout type='info' emoji='ℹ️'>
-  Explosion effects do not need a .from(). This is the only exception.
+  Explosion effects do not need a `.from()`. This is the only exception.
 </Callout>
 
-```js
+```js copy /from/
 new Particle3D('e')
   .to(Array.from(game.user.targets))
   .sprite('modules/levels-3d-preview/assets/particles/dust.png')
@@ -852,11 +868,11 @@ new Particle3D('e')
 
 ##### Wall of fire (stop)
 
-Notice how the new Particle3D() is assigned to a variable, then a set timeout
+Notice how the new `Particle3D()` is assigned to a variable, then a set timeout
 stops the effect after 1000 milliseconds. With the same logic you could store
 the ID and stop an effect on concentration end.
 
-```js
+```js copy /Particle3D/
 const effectId = new Particle3D('r')
   .from(token)
   .to(Array.from(game.user.targets))
@@ -877,7 +893,7 @@ setTimeout(() => {
 
 Once you assign a name you can stop the effect from a completely different macro.
 
-```js
+```js copy /Particle3D.stop/
 const effectId = new Particle3D('r')
   .from(token)
   .to(Array.from(game.user.targets))
@@ -897,11 +913,11 @@ Particle3D.stop('Wall of Fire');
 ##### Spirit Bolt (Explosion Chaining)
 
 <Callout type='info' emoji='ℹ️'>
-  The .to() is omitted from the .onEnd() explosion effect so that the explosion
-  plays on the target hit.
+  The `.to()` is omitted from the `.onEnd()` explosion effect so that the
+  explosion plays on the target hit.
 </Callout>
 
-```js
+```js copy
 new Particle3D('p')
   .from(token)
   .to(Array.from(game.user.targets))
@@ -928,7 +944,7 @@ new Particle3D('p')
 
 ##### Magic Missile (MIDI-QOL on use Macro)
 
-```js
+```js copy
 const lastArg = args[args.length - 1];
 const casterToken = canvas.tokens.get(lastArg.tokenId);
 const targets = lastArg.hitTargets;
@@ -1011,7 +1027,7 @@ You can pass another particle3D or an array of particle3d to the `.onEnd` method
 
 Play a 3D Animation, the animation data is formatted as follows
 
-```js
+```js copy
 {
   from: { // The from property specifies which animation should be played on the origin of the particle effect (usually the caster or attacker)
     id: "twirl", // The id of the animation to play
@@ -1113,7 +1129,7 @@ option.
 
 [FileMaterial Browser.pngthumb](FileMaterial_Browser.pngthumb 'wikilink') Tokens, walls, tiles and the scene table support PBR Materials. To load a pbr material you need a specific file naming stuctures. The files must be named as follows and be all in the same folder.
 
-```js
+```js copy
 Wood077_1K_AmbientOcclusion.jpg;
 Wood077_1K_Color.jpg;
 Wood077_1K_Emissive.jpg;

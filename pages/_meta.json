@@ -1,6 +1,7 @@
 {
   "index": "Introduction",
-  "----": {
+  "levels3d-separator": {
+    "title": "Specific Modules",
     "type": "separator"
   },
   "3D": {
@@ -9,7 +10,8 @@
   "levels": {
     "title": "Levels"
   },
-  "---": {
+  "other-separator": {
+    "title": "All Modules",
     "type": "separator"
   },
   "contact": {
