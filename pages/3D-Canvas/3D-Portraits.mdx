@@ -1,12 +1,6 @@
 import ImageButBetter from '../../components/ImageButBetter';
 import styles from '../globals.module.css';
 
-# 3D Portraits
-
-Show 3D Files as actor portraits and items
-
-## How to use
-
 <ImageButBetter
   src='/images/3D-Portraits/3dpheader.png'
   alt='Global 3D Canvas Settings'
@@ -15,7 +9,11 @@ Show 3D Files as actor portraits and items
   className={styles.wikiimage}
 />
 
-### Setting a 3D file as actor or item portrait
+# 3D Portraits
+
+Show 3D Files as actor portraits and items
+
+## How to use
 
 <ImageButBetter
   src='/images/3D-Portraits/3dpconfig.png'
@@ -25,6 +23,8 @@ Show 3D Files as actor portraits and items
   className={styles.wikiimage}
 />
 
+### Setting a 3D file as actor or item portrait
+
 - Open the 3D Portraits configuration in the Window Header
 - In the configuration window select a 3D File, only `glb` and `gltf`
   are supported. If you have setup the Heroforge integration, you can
@@ -32,6 +32,14 @@ Show 3D Files as actor portraits and items
   Collection
 - If you wish set a background image for the 3D Portrait
 
+<ImageButBetter
+  src='/images/3D-Portraits/3dpfilepickerplus.png'
+  alt='Filepicker+ integration'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+  
 ### Integrations
 
 #### Hero Forge
@@ -41,19 +49,7 @@ the module settings is required for Hero Forge integration. It is also
 required to input the Hero Forge authentication key in the module
 settings.
 
-<ImageButBetter
-  src='/images/3D-Portraits/3dpfilepickerplus.png'
-  alt='Filepicker+ integration'
-  width={2000}
-  height={2000}
-  className={styles.wikiimage}
-/>
-
-#### Filepicker+ Integration
-
-If you have Filepicker+ installed you can preview 3D Files directly in
-the Filepicker by hovering over them.
-
+#### Filepicker+
 <ImageButBetter
   src='/images/3D-Portraits/3dpargon.png'
   alt='Argon integration'
@@ -62,10 +58,16 @@ the Filepicker by hovering over them.
   className={styles.wikiimage}
 />
 
-#### Argon Integration
+If you have [Filepicker+](../premium/Filepicker) installed you can preview 3D Files directly in
+the Filepicker by hovering over them.
 
-If you have Argon Combat HUD installed, the 3D Portrait will show in the
+#### Argon Combat HUD
+
+
+If you have [Argon Combat HUD](../free/Argon) installed, the 3D Portrait will show in the
 HUD as well
+
+#### 3D Canvas
 <ImageButBetter
   src='/images/3D-Portraits/3dp3dc.png'
   alt='3D Canvas integration'
@@ -74,29 +76,38 @@ HUD as well
   className={styles.wikiimage}
 />
 
-#### 3D Canvas Integration
-
 If you have 3D Canvas installed, you can use the Heroforge Browser for
 3D Tokens
 
+<br/>
+<br/>
+<br/>
+
 ## Generating Thumbnails for 3D Files
+
 
 If you have a folder of your own 3D Models, you can generate Thumbnails
 that will be used by Filepicker+ to display. To do so, simply run this
 in the console or as a script macro replacing the path accordingly.
 
-`game.threeportrait.ThreePortraitPreview.generateThumbnails("your/path/")`
+```js copy 
+game.threeportrait.ThreePortraitPreview.generateThumbnails("your/path/")
+```
 
 Example:
 
-`game.threeportrait.ThreePortraitPreview.generateThumbnails("assets/3dModels")`
+```js copy
+game.threeportrait.ThreePortraitPreview.generateThumbnails("assets/3dModels")
+```
 
 By default this command will skip generating a thumbnail if it already
 exists, if you wish to generate anyways (for example to replace old
 thumbnails) you can set the second argument to false
 
-`game.threeportrait.ThreePortraitPreview.generateThumbnails("your/path/",
-false)`
+```js copy
+game.threeportrait.ThreePortraitPreview.generateThumbnails("your/path/",
+false)
+```
 
-Thubnail generation requires **Chrome** or the **Desktop App**, it won't
+Thumbnail generation requires **Chrome** or the **Desktop App**, it won't
 work in other browsers\!
