@@ -23,17 +23,13 @@ const config: DocsThemeConfig = {
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta
           property='og:title'
-          content={frontMatter.title || 'theripper93'}
+          content={frontMatter.title || '✨ theripper93'}
         />
         <meta
           property='og:description'
           content={frontMatter.description || 'The wiki for theripper93'}
         />
-        <link
-          rel='icon'
-          type='image/png'
-          href='/static/images/favicon.png'
-        />
+        <link rel='icon' type='image/png' href='/static/images/favicon.png' />
         <style>{dom.css()}</style>
       </>
     );

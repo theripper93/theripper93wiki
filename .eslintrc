@@ -1,5 +1,6 @@
 {
   "extends": [
+    "next",
     "plugin:mdx/recommended"
   ],
   // optional, if you want to lint code blocks at the same time
