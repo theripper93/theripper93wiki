@@ -13,6 +13,6 @@ export default function Cards({ cards }) {
 
 function Card({ icon, title, href }) {
     return (
-        <Link href={href ?? './'} className={styles.card}>ᐅ {title}</Link>
+        <Link href={href ?? './'} className={styles.card}>{title}</Link>
     );
 }
