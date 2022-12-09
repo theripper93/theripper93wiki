@@ -10,6 +10,7 @@ export default function ImageButBetter({ src, alt, ...props }) {
             alt={alt}
             width={2000}
             height={2000}
+            className={props.className == styles.wikiimage ? styles.wikiimg : styles.wikiimg}
             />
         </div>
     )

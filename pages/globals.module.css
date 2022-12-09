@@ -2,9 +2,7 @@
   position: relative;
   border-radius: 5px;
   margin: 1rem;
-  max-width: 20vw;
   object-fit: contain;
-  width: auto;
   float: right;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 0 2px
@@ -19,9 +17,11 @@
 }
 
 .wikiimagesmall {
+  position: relative;
     border-radius: 5px;
     margin: 1rem;
     max-width: 10vw;
+    max-height: 20vh;
     object-fit: contain;
     width: auto;
     float: right;
@@ -45,4 +45,20 @@
   padding: 0.2rem;
   backdrop-filter: blur(5px);
   text-shadow: 0 0 5px black;
+}
+
+.wikiimg{
+  object-fit: contain;
+  width: auto;
+  max-width: 20vw;
+  max-height: 30vh;
+  min-width: 20vh;
+}
+
+.wikiimgsmall{
+  object-fit: contain;
+  width: auto;
+  max-width: 10vw;
+  max-height: 20vh;
+  min-width: 10vh;
 }
