@@ -6,13 +6,8 @@ import styles from '../globals.module.css';
 
 Give that extra touch to your game, compatible with most game systems.
 
-<Callout type='warning' emoji='⚠️'>
-  {' '}
-  On some systems the **Creature Type** and **Custom Creature Type** options might
-  cause Splatter to not work correctly{' '}
-To fix this, imply go into the module settings for Splatter and empty both those settings leaving them blank.
-</Callout>
 ## Configuration
+
 <ImageButBetter
   src='/../public/images/Splatter/Splatteronhit.png'
   alt='Token Bleeding from a hit'
@@ -33,6 +28,12 @@ systems\!
 
 ### Blood on hit
 
+<Callout type='warning' emoji='⚠️'>
+  On some systems the **Creature Type** and **Custom Creature Type** options
+  might cause Splatter to not work correctly To fix this, imply go into the
+  module settings for Splatter and empty both those settings leaving them blank.
+</Callout>
+
 <ImageButBetter
   src='/../public/images/Splatter/Splatterbloodsheet.png'
   alt='Customize Blood Color per token'
@@ -40,13 +41,14 @@ systems\!
   height={2000}
   className={styles.wikiimage}
 />
-The bigger the hit, the more the blood. Configure manual blood scale,
-violence level, and blood trails
+The bigger the hit, the more the blood. Configure manual blood scale, violence level,
+and blood trails
 
 ### Blood by creature type
 
 Set up a configuration for blood color and creature type, by default one
 for dnd5e is included
+
 ### Per Token Blood color
 
 <ImageButBetter
@@ -56,8 +58,8 @@ for dnd5e is included
   height={2000}
   className={styles.wikiimage}
 />
-Set the blood color differently for each token, if you want a token to
-not bleed, you can set the color to transparent\!
+Set the blood color differently for each token, if you want a token to not bleed,
+you can set the color to transparent\!
 
 ### Custom Data Path
 
@@ -88,11 +90,11 @@ splatter for your system.
 - Paste it in the Splatter Module settings appropriate field.
 
 ## V10 Data Path update
+
 When updating to V10 you will probably need
 to update your datapaths, this basically means removing any `data` from
 the path, for example for dnd5e it would be `attributes.hp.value` as you
 can see the `data.` is no longer in the path.
-
 
 <ImageButBetter
   src='/../public/images/Splatter/Splatterbloodsheet.png'
@@ -101,6 +103,7 @@ can see the `data.` is no longer in the path.
   height={2000}
   className={styles.wikiimage}
 />
+
 ## Additional Information
 
 **Blood and guts exists, why make a new one?**

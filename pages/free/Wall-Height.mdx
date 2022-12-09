@@ -1,5 +1,5 @@
-import ImageButBetter from '../../components/ImageButBetter'
-import styles from '../globals.module.css'
+import ImageButBetter from '../../components/ImageButBetter';
+import styles from '../globals.module.css';
 import { Callout } from 'nextra-theme-docs';
 
 # Wall Height
@@ -15,6 +15,7 @@ them according to relative heights as well.
 - [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper)
 
 ### Tokens
+
 <ImageButBetter
   src='/../public/images/Wall-Height/Token_Height_Adjustment.gif'
   alt='Token Height Adjustment Menu'
@@ -22,9 +23,8 @@ them according to relative heights as well.
   height={2000}
   className={styles.wikiimage}
 />
-Tokens are able to see over walls which
-are below them in elevation. Likewise, tokens cannot see through walls
-that are higher than them in.
+Tokens are able to see over walls which are below them in elevation. Likewise, tokens
+cannot see through walls that are higher than them in.
 
 To change a token's elevation, right-click the token. You will see an
 input box in the top left of the token HUD. This is the token's
@@ -32,6 +32,7 @@ elevation. Modify it by selecting the box and entering the desired
 elevation for the token.
 
 #### Token Height
+
 <ImageButBetter
   src='/../public/images/Wall-Height/Token_Height_Setting.png'
   alt='Token height input in token settings'
@@ -39,9 +40,8 @@ elevation for the token.
   height={2000}
   className={styles.wikiimage}
 />
-The height of a token, which is
-different than the elevation of it. It represents how tall a token is
-and is used in sight calculation.
+The height of a token, which is different than the elevation of it. It represents
+how tall a token is and is used in sight calculation.
 
 To modify the height of a specific token, go to token settings and
 change its value. All non-0 values will override the default settings
@@ -53,10 +53,13 @@ determine the default for all tokens.
 If you wish to double check what is the computed value for a specifi token when it's height is set to 0 (thus triggering the automatic calculation), you can check it in the text displayed below the Token Height in the Token Configuration
 
 <Callout type='warning' emoji='⚠️'>
-If you are using the [Levels](../levels/Levels) module, remember that if the height of a token pushes it's head through a ceiling, you will see the floor above you!
+  If you are using the [Levels](../levels/Levels) module, remember that if the
+  height of a token pushes it's head through a ceiling, you will see the floor
+  above you!
 </Callout>
 
 ### Walls
+
 <ImageButBetter
   src='/../public/images/Wall-Height/Wall_Config_Menu.png'
   alt='The wall configuration menu'
@@ -64,9 +67,8 @@ If you are using the [Levels](../levels/Levels) module, remember that if the hei
   height={2000}
   className={styles.wikiimage}
 />
-Walls can be assigned a top elevation and
-a bottom elevation, representing the highest and lowest point of the
-wall respectively.
+Walls can be assigned a top elevation and a bottom elevation, representing the highest
+and lowest point of the wall respectively.
 
 Their values can be edited in the wall configuration menu. To access the
 wall configuration menu, double click the wall you wish to modify.
@@ -77,6 +79,7 @@ and `Wall Height (Bottom)`. The default values are `Infinity` and
 `-Infinity` respectively.
 
 ## Settings
+
 <ImageButBetter
   src='/../public/images/Wall-Height/Scene_Config_Wall_Height.png'
   alt='The scene setting for Wall Height'
@@ -84,12 +87,12 @@ and `Wall Height (Bottom)`. The default values are `Infinity` and
   height={2000}
   className={styles.wikiimage}
 />
-`Enable Wall Height for Scene` in
-scene settings is enabled by default. If you wish to disable it, it can
-be done in scene settings. However, this will mean Wall Height's
+`Enable Wall Height for Scene` in scene settings is enabled by default. If you wish
+to disable it, it can be done in scene settings. However, this will mean Wall Height's
 features cannot be used in the scene.
 
 ### Enable Tooltip
+
 <ImageButBetter
   src='/../public/images/Wall-Height/Wall_Height_Tooltip.png'
   alt='The wall height tooltip'
@@ -97,8 +100,7 @@ features cannot be used in the scene.
   height={2000}
   className={styles.wikiimage}
 />
-The tooltip will display when a wall is
-hovered, showing its lowest and highest elevation.
+The tooltip will display when a wall is hovered, showing its lowest and highest elevation.
 
 ### Display Height on Walls
 While enabled, displays the elevation values of a wall on the wall itself.

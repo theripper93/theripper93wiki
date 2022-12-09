@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import styles from '../pages/globals.module.css'
+import Image from 'next/image';
+import styles from '../pages/globals.module.css';
 
 export default function ImageButBetter({ src, alt, ...props }) {
     return (

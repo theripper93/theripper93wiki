@@ -1,5 +1,5 @@
-import ImageButBetter from '../../components/ImageButBetter'
-import styles from '../globals.module.css'
+import ImageButBetter from '../../components/ImageButBetter';
+import styles from '../globals.module.css';
 import { Callout } from 'nextra-theme-docs';
 
 # Patrol
@@ -8,17 +8,29 @@ Automatic Patrol Routes for NPCs.
 
 ## Basics
 
-<ImageButBetter  src='/../public/images/Patrol/Patrolmulti.gif'  alt='Multi Path Patrol'  width={2000}  height={2000}  className={styles.wikiimage}/>
+<ImageButBetter
+  src='/../public/images/Patrol/Patrolmulti.gif'
+  alt='Multi Path Patrol'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
 
 ### Patrols
 
 #### Enable Random Patrol
+
 <Callout type='warning' emoji='⚠️'>
-  This option is mutually
-exclusive to "Enable Path patrol"
+  This option is mutually exclusive to "Enable Path patrol"
 </Callout>
-If enabled the token will patrol randomly. 
-<ImageButBetter  src='/../public/images/Patrol/Single_Path_Patrol.gif'  alt='Single Path Patrol'  width={2000}  height={2000}  className={styles.wikiimage}/>
+If enabled the token will patrol randomly.
+<ImageButBetter
+  src='/../public/images/Patrol/Single_Path_Patrol.gif'
+  alt='Single Path Patrol'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
 
 #### Spot Player Characters
 
@@ -26,9 +38,16 @@ If enabled the token will spot player characters, pausing the game and
 panning on the token when spotting. Only works for Random Patrol
 
 <Callout type='warning' emoji='⚠️'>
-  This feature only works with Random Patrol, with Path Patrol the spotting will not work
+  This feature only works with Random Patrol, with Path Patrol the spotting will
+  not work
 </Callout>
-<ImageButBetter  src='/../public/images/Patrol/Patrol_Toggle.png'  alt='Patrol Toggle'  width={2000}  height={2000}  className={styles.wikiimage}/>
+<ImageButBetter
+  src='/../public/images/Patrol/Patrol_Toggle.png'
+  alt='Patrol Toggle'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
 
 #### Enable Path Patrol
 
@@ -47,7 +66,14 @@ The name(s) of the path(s) the token will follow if patrolling paths.
 
 The node of the path at which the token is currently on. This setting
 can be changed to start tokens mid-way through paths.
-<ImageButBetter  src='/../public/images/Patrol/Patrol_Token_Config.png'  alt='Patrol Token Config'  width={2000}  height={2000}  className={styles.wikiimage}/>
+
+<ImageButBetter
+  src='/../public/images/Patrol/Patrol_Token_Config.png'
+  alt='Patrol Token Config'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
 
 #### Alerting
 
@@ -125,16 +151,18 @@ You can use Patrol's hooks to enable additional features. Use the hooks:
 Example:
 
 ```js
-Hooks.on("prePatrolSpotted", (spotter, spotted) => { 
-// Only actually spotted if the Spotter has a higher passive perception than the target's DC
-return spotter.passivePerception >= spotted.passiveDC; 
+Hooks.on('prePatrolSpotted', (spotter, spotted) => {
+  // Only actually spotted if the Spotter has a higher passive perception than the target's DC
+  return spotter.passivePerception >= spotted.passiveDC;
 });
 ```
+
 ```js
-Hooks.on("patrolSpotted", (spotter, spotted) => {
-// Start a new combat if needed, then add the spotter to the spotted with a surprise round
+Hooks.on('patrolSpotted', (spotter, spotted) => {
+  // Start a new combat if needed, then add the spotter to the spotted with a surprise round
 });
 ```
+
 ## Tutorials
 
 ### [Video Tutorial by _Check the Rulebook_](https://youtu.be/Izx441zjtBs)
