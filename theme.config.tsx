@@ -29,6 +29,11 @@ const config: DocsThemeConfig = {
           property='og:description'
           content={frontMatter.description || 'The wiki for theripper93'}
         />
+        <link
+          rel='icon'
+          type='image/png'
+          href='/static/images/favicon.png'
+        />
         <style>{dom.css()}</style>
       </>
     );
