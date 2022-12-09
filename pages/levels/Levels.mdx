@@ -24,9 +24,9 @@ levels.
 <Tabs items={['Dependencies', 'Recommended', 'Submodules']}>
   <Tab>
     <>
-      These modules are **required** for Levels to run. 
-      - [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper) 
-      - [Wall Height](Wall-Height)
+      These modules are **required** for Levels to run. -
+      [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper) - [Wall
+      Height](Wall-Height)
     </>
   </Tab>
   <Tab>
@@ -37,17 +37,19 @@ levels.
     </>
   </Tab>
   <Tab>
-    These modules are developed by theripper93 himself that extend **Levels**' features.
-    - [Automatic Cover Calculator](Levels-Auto-Cover)
-    - [Depth Blur](Levels-Depth-Blur)
-    - [Volumetric Templates](Levels-Volumetric-Templates)
+    These modules are developed by theripper93 himself that extend **Levels**'
+    features. - [Automatic Cover Calculator](Levels-Auto-Cover) - [Depth
+    Blur](Levels-Depth-Blur) - [Volumetric
+    Templates](Levels-Volumetric-Templates)
   </Tab>
 </Tabs>
 
 ## Basics
 
 <Callout type='warning' emoji='⚠️'>
-When using Levels it's important to understand the concept of [Wall Height's Token Height](../free/Wall-Height#token-height) make sure to read the documentation about it before using Levels.
+  When using Levels it's important to understand the concept of [Wall Height's
+  Token Height](../free/Wall-Height#token-height) make sure to read the
+  documentation about it before using Levels.
 </Callout>
 
 ### Your First Levels Map
@@ -194,7 +196,9 @@ will count instead as a solid scene sized plane.
 
 ### Tokens
 
-Token height is handled by [Wall Height](../free/Wall-Height). It's highly suggested to read the `Token Height` section of the Wall Height page before using Levels.
+Token height is handled by [Wall Height](../free/Wall-Height).
+It's highly suggested to read the `Token Height` section of the Wall Height page
+before using Levels.
 
 ### Drawings
 
@@ -242,16 +246,20 @@ Stairs allow tokens to travel **from** and **to** two set elevations.
 - Stairs will move tokens one value higher than its top elevation if
   entering from below
 
-For example: a stair with a bottom of 0 and a top of 9. A token at an elevation of 0 that enters the stair will now have an elevation of 10.
-If they re-enter the stair while at an elevation of 10, they will then have an elevation of 0. Any other elevation will not trigger the Stair.
+For example: a stair with a bottom of 0 and a top of 9. A token at an elevation
+of 0 that enters the stair will now have an elevation of 10.
+If they re-enter the stair while at an elevation of 10, they will then have an
+elevation of 0. Any other elevation will not trigger the Stair.
 
 #### One Way Stairs
 
 One way stairs function the same way as regular stairs but don't allow
 two-way movement.
 
-For example: a one way stair with a bottom of 0 and a top of 9. If set to `One Way - Down` will bring any token that enters it while at an
-elevation of 10 to 0, and entering with an elevation of 0 will do nothing. `One Way - Up` will do the opposite
+For example: a one way stair with a bottom of 0 and a top of 9.
+If set to `One Way - Down` will bring any token that enters it while at an
+elevation of 10 to 0,
+and entering with an elevation of 0 will do nothing. `One Way - Up` will do the opposite
 
 #### Elevators
 
@@ -266,10 +274,10 @@ trigger on any elevation between those (e.g. 25). The options you define
 in the elevator don't affect the triggering range.
 
 ### Vision
+
 <Callout type='info' emoji='ℹ️'>
-Levels heavily relies on vision. If vision is disabled on the map or you
-have selected a token without vision, you might experience undesired
-effects\!
+  Levels heavily relies on vision. If vision is disabled on the map or you have
+  selected a token without vision, you might experience undesired effects\!
 </Callout>
 
 <Image
@@ -341,7 +349,9 @@ toggle it per tile.
   className={styles.wikiimage}
 />
 
-In this example the lighting looks correct at first glance. `Light Masking` can be toggled in the `Lighting` tab in the scene settings. By enabling this feature all lights below the current point of view will be visible and masked with the tiles that are above them.
+In this example the lighting looks correct at first glance. `Light Masking` can
+be toggled in the `Lighting` tab in the scene settings. By enabling this feature
+all lights below the current point of view will be visible and masked with the tiles that are above them.
 
 <Image
   src='/../public/images/Levels/Light_masking_broken.jpg'
@@ -351,9 +361,12 @@ In this example the lighting looks correct at first glance. `Light Masking` can 
   className={styles.wikiimage}
 />
 
-Disabling this setting will only show lights on the current level. Here we can see, by moving the roof slightly, that while the roof is covering the "green" coloration of the light, the vision portion of the light is still visible.
+Disabling this setting will only show lights on the current level. Here we can 
+see, by moving the roof slightly, that while the roof is covering the "green" 
+coloration of the light, the vision portion of the light is still visible.
 
-If you are **not** using the **[Perfect Vision](https://foundryvtt.com/packages/perfect-vision)** module you will encounter the limitations listed below:
+If you are **not** using the **[Perfect Vision](https://foundryvtt.com/packages/perfect-vision)** 
+module you will encounter the limitations listed below:
 
 - Light masking will mask the "visual" part of the light, as in it's
   color and animation. Unfortunately the "vision" part of the light
@@ -406,7 +419,8 @@ different elevations.
 
 ## API
 
-The API is available for viewing by entering `CONFIG.Levels.API` in the Foundry console or in [API.js](https://github.com/theripper93/Levels/blob/v9/scripts/API.js).
+The API is available for viewing by entering `CONFIG.Levels.API` in the Foundry 
+console or in [API.js](https://github.com/theripper93/Levels/blob/v9/scripts/API.js).
 
 ### Hooks
 
