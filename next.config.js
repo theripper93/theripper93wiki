@@ -8,3 +8,16 @@ module.exports = withNextra({
     domains: ['user-images.githubusercontent.com'],
   },
 });
+
+
+function getWikiPage(moduleName, status){
+  let url = 'theripper93.com/wiki/'
+  let root = '';
+  if(moduleName.toLowerCase().includes('3d')) root = '3D'
+  else if(moduleName.toLowerCase().includes('levels')) root = 'levels'
+  else if(status === 'free') root = 'free'
+  else if(status === 'paid') root = 'premium'
+  url += root + '/';
+  url += moduleName.replaceAll(' ', '-');
+  return url;
+}
