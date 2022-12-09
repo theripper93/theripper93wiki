@@ -1,6 +1,10 @@
 import Image from 'next/image'
 import styles from '../globals.module.css'
 import ImageButBetter from '../../components/ImageButBetter'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faViruses,
+} from '@fortawesome/free-solid-svg-icons';
 
 # Maxwell's Manual of Malicious Maladies
 
@@ -30,7 +34,7 @@ the tables compendium.
 
 #### Adding Injuries
 
-The GM can click on the Red Virus button in the name of the injury (in
+The GM can click on the Red Virus <FontAwesomeIcon icon={faViruses} style={{color: 'red'}} /> button in the name of the injury (in
 chat) to add it as an item to the target's character sheet.
 
 Active effects will be added to items with the appropriate duration.
