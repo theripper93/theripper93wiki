@@ -9,13 +9,6 @@ It allows tokens to look over or under walls and to move over or under
 them according to relative heights as well.
 
 ## Basics
-
-### Required Modules
-
-- [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper)
-
-### Tokens
-
 <ImageButBetter
   src='/images/Wall-Height/Token_Height_Adjustment.gif'
   alt='Token Height Adjustment Menu'
@@ -23,6 +16,13 @@ them according to relative heights as well.
   height={2000}
   className={styles.wikiimage}
 />
+
+### Required Modules
+
+- [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper)
+
+### Tokens
+
 Tokens are able to see over walls which are below them in elevation. Likewise, tokens
 cannot see through walls that are higher than them in.
 
@@ -33,6 +33,11 @@ elevation for the token.
 
 #### Token Height
 
+<Callout type='warning' emoji='⚠️'>
+  If you are using the [Levels](../levels) module, remember that if the
+  height of a token pushes it's head through a ceiling, you will see the floor
+  above you!
+</Callout>
 <ImageButBetter
   src='/images/Wall-Height/Token_Height_Setting.png'
   alt='Token height input in token settings'
@@ -52,11 +57,6 @@ determine the default for all tokens.
 
 If you wish to double check what is the computed value for a specifi token when it's height is set to 0 (thus triggering the automatic calculation), you can check it in the text displayed below the Token Height in the Token Configuration
 
-<Callout type='warning' emoji='⚠️'>
-  If you are using the [Levels](../levels/Levels) module, remember that if the
-  height of a token pushes it's head through a ceiling, you will see the floor
-  above you!
-</Callout>
 
 ### Walls
 

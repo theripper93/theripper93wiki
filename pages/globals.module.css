@@ -20,8 +20,6 @@
   position: relative;
   border-radius: 2px;
   margin: 1rem;
-  max-width: 10vw;
-  max-height: 20vh;
   object-fit: contain;
   width: auto;
   float: right;
@@ -42,7 +40,7 @@
   font-size: smaller;
   width: 100%;
   bottom: 0;
-  color: rgb(249,250,251);
+  color: rgb(249, 250, 251);
   background: linear-gradient(
     0deg,
     rgb(17 17 17 / 90%) 0%,

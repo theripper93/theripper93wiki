@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from '../pages/cards.module.css';
+import styles from './cards.module.css';
 
 export default function Cards({ cards }) {
     return (
