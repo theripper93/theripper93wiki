@@ -5,7 +5,7 @@ import { config as faConfig, dom } from '@fortawesome/fontawesome-svg-core';
 faConfig.autoAddCss = false;
 
 export default {
-  logo: <div style={{display: 'flex',alignItems: 'center',gap: '0.5rem'}}><img src="https://theripper93.com/assets/favicon.ico" style={{width: '2rem', height: '2rem'}} alt="" /> <span> TheRipper93's WIKI</span></div>,
+  logo: <div style={{display: 'flex',alignItems: 'center',gap: '0.5rem'}}><img src="https://theripper93.com/assets/favicon.ico" style={{width: '2rem', height: '2rem'}} alt="" /> <span> TheRipper93's Wiki</span></div>,
   project: {
     link: 'https://github.com/theripper93',
   },
@@ -29,7 +29,7 @@ export default {
   },
   useNextSeoProps() {
     return {
-      titleTemplate: '%s – TheRipper93 WIKI',
+      titleTemplate: '%s – TheRipper93 Wiki',
     }
   },
   head: () => {
