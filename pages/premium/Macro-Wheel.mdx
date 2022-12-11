@@ -1,0 +1,66 @@
+import ImageButBetter from '../../components/ImageButBetter'
+import styles from '../globals.module.css'
+
+# Macro Wheel
+
+Do you have too many macros? Macro Wheel is for you\! Press `M` or
+`Middle Mouse Button` to show an easy to use interface that can hold
+infinite macros\!
+
+
+## Getting Started
+<ImageButBetter src="/images/Macro-Wheel/Macrowheel.png" alt="Macro Wheel in action" width={2000} height={2000} className={styles.wikiimage}/>
+
+When you enable the module it will be already ready to go, simply press
+M to display your macros in the Macro Wheel\! This said, a warning will
+be shown prompting you to setup the macro wheel since the `MacroWheel`
+folder is missing.
+
+If you don't wish to do any specific configuration for Macro Wheel,
+simply head into the module settings and enable `Use Root Folder`.
+
+### Basic Configuration
+
+<ImageButBetter src="/images/Macro-Wheel/Macrowheelsample.png" alt="A sample setup of folders and subfolders" width={2000} height={2000} className={styles.wikiimage}/>
+
+If `Use Root Folder` is
+disabled, Macro Wheel will build the wheel using a folder named
+`MacroWheel`, let's set it up\!
+
+  - Open the `Macros Directory`
+  - Create a folder named exactly `MacroWheel`
+  - Every folder inside the `MacroWheel` folder will create a `Wheel`
+    containing all the macros inside that folder, you can check the
+    image to see how a sample setup looks like
+
+### Customizing the Wheel
+
+Every `Wheel` is a `macro folder`, so to customize it, simply edit the
+folder. If you prefer, you can open the edit folder dialog by clicking
+with the `right mouse button` on a wheel.
+
+You will find 2 extra options
+
+#### Macro Wheel Image
+
+This is the image used for the Wheel, change it to what you prefer\!
+
+#### Condition
+
+Some premade conditions you can use to conditionally show a wheel. For
+example selecting `In Combat` will only show the wheel if a combat is
+active in the scene. Set to `Custom` to use the option below.
+
+#### Custom Condition
+
+This is a condition that will be evaluated to determine if the wheel
+should be shown, for example you could use the `canvas.activeLayer ===
+canvas.tokens` condition to have the specific Wheel display only on the
+token layer.
+
+### Other Customizations
+
+The module settings contains other customizations that are explained in
+the setting itself, such as showing hotbars and customizing the macro
+wheel size\!
+

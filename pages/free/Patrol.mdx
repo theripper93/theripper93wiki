@@ -1,0 +1,167 @@
+import ImageButBetter from '../../components/ImageButBetter';
+import styles from '../globals.module.css';
+import { Callout } from 'nextra-theme-docs';
+
+# Patrol
+
+Automatic Patrol Routes for NPCs.
+
+## Basics
+
+<ImageButBetter
+  src='/images/Patrol/Patrolmulti.gif'
+  alt='Multi Path Patrol'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+
+### Patrols
+
+#### Enable Random Patrol
+
+<Callout type='warning' emoji='⚠️'>
+  This option is mutually exclusive to "Enable Path patrol"
+</Callout>
+If enabled the token will patrol randomly.
+<ImageButBetter
+  src='/images/Patrol/Single_Path_Patrol.gif'
+  alt='Single Path Patrol'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+
+#### Spot Player Characters
+
+If enabled the token will spot player characters, pausing the game and
+panning on the token when spotting. Only works for Random Patrol
+
+<Callout type='warning' emoji='⚠️'>
+  This feature only works with Random Patrol, with Path Patrol the spotting will
+  not work
+</Callout>
+<ImageButBetter
+  src='/images/Patrol/Patrol_Toggle.png'
+  alt='Patrol Toggle'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+
+#### Enable Path Patrol
+
+If enabled the token will follow the given path/paths. This option is
+mutually exclusive to "Enable Random patrol".
+
+#### Use Multiple paths
+
+If enabled the token will use multiple paths.
+
+#### Patrol Path
+
+The name(s) of the path(s) the token will follow if patrolling paths.
+
+#### Path Node
+
+The node of the path at which the token is currently on. This setting
+can be changed to start tokens mid-way through paths.
+
+<ImageButBetter
+  src='/images/Patrol/Patrol_Token_Config.png'
+  alt='Patrol Token Config'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+
+#### Alerting
+
+When a player is spotted a question mark will appear on top of the enemy
+token which will then try to chase the intruder.
+
+After a set time has passed the token will be spotted. You can configure
+sad time in the module settings.
+
+If the alert time is set to 0 the character will be immediately spotted.
+
+#### Custom Patrols
+
+You can have a token patrol a specific area by drawing a Polygon or
+Rectangle (other shapes are not supported) and in its's text property
+call it "Patrol" (upper case P). Any token in that area will patrol only
+inside that area
+
+You can also draw a Polygon or Rectangle, and in it's text property
+include the word "Path" (upper case P) to select the drawing as a path
+for patrolling tokens. You may add to the word, but it must include the
+word "Path" somewhere. (eg. GuardPathA, GuardPathB). A token set to
+patrol a path will reset back to the beginning of the path once it has
+finished unless "Use Multiple Paths" is checked.
+
+The speed for tokens patrolling paths will be determined by the "Patrol
+speed for paths(ms)" module setting. This setting defines how long it
+will take every token patrolling a path to arrive at the next node.
+Thus, the actual animation speed will depend on the distance from the
+current node to the next one. This means that tokens can "speed up" mid
+path by drawing longer nodes or "slow down" by drawing shorter nodes.
+
+Please ensure that only one of the patrol types is checked in the token
+config.
+
+#### Using Multiple Paths
+
+If the "Use Multiple Paths" checkbox is enabled in the token config, You
+can draw multiple paths with the same name. The token will randomly
+select one of the other paths with the same name when it has finished
+patrolling its current path. It will give preference to paths that are
+not currently being patrolled by any tokens.
+
+It is often a good idea to hit the "Remap paths and Reset Nodes" button
+after making any changes to any paths or patrolling tokens. This will
+reset the token's path node to either 0, or to a random path and node
+within the group if the "Reset to Random Node" is checked.
+
+## Auto Rotate
+
+Patrol is compatible with the Auto Rotate module. Combine them for auto
+rotating patrols\!
+
+## Issues
+
+### Patrol is not working
+
+If patrol is not working, check this steps before opening an issue:
+
+- If a token is selected it will stop patrolling
+- If you create a combat encounter the patrol will stop
+- If you have the game paused, the patrol will stop
+- If you haven't toggled the patrol button the patrol will not start
+- If path patrol mode tokens will not spot players
+
+### Integration
+
+You can use Patrol's hooks to enable additional features. Use the hooks:
+
+- `"prePatrolSpotted", (spotter, spotted)`
+- `"patrolSpotted", (spotter, spotted)`
+- `"prePatrolAlerted", (spotter, spotted)`
+- `"patrolAlerted", (spotter, spotted)`
+
+Example:
+
+```js
+Hooks.on('prePatrolSpotted', (spotter, spotted) => {
+  // Only actually spotted if the Spotter has a higher passive perception than the target's DC
+  return spotter.passivePerception >= spotted.passiveDC;
+});
+```
+
+```js
+Hooks.on('patrolSpotted', (spotter, spotted) => {
+  // Start a new combat if needed, then add the spotter to the spotted with a surprise round
+});
+```
+
+## Tutorials
+- [Video Tutorial by _Check the Rulebook_](https://youtu.be/Izx441zjtBs)

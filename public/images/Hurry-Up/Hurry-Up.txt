@@ -1,0 +1,29 @@
+A simple timer to hurry up your players in combat! Tired of those pesky players taking forever to then just swing a longsword after a 10 minute wait?
+[[File:Hutimer.png|thumb|The Hurry Up! Timer]]
+[[File:Hucirclecrit.png|thumb|Circle Style Timer going critical]]
+[[File:Husand.png|thumb|Sand style timer]]
+
+== Features ==
+
+=== Auto Start ===
+The timer automatically starts when it's the turn of a token owned by a player.
+
+=== Critical ===
+Chose the duration of the timer and when it goes critical, at this point the progress bar will turn red and start blinking.
+
+=== Sounds ===
+Play a looping sound when the timer goes critical (defaults to ticking) and a sound when the time is over.
+
+=== Go Next ===
+Automatically advance the turn tracker when a timer ends.
+
+=== Styles ===
+Choose between 3 Styles of timers.
+
+=== Custom Timer ===
+You can create a timer out of combat with this simple script macro <code>CombatTimer.Create(seconds)</code> with the desired amount of seconds.
+
+== Credits ==
+The sounds included are from [https://sonniss.com/gameaudiogdc GameAudioGDC].
+
+[[Category: Module]] [[Category: Free]]

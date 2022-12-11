@@ -1,0 +1,70 @@
+import ImageButBetter from '../../components/ImageButBetter'
+import styles from '../globals.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faViruses,
+} from '@fortawesome/free-solid-svg-icons';
+
+# Maxwell's Manual of Malicious Maladies
+
+**Maxwell's Manual of Malicious Maladies** (MMMM) contains 208 lingering
+injuries based on the 13 different damage types. All with different
+severities, durations, and consequences. Based on the titular [Maxwell's Manual of Malicious Maladies](https://www.reddit.com/r/DnDBehindTheScreen/comments/l4ags0/maxwells_manual_of_malicious_maladies_a_34_page/).
+
+The module contains compendiums of the injuries, effects, items, and
+tables for rolling. Rolling for injuries can be automated through
+settings, chat commands, and/or
+[MidiQoL](https://foundryvtt.com/packages/midi-qol).
+## Basics
+<ImageButBetter src='/images/MMMM/Mmminjury.png'  alt='Example Injury with Virus button location'  width={2000}  height={2000}  className={styles.wikiimage}/>
+
+### Compendiums
+
+Items and journals with the full content of the original homebrew are
+available in compendiums. Injury tables are accessible and importable in
+the tables compendium.
+
+### Chat Commands
+
+#### Rolling Injuries
+
+- `/mmmm` will bring up a dialog with all the tables
+- Specify a damage type to auto roll that table (e.g. `/mmmm radiant`)
+
+#### Adding Injuries
+
+The GM can click on the Red Virus <FontAwesomeIcon icon={faViruses} style={{color: 'red'}} /> button in the name of the injury (in
+chat) to add it as an item to the target's character sheet.
+
+Active effects will be added to items with the appropriate duration.
+Note that these effects just serve as a reminder of the injury.
+
+### Injury Automation
+
+Injuries can be automated as well. Some will require
+[MidiQoL](https://foundryvtt.com/packages/midi-qol).
+
+MMMM can automatically prompt for injuries on:
+
+- Critically failed saving throw
+  ([**MidiQoL**](https://foundryvtt.com/packages/midi-qol) required)
+- Critical hit
+  ([**MidiQoL**](https://foundryvtt.com/packages/midi-qol) required)
+- More than half hp of damage
+- HP reaches 0
+
+## Customization
+
+This module will search tables by name, if the table is not found in
+your sidebar the one in the compendium will be used.
+
+You can import the tables and modify the injuries as you like, as long
+as the name of the table remains the same.
+
+## Credit
+
+Based on the [original homebrew](https://www.reddit.com/r/DnDBehindTheScreen/comments/l4ags0/maxwells_manual_of_malicious_maladies_a_34_page/)
+by
+[u/almostlucid](https://www.reddit.com/r/DnDBehindTheScreen/comments/l4ags0/maxwells_manual_of_malicious_maladies_a_34_page/).
+Reading it (from the included journal entries or from the original PDF)
+is highly suggested as it includes extra rules for healing injuries\!

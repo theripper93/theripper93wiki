@@ -1,0 +1,54 @@
+import ImageButBetter from '../../components/ImageButBetter'
+import styles from '../globals.module.css'
+
+# Image Context
+
+Create image popouts of any image.
+
+## How to use
+
+<ImageButBetter src="/images/Image-Context/Icmenu.png" alt="Image Context Menu" width={2000} height={2000} className={styles.wikiimage}/>
+
+### Invoking the Image Context Menu
+
+Simply right click on any image in the interface to open the Image
+Context Menu, if the item has already a context menu, Right click two
+times
+
+This works on any image, this includes:
+
+- Images in sidebar items (Right click two times)
+- Images in the file picker
+- Images in character, items, journal sheets
+- Images in chat messages
+
+#### Show
+
+<ImageButBetter src="/images/Image-Context/Icbutton.png" alt="Image Context Scene controls button" width={2000} height={2000} className={styles.wikiimage}/>
+
+The Show button will popout the
+image, from here you can use the regular foundry interactions, such as
+show to players
+
+#### Send to chat
+
+This will open a prompt that will let you chose which players can see
+the chat message. The image will be posted to chat. Any image created
+this way, can be popped out from the chat by left clicking on the image.
+
+#### Copy URL
+
+This will let you copy the image path, to (for example) paste it on a
+tile or token image field or anywhere else.
+
+### Chat image parsing
+
+Image context will also parse image URLs posted in chat, so if you send
+an image url into chat the image will be shown and it can be popped out
+by left clicking.
+
+### URL Parser
+
+The button in the tile layer will let you execute the context menu
+operations on a copied URL.
+

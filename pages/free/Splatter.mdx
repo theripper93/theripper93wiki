@@ -1,0 +1,125 @@
+import { Callout } from 'nextra-theme-docs';
+import ImageButBetter from '../../components/ImageButBetter';
+import styles from '../globals.module.css';
+
+# Splatter
+
+Give that extra touch to your game, compatible with most game systems.
+
+## Configuration
+
+<ImageButBetter
+  src='/images/Splatter/Splatteronhit.png'
+  alt='Token Bleeding from a hit'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+
+If you manually added the data paths for your System to splatter, please
+send in a PR for
+[config.js](https://github.com/theripper93/Splatter/blob/main/scripts/config.js)
+
+For information on how to configure Splatter for your system please read
+[this](https://github.com/theripper93/Splatter/blob/main/CONFIGURATIONS.MD)
+
+You are also free to send in PRs with configurations for missing
+systems\!
+
+### Blood on hit
+
+<Callout type='warning' emoji='⚠️'>
+  On some systems the **Creature Type** and **Custom Creature Type** options
+  might cause Splatter to not work correctly To fix this, imply go into the
+  module settings for Splatter and empty both those settings leaving them blank.
+</Callout>
+
+<ImageButBetter
+  src='/images/Splatter/Splatterbloodsheet.png'
+  alt='Customize Blood Color per token'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+The bigger the hit, the more the blood. Configure manual blood scale, violence level,
+and blood trails
+
+### Blood by creature type
+
+Set up a configuration for blood color and creature type, by default one
+for dnd5e is included
+
+### Per Token Blood color
+
+<ImageButBetter
+  src='/images/Splatter/Splatterdatapath.png'
+  alt='Data Path settings'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+Set the blood color differently for each token, if you want a token to not bleed,
+you can set the color to transparent\!
+
+### Custom Data Path
+
+Set the data path of relevant data to adjust Splatter for your game
+system
+
+### 3D Canvas Integration
+
+If you use 3D Canvas, Splatter will make tokens bleed also in 3D\!
+
+### Manually Configuring Splatter for your System
+<ImageButBetter
+  src='/images/Splatter/Splatterbloodsheet.png'
+  alt='Creature Type Blood Color Macro'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+
+Some systems are supported out of the box, others will require manual
+configuration of the data paths, follow these instructions to configure
+splatter for your system.
+
+- Place a Token on a scene, any scene and any token will do
+- Select the token
+- Open the Console using the `F12` Key
+- On the Top Tabs, make sure you are in the Console Tab
+- In the console, type `_token.actor.system` and press Enter
+- You will see some data displayed, click the Expand Arrow to see all
+  the data
+- Browse the data tree using the Expand arrows to locate the data path
+  of your Current\\Max hp.
+- Once you have located the data path, right click on the name of the
+  property and click `"Copy Property Path"`.
+- Paste it in the Splatter Module settings appropriate field.
+
+## V10 Data Path update
+
+When updating to V10 you will probably need
+to update your datapaths, this basically means removing any `data` from
+the path, for example for dnd5e it would be `attributes.hp.value` as you
+can see the `data.` is no longer in the path.
+
+
+## Additional Information
+
+**Blood and guts exists, why make a new one?**
+Blood and guts was a massive project and while it was amazing, with a lot of code comes a lot of issues and it's extremely difficult to mantain and fix.
+This implementation is simpler and more streamlined, and while it has less features, it will be much easier to mantain or adopt if it ever gets abandoned.
+
+<Callout type='info' emoji='ℹ️'>
+  **No feature requests will be implemented**
+</Callout>
+
+The point of this module is to keep it streamlined to avoid making it impossible to maintain. Unless it is something that all the users of this module would greatly benefit from.
+
+Please refrain from asking. Thank you for understanding :)
+
+## Licensing
+
+The included Splatter font was created by **Codin Repsh**
+
+Original concept by **edzillion**

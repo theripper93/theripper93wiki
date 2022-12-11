@@ -1,0 +1,52 @@
+[[Category: Module]] [[Category: Free]]
+[[File:Ddrebuildcache.png|thumb|The Rebuild Cache button (needed if you move\add files)]]
+Perform deep searches inside folder structures and sidebars and fuzzy searches on compendiums and sidebars.
+[[File:Ddtips.png|thumb|The text in this journals contains the word "Tips"]]
+[[File:Ddimagescene.png|thumb|These scenes have tiles with images that include cobbler in their name]]
+[[File:Ddcrsearch.png|thumb|Search for CR in dnd5e using the deep search]]
+
+== Basics ==
+
+=== Searches ===
+[[File:Ddexcavate.png|thumb|The Excavation button]]
+
+==== Deep Folder Search ====
+If enabled, it will allow you to search in subfolders while using the file picker.
+
+For this feature to work you must enable <code>Deep File Search</code> in the module settings then click the <code>Rebuild Cache</code> button in the settings sidebar
+
+==== Fuzzy Search ====
+Fuzzy Searches are done automatically. It will find the closest matches to your search (e.g. searching for accolite will show "Acolyte" in the results). They are enabled by default and will work for compendiums and the actor sidebar.
+
+==== Deep Search ====
+The deep search starts with <code>&</code>. It will look into the items to find a property or value that matches the search. For example: Searching for the name of an image will filter for any entity that is using that image. 
+
+Note that this feature works on all sidebar directories and will search inside the JSON itself. If you are looking for a scene with zombies you can search in your scene sidebar for <code>&zombie</code>.
+
+==== Prop Search ====
+Starting a search with <code>!</code> will search in the properties defined in the settings. '''Prop Search may be slow for huge directories.'''
+If <code>data.details.cr</code> is a property defined in the settings, searching for <code>!1</code> will filter for creatures with a cr of 1.
+[[File:Ddcompendium.png|thumb|A more advanced search for compendium (these creatures where imported from the dndsrd monsters compendium)]]
+
+=== Other Features ===
+
+==== Cache Rebuilding ====
+To rebuild the cache (needed if you move\add files) use this button:
+
+==== Excavating Tokens ====
+This option will find the closest match image based on the token name. 
+
+To use it, simply click the excavation button to the right of the token image field.
+
+== Credits ==
+
+=== Fuzzyset.js ===
+This package is licensed under the Prosperity Public License 3.0.
+
+That means that this package is free to use for non-commercial projects
+
+See https://github.com/Glench/fuzzyset.js for more details
+
+
+
+[[Category: Module]] [[Category: Free]]

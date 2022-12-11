@@ -1,0 +1,145 @@
+import ImageButBetter from '../../components/ImageButBetter';
+import styles from '../globals.module.css';
+import { Callout } from 'nextra-theme-docs';
+
+# Mastercrafted
+
+<Callout type='info' emoji='ℹ️'>
+  Want to start with some already made recipes and gathering points? Download
+  the DnD5e [Potion Crafting &
+  Gathering](https://github.com/action-jay/potion-crafting-gathering) module by
+  [Action_Jay](http://www.actionjay.com/) using
+  [this](https://github.com/action-jay/potion-crafting-gathering/releases/latest/download/module.json)
+  ManifestURL! The module leverages both the [Mastercrafted](Mastercrafted
+  'wikilink') and [Gatherer](Gatherer 'wikilink') modules. Make sure you install
+  both!
+</Callout>
+A simple yet effective crafting module for any system, create books, recipes, export
+and share! Make recipes with different outcomes or that can require alternate ingredients!
+Set permissions to specific players, require tools to craft and more!
+
+### Creating and Editing Recipes
+
+#### Creating a new Book and Recipe
+
+<ImageButBetter
+  src='/images/Mastercrafted/Recipemanagerbtn.png'
+  alt='Recipe Manager button'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+
+- To open the Recipe Manager, click the button located in the Items
+  Sidebar Tab
+- Use the "Add Recipe Book" button to create a new book, configure as
+  needed
+- Right click a book to add a recipe, left click a book to expand it
+- Click the newly created recipe to open it
+
+#### Configuring a recipe
+
+<ImageButBetter
+  src='/images/Mastercrafted/Mastercraftedwindowedit.png'
+  alt='The Main Mastercrafted Window'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+
+- Drag and Drop ingredients in the **+** panels. Dragging multiple
+  ingredients in the same panel will let the player chose which one to
+  use from that panel for the crafting
+- Having multiple ingredient panels means that at least one item from
+  each panel will be required for the crafting.
+- You can edit the required quantity in on the top right of the
+  ingredient
+- Left click an ingredient to inspect, right click to remove it from
+  the recipe
+
+#### Creating a crafting result
+
+<ImageButBetter
+  src='/images/Mastercrafted/Recipeedit.png'
+  alt='The Recipe panel in Edit Mode'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+
+- Drag and drop items in the result **+** panels
+- Having multiple items in a single result panel will award the player
+  with all the items when crafting
+- If you have multiple result panels, the player will be able to chose
+  which panel will be the result of the crafting
+- Left click a result to inspect, right click to remove it from the
+  recipe
+
+#### Importing\\Exporting
+
+- Right click a recipe or book to export it
+- Right click a recipe or book to import from a json and overwrite it
+  
+<ImageButBetter
+    src='/images/Mastercrafted/Craftingbutton.png'
+    alt='Button in the Actor Sheet'
+    width={2000}
+    height={2000}
+    className={styles.wikiimage}
+  />
+
+### Crafting
+
+- Open an Actor Sheet
+- Click the Crafting button in the window header
+- Select a Recipe (Keep in mind that as a GM you will always see all
+  recipes, make sure you give the correct permissions to players in
+  the book/recipe configuration)
+- Left click to inspect ingredients\\results
+- Right click to select a different ingredient from an ingredient
+  panel
+- Left click a result panel to select the desired result
+- Click the Craft button on the top right to craft, hold `ctrl` to
+  skip confirmation
+
+<ImageButBetter
+  src='/images/Mastercrafted/craftwindownoitem.png'
+  alt='The crafting window'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+
+### Advanced: Adding conditions to crafting
+
+Adding conditions will allow you to add custom checks to crafting, for
+example making a strength check in order to make an item (in addition to
+other conditions). We will use the DND5E System in this example but it
+will work with any system, refer to your system discord channel or macro
+polo to know the correct macro commands for checks.
+
+- Create a new script macro, for this example we will call it
+  `StrengthCheck`
+- Edit the recipe and type the exact macro name in the `Condition`
+  field
+- The macro will need to return an object `{ success: Boolean,
+consume: Boolean }`
+- `success` determines if the crafting is successful or not while
+  `consume` determines if the ingredients are consumed in the event of
+  a failed craft
+- In the context of the macro, `actor` is the Actor doing the
+  crafting.
+- You can copy paste this sample macro to use as a template for your
+  own
+- Note: You can also copy paste the macro code directly in the
+  `Condition` field, but make sure your lines correctly end with `;`
+  as the code will be collapsed to a single line!
+
+```javascript numberLines
+const roll = await actor.rollAbilityTest('str');
+
+return {
+  success: roll.total > 12,
+  consume: true,
+};
+```

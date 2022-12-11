@@ -1,0 +1,93 @@
+A Windows Style Taskbar to manage windows and shortcuts easly.
+[[File:Taskbarmain.png|thumb|791x791px|Taskbar Interface]]
+
+== How to use ==
+The instructions will follow the refrerence Taskbar Interface image on this page.
+
+=== Start Button ===
+Clicking the start button will bring up all the quick access functionalities of Taskbar
+
+=== Sidebar ===
+Clicking the start button on the top of the sidebar or hovering over any of the buttons will expand the sidebar giving you some usefull shortcuts to Foundry functionality
+
+=== Quick Items ===
+This list can contain any entity from the Sidebar or Compendiums, simply drag and drop and entity in the quick items to add it (Tokens, Journals, Items etc...)
+
+To remove an item click on the <code>X</code> to the right of the item
+
+Left Clicking an item will bring up it's Sheet, you can also drag an item onto the canvas to place it (such as a token)
+
+=== Quick Macros ===
+Drag and Drop macros here from ether the hotbar or the macro directory
+
+Left click a macro to execute or Right click to remove it
+
+=== Players Button ===
+Clicking this button will bring up the Players list which taskbar will remove from the main interface to save space (if the setting is enabled in the module settings)
+
+=== Tray Icons ===
+These icons provide shortcuts such as Locking\Unlocking the taskbar, Open module settings, Close all windows, or show FPS.
+
+The Arrow pointing up icon will open the Workspaces
+
+=== Workspaces ===
+The workspaces are groups of windows that you can save for later use. Clicking on a workspace will open all windows stored in that workspace.
+
+==== Creating a workspace ====
+To create a workspace, click the <code>+</code> button, a prompt will ask for the workspace name. When you create a workspace, all active windows that represent an entity (Actors, Items, Journals etc...) will be saved to the workspace.
+
+==== Deleting a workspace ====
+To delete a workspace, right click on it.
+
+=== Toggle Windows ===
+Clicking this button will minimize all opened windows and maximize all minimized windows.
+[[File:Tbmini.png|thumb|Minimize Button]]
+
+=== Minimizing\Maximizing windows ===
+To minimize a window, ether click on it's corresponding button in the Taskbar or click on the Minimize button in the window header
+
+=== Customization ===
+You can customize the aspect and behaviour of Taskbar in the module settings, all options are described in detail there.
+
+=== Module Sinergy ===
+[[File:Tssmalltime.png|thumb|SmallTime Integration]]
+
+==== SmallTime ====
+If you have [https://foundryvtt.com/packages/smalltime SmallTime] Taskbar will embed it in the Tray Icon space, you can enable the option in the module settings to auto dock small time.
+
+==== GM Screen ====
+If you have [https://foundryvtt.com/packages/gm-screen GM Screen] enabled, Taskbar will add a Tray Icon to open\close GM Screen
+[[File:Tbquickinserts.png|thumb|Quick Inserts Integration]]
+
+==== Quick Inserts ====
+If you have [https://foundryvtt.com/packages/quick-insert#:~:text=Quick%20Insert%20provides%20a%20context,README%20for%20full%20usage%20instructions. Quick Inserts] enabled, Taskbar will add a search icon next to the Start Button to bring up Quick Inserts
+
+== Advanced: Custom Docking ==
+Custom Docking will allow you to dock arbitrary windows to the taskbar, you can configure it in the module settings.
+For example, if we want to dock Monk's tokenbar, the macro bar and token notes we can set the setting as follows: 
+
+<code>Hotbar,TokenBar,TokenNotes,AlwaysHP</code> 
+
+''<big><u>This feature is provided as-is and not all applications will dock correctly</u></big>''
+{| class="wikitable"
+|+Known module application ids
+!Application
+!ID
+|-
+|Core Hotbar
+|<code>Hotbar</code>
+|-
+|Monk's Token Bar
+|<code>TokenBar</code>
+|-
+|Token Notes
+|<code>TokenNotes</code>
+|-
+|Always HP
+|<code>AlwaysHP</code>
+|-
+|Alpha Hud
+|<code>SelectedWidgetApp</code> <code>CharactersWidgetApp</code>
+|}
+<blockquote></blockquote>
+[[Category:Module]]

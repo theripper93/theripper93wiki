@@ -1,0 +1,8 @@
+Execute macros on all clients.
+[[File:Smcheck.png|thumb|Socket Macros Checkbox]]
+
+== How to use ==
+Simply create your macro, and enable the <code>Execute on all Clients?</code> checkbox
+
+When you run the macro, it will run for you and all connected players.
+[[Category:Module]]

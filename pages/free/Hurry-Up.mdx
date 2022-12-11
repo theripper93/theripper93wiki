@@ -1,0 +1,64 @@
+import ImageButBetter from '../../components/ImageButBetter';
+import styles from '../globals.module.css';
+
+# Hurry Up
+
+<ImageButBetter
+  src='/images/Hurry-Up/Hutimer.png'
+  alt='The Hurry Up! Timer'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
+A simple timer to hurry up your players in combat\! Tired of those pesky players
+taking forever to then just swing a longsword after a 10 minute wait?
+
+## Features
+
+### Auto Start
+<ImageButBetter
+  src='/images/Hurry-Up/Hucirclecrit.png'
+  alt='Circle Style Timer going critical'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
+
+The timer automatically starts when it's the turn of a token owned by a
+player.
+
+### Critical
+
+
+Chose the duration of the timer and when it goes critical, at this point
+the progress bar will turn red and start blinking.
+
+### Sounds
+
+Play a looping sound when the timer goes critical (defaults to ticking)
+and a sound when the time is over.
+<ImageButBetter
+  src='/images/Hurry-Up/Husand.png'
+  alt='Sand style timer'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
+
+### Go Next
+
+Automatically advance the turn tracker when a timer ends.
+
+### Styles
+
+Choose between 3 Styles of timers.
+
+### Custom Timer
+
+You can create a timer out of combat with this simple script macro
+`CombatTimer.Create(seconds){:jsx}` with the desired amount of seconds.
+
+## Credits
+
+The sounds included are from
+[GameAudioGDC](https://sonniss.com/gameaudiogdc).

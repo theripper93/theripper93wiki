@@ -1,0 +1,99 @@
+import ImageButBetter from '../../components/ImageButBetter';
+import styles from '../globals.module.css';
+import { Callout } from 'nextra-theme-docs';
+
+# Dig Down
+
+<ImageButBetter
+  src='/images/Dig-Down/Ddrebuildcache.png'
+  alt='Rebuild Cache button'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
+Perform deep searches inside folder structures and sidebars and fuzzy searches on
+compendiums and sidebars. The text in this journals contains the word
+
+## Basics
+
+### Searches
+
+#### Deep Folder Search
+
+<ImageButBetter
+  src='/images/Dig-Down/Ddtips.png'
+  alt='Journal containing the word "Tips"'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
+If enabled, it will allow you to search in subfolders while using the file picker.
+
+For this feature to work you must enable `Deep File Search` in the
+module settings then click the `Rebuild Cache` button in the settings
+sidebar
+
+#### Fuzzy Search
+
+Fuzzy Searches are done automatically. It will find the closest matches
+to your search (e.g. searching for `accolite` will show `Acolyte` in the
+results). They are enabled by default and will work for compendiums and
+the actor sidebar.
+
+#### Deep Search
+
+<ImageButBetter
+  src='/images/Dig-Down/Ddcrsearch.png'
+  alt='Search CR with deep search'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
+The deep search starts with `&`. It will look into the items to find a property or
+value that matches the search. For example: Searching for the name of an image will
+filter for any entity that is using that image.
+
+Note that this feature works on all sidebar directories and will search
+inside the JSON itself. If you are looking for a scene with zombies you
+can search in your scene sidebar for `&zombie`.
+
+#### Prop Search
+
+<Callout type='warning' emoji='⚠️'>
+  Prop Search may be slow for huge directories.
+</Callout>
+
+Starting a search with `!` will search in the properties defined in the
+settings.
+
+If `data.details.cr` is a property defined in the settings, searching for
+`!1` will filter for creatures with a cr of 1. 
+
+### Other Features
+
+<ImageButBetter
+  src='/images/Dig-Down/Ddcompendium.png'
+  alt='Advanced search for compendium'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
+
+#### Cache Rebuilding
+
+To rebuild the cache (needed if you move\\add files) use this button:
+
+#### Excavating Tokens
+
+This option will find the closest match image based on the token name.
+
+To use it, simply click the excavation button to the right of the token
+image field.
+
+## Credits
+
+### Fuzzyset.js
+
+This package is licensed under the Prosperity Public License 3.0 which means this package is free to use for non-commercial projects.
+
+See https://github.com/Glench/fuzzyset.js for more details.

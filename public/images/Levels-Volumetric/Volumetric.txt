@@ -1,0 +1,30 @@
+'''Volumetric Templates''' ''(Levels - Volumetric Templates in releases)'' is a submodule of [[Levels]]. It allows for compute Foundry templates in 3D with autotargeting. Automatic mode to dynamically switch between 2D and 3D depending on the information provided. Works with all systems and is [https://gitlab.com/tposney/midi-qol MIDI QOL] compatible.
+
+== How to use ==
+Volumetric templates will work automatically with normal templates placement.
+
+The module will automatically figure out if a template needs 3D Calculations or not if <code>Dynamic auto swap</code> is enabled in the module settings.
+
+By default, circles will be spheres, and cones will be calculated as cones. Other shapes (boxes, cylinders, hight for rays) will need the special field to work in 3D.
+[[File:Vtmanual.png|thumb|Template Configuration Button]]
+
+=== Manually configuring a template ===
+[[File:Vtconfigscreen.png|thumb|Configure Template Prompt]]
+If you need to set the Special field, or manually set the elevation at which the template is placed you can do so with the configure template button.
+
+==== Elevation ====
+If you don't set an elevation, the elevation of your currently selected token will be used
+
+==== Special ====
+This field will tell Volumetric Templates the 3rd dimension of the template. Spheres and cones don't need it so that's why you don't need to set it for those.
+
+* '''Circle''': If a Special is set, the circle will be calculated as a cylinder with the Special beeing it's height
+* '''Cone''': Special will be ignored for cones
+* '''Rectangle''': The special field will determine the height (or depth) of the Rectangle
+* '''Ray''': The special field will determine the height (or depth) of the Ray
+
+[[File:Vtspecialtemp.png|thumb|The 3rd Dimension shown on the template]]
+When a special field is set, it will be shown in the template dimensions.
+
+== Configuration ==
+In the module settings you can find many options to customize Volumetric Templates, the most important field is the <code>Volume Percentage</code>, this will determine how much a token needs to overlap with a template to count as a target. Tokens are simplified to Cubes for intersections.

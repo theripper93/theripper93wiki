@@ -1,0 +1,80 @@
+import ImageButBetter from '../../components/ImageButBetter'
+import styles from '../globals.module.css'
+
+# Levels - Volumetric Templates
+
+**Volumetric Templates** _(Levels - Volumetric Templates in releases)_
+is a submodule of [Levels](Levels). It allows for compute
+Foundry templates in 3D with autotargeting. Automatic mode to
+dynamically switch between 2D and 3D depending
+on the information provided. Works with all systems and is [MIDI QOL](https://gitlab.com/tposney/midi-qol) compatible.
+
+## How to use
+
+<ImageButBetter
+  src='/images/Levels-Volumetric/Vtmanual.png'
+  alt='Template Configuration Button'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+
+Volumetric templates will work automatically with normal templates
+placement.
+
+The module will automatically figure out if a template needs 3D
+Calculations or not if `Dynamic auto swap` is enabled in the module
+settings.
+
+By default, circles will be spheres, and cones will be calculated as
+cones. Other shapes (boxes, cylinders, hight for rays) will need the
+special field to work in 3D.
+
+### Manually configuring a template
+
+<ImageButBetter
+  src='/images/Levels-Volumetric/Vtconfigscreen.png'
+  alt='Configure Template Prompt'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+If you need to set the Special field, or
+manually set the elevation at which the template is placed you can do so
+with the configure template button.
+
+#### Elevation
+
+If you don't set an elevation, the elevation of your currently selected
+token will be used
+
+#### Special
+
+This field will tell Volumetric Templates the 3rd dimension of the
+template. Spheres and cones don't need it so that's why you don't need
+to set it for those.
+
+- **Circle**: If a Special is set, the circle will be calculated as a
+  cylinder with the Special being it's height
+- **Cone**: Special will be ignored for cones
+- **Rectangle**: The special field will determine the height (or
+  depth) of the Rectangle
+- **Ray**: The special field will determine the height (or depth) of
+  the Ray
+
+<ImageButBetter
+  src='/images/Levels-Volumetric/Vtspecialtemp.png'
+  alt='3D on template'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+ When a special field is set,
+it will be shown in the template dimensions.
+
+## Configuration
+
+In the module settings you can find many options to customize Volumetric
+Templates, the most important field is the `Volume Percentage`, this
+will determine how much a token needs to overlap with a template to
+count as a target. Tokens are simplified to Cubes for intersections.

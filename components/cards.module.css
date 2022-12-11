@@ -1,0 +1,23 @@
+.card{
+    padding: 1rem;
+    border: 1px solid rgb(52, 52, 52);
+    border-radius: 5px;
+    display: flex;
+    transition: border-color 0.4s ease-in-out;
+    font-weight: 700;
+    width: 190px;
+    justify-content: center;
+}
+
+.card:hover{
+    cursor: pointer;
+    border-color: hsl(var(--nextra-primary-hue) 100% 45%);
+}
+
+.cardcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem 0;
+    gap: 1rem;
+}
