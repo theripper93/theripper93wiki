@@ -10,7 +10,7 @@ module.exports = withNextra({
 });
 
 
-function getWikiPage(moduleName, status){
+/*function getWikiPage(moduleName, status){
   let url = 'theripper93.com/wiki/'
   let root = '';
   if(moduleName == 'Levels') return 'theripper93.com/wiki/levels';
@@ -22,4 +22,4 @@ function getWikiPage(moduleName, status){
   url += root + '/';
   url += moduleName.replaceAll(' ', '-');
   return url;
-}
+}*/

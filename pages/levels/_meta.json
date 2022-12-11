@@ -1,5 +1,5 @@
 {
-  "Levels-Auto-Cover": "Auto Cover",
-  "Levels-Depth-Blur": "Depth Blur",
-  "Levels-Volumetric-Templates": "Volumetric Templates"
+  "levelsautocover": "Auto Cover",
+  "levels-layer-effects": "Depth Blur",
+  "levelsvolumetrictemplates": "Volumetric Templates"
 }
