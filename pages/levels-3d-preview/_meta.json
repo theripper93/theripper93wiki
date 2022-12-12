@@ -3,5 +3,8 @@
   "three-actor-portrait": "3D Portraits",
   "canvas3dcompendium": "Mapmaking pack",
   "canvas3dtokencompendium": "Token Collection",
-  "particles": "Particles Scripting"
+  "particles": "Particles Scripting",
+  "townscaper": {
+    "display": "hidden"
+  }
 }
