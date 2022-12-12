@@ -44,35 +44,35 @@ export default function ModuleInfo() {
       >
         {moduleData.module ? (
           <>
-            <ModuleInfoButton name={'Free'} color={'hsl(150deg 100% 27%)'} />
+            <ModuleInfoButton name={'Free'} color={'hsl(150deg 100% 40%)'} />
             <ModuleInfoButton
               name={'Version: ' + moduleData.module.latest}
-              color={'hsl(37deg 100% 53%)'}
             />
             <ModuleInfoButton
               name={'Installs: ' + moduleData.module.installs + '%'}
-              color={'#5c2ad9'}
             />
-            <ModuleInfoButton name={'FVTT: V10'} color={'#d24c8f'} />
+            <ModuleInfoButton name={'FVTT: V10'} />
+            <ModuleInfoButton name={'Download'} color={'hsl(var(--nextra-primary-hue)100% 45%/var(--tw-text-opacity))'} link={`https://foundryvtt.com/packages/${moduleId}`} />
           </>
         ) : (
           <>
-            <ModuleInfoButton name={'Premium'} color={'hsl(10deg 100% 52%)'} />
+            <ModuleInfoButton name={'Premium'} color={'hsl(10deg 100% 50%)'} />
             <ModuleInfoButton
               name={'Version: ' + moduleData.premium?.version}
               color={'hsl(37deg 100% 53%)'}
             />
             <ModuleInfoButton name={'FVTT: V10'} color={'#d24c8f'} />
+            <ModuleInfoButton name={'Download'} color={'hsl(var(--nextra-primary-hue)100% 45%/var(--tw-text-opacity))'} link={moduleData.premium?.downloadURL} />
           </>
         )}
       </div>
     );
 }
 
-function ModuleInfoButton({ name, color = 'var(--nextra-primary-hue)' }) {
+function ModuleInfoButton({ name, color, link }) {
   return (
-    <div style={{ color: color }} className={styles.modulebutton}>
+    <a style={{ color: color }} className={styles.modulebutton} href={link} target='_blank'>
       {name}
-    </div>
+    </a>
   );
 }
