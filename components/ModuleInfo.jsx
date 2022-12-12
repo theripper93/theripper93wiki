@@ -3,11 +3,16 @@ import { useEffect } from 'react';
 import styles from './moduleinfo.module.css';
 
 export default function ModuleInfo({ moduleId }) {
-  async function fetchData() {
-    return await fetch(`https://forge-vtt.com/api/bazaar/package/${moduleId}`)
-      .then((response) => response.json())
-      .then((data) => data);
-  }
+
+
+
+    async function fetchData(){
+        return await fetch(
+            `https://forge-vtt.com/api/bazaar/package/${moduleId}`
+          )
+            .then((response) => response.json())
+            .then((data) => data);
+    }
 
     async function fetchPremium(){
         return await fetch(
