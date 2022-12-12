@@ -9,23 +9,19 @@ export default {
   project: {
     link: 'https://github.com/theripper93',
   },
+  docsRepositoryBase : 'https://github.com/theripper93/theripper93wiki/tree/main',
   chat: {
     link: 'https://discord.com/invite/F53gBjR97G',
   },
   footer: {
     text: 'Created by theripper93 and apriltaoyvr with Nextra',
   },
-  editLink: {
-    component: null,
-    text: '',
-  },
-  feedback: {
-    content: null,
-    labels: '',
-  },
   primaryHue: {
     dark: 45,
     light: 259,
+  },
+  feedback: {
+    content: 'Report an issue with this page →',
   },
   useNextSeoProps() {
     return {

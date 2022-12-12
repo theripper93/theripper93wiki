@@ -58,7 +58,7 @@
   width: auto;
   max-width: 20vw;
   max-height: 30vh;
-  min-width: 15vh;
+  min-width: max(150px,15vh);
 }
 
 .wikiimgsmall {
@@ -66,5 +66,5 @@
   width: auto;
   max-width: 10vw;
   max-height: 20vh;
-  min-width: 10vh;
+  min-width: max(200px,10vh);
 }

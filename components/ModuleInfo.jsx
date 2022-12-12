@@ -59,9 +59,8 @@ export default function ModuleInfo() {
             <ModuleInfoButton name={'Premium'} color={'hsl(10deg 100% 50%)'} />
             <ModuleInfoButton
               name={'Version: ' + moduleData.premium?.version}
-              color={'hsl(37deg 100% 53%)'}
             />
-            <ModuleInfoButton name={'FVTT: V10'} color={'#d24c8f'} />
+            <ModuleInfoButton name={'FVTT: V10'} />
             <ModuleInfoButton name={'Download'} color={'hsl(var(--nextra-primary-hue)100% 45%/var(--tw-text-opacity))'} link={moduleData.premium?.downloadURL} />
           </>
         )}
