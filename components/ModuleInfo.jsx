@@ -38,24 +38,35 @@ export default function ModuleInfo({ moduleId }) {
     }, []);
 
     return (
-        <div className={styles.infowrapper} style={moduleData.ready ? {} : {display: "none"}}>
-            {
-                moduleData.module ?
-                (<>
-                <ModuleInfoButton name={'Free'} color={'lime'} />
-                <ModuleInfoButton name={'Version: ' + moduleData.module.latest} color={'red'} />
-                <ModuleInfoButton name={'Installs: ' + moduleData.module.installs + '%'} color={'green'} />
-                <ModuleInfoButton name={'FVTT: V10'} color={'orange'}/>
-                </>)
-                :
-                (<>
-                <ModuleInfoButton name={'Premium'} color={'red'}/>
-                <ModuleInfoButton name={'Version: ' + moduleData.premium?.version} color={'red'} />
-                <ModuleInfoButton name={'FVTT: V10'} color={'orange'}/>
-                </>)
-            }
-        </div>
-    )
+      <div
+        className={styles.infowrapper}
+        style={moduleData.ready ? {} : { display: 'none' }}
+      >
+        {moduleData.module ? (
+          <>
+            <ModuleInfoButton name={'Free'} color={'hsl(150deg 100% 27%)'} />
+            <ModuleInfoButton
+              name={'Version: ' + moduleData.module.latest}
+              color={'hsl(37deg 100% 53%)'}
+            />
+            <ModuleInfoButton
+              name={'Installs: ' + moduleData.module.installs + '%'}
+              color={'hsl(235deg 100% 64%)'}
+            />
+            <ModuleInfoButton name={'FVTT: V10'} color={'var(--nextra-primary-hue)'} />
+          </>
+        ) : (
+          <>
+            <ModuleInfoButton name={'Premium'} color={'hsl(37deg 100% 53%)'} />
+            <ModuleInfoButton
+              name={'Version: ' + moduleData.premium?.version}
+              color={'hsl(37deg 100% 53%)'}
+            />
+            <ModuleInfoButton name={'FVTT: V10'} color={'var(--nextra-primary-hue)'} />
+          </>
+        )}
+      </div>
+    );
 }
 
 function ModuleInfoButton({ name, color = 'var(--nextra-primary-hue)' }) {
