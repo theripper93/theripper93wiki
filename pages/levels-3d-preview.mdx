@@ -1,18 +1,19 @@
-import ImageButBetter from '../components/ImageButBetter';
-import ModuleInfo from '../components/ModuleInfo';
-import { Callout, Tab, Tabs } from 'nextra-theme-docs';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ImageButBetter from "../components/ImageButBetter";
+import ModuleInfo from "../components/ModuleInfo";
+import { Callout, Tab, Tabs } from "nextra-theme-docs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCube,
   faUser,
   faSort,
   faFileImport,
-} from '@fortawesome/free-solid-svg-icons';
-import { faDiscord, faPatreon } from '@fortawesome/free-brands-svg-icons';
-import styles from './globals.module.css';
+} from "@fortawesome/free-solid-svg-icons";
+import { faDiscord, faPatreon } from "@fortawesome/free-brands-svg-icons";
+import styles from "./globals.module.css";
 
 # 3D Canvas
-<ModuleInfo/>
+
+<ModuleInfo />
 3D Canvas is a module for viewing and creating maps in 3D.
 
 Turn your maps into true 3D, load in 3D models, and play your games in
@@ -85,6 +86,58 @@ Foundry sidebar. All controls can be rebinded in the configure controls menu.
 
 Actions marked GC are only available when Game Camera is enabled.
 
+### Camera Controls
+
+| Control                | Action                                                                                                                                             |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Left Mouse` + `Drag`  | Rotate Camera                                                                                                                                      |
+| `WASD`                 | Pan Camera                                                                                                                                         |
+| `Right Mouse` + `Drag` | Pan Camera                                                                                                                                         |
+| `Scroll Wheel`         | Zoom Camera                                                                                                                                        |
+| `Alt`                  | Holding Alt while moving the camera will prevent regular mouse event (like selecting an entity)                                                    |
+| `⇧ Shift` + `R`        | Reset camera to initial position                                                                                                                   |
+| `⇧ Shift` + `X`        | If a token is selected, focus the camera on the selected token                                                                                     |
+| `Spacebar`             | `GC` Locks onto active target <br/>In combat, this is the last actor to do an action Outside of combat, it locks onto the currently selected token |
+| `O`                    | `GC` Toggles top-down view                                                                                                                         |
+
+### Entity Interaction
+
+| Control                            | Action                               | Notes                                                                                            |
+| ---------------------------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `Left Mouse` + `Drag`              | Drag move entity                     | With `⇧ Shift` held, the scale is +-1 elevation. With `Crtl` held, the scale is +-0.1 elevation. |
+| `⇧ Shift` + `Click`                | Select multiple                      |                                                                                                  |
+| `Ctrl` + `Scroll Wheel`            | Rotate currently controlled entities |                                                                                                  |
+| `Click ''(on empty spot)''`        | Deselect all entities                | GM Only.                                                                                         |
+| `Ctrl + Click ''(on empty spot)''` | Deselect all entities                |                                                                                                  |
+| `F`                                | Re-enable ground snapping            | While held, can select multiple entities via box selection.                                      |
+
+### Measured Template
+
+| Control                                     | Action                                        |
+| ------------------------------------------- | --------------------------------------------- |
+| `Scroll Wheel ''(in template preview)''`    | Rotate the template                           |
+| `Scroll Wheel ''(while placing template)''` | Unsnap the second point and place it manually |
+| `F`                                         | Re-enable snapping                            |
+
+### Pings
+
+| Control         | Action                    |
+| --------------- | ------------------------- |
+| `⇧ Shift` + `Q` | Ping and focus the camera |
+| `⇧ Shift` + `E` | Ping location             |
+
+### Tile Editor
+
+| Control | Action                                                                                                   |
+| ------- | -------------------------------------------------------------------------------------------------------- |
+| `S`     | Scale                                                                                                    |
+| `R`     | Rotate                                                                                                   |
+| `T`     | Translate                                                                                                |
+| `G`     | Toggle Gizmo                                                                                             |
+| `Q`     | Cycle Fill Mode                                                                                          |
+| `F`     | Hold and Click-Drag to box select                                                                        |
+| `CTRL`  | Hold when starting a Gizmo Transform to duplicate the currently selected tiles and leave a clone behind. |
+
 TODO: CONTROLS TABLES
 
 ### Navigator
@@ -151,8 +204,8 @@ Sets the resolution scale.
 ### Global Settings
 
 <ImageButBetter
-  src='/images/3D-Canvas/Global_3D_Canvas_Settings.png'
-  alt='Global 3D Canvas Settings'
+  src="/images/3D-Canvas/Global_3D_Canvas_Settings.png"
+  alt="Global 3D Canvas Settings"
   width={2000}
   height={2000}
   className={styles.wikiimage}
@@ -300,8 +353,8 @@ Shows helpful debug info for troubleshooting.
 ### Scene Configuration
 
 <ImageButBetter
-  src='/images/3D-Canvas/3D_Canvas_Scene_Settings.png'
-  alt='3D Canvas Scene Settings'
+  src="/images/3D-Canvas/3D_Canvas_Scene_Settings.png"
+  alt="3D Canvas Scene Settings"
   width={2000}
   height={2000}
   className={styles.wikiimage}
@@ -435,8 +488,8 @@ single image.
 #### 3D Tiles
 
 <ImageButBetter
-  src='/images/3D-Canvas/3D_Tile_Menu.png'
-  alt='3D Tile Menu'
+  src="/images/3D-Canvas/3D_Tile_Menu.png"
+  alt="3D Tile Menu"
   width={2000}
   height={2000}
   className={styles.wikiimage}
@@ -540,7 +593,7 @@ If the scene crashes because of the settings, and you are not able to access the
 
 #### Shared Context
 
-<Callout type='warning' emoji='⚠️'>
+<Callout type="warning" emoji="⚠️">
   It is **not recommended** to disable Shared Context.
 </Callout>
 
@@ -558,7 +611,7 @@ obstacles.
 
 #### Fog Limitations
 
-<Callout type='info' emoji='ℹ️'>
+<Callout type="info" emoji="ℹ️">
   **Fog is not 3D!** Fog exploration is 2 dimensional.
 </Callout>
 
@@ -598,8 +651,8 @@ Controls <FontAwesomeIcon icon={faUser} /> and click the `Set Elevation for next
 You can access the Token Animations by Right clicking your token to open the Token Hud, you will see a Magic Wand icon on the right, click it to open the available animations. Clicking on an animation will play the animation for all clients. Some animations might not work if the token is Prone or Defeated.
 
 <ImageButBetter
-  src='https://user-images.githubusercontent.com/1346839/168579135-4b6137f7-05a5-4371-9d24-3e0454cf42ab.png'
-  alt='3D Tile Menu'
+  src="https://user-images.githubusercontent.com/1346839/168579135-4b6137f7-05a5-4371-9d24-3e0454cf42ab.png"
+  alt="3D Tile Menu"
   width={2000}
   height={2000}
   className={styles.wikiimage}
@@ -637,7 +690,7 @@ This is optional, an object containing additional parameters
 This macro will play the Twirl animation, 3 Times, on all Selected Tokens
 
 ```js copy
-game.Levels3DPreview.playTokenAnimation(canvas.tokens.controlled, 'twirl', {
+game.Levels3DPreview.playTokenAnimation(canvas.tokens.controlled, "twirl", {
   repeats: 3,
 });
 ```
@@ -675,7 +728,7 @@ new Particle3D(type);
 
 If no type is provided the default is `"p"`
 
-<Callout type='info' emoji='ℹ️'>
+<Callout type="info" emoji="ℹ️">
   Note that "Sprite" also accepts 3D Models as particles!
 </Callout>
 
@@ -692,7 +745,7 @@ These two methods are required on every effects, each one can take a single `Tok
 A `Position` is defined by `{ x:0, y:0, z:0 }` where `z` is in elevation units.
 `Explosion` effects are the exception as they do not require a `.from()`
 
-<Callout type='info' emoji='ℹ️'>
+<Callout type="info" emoji="ℹ️">
   You can omit both `.from()` and `.to()` when creating an effect inside
   `.onEnd()`. In that case the `.to()` will be set as the target of that
   particular effect.
@@ -735,40 +788,40 @@ Simply select a token, target some tokens and run the macros, you will see them 
 ##### Frostbolt
 
 ```js copy
-new Particle3D('p')
+new Particle3D("p")
   .from(token)
   .to(Array.from(game.user.targets))
-  .sprite('modules/levels-3d-preview/assets/particles/star_09.png')
+  .sprite("modules/levels-3d-preview/assets/particles/star_09.png")
   .speed(10)
-  .color('#0f4fff', '#4dd5ff')
+  .color("#0f4fff", "#4dd5ff")
   .scale(0.7)
   .start();
 ```
 
 ##### Bouncing Frostbolt (onEnd)
 
-<Callout type='info' emoji='ℹ️'>
+<Callout type="info" emoji="ℹ️">
   The `.onEnd()` parameter accepts another `Particle3D`
 </Callout>
-<Callout type='error' emoji='️🚫'>
+<Callout type="error" emoji="️🚫">
   You must not call `.start()` on the `Particle3D` inside the `.onEnd()`. The
   Particle3D inside the `.onEnd()` can have an `.onEnd()` as well, allowing for
   infinite chaining.
 </Callout>
 
 ```js copy /onEnd/
-new Particle3D('p')
+new Particle3D("p")
   .from(canvas.tokens.controlled)
   .to(Array.from(game.user.targets))
   .speed(10)
-  .color('#0f4fff', '#4dd5ff')
+  .color("#0f4fff", "#4dd5ff")
   .scale(0.8)
   .onEnd(
-    new Particle3D('p')
+    new Particle3D("p")
       .from(Array.from(game.user.targets))
       .to(canvas.tokens.controlled)
       .speed(10)
-      .color('#0f4fff', '#4dd5ff')
+      .color("#0f4fff", "#4dd5ff")
       .scale(0.8)
   )
   .start();
@@ -776,37 +829,37 @@ new Particle3D('p')
 
 ##### Magic Missile
 
-<Callout type='info' emoji='ℹ️'>
+<Callout type="info" emoji="ℹ️">
   The `.arc()` parameter will make each projectile curve in a different
   direction!
 </Callout>
 
 ```js copy /arc/
-new Particle3D('p')
+new Particle3D("p")
   .from(token)
   .to(Array.from(game.user.targets))
   .speed(8)
   .repeat(3)
   .arc(1)
   .delay(300)
-  .color('#ffffff', '#2e4aff')
+  .color("#ffffff", "#2e4aff")
   .scale(0.7)
   .start();
 ```
 
 ##### Shocking Grasp
 
-<Callout type='info' emoji='ℹ️'>
+<Callout type="info" emoji="ℹ️">
   Ray Effects tend to require a larger amount of particles, don't forget to set
   `.rate()`
 </Callout>
 
 ```js copy /rate/
-new Particle3D('r')
+new Particle3D("r")
   .from(token)
   .to(Array.from(game.user.targets))
-  .sprite('modules/levels-3d-preview/assets/particles/spark_04.png')
-  .color('blue', '#2e4aff')
+  .sprite("modules/levels-3d-preview/assets/particles/spark_04.png")
+  .color("blue", "#2e4aff")
   .scale(0.7)
   .rate(100, 1)
   .start();
@@ -815,11 +868,11 @@ new Particle3D('r')
 ##### Scorching Ray
 
 ```js copy
-new Particle3D('r')
+new Particle3D("r")
   .from(token)
   .to(Array.from(game.user.targets))
-  .sprite('modules/levels-3d-preview/assets/particles/flame_01.png')
-  .color('red', 'orange')
+  .sprite("modules/levels-3d-preview/assets/particles/flame_01.png")
+  .color("red", "orange")
   .scale(0.5)
   .repeat(3)
   .duration(250)
@@ -830,34 +883,34 @@ new Particle3D('r')
 
 ##### Dubstep Gun
 
-<Callout type='info' emoji='ℹ️'>
+<Callout type="info" emoji="ℹ️">
   The `.color()` parameter can accept Arrays of colors.
 </Callout>
 
 ```js copy /color/
-new Particle3D('p')
+new Particle3D("p")
   .from(token)
   .to(Array.from(game.user.targets))
-  .sprite('modules/levels-3d-preview/assets/particles/slash_03.png')
+  .sprite("modules/levels-3d-preview/assets/particles/slash_03.png")
   .repeat(3)
   .delay(200)
   .speed(10)
-  .color(['red', 'blue'], ['green', 'yellow'])
+  .color(["red", "blue"], ["green", "yellow"])
   .start();
 ```
 
 ##### Fireball Explosion
 
-<Callout type='info' emoji='ℹ️'>
+<Callout type="info" emoji="ℹ️">
   Explosion effects do not need a `.from()`. This is the only exception.
 </Callout>
 
 ```js copy /from/
-new Particle3D('e')
+new Particle3D("e")
   .to(Array.from(game.user.targets))
-  .sprite('modules/levels-3d-preview/assets/particles/dust.png')
+  .sprite("modules/levels-3d-preview/assets/particles/dust.png")
   .speed(0)
-  .color('red', 'orange')
+  .color("red", "orange")
   .scale(2, 2)
   .gravity(2)
   .life(700)
@@ -875,11 +928,11 @@ stops the effect after 1000 milliseconds. With the same logic you could store
 the ID and stop an effect on concentration end.
 
 ```js copy /Particle3D/
-const effectId = new Particle3D('r')
+const effectId = new Particle3D("r")
   .from(token)
   .to(Array.from(game.user.targets))
-  .sprite('modules/levels-3d-preview/assets/particles/flame_01.png')
-  .color('red', 'orange')
+  .sprite("modules/levels-3d-preview/assets/particles/flame_01.png")
+  .color("red", "orange")
   .scale(1.5)
   .duration(Infinity)
   .rate(100, 1)
@@ -896,12 +949,12 @@ setTimeout(() => {
 Once you assign a name you can stop the effect from a completely different macro.
 
 ```js copy /Particle3D.stop/
-const effectId = new Particle3D('r')
+const effectId = new Particle3D("r")
   .from(token)
   .to(Array.from(game.user.targets))
-  .sprite('modules/levels-3d-preview/assets/particles/flame_01.png')
-  .color('red', 'orange')
-  .name('Wall of Fire')
+  .sprite("modules/levels-3d-preview/assets/particles/flame_01.png")
+  .color("red", "orange")
+  .name("Wall of Fire")
   .scale(1.5)
   .duration(Infinity)
   .rate(100, 1)
@@ -909,29 +962,29 @@ const effectId = new Particle3D('r')
   .start();
 
 //In a different macro later on - we stop the effect
-Particle3D.stop('Wall of Fire');
+Particle3D.stop("Wall of Fire");
 ```
 
 ##### Spirit Bolt (Explosion Chaining)
 
-<Callout type='info' emoji='ℹ️'>
+<Callout type="info" emoji="ℹ️">
   The `.to()` is omitted from the `.onEnd()` explosion effect so that the
   explosion plays on the target hit.
 </Callout>
 
 ```js copy
-new Particle3D('p')
+new Particle3D("p")
   .from(token)
   .to(Array.from(game.user.targets))
   .speed(15)
   .arc(1)
-  .color('#c034eb', '#5819b5')
+  .color("#c034eb", "#5819b5")
   .scale(1)
   .onEnd(
-    new Particle3D('e')
-      .sprite('modules/levels-3d-preview/assets/particles/dust.png')
+    new Particle3D("e")
+      .sprite("modules/levels-3d-preview/assets/particles/dust.png")
       .speed(0)
-      .color('#c034eb', '#291547')
+      .color("#c034eb", "#291547")
       .scale(0.9, 0.9)
       .gravity(-5)
       .life(1700)
@@ -950,14 +1003,14 @@ new Particle3D('p')
 const lastArg = args[args.length - 1];
 const casterToken = canvas.tokens.get(lastArg.tokenId);
 const targets = lastArg.hitTargets;
-new Particle3D('p')
+new Particle3D("p")
   .from(casterToken)
   .to(targets)
   .speed(8)
   .repeat(3)
   .arc(1)
   .delay(200)
-  .color('#ffffff', '#2e4aff')
+  .color("#ffffff", "#2e4aff")
   .scale(0.7)
   .start();
 ```
@@ -1125,8 +1178,8 @@ If you installed the 3D Canvas Mapmaking Pack, you will have access to more than
 To access the material browser simply click the circular icon left of the [Filepicker+](Filepicker) icon (<FontAwesomeIcon icon={faFileImport} />).
 
 <ImageButBetter
-  src='/images/3D-Canvas/Material_Browser_Icon.png'
-  alt='Global 3D Canvas Settings'
+  src="/images/3D-Canvas/Material_Browser_Icon.png"
+  alt="Global 3D Canvas Settings"
   width={958}
   height={958}
   className={styles.wikiimagesmall}
@@ -1137,7 +1190,7 @@ option.
 
 #### Loading a PBR Material
 
-[FileMaterial Browser.pngthumb](FileMaterial_Browser.pngthumb 'wikilink') Tokens, walls, tiles and the scene table support PBR Materials. To load a pbr material you need a specific file naming stuctures. The files must be named as follows and be all in the same folder.
+[FileMaterial Browser.pngthumb](FileMaterial_Browser.pngthumb "wikilink") Tokens, walls, tiles and the scene table support PBR Materials. To load a pbr material you need a specific file naming stuctures. The files must be named as follows and be all in the same folder.
 
 ```postcss
 Wood077_1K_AmbientOcclusion.jpg
@@ -1152,7 +1205,7 @@ As you can see all the files share a root name then keywords to differentiate th
 
 You need to select one of the files in the image field to use them in 3D Canvas.
 
-<Callout type='warning' emoji='⚠️'>
+<Callout type="warning" emoji="⚠️">
   For the full material to be loaded you can pick any of the images but _not_
   color, otherwise only the color texture will be used.
 </Callout>
