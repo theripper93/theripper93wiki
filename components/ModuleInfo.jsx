@@ -25,7 +25,6 @@ export default function ModuleInfo() {
 
     async function fetchPremium(){
       if(fetchedModuleData) return fetchedModuleData;
-      console.log('Fetched data for ' + moduleId)
       const data = await fetch(
         `https://api.theripper93.com/moduleListing/latest`
       )
