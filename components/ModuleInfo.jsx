@@ -18,7 +18,7 @@ export default function ModuleInfo() {
 
     async function fetchPremium(){
         return await fetch(
-            `https://raw.githubusercontent.com/theripper93/theripper-premium-hub/master/moduleListingV10.json`
+            `https://api.theripper93.com/moduleListing/latest`
           )
             .then((response) => response.json())
             .then((data) => data);
