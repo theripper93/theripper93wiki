@@ -40,7 +40,7 @@ export default function ModuleInfo() {
     return (
       <div
         className={styles.infowrapper}
-        style={moduleData.ready ? {} : { opacity: 0}}
+        style={moduleData.ready ? {} : { opacity: 0 }}
       >
         {moduleData.module ? (
           <>
@@ -51,18 +51,18 @@ export default function ModuleInfo() {
             />
             <ModuleInfoButton
               name={'Installs: ' + moduleData.module.installs + '%'}
-              color={'hsl(235deg 100% 64%)'}
+              color={'#5c2ad9'}
             />
-            <ModuleInfoButton name={'FVTT: V10'} color={'var(--nextra-primary-hue)'} />
+            <ModuleInfoButton name={'FVTT: V10'} color={'#d24c8f'} />
           </>
         ) : (
           <>
-            <ModuleInfoButton name={'Premium'} color={'hsl(37deg 100% 53%)'} />
+            <ModuleInfoButton name={'Premium'} color={'hsl(10deg 100% 52%)'} />
             <ModuleInfoButton
               name={'Version: ' + moduleData.premium?.version}
               color={'hsl(37deg 100% 53%)'}
             />
-            <ModuleInfoButton name={'FVTT: V10'} color={'var(--nextra-primary-hue)'} />
+            <ModuleInfoButton name={'FVTT: V10'} color={'#d24c8f'} />
           </>
         )}
       </div>
