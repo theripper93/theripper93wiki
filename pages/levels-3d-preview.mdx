@@ -31,13 +31,12 @@ If you prefer Video Guides, you can check [3D Canvas Installation](https://youtu
 <Tabs items={['Dependencies', 'Recommended', 'Supported']}>
   <Tab>
     <>
-      These modules are **required** for Levels to run.
+      These modules are **required** for 3D Canvas to run.
 
       - [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper)
       - [socketLib](https://github.com/manuelVo/foundryvtt-socketlib)
       - [Levels](../levels)
       - [Wall Height](../free/wall-height)
-      - [Better Roofs](../free/betterroofs)
     </>
 
   </Tab>
@@ -57,7 +56,7 @@ If you prefer Video Guides, you can check [3D Canvas Installation](https://youtu
       **By other developers**
       - [Auto Rotate](https://github.com/Varriount/fvtt-autorotate) by Varriount
       - [Automated Animations](https://github.com/otigon/automated-jb2a-animations) by Otigon
-      - [Drag Ruler](https://github.com/manuelVo/foundryvtt-drag-ruler) by Varriount
+      - [Drag Ruler](https://github.com/manuelVo/foundryvtt-drag-ruler) by Stäbchenfisch
     </>
 
   </Tab>
@@ -86,7 +85,7 @@ Foundry sidebar. All controls can be rebinded in the configure controls menu.
 
 Actions marked GC are only available when Game Camera is enabled.
 
-<Tabs items={['Camera Controls', 'Entity Interaction', 'Measured Template', 'Pings', 'Tile Editor']}>
+<Tabs items={['Camera Controls', 'Entity Interaction', 'Measured Template', 'Pings', 'Tile Editor', 'Navigator']}>
   <Tab>
 | Control                | Action                                                                                                                                             |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -134,31 +133,32 @@ Actions marked GC are only available when Game Camera is enabled.
 | `F` | Hold and Click-Drag to box select |
 | `CTRL` | Hold when starting a Gizmo Transform to duplicate the currently selected tiles and leave a clone behind. |
   </Tab>
+  <Tab>
+    The 3D navigator is a new way for you and your players to navigate the
+    3D Scene with ease!
+
+    To have the 3D Navigator show a slider with all it's options, you must
+    define Levels in the Levels UI. The navigator will use those names and
+    the top range for its clipping planes
+
+    To cut to a specific Level, simply move the slider to the Level you
+    prefer, the slider will automatically snap to the closest Level.
+
+    - **Sync**:
+    If you are a GM, you will see a Sync button on top of the slider, by pressing
+    the button you will sync your current level with all players.
+    - **Camera**:
+    If you are a Player or GM you will see a Camera button, by pressing it
+    the camera will focus on the currently selected token (the same as Shift + X ).
+    Doing this will automatically set the navigator to the closest level.
+    - **Follow Mode**:
+    Click to toggle. Selecting a token or changing elevation will automatically
+    set the navigator to the closest level while enabled. It is enabled on scene
+    load for players and disabled for GMs by default. You can change this behaviour in the module settings under the misc tab.
+
+  </Tab>
 </Tabs>
 
-### Navigator
-
-The 3D navigator is a new way for you and your players to navigate the
-3D Scene with ease!
-
-To have the 3D Navigator show a slider with all it's options, you must
-define Levels in the Levels UI. The navigator will use those names and
-the top range for its clipping planes
-
-To cut to a specific Level, simply move the slider to the Level you
-prefer, the slider will automatically snap to the closest Level.
-
-**Sync**:
-If you are a GM, you will see a Sync button on top of the slider, by pressing
-the button you will sync your current level with all players.
-**Camera**:
-If you are a Player or GM you will see a Camera button, by pressing it
-the camera will focus on the currently selected token (the same as Shift + X ).
-Doing this will automatically set the navigator to the closest level.
-**Follow Mode**:
-Click to toggle. Selecting a token or changing elevation will automatically
-set the navigator to the closest level while enabled. It is enabled on scene
-load for players and disabled for GMs by default. You can change this behaviour in the module settings under the misc tab.
 
 ## Settings
 
@@ -472,99 +472,109 @@ load for players and disabled for GMs by default. You can change this behaviour 
 
 #### 2D Tiles
 
-Tiles are placed at the bottom elevation via the
-[Levels](Levels) module. Background tiles are rendered but
-it's highly suggested to instead use a single background image or
-popping and flickering issues may occur.
-
-[DF Architect](https://github.com/flamewave000/dragonflagon-arch) has an
-option to merge all your background tiles and background image into a
-single image.
+Tiles are placed at the bottom elevation set through the Levels module. While background tiles are rendered as well it's highly suggested that you instead use a single background image or you will have popping and flickering issues. The module [DF Architect](https://foundryvtt.com/packages/df-architect) has an option to merge all your background tiles and background image into a single image.
 
 #### 3D Tiles
+For props or entire 3D Maps, use the 3D Tiles!
+
+#### Placing 3D Tiles
+
+To place a 3D Tile, open the filepicker while in 3D Mode and in the Tiles Layer. The file picker will now show 3D Files instead of 2D Images.
+Drag and drop a file from the filepicker to the scene to create a 3D Tile, 3D Canvas will give your tile a placeholder 2D Image as well, required for Levels to adjust visibility when needed and to make it clear that you have 3D Tiles on the map, you can change this placeholder image but it's not suggested to leave it Blank.
+
+If you wish to see 3D Models previews in the file picker, you will need the Filepicker+ and 3D Portraits Modules (Check the home page for the Recomended Modules).
+
+#### Tile Configuration
+
+The 3D Tab contains all the settings to manipulate the tile manually through numbers, although most of these settings are self explanatory, we will focus on some that could be confusing:
+
+<Tabs items={['Vision', 'Fill Type', 'Random Seed', 'Shaders', 'Terrain', 'Heightmap' ]}>
+  <Tab>
+    This option tells 3D Canvas if the tile should be included in collision and/or vision calculations, for example, if one of your tiles represents Water, you would need to disable both options.
+  
+    **Door Options**
+    These options behave the same as core foundry. Tile Doors also do a range check against players so they will need to be no more than 1 Square away from the door to be able to open it.
+
+  </Tab>
+  <Tab>
+    This will change how the tile is displayed:
+    * Single: Will stretch the 3D Model to fill the box defined by the tile.
+    * Repeat: Will make multiple copies of this tile, "tiling" it inside the tile bounds.
+  </Tab>
+  <Tab>
+    The seed used to generate the randomization, you can change this seed to some arbitrary characters if you want to re randomize the tile.
+    The seed is used for both repeat tiles and terrain generation.
+  </Tab>
+  <Tab>
+    Tile come with options to create special effects, it's suggested that you use the included models in the `basicShapes` folder in the 3D Canvas Mapmaking Pack. Although the shaders will work on any model.
+
+    * **Water**: The water shader will create a wave effect on the 3D Geometry.
+    * **Distortion**: The distortion effect will create a "Lava" like effect on the geometry.
+    * **Wind**: Will create wind motion, this will work very well with the included grass and tree assets!
+    * **Triplanar Mapping**: Will project the texture in a way that prevents stretching, goes very well with the Terrain option.
+    * **Grid**: Will create a grid projection on the Tile.
+  </Tab>
+  <Tab>
+    This option will let you create a randomly generated terrain with some customization options, it's suggested that you use the included models in the `basicShapes` folder in the 3D Canvas Mapmaking Pack.
+  </Tab>
+  <Tab>
+    Selecting a black an white image in this slot will transform the geometry of the tile depending on the intensity oof the black color. Fully black means high terrain, while fully white is lower ground
+  </Tab>
+  <Tab></Tab>
+</Tabs>
+
+<hr/>
+
+#### Making a Multilevel 3D Map
+
+<Callout type="warning" emoji="⚠️">
+For this to work, first enable the "**Mirror Levels Tile Visibility**" in the 3D Tab in your Scene Configuration.
+</Callout>
+
+If you wish to make a multilevel 3D Map, where the 3D Objects above you are not visible, Open the Levels UI and define the amount of levels you wish, then, select a level.
+A Magenta colored Plane will appear, to indicate where you are building, start draging and dropping 3D Object onto that plane to build on that level, repeat for the other levels.
+If you now explore the map with a token selected, you will see that Objects above you will be hidden.
+
+#### Tagging 3D Models with Collision and Door data (Blender)
 
 <ImageButBetter
-  src="/images/3D-Canvas/3D_Tile_Menu.png"
-  alt="3D Tile Menu"
-  width={2000}
-  height={2000}
+  src="https://user-images.githubusercontent.com/1346839/176191860-6514a287-04b9-4cd4-b65b-74390b85f956.png"
+  alt="Blender Tagging Location"
   className={styles.wikiimage}
 />
+You can add metadata to your 3D Models in a way that 3D Canvas will be able to read it and automatically make parts of your Mesh Doors or set collision\sight blocking on submeshes separetly
 
-For props or entire 3D Maps, use 3D Tiles!
+1. Select the mesh you wish to tag
+2. Head to the 'Object Properties' tab and scroll to the bottom, Expand 'Custom Properties' and add them as needed (list of supported properties below)
+3. When you are done tagging all your meshes export the file as GLTF/GLB and make sure to include the custom properties in the export
 
-You can add metadata to your 3D Models in a way that 3D Canvas will be
-able to read it and automatically make parts of your Mesh Doors or set
-collision sight blocking on submeshes separately.
+<Tabs items={['Supported Properties', 'Collision and Sight', 'Doors']}>
+  <Tab>
+_The property names are case sensitive!_
 
-##### Placing 3D Tiles
+| Property Name | Type    | Value           |
+|---------------|---------|-----------------|
+| collision     | Integer | 0/1             |
+| sight         | Integer | 0/1             |
+| isDoor        | Integer | 0/1/2           |
+| doorId        | String  | Any Unique Name |
+| ds            | Integer | 0/1/2           |
+  </Tab>
+  <Tab>
+    
+    Setting collision and sight will tell 3D Canvas whether to block these 'senses', for example you would set on solid meshes both 'collision' and 'sight' to 1, while on a window 'collision' to 1 and 'sight' to 0. If you had an ethereal wall for example, you would set both to 0 or 'collision' to 0 and 'sight' to 1.
 
-To place a 3D Tile, open the filepicker while in 3D Mode and in the
-Tiles Layer. The file picker will now show 3D Files instead of 2D
-Images. Drag and drop a file from the filepicker to the scene to create
-a 3D Tile, 3D Canvas will give your tile a placeholder 2D Image as well,
-required for Levels to adjust visibility when needed and to make it
-clear that you have 3D Tiles on the map, you can change this placeholder
-image but it's not suggested to leave it Blank.
+    Note: You don't need to set collision and sight on all of your meshes. If the data is missing, 3D Canvas will use what is set globally on the tile (by default 1\1)
 
-If you wish to see 3D Models previews in the file picker, you will need
-the [Filepicker+](Filepicker) and [3D Portraits](3D-Portraits) modules.
+  </Tab>
+  <Tab>
+    In order for 3D Canvas to recognize and process a door correctly, any door you want to tag must have 'isDoor' set to 1 and a 'doorId' of your choice (eg "Tavern_Door_A". Keep in mind that every doorId must be different (no duplicate Ids)
 
-##### Tile Editor
+    The 'ds' property tells 3D Canvas the Door State: 0 - Open, 1 - Closed, 2 - Closed and Locked 
+    The 'isDoor' property tells 3D Canvas which type of door the door is: 0 - Not a Door, 1 - Regular Door, 2 - Secret Door
 
-Once a Tile is on the scene you can select it and use the quick tile
-editor controls to manipulate the tile. All the shortcuts are documented
-in the [3D Canvas Controls](3D-Canvas#controls).
-
-##### Tile Configuration
-
-The 3D Tab contains all the settings to manipulate the tile manually
-through numbers, although most of these settings are self explanatory,
-we will focus on some that could be confusing
-
-##### Block Sight or Movement
-
-This option tells 3D Canvas if the tile should be included in collision and or vision calculations.
-
-For example, if one of your tiles represents water, you would need to
-disable both options.
-
-##### Door Options
-
-These options behave the same as core foundry. Tile Doors also do a
-range check against players so they will need to be no more than 1
-square away from the door to be able to open it.
-
-##### Fill Type
-
-This will change how the tile is displayed
-
-- **Single** will stretch the 3D Model to fill the box defined by the tile.
-- **Repeat** will make multiple copies of this tile, tiling it inside the tile bounds. This option is considerably more performant than having multiple copies of a Single fill tile.
-
-##### Gap
-
-This option will set the Gap between the repeated 3D Models. Will only
-work with Repeat Fill Type
-
-##### Randomization Options
-
-All this options will only affect the Repeat Fill Type
-
-##### Random Seed
-
-The seed used to generate the randomization, you can change this seed to
-some arbitrary characters if you want to re randomize the tile.
-
-##### Supported Properties
-
-| Property Name | Type       | Value |
-| ------------- | ---------- | ----- |
-| collision     | Integer    | 01    |
-| sight         | Integer    | 01    |
-| isDoor        | Integer    | 012   |
-| doorId        | String     | Any   |
-| Unique Name   | ds Integer | 012   |
+  </Tab>
+</Tabs>
 
 ### Lights
 
@@ -572,56 +582,18 @@ To create a light, simply go to the light layer and drag to create a light, all 
 
 #### Sun
 
-The sun's position and lighting is determined by the time of day.
+The sun's position and lighting is determined by the time of day. You can configure it in the scene settings.
 
 #### Limitations
 
-3D Lights will not be blocked by walls or cast shadows because of a WebGL limitation. It's also incredibly expensive on performance.
+<Callout type="warning" emoji="⚠️">
+3D Lights will not be blocked by walls or cast shadows because of WebGL limitations. It's also incredibly expensive on performance.
+</Callout>
 
-You can enable Shadow CastingWall Blocking in the 3D Tab for specific lights, but it's highly suggested to not use more than 2-3 lights per scene while enabled. Enabling this option on a large number of lights
+You can enable Shadow Casting/Wall Blocking in the 3D Tab for specific lights, but it's highly suggested to not use more than 2-3 lights per scene while enabled. Enabling this option on a large number of lights
 will crash the scene.
 
 If the scene crashes because of the settings, and you are not able to access the 3D or 2D Scene, disable 3D Canvas (or launch your world in safe mode) and delete the shadow casting lights.
-
-### Fog of War
-
-#### Shared Context
-
-<Callout type="warning" emoji="⚠️">
-  It is **not recommended** to disable Shared Context.
-</Callout>
-
-Shared Context is a global setting. If enabled, it allows for fog of war
-to be rendered in real-time with better performance and better quality. The downside is that you will lose access to the Mini-Canvas
-
-#### Fog Exploration
-
-If you have both **Token Vision** and **Fog Exploration** enabled in the
-scene settings, 3D Canvas will mirror the 2D Canvas fog. This means that
-fog bounds are solely determined by walls in the scene.
-
-If you have **Token Vision** enabled but **Fog Exploration** disabled, the whole scene will be revealed but walls and geometry (if set in the scene settings) will prevent tokens from seeing each other if blocked by
-obstacles.
-
-#### Fog Limitations
-
-<Callout type="info" emoji="ℹ️">
-  **Fog is not 3D!** Fog exploration is 2 dimensional.
-</Callout>
-
-Exploring any space will explore the full vertical space of that location. There are no current plans for 'true' 3D fog exploration because of performance costs.
-
-#### Manual Fog of War
-
-If you wish to have some semblance of a 3D Fog, you can use Box Measure
-templates to create Fog of War boxes. It will mimic the use a piece of
-paper to cover the map table experience—but in 3D.
-
-Simply place a Box Measured Template, open it's configuration, and
-enable `Is Fog of War Box`
-
-Players will see this box as solid black. GMs will see it semi
-transparent. Moving the camera inside the box will obscure the view. The GM can move or remove these boxes during the exploration.
 
 ### Measured Templates
 
@@ -635,6 +607,48 @@ placement, check the Controls Wiki Page
 
 Since this is not obvious, to create a cylinder, head over to the Token
 Controls <FontAwesomeIcon icon={faUser} /> and click the `Set Elevation for next placed Template` button <FontAwesomeIcon icon={faSort} />. In the **Special** field, set the height of the cylinder (in grid units). Then place a circle template.
+
+## Fog of War
+
+### Shared Context
+
+<Callout type="warning" emoji="⚠️">
+  It is **not recommended** to disable Shared Context.
+</Callout>
+
+Shared Context is a global setting. If enabled, it allows for fog of war
+to be rendered in real-time with better performance and better quality. The downside is that you will lose access to the Mini-Canvas
+
+### Fog Exploration
+
+If you have both **Token Vision** and **Fog Exploration** enabled in the
+scene settings, 3D Canvas will mirror the 2D Canvas fog. This means that
+fog bounds are solely determined by walls in the scene.
+
+If you have **Token Vision** enabled but **Fog Exploration** disabled, the whole scene will be revealed but walls and geometry (if set in the scene settings) will prevent tokens from seeing each other if blocked by
+obstacles.
+
+### Fog Limitations
+
+<Callout type="info" emoji="ℹ️">
+  **Fog is not 3D!** Fog exploration is 2 dimensional.
+</Callout>
+
+Exploring any space will explore the full vertical space of that location. There are no current plans for 'true' 3D fog exploration because of performance costs.
+
+### Manual Fog of War
+
+If you wish to have some semblance of a 3D Fog, you can use Box Measure
+templates to create Fog of War boxes. It will mimic the use a piece of
+paper to cover the map table experience—but in 3D.
+
+Simply place a Box Measured Template, open it's configuration, and
+enable `Is Fog of War Box`
+
+Players will see this box as solid black. GMs will see it semi
+transparent. Moving the camera inside the box will obscure the view. The GM can move or remove these boxes during the exploration.
+
+
 
 ## Special Effects
 
@@ -659,18 +673,11 @@ To play an animation with a macro, first create a script macro, then use the fol
 ```js copy
 game.Levels3DPreview.playTokenAnimation(tokens, animationId, options);
 ```
-
-##### tokens
-
-This parameter can be a single token object, an array of token objects, a single token ID or an array of token IDs, the animation will play on all these targets.
-
-##### animationId
-
-The identifier for the animation, you can find all the animation IDs by typing `game.Levels3DPreview.CONFIG.tokenAnimations` in the console and hitting Enter.
-
-##### Options
-
-This is optional, an object containing additional parameters
+|Parameter|Description|
+|---|---|
+|tokens|This parameter can be a single token object, an array of token objects, a single token ID or an array of token IDs, the animation will play on all these targets.|
+|animationId|The identifier for the animation, you can find all the animation IDs by typing `game.Levels3DPreview.CONFIG.tokenAnimations` in the console and hitting Enter.|
+|Options|This is optional, an object containing additional parameters|
 
 ```js copy
 {
@@ -679,7 +686,7 @@ This is optional, an object containing additional parameters
 }
 ```
 
-##### Example Macro
+#### Example Macro
 
 This macro will play the Twirl animation, 3 Times, on all Selected Tokens
 
@@ -689,9 +696,6 @@ game.Levels3DPreview.playTokenAnimation(canvas.tokens.controlled, "twirl", {
 });
 ```
 
-### Weather
-
-You can set the Weather of your 3D Scene in the 3D Tab of the scene configuration under the "Particles" Section.
 
 ### Particle System
 
@@ -699,605 +703,161 @@ You can set the Weather of your 3D Scene in the 3D Tab of the scene configuratio
 
 #### No Scripting usage
 
+<ImageButBetter
+  src="https://user-images.githubusercontent.com/1346839/168579424-7dd2436b-7503-46f4-8ea5-ff9a0925d610.png"
+  alt="Automated Animations UI"
+  className={styles.wikiimage}
+/>
 If you don't want to dig into the scripting aspect, the module [Automated Animations](https://foundryvtt.com/packages/autoanimations) provides a graphical interface to setup 3D Canvas Particle Effects.
 
-![image](https://user-images.githubusercontent.com/1346839/168579424-7dd2436b-7503-46f4-8ea5-ff9a0925d610.png)
 
-#### Creating an Effect
-
-First create a `Script Macro`, then to start creating your effect simply call
-
-```js copy
-new Particle3D(type);
-```
-
-`type` is the type of particle effect, at the moment the options are:
-
-| Effect     | type         | type(short) |
-| ---------- | ------------ | ----------- |
-| Projectile | "projectile" | "p"         |
-| Sprite     | "sprite"     | "s"         |
-| Ray        | "ray"        | "r"         |
-| Explosion  | "explosion"  | "e"         |
-
-If no type is provided the default is `"p"`
-
-<Callout type="info" emoji="ℹ️">
-  Note that "Sprite" also accepts 3D Models as particles!
-</Callout>
-
-Now you can start chaining properties, similar to how Sequencer works. Every time you call a `.method()` on a `Particle3D` it will always return the `Particle3D` object, allowing for chaining. The only exception is the `.start()` method that will return the ID if the `Particle3D`
-First we must provide an origin and a destination.
-
-```js copy
-new Particle3D(type).from(origin).to(destination);
-```
-
-##### `.from()` & `.to()`
-
-These two methods are required on every effects, each one can take a single `Token` or an array of `Tokens` or a single `Position` or an array of them. Non `Token` placeables are also supported.
-A `Position` is defined by `{ x:0, y:0, z:0 }` where `z` is in elevation units.
-`Explosion` effects are the exception as they do not require a `.from()`
-
-<Callout type="info" emoji="ℹ️">
-  You can omit both `.from()` and `.to()` when creating an effect inside
-  `.onEnd()`. In that case the `.to()` will be set as the target of that
-  particular effect.
-</Callout>
-
-Let's set up our origin as the selected token and the destination as our targets
-
-```js copy
-new Particle3D(type).from(token).to(Array.from(game.user.targets));
-```
-
-At this point we can `.start()` our Particle3D to play the effect and the default settings will be used (it will look like a firebolt)
-
-```js copy /start/
-new Particle3D(type).from(token).to(Array.from(game.user.targets)).start();
-```
-
-##### `.start()`
-
-The `.start()` method takes no arguments and will simply start the effect. After using this method you should **not** interact with the `Particle3D` anymore. Use the returned ID instead if you wish to stop the effect, see the [Stopping an Effect](#stopping-an-effect) section below.
-
-If you wish you can call `.start(false)` to only play the effect locally.
-
-##### Stopping an Effect
-
-When creating an effect, the effect will return it's id. You can use this Id later to stop the effect. You can also execute `Particle3D.stop("all")` to stop all effects.
-
-If you used the `.name()` property on effect creation you can also `.stop(name)` to stop all effects with that name.
-
-##### Try it yourself
-
-These are several examples showcasing the Particle3D system that are a good starting point for understanding the system and creating your own custom effects.
-
-Create new `Script Macros` in your game with the code blocks below to try them out in 3DCanvas and see the different effects. You can adjust the variables to see how those influence the effects. These macros are also all available to import directly in the `3D Canvas Particle Effects` macro compendium!
-
-Simply select a token, target some tokens and run the macros, you will see them in action!
-
-#### Examples
-
-##### Frostbolt
-
-```js copy
-new Particle3D("p")
-  .from(token)
-  .to(Array.from(game.user.targets))
-  .sprite("modules/levels-3d-preview/assets/particles/star_09.png")
-  .speed(10)
-  .color("#0f4fff", "#4dd5ff")
-  .scale(0.7)
-  .start();
-```
-
-##### Bouncing Frostbolt (onEnd)
-
-<Callout type="info" emoji="ℹ️">
-  The `.onEnd()` parameter accepts another `Particle3D`
-</Callout>
-<Callout type="error" emoji="️🚫">
-  You must not call `.start()` on the `Particle3D` inside the `.onEnd()`. The
-  Particle3D inside the `.onEnd()` can have an `.onEnd()` as well, allowing for
-  infinite chaining.
-</Callout>
-
-```js copy /onEnd/
-new Particle3D("p")
-  .from(canvas.tokens.controlled)
-  .to(Array.from(game.user.targets))
-  .speed(10)
-  .color("#0f4fff", "#4dd5ff")
-  .scale(0.8)
-  .onEnd(
-    new Particle3D("p")
-      .from(Array.from(game.user.targets))
-      .to(canvas.tokens.controlled)
-      .speed(10)
-      .color("#0f4fff", "#4dd5ff")
-      .scale(0.8)
-  )
-  .start();
-```
-
-##### Magic Missile
-
-<Callout type="info" emoji="ℹ️">
-  The `.arc()` parameter will make each projectile curve in a different
-  direction!
-</Callout>
-
-```js copy /arc/
-new Particle3D("p")
-  .from(token)
-  .to(Array.from(game.user.targets))
-  .speed(8)
-  .repeat(3)
-  .arc(1)
-  .delay(300)
-  .color("#ffffff", "#2e4aff")
-  .scale(0.7)
-  .start();
-```
-
-##### Shocking Grasp
-
-<Callout type="info" emoji="ℹ️">
-  Ray Effects tend to require a larger amount of particles, don't forget to set
-  `.rate()`
-</Callout>
-
-```js copy /rate/
-new Particle3D("r")
-  .from(token)
-  .to(Array.from(game.user.targets))
-  .sprite("modules/levels-3d-preview/assets/particles/spark_04.png")
-  .color("blue", "#2e4aff")
-  .scale(0.7)
-  .rate(100, 1)
-  .start();
-```
-
-##### Scorching Ray
-
-```js copy
-new Particle3D("r")
-  .from(token)
-  .to(Array.from(game.user.targets))
-  .sprite("modules/levels-3d-preview/assets/particles/flame_01.png")
-  .color("red", "orange")
-  .scale(0.5)
-  .repeat(3)
-  .duration(250)
-  .delay(600)
-  .rate(100, 1)
-  .start();
-```
-
-##### Dubstep Gun
-
-<Callout type="info" emoji="ℹ️">
-  The `.color()` parameter can accept Arrays of colors.
-</Callout>
-
-```js copy /color/
-new Particle3D("p")
-  .from(token)
-  .to(Array.from(game.user.targets))
-  .sprite("modules/levels-3d-preview/assets/particles/slash_03.png")
-  .repeat(3)
-  .delay(200)
-  .speed(10)
-  .color(["red", "blue"], ["green", "yellow"])
-  .start();
-```
-
-##### Fireball Explosion
-
-<Callout type="info" emoji="ℹ️">
-  Explosion effects do not need a `.from()`. This is the only exception.
-</Callout>
-
-```js copy /from/
-new Particle3D("e")
-  .to(Array.from(game.user.targets))
-  .sprite("modules/levels-3d-preview/assets/particles/dust.png")
-  .speed(0)
-  .color("red", "orange")
-  .scale(2, 2)
-  .gravity(2)
-  .life(700)
-  .rate(10, 1)
-  .emitterSize(1)
-  .alpha(0.1, 0)
-  .mass(400)
-  .start();
-```
-
-##### Wall of fire (stop)
-
-Notice how the new `Particle3D()` is assigned to a variable, then a set timeout
-stops the effect after 1000 milliseconds. With the same logic you could store
-the ID and stop an effect on concentration end.
-
-```js copy /Particle3D/
-const effectId = new Particle3D("r")
-  .from(token)
-  .to(Array.from(game.user.targets))
-  .sprite("modules/levels-3d-preview/assets/particles/flame_01.png")
-  .color("red", "orange")
-  .scale(1.5)
-  .duration(Infinity)
-  .rate(100, 1)
-  .gravity(-5)
-  .start();
-
-setTimeout(() => {
-  Particle3D.stop(effectId);
-}, 1000);
-```
-
-##### Wall of fire (stop with name)
-
-Once you assign a name you can stop the effect from a completely different macro.
-
-```js copy /Particle3D.stop/
-const effectId = new Particle3D("r")
-  .from(token)
-  .to(Array.from(game.user.targets))
-  .sprite("modules/levels-3d-preview/assets/particles/flame_01.png")
-  .color("red", "orange")
-  .name("Wall of Fire")
-  .scale(1.5)
-  .duration(Infinity)
-  .rate(100, 1)
-  .gravity(-5)
-  .start();
-
-//In a different macro later on - we stop the effect
-Particle3D.stop("Wall of Fire");
-```
-
-##### Spirit Bolt (Explosion Chaining)
-
-<Callout type="info" emoji="ℹ️">
-  The `.to()` is omitted from the `.onEnd()` explosion effect so that the
-  explosion plays on the target hit.
-</Callout>
-
-```js copy
-new Particle3D("p")
-  .from(token)
-  .to(Array.from(game.user.targets))
-  .speed(15)
-  .arc(1)
-  .color("#c034eb", "#5819b5")
-  .scale(1)
-  .onEnd(
-    new Particle3D("e")
-      .sprite("modules/levels-3d-preview/assets/particles/dust.png")
-      .speed(0)
-      .color("#c034eb", "#291547")
-      .scale(0.9, 0.9)
-      .gravity(-5)
-      .life(1700)
-      .force(3)
-      .rate(50, 1)
-      .emitterSize(0.05)
-      .alpha(0.1, 0)
-      .mass(200)
-  )
-  .start();
-```
-
-##### Magic Missile (MIDI-QOL on use Macro)
-
-```js copy
-const lastArg = args[args.length - 1];
-const casterToken = canvas.tokens.get(lastArg.tokenId);
-const targets = lastArg.hitTargets;
-new Particle3D("p")
-  .from(casterToken)
-  .to(targets)
-  .speed(8)
-  .repeat(3)
-  .arc(1)
-  .delay(200)
-  .color("#ffffff", "#2e4aff")
-  .scale(0.7)
-  .start();
-```
-
-#### Particles Properties & Behaviours
-
-We can now add properties to the effect in any order to alter it's appearance
-
-##### `.alpha(start,end)`
-
-This property requires start and end to be numbers between 0 and 1 - sets the starting and ending opacity of particles
-
-##### `.arc(integer)`
-
-This property takes an integer and indicates how many times the projectile will curve before reaching it's destination. Default is 0
-
-##### `.color(start,end)`
-
-This will determine the starting and ending color of the effect, only start can be provided. start and end can also be arrays of colors (eg `.color([color1,color2],[color3,color4])`.
-
-If an array of colors is provided for start/end the system will pick one of those colors randomly as the starting/ending color - it will **not** create a multicolor gradient.
-
-The colors can be in any format, HEX is recommended but you can use any CSS compatible color - even using `"red"` will work.
-
-##### `.delay(milliseconds)`
-
-If `.repeat()` is set, this will be the delay between each repeat.
-
-##### `.duration(milliseconds)`
-
-Duration in milliseconds of the effect, valid only for "ray". Default is 300 milliseconds
-
-##### `.emitterSize(number)`
-
-Radius of the area of emission in grid squares (so 1 would be 1 grid square), the larger the number the more spread out the particles will be in their starting point. Default is 0
-
-##### `.force(number)`
-
-If using an explosion, set the force of the explosion, default is 15.
-This will determine the force with which the particles are propelled from the origin. Higher numbers will result in faster particles.
-
-##### `.gravity(number)`
-
-Gravity affecting the particles - 1 is Earth gravity.
-Higher numbers means particles will travel down faster depending on their mass.
-Negative gravity is also possible if you want particles to go up instead.
-
-##### `.life(min, max)`
-
-Range in milliseconds of the lifetime of a particle, bigger numbers will equal to longer trails. default (100,500). A single value is also accepted.
-
-##### `.mass(number)`
-
-The Mass of the particle, this will affect how much gravity pulls down the particle. Default is 100.
-
-##### `.miss()`
-
-If added to the effect, it will miss the target. You can also call `.miss(Boolean)` if you prefer.
-
-##### `.name(string)`
-
-You can give a name to an effect, if you do so, you can call the `.stop()` method using this name and all effects with this name will be stopped.
-
-##### `.onEnd(particle3D)`
-
-You can pass another particle3D or an array of particle3d to the `.onEnd` method, if you do so, these effects will be played when the main effect ends, you can nest this how many times you want but **DO NOT** call the `.start()` method on Particle3D inside the `.onEnd()` method. Does not trigger when the effect is terminated by `.stop()`
-
-##### `.playAnimation(animationData)`
-
-Play a 3D Animation, the animation data is formatted as follows
-
-```js copy
-{
-  // The from property specifies which animation should be played
-  // on the origin of the particle effect (usually the caster or attacker)
-  from: {
-    // The id of the animation to play
-    id: "twirl",
-    //If the animation should be played on start of the effect
-    start: true,
-    // If the animation should be played when the effect ends (like a projectile reaching it's target)
-    end: false,
-  },
-  // The from property specifies which animation should be played
-  // on the origin of the particle effect
-  // (usually the caster or attacker)
-  to: {
-    id: "shake",
-    start: true,
-    end: false,
-  },
-}
-```
-
-##### `.push(dx,dy,dz)`
-
-The pushing force affecting the particles, this is a method generally used internally for fixed emitters - it will create an effect on the particles as if a force was pushing them in a specific direction. Default is (0,0,0).
-
-##### `.rate(particles,milliseconds)`
-
-The Rate of the emitter, where particles is the amount of particles in the system and milliseconds is how often the system creates a particle. Default (12, 16)
-
-##### `.repeat(integer)`
-
-The number of times to repeat the effect
-
-##### `.rotation(x,y,z)`
-
-Rotation in degrees of the particle, only used if using a 3D Model as particle
-
-##### `.up(x,y,z)`
-
-A unit vector (eg .up(1,0,1) ) representing the direction of the "tip" of the model (eg, an arrow or a dagger), only used if using a 3D Model as particle
-
-##### `.rotateTowards()`
-
-Instead of a projectile, do a swinging motion, only used if using a 3D Model as particle
-
-##### `.scale(min,max)`
-
-The starting and ending size in in grid squares of a single particle. Default is (0.8,0)
-
-##### `.speed(number)`
-
-The speed of the projectile. Default is 10.
-
-##### `.sprite(pathToFile)`
-
-The path to the image to be used as particle. Default is `modules/levels-3d-preview/assets/particles/emberssmall.png` you can find many particles in that same folder.
-
-##### `.startAfter(milliseconds)`
-
-Delay the start of the effect by the specified milliseconds
-
-## Files
-
-### Supported File Formats
-
-#### 3D File Formats
-
-You can use **`GLB`**, **`GLTF`** and **`FBX`** files, other formats can be easily converted. Blender is suggested to perform
-this operation.
-
-#### 2D File Formats
-
-3D Canvas supports all the file formats supported by Foundry, including
-animated **`webm`** files. Due to how 3D Canvas handles transparency, semi-transparent images might be completely cut of by the processing.
-
-While the weather system supports animated file formats, the particle
-effect system does not.
-
-##### Animated Images
-
-While 3D Canvas supports animated webm, it's possible that your browser,
-or some browser extension blocks video autoplay. Because the 3D Library
-loads animated images differently than 2D it might bump into that block,
-if they don't work for you, try to switch browser or disable extensions.
-
-### PBR Materials
-
-#### Material Browser
-
-If you installed the 3D Canvas Mapmaking Pack, you will have access to more than 1000 Materials and the Material Browser.
-
-To access the material browser simply click the circular icon left of the [Filepicker+](Filepicker) icon (<FontAwesomeIcon icon={faFileImport} />).
-
-<ImageButBetter
-  src="/images/3D-Canvas/Material_Browser_Icon.png"
-  alt="Global 3D Canvas Settings"
-  width={958}
-  height={958}
-  className={styles.wikiimagesmall}
-/>
-
-You will then be welcomed by the material browser. To apply the material simply click on the desired one. Keep in mind that if you intend to use these materials on tokens, you need to select PBR in the material
-option.
-
-#### Loading a PBR Material
-
-[FileMaterial Browser.pngthumb](FileMaterial_Browser.pngthumb "wikilink") Tokens, walls, tiles and the scene table support PBR Materials. To load a pbr material you need a specific file naming stuctures. The files must be named as follows and be all in the same folder.
-
-```postcss
-Wood077_1K_AmbientOcclusion.jpg
-Wood077_1K_Color.jpg
-Wood077_1K_Emissive.jpg
-Wood077_1K_Metalness.jpg
-Wood077_1K_NormalGL.jpg
-Wood077_1K_Roughness.jpg
-```
-
-As you can see all the files share a root name then keywords to differentiate the different textures. You can find materials already set up this way here AmbientCG.
-
-You need to select one of the files in the image field to use them in 3D Canvas.
-
-<Callout type="warning" emoji="⚠️">
-  For the full material to be loaded you can pick any of the images but _not_
-  color, otherwise only the color texture will be used.
-</Callout>
-
-For walls you can load the image in it's texture field, same for tokens, tiles and the scene table. Tokens also require that the material is set to PBR.
-
-Displacement maps are not supported due to performance and optimization.
-
-## Other
-
-### Resources
-
-#### Content Creators
-
-If you wish to purchase premade content for 3D Canvas, some content
-creators have it available on their Patreons.
-
-- [Baileywiki](https://www.patreon.com/baileywiki) has a vast collection of 3D Prefabs, Heightmaps, and Maps with heavy use of built in tools from the Mapmaking Pack.
-- [Swift Cartography](https://www.patreon.com/Swift) has 3D Models of complete maps and Props.
-
-#### 3D Canvas Compendium
-
-The [compendium](https://github.com/theripper93/canvas3dcompendium) includes
-premade maps and tokens and a vast collection of 3D tiles, the assets
-included are continuously updated.
-
-#### Heroforge
-
-By using the [3D Portraits](../levels-3d-preview/three-actor-portrait) module, you can
-import your purchased 3D minis from [Hero Forge](https://www.heroforge.com).
-
-Hero Forge also offers a $15 a month subscription service that
-lets you use all the pro customization and includes 5 minis purchases
-per month.
-
-#### 3D Models
-
-- [Quaternius](https://quaternius.com/)
-- [Shapeways](https://www.shapeways.com/) Account Required
-- [How to convert STLs](https://youtu.be/2UwQ5v1uQy0d)
-
-#### HDRIs
-
-- [Polyhaven](https://polyhaven.com/hdris)
-- [iHDRI](https://www.ihdri.com/hdri-skies-outdoor)
-- [HDRMaps](https://hdrmaps.com)
-- [Location Textures](https://locationtextures.com/panoramas)
-
-#### Skyboxes
-
-- [Skyboxes by Zachery “skiingpenguins” Slocum](https://opengameart.org/content/skiingpenguins-skybox-pack)
-
-#### Model Editors
-
-- [FBX to GTF converter](https://products.aspose.app/3d/conversion/fbx-to-gltf)
-- [Three.js Model Editor](https://threejs.org/editor)
-
-#### Other Resources
-
-- [Sketchfab](https://sketchfab.com/) has tons of free 3D assets that you can download already in the correct format
-
-### Tutorials
-
-- [Getting Started](./3D-Canvas-Getting-Started): a page for new users to quickly get started with 3D Canvas.
-
-- A [playlist](https://youtube.com/playlist?list=PLbNUuLLqMgaCpFyHQnTuOGLnljT22XWVp) of 3D Canvas tutorials.
-  Keep in mind that some may be outdated, but the general concepts will likely apply for current or future versions of 3D Canvas.
-
-#### Converting a Spherical HDRI map to a Cube Map for 3D Canvas
-
-_A guide by `@simulacrum`_
-
-- Go to [HDRI to Cubemap by Matheowis](https://matheowis.github.io/HDRI-to-CubeMap/)
-  - Upload you image. It doesn't take EXR so you'll have to convert those to HDRI, PNG or JPEG.
-- Once it's uploaded it will appear in the 3D view. You can now see how the Cube map will look.
-- It's possible to move the image by dragging on it but**don't**or it won't line up with your HDRI.
-- Adjust the Exposure. Make it darker.
-- The HDRI lights the cube map so you will have to compensate for this, either now or in your image editor later.
-  - Choose Export and choose the bottom option export as PNG choosing the size you want for the individual sides
-- 2k is normally enough but you can try 4k if your machine can handle it or 1k if not
-  - Click Process
-  - Once it's finished, download them
-- The names of the files don't match up with 3D Canvas so use a file renamer to swap them.
-- Remember that your prefix must match on every file (i.e. **name_bk** , **name_ft** , etc.)
-- All the images will need to be flipped horizontally.
-- You will also have to rotate the **\_up** and **\_dn** images clockwise 90 degrees.
-- Altering the images in an editor like Photoshop or Gimp is recommended.
-- Save all of the files.
-- You can get the file size down by changing them to JPEG
-- Don't use much, if any, compression as it shows.  
-  webp looks very compressed so I don't use it.  
-  That's it. You now have an 8bit cube map that matches you 32 bit HDRI that will be a much smaller file size that the equivalent HDRI. Now you can use a 1k HDRI to give you the lighting and reflections and use the 8bit Cube Map as the background image.
-
-#### Importing Maps from Townscaper
-
-Townscaper Importing_Maps_from_Townscaper_by_Chryron#3457
-
-#### Special Mentions
+#### Advanced usage
+
+If you wish to use the particle system to it's full potential, you can create particle effects by using macros.
+You can find the full documentation in the [Particle Scripting Wiki Page](./levels-3d-preview/particles)
+
+## Supported File Formats
+
+<Tabs items={['3D File Formats', '2D File Formats', 'PBR Materials']}>
+  <Tab>
+    You can use **`GLB`**, **`GLTF`** and **`FBX`** files, other formats can be easily converted. Blender is suggested to perform
+    this operation.
+  </Tab>
+  <Tab>
+    3D Canvas supports all the file formats supported by Foundry, including
+    animated **`webm`** files. Due to how 3D Canvas handles transparency, semi-transparent images might be completely cut of by the processing.
+
+    While the weather system supports animated file formats, the particle
+    effect system does not.
+  </Tab>
+  <Tab>
+    **Material Browser**
+    <ImageButBetter
+      src="/images/3D-Canvas/Material_Browser_Icon.png"
+      alt="Material Browser Button"
+      className={styles.wikiimage}
+    />
+
+    If you installed the 3D Canvas Mapmaking Pack, you will have access to more than 1000 Materials and the Material Browser.
+    <ImageButBetter
+      src="/images/3D-Canvas/Material_Browser.png"
+      alt="Material Browser Interface"
+      className={styles.wikiimage}
+    />
+
+    To access the material browser simply click the circular icon left of the [Filepicker+](Filepicker) icon (<FontAwesomeIcon icon={faFileImport} />).
+
+
+    You will then be welcomed by the material browser. To apply the material simply click on the desired one. Keep in mind that if you intend to use these materials on tokens, you need to select PBR in the material
+    option.
+
+    **Manually Loading a PBR Material**
+
+    Tokens, walls, tiles and the scene table support PBR Materials. To load a pbr material you need a specific file naming stuctures. The files must be named as follows and be all in the same folder.
+
+    ```postcss
+    Wood077_1K_AmbientOcclusion.jpg
+    Wood077_1K_Color.jpg
+    Wood077_1K_Emissive.jpg
+    Wood077_1K_Metalness.jpg
+    Wood077_1K_NormalGL.jpg
+    Wood077_1K_Roughness.jpg
+    ```
+
+    As you can see all the files share a root name then keywords to differentiate the different textures. You can find materials already set up this way here AmbientCG.
+
+    You need to select one of the files in the image field to use them in 3D Canvas.
+
+    <Callout type="warning" emoji="⚠️">
+      For the full material to be loaded you can pick any of the images but _not_
+      color, otherwise only the color texture will be used.
+    </Callout>
+
+    For walls you can load the image in it's texture field, same for tokens, tiles and the scene table. Tokens also require that the material is set to PBR.
+
+    Displacement maps are not supported due to performance and optimization.
+  </Tab>
+</Tabs>
+
+## Assets and Resources
+
+<Tabs items={['Content Creators', 'Heroforge', '3D Models', 'HDRIs', 'Model Editors']}>
+  <Tab>
+    If you wish to purchase premade content for 3D Canvas, some content
+    creators have it available on their Patreons.
+
+    - [Baileywiki](https://www.patreon.com/baileywiki) has a vast collection of 3D Prefabs, Heightmaps, and Maps with heavy use of built in tools from the Mapmaking Pack.
+    - [Swift Cartography](https://www.patreon.com/Swift) has 3D Models of complete maps and Props.
+  </Tab>
+  <Tab>
+    By using the [3D Portraits](../levels-3d-preview/three-actor-portrait) module, you can
+    import your purchased 3D minis from [Hero Forge](https://www.heroforge.com).
+
+    Hero Forge also offers a $15 a month subscription service that
+    lets you use all the pro customization and includes 5 minis purchases
+    per month.    
+  </Tab>
+  <Tab>
+    - [Quaternius](https://quaternius.com/)
+    - [Sketchfab](https://sketchfab.com/) has tons of free 3D assets that you can download already in the correct format
+    - [Shapeways](https://www.shapeways.com/) Account Required
+    - [How to convert STLs](https://youtu.be/2UwQ5v1uQy0d)
+  </Tab>
+  <Tab>
+    - [Polyhaven](https://polyhaven.com/hdris)
+    - [iHDRI](https://www.ihdri.com/hdri-skies-outdoor)
+    - [HDRMaps](https://hdrmaps.com)
+    - [Location Textures](https://locationtextures.com/panoramas)
+  </Tab>
+  <Tab>
+    - [Terrascape](https://terrascape.theripper93.com/) - Easy terrain creation
+    - [FBX to GTF converter](https://products.aspose.app/3d/conversion/fbx-to-gltf)
+    - [Three.js Model Editor](https://threejs.org/editor)
+  </Tab>
+</Tabs>
+
+## Tutorials
+
+<Tabs items={['Official', 'Spherical HDRI to Cube Map', 'Townscaper']}>
+  <Tab>
+    - [Getting Started](./levels-3d-preview/3D-Canvas-Getting-Started): a page for new users to quickly get started with 3D Canvas.
+
+    - A [playlist](https://youtube.com/playlist?list=PLbNUuLLqMgaCpFyHQnTuOGLnljT22XWVp) of 3D Canvas tutorials.
+      Keep in mind that some may be outdated, but the general concepts will likely apply for current or future versions of 3D Canvas.
+  </Tab>
+  <Tab>
+    _A guide by `@simulacrum`
+
+    - Go to [HDRI to Cubemap by Matheowis](https://matheowis.github.io/HDRI-to-CubeMap/)
+      - Upload you image. It doesn't take EXR so you'll have to convert those to HDRI, PNG or JPEG.
+    - Once it's uploaded it will appear in the 3D view. You can now see how the Cube map will look.
+    - It's possible to move the image by dragging on it but**don't**or it won't line up with your HDRI.
+    - Adjust the Exposure. Make it darker.
+    - The HDRI lights the cube map so you will have to compensate for this, either now or in your image editor later.
+      - Choose Export and choose the bottom option export as PNG choosing the size you want for the individual sides
+    - 2k is normally enough but you can try 4k if your machine can handle it or 1k if not
+      - Click Process
+      - Once it's finished, download them
+    - The names of the files don't match up with 3D Canvas so use a file renamer to swap them.
+    - Remember that your prefix must match on every file (i.e. **name_bk** , **name_ft** , etc.)
+    - All the images will need to be flipped horizontally.
+    - You will also have to rotate the **\_up** and **\_dn** images clockwise 90 degrees.
+    - Altering the images in an editor like Photoshop or Gimp is recommended.
+    - Save all of the files.
+    - You can get the file size down by changing them to JPEG
+    - Don't use much, if any, compression as it shows.  
+      webp looks very compressed so I don't use it.  
+      That's it. You now have an 8bit cube map that matches you 32 bit HDRI that will be a much smaller file size that the equivalent HDRI. Now you can use a 1k HDRI to give you the lighting and reflections and use the 8bit Cube Map as the background image.
+</Tab>
+  <Tab>
+    - [Importing Maps from Townscaper](./townscaper) by 'Chryron#3457'
+  </Tab>
+  <Tab></Tab>
+  <Tab></Tab>
+</Tabs>
+
+
+## Special Mentions
 
 - **dev7355608** for tons of help and suggestions on many parts of the 3D Canvas development
   - <FontAwesomeIcon icon={faDiscord} /> `@dev7355608`
