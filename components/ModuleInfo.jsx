@@ -38,7 +38,7 @@ export default function ModuleInfo() {
     }, []);
 
     return (
-        <div className={styles.infowrapper} style={moduleData.ready ? {} : {display: "none"}}>
+        <div className={styles.infowrapper} style={moduleData.ready ? {} : {opacity: 0}}>
             {
                 moduleData.module ?
                 (<>
