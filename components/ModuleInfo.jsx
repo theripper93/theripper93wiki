@@ -3,10 +3,10 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import styles from './moduleinfo.module.css'
 
-export default function ModuleInfo({ moduleId }) {
+export default function ModuleInfo() {
 
     const router = useRouter()
-    debugger;
+    const moduleId = router.pathname.split('/').pop()
 
     async function fetchData(){
         return await fetch(
@@ -40,7 +40,7 @@ export default function ModuleInfo({ moduleId }) {
     return (
       <div
         className={styles.infowrapper}
-        style={moduleData.ready ? {} : { display: 'none' }}
+        style={moduleData.ready ? {} : { opacity: 0}}
       >
         {moduleData.module ? (
           <>
