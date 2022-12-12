@@ -86,8 +86,8 @@ Foundry sidebar. All controls can be rebinded in the configure controls menu.
 
 Actions marked GC are only available when Game Camera is enabled.
 
-### Camera Controls
-
+<Tabs items={['Camera Controls', 'Entity Interaction', 'Measured Template', 'Pings', 'Tile Editor']}>
+  <Tab>
 | Control                | Action                                                                                                                                             |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Left Mouse` + `Drag`  | Rotate Camera                                                                                                                                      |
@@ -99,9 +99,8 @@ Actions marked GC are only available when Game Camera is enabled.
 | `⇧ Shift` + `X`        | If a token is selected, focus the camera on the selected token                                                                                     |
 | `Spacebar`             | `GC` Locks onto active target <br/>In combat, this is the last actor to do an action Outside of combat, it locks onto the currently selected token |
 | `O`                    | `GC` Toggles top-down view                                                                                                                         |
-
-### Entity Interaction
-
+  </Tab>
+  <Tab>
 | Control                            | Action                               | Notes                                                                                            |
 | ---------------------------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------ |
 | `Left Mouse` + `Drag`              | Drag move entity                     | With `⇧ Shift` held, the scale is +-1 elevation. With `Crtl` held, the scale is +-0.1 elevation. |
@@ -110,35 +109,32 @@ Actions marked GC are only available when Game Camera is enabled.
 | `Click ''(on empty spot)''`        | Deselect all entities                | GM Only.                                                                                         |
 | `Ctrl + Click ''(on empty spot)''` | Deselect all entities                |                                                                                                  |
 | `F`                                | Re-enable ground snapping            | While held, can select multiple entities via box selection.                                      |
-
-### Measured Template
-
+  </Tab>
+  <Tab>
 | Control                                     | Action                                        |
 | ------------------------------------------- | --------------------------------------------- |
-| `Scroll Wheel ''(in template preview)''`    | Rotate the template                           |
+| `Scroll Wheel ''(in template preview)''` | Rotate the template |
 | `Scroll Wheel ''(while placing template)''` | Unsnap the second point and place it manually |
-| `F`                                         | Re-enable snapping                            |
-
-### Pings
-
+| `F` | Re-enable snapping |
+  </Tab>
+  <Tab>
 | Control         | Action                    |
 | --------------- | ------------------------- |
 | `⇧ Shift` + `Q` | Ping and focus the camera |
-| `⇧ Shift` + `E` | Ping location             |
-
-### Tile Editor
-
+| `⇧ Shift` + `E` | Ping location |
+  </Tab>
+  <Tab>
 | Control | Action                                                                                                   |
 | ------- | -------------------------------------------------------------------------------------------------------- |
-| `S`     | Scale                                                                                                    |
-| `R`     | Rotate                                                                                                   |
-| `T`     | Translate                                                                                                |
-| `G`     | Toggle Gizmo                                                                                             |
-| `Q`     | Cycle Fill Mode                                                                                          |
-| `F`     | Hold and Click-Drag to box select                                                                        |
-| `CTRL`  | Hold when starting a Gizmo Transform to duplicate the currently selected tiles and leave a clone behind. |
-
-TODO: CONTROLS TABLES
+| `S` | Scale |
+| `R` | Rotate |
+| `T` | Translate |
+| `G` | Toggle Gizmo |
+| `Q` | Cycle Fill Mode |
+| `F` | Hold and Click-Drag to box select |
+| `CTRL` | Hold when starting a Gizmo Transform to duplicate the currently selected tiles and leave a clone behind. |
+  </Tab>
+</Tabs>
 
 ### Navigator
 
