@@ -9,27 +9,44 @@ export default function ModuleInfo({ moduleId }) {
       .then((data) => data);
   }
 
-  const [module, setModule] = useState({});
+    async function fetchPremium(){
+        return await fetch(
+            `https://raw.githubusercontent.com/theripper93/theripper-premium-hub/master/moduleListingV10.json`, { cache: "no-cache" }
+          )
+            .then((response) => response.json())
+            .then((data) => data);
+    }
 
-  useEffect(() => {
-    fetchData().then((data) => {
-      if (data.success) setModule(data.package);
-    });
-  }, []);
+    const [moduleData, setModuleData] = useState({ready: false});
 
-  return (
-    <div
-      className={styles.infowrapper}
-      style={module.installs ? {} : { display: 'none' }}
-    >
-      <ModuleInfoButton name={'Version: ' + module.latest} color={'#ef4444'} />
-      <ModuleInfoButton
-        name={'Installs: ' + module.installs + '%'}
-        color={'#22c55e'}
-      />
-      <ModuleInfoButton name={'FVTT: V10'} color={'#f97316'} />
-    </div>
-  );
+    async function setData(){
+        const modData = await fetchData();
+        const premData = await fetchPremium() ?? {};
+        const data = {ready: true, module: modData.success ? modData.package : null, premium: premData[moduleId]};
+        return data;
+    }
+
+    useEffect(() => {
+        fetchData().then(data => {
+            if(data.success) setModule(data.package)});
+    }, []);
+
+    return (
+      <div
+        className={styles.infowrapper}
+        style={module.installs ? {} : { display: 'none' }}
+      >
+        <ModuleInfoButton
+          name={'Version: ' + module.latest}
+          color={'#ef4444'}
+        />
+        <ModuleInfoButton
+          name={'Installs: ' + module.installs + '%'}
+          color={'#22c55e'}
+        />
+        <ModuleInfoButton name={'FVTT: V10'} color={'#f97316'} />{' '}
+      </div>
+    );
 }
 
 function ModuleInfoButton({ name, color = 'var(--nextra-primary-hue)' }) {
