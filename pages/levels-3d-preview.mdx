@@ -160,313 +160,317 @@ Click to toggle. Selecting a token or changing elevation will automatically
 set the navigator to the closest level while enabled. It is enabled on scene
 load for players and disabled for GMs by default. You can change this behaviour in the module settings under the misc tab.
 
-## Scene Setup
+## Settings
 
-### Module Settings
+<Tabs items={['Module Settings', 'Global Settings', 'Scene Settings']}>
+  <Tab>
+    **Enable Screen Space Panning**
 
-#### Enable Screen Space Panning
+    Enables screen space panning. This enables an alternate way of panning, more similar to a Strategy game.
 
-#### Enable Damping
+    **Enable Damping**
 
-Adds damping to camera movements. Disabling this option is recommended
-for people who experience motion sickness easily.
+    Adds damping to camera movements. Disabling this option is recommended
+    for people who experience motion sickness easily.
 
-Press `Shift` + `R` in 3D View to reset the camera and apply
-changes.
+    Press `Shift` + `R` in 3D View to reset the camera and apply
+    changes.
 
-#### Soft Shadows
+    **Soft Shadows**
 
-Adds softer shadows. Minor performance impact.
+    Adds softer shadows. Minor performance impact.
 
-#### Shadow Quality
+    **Shadow Quality**
 
-Affects the resolution of shadows. Set to `Disabled` to disable
-shadows.
+    Affects the resolution of shadows. Set to `Disabled` to disable
+    shadows.
 
-#### Anti-Aliasing
+    **Anti-Aliasing**
 
-Adds anti-aliasing (reduced pixelation around edges). FXAA will have
-very little impact on performance. SMAA will have better results but
-with more performance impact.
+    Adds anti-aliasing (reduced pixelation around edges). FXAA will have
+    very little impact on performance. SMAA will have better results but
+    with more performance impact.
 
-#### Fog of War Quality
+    **Fog of War Quality**
 
-Sets the resolution of fog of war.
+    Sets the resolution of fog of war.
 
-#### Resolution Multiplier
+    **Resolution Multiplier**
 
-Sets the resolution scale.
+    Sets the resolution scale.
+  </Tab>
+    <Tab>
+      <ImageButBetter
+        src="/images/3D-Canvas/Global_3D_Canvas_Settings.png"
+        alt="Global 3D Canvas Settings"
+        width={2000}
+        height={2000}
+        className={styles.wikiimage}
+      />
 
-### Global Settings
+      Global 3D Canvas settings are accessed from the module settings.
 
-<ImageButBetter
-  src="/images/3D-Canvas/Global_3D_Canvas_Settings.png"
-  alt="Global 3D Canvas Settings"
-  width={2000}
-  height={2000}
-  className={styles.wikiimage}
-/>
+      #### Canvas
 
-Global 3D Canvas settings are accessed from the module settings.
+      ##### Prevent Negative Elevation
 
-#### Canvas
+      Prevents token movement that goes below the game board.
 
-##### Prevent Negative Elevation
+      ##### Template Style
 
-Prevents token movement that goes below the game board.
+      The style for measured templates. Options are wireframe or solid.
 
-##### Template Style
+      ##### Grid Draw Mode
 
-The style for measured templates. Options are wireframe or solid.
+      How the grid is drawn. Fast is better in general, but only supports square grids.
+      Mirror will mirror the foundry grid 11 but will be more expensive to render.
 
-##### Grid Draw Mode
+      ##### Range Finder
 
-How the grid is drawn. Fast is better in general, but only supports square grids.
-Mirror will mirror the foundry grid 11 but will be more expensive to render.
+      Shows the distance to tokens while hovering over them.
 
-##### Range Finder
+      ##### Auto Pan
 
-Shows the distance to tokens while hovering over them.
+      Hooks the 3D Camera panning to the 2D one (i.e. moving a token will have
+      the camera follow it).
 
-##### Auto Pan
+      While disabled, you can pan to the selected token with `CRTL` + `X`.
 
-Hooks the 3D Camera panning to the 2D one (i.e. moving a token will have
-the camera follow it).
+      #### Token
 
-While disabled, you can pan to the selected token with `CRTL` + `X`.
+      ##### Stand-ups Face Camera
 
-#### Token
+      2D Tokens displayed in a stand-up style will always face the camera.
 
-##### Stand-ups Face Camera
+      ##### Combat Highlight
 
-2D Tokens displayed in a stand-up style will always face the camera.
+      Highlight the current combatant.
 
-##### Combat Highlight
+      ##### Turn Start Marker
 
-Highlight the current combatant.
+      Place a marker where a token started its turn in combat. Visible only to
+      owners of the token.
 
-##### Turn Start Marker
+      ##### Hide Target Indicator
 
-Place a marker where a token started its turn in combat. Visible only to
-owners of the token.
+      Hides target indicator if the token has the base enabled. Targets will
+      be shown in the base ring highlight.
 
-##### Hide Target Indicator
+      ##### Base
 
-Hides target indicator if the token has the base enabled. Targets will
-be shown in the base ring highlight.
+      ###### Base Style
 
-##### Base
+      The base style to use. Image will display the chosen image, solid will
+      draw a miniature-style base.
 
-###### Base Style
+      ###### Solid Base Mode
 
-The base style to use. Image will display the chosen image, solid will
-draw a miniature-style base.
+      The default solid base mode to use. On top will offset the model to the
+      top of the base. Merge will not move the original model.
 
-###### Solid Base Mode
+      ###### Solid Base Color
 
-The default solid base mode to use. On top will offset the model to the
-top of the base. Merge will not move the original model.
+      Color of the solid base. Can be a hex value or a color name (e.g. any
+      CSS color). Default is `#1C1C1C`.
 
-###### Solid Base Color
+      ###### Rotate Base
 
-Color of the solid base. Can be a hex value or a color name (e.g. any
-CSS color). Default is `#1C1C1C`.
+      Rotate the 3D Base to match token rotation.
 
-###### Rotate Base
+      #### Permissions
 
-Rotate the 3D Base to match token rotation.
+      ##### Players Can Ping
 
-#### Permissions
+      Enables the ability to ping location for players (Default `Shift + E`).
 
-##### Players Can Ping
+      ##### Players Can Send Camera Position
 
-Enables the ability to ping location for players (Default `Shift + E`).
+      Enables the ability to send the camera position for players (Default
+      `Shift + Q`).
 
-##### Players Can Send Camera Position
+      ##### Game Camera
 
-Enables the ability to send the camera position for players (Default
-`Shift + Q`).
+      Enable the 'video game'-like camera. Enabled for players by default; GM is able
+      to toggle it.
 
-##### Game Camera
+      ##### Min Angle
 
-Enable the 'video game'-like camera. Enabled for players by default; GM is able
-to toggle it.
+      Minimum angle the camera can be rotated to.
 
-##### Min Angle
+      ##### Max Angle
 
-Minimum angle the camera can be rotated to.
+      Maximum angle the camera can be rotated to.
 
-##### Max Angle
+      ##### Clipping
 
-Maximum angle the camera can be rotated to.
+      Hide objects covering the current target while enabled.
 
-##### Clipping
+      ##### Auto Re-Lock
 
-Hide objects covering the current target while enabled.
+      When the game camera is unlocked from its target, automatically relock
+      it if the target changes.
 
-##### Auto Re-Lock
+      ##### GM Default On
 
-When the game camera is unlocked from its target, automatically relock
-it if the target changes.
+      GMs will have Game Camera toggled on when first loading a scene while
+      enabled.
 
-##### GM Default On
+      ##### Show Warnings
 
-GMs will have Game Camera toggled on when first loading a scene while
-enabled.
+      Display warnings for Game Camera functionality.
 
-##### Show Warnings
+      #### Misc
 
-Display warnings for Game Camera functionality.
+      ##### Enable Camera Popout
 
-#### Misc
+      Pop out the 2D Canvas into a separate window when 3D mode is activated.
 
-##### Enable Camera Popout
+      ##### Navigator Follow Mode
 
-Pop out the 2D Canvas into a separate window when 3D mode is activated.
+      Automatically enables the follow mode for the 3D Navigator on scene
+      load.
 
-##### Navigator Follow Mode
+      ##### Always Show Advanced Settings
 
-Automatically enables the follow mode for the 3D Navigator on scene
-load.
+      Show the advanced settings in configuration menus by default.
 
-##### Always Show Advanced Settings
+      ##### Prevent Negative Camera
 
-Show the advanced settings in configuration menus by default.
+      Prevent the camera from pivoting or panning below 0 elevation.
 
-##### Prevent Negative Camera
+      ##### Shared Context
 
-Prevent the camera from pivoting or panning below 0 elevation.
+      Enables shared context for all players. Performance will be improved
+      while disabled but mini canvas will be disabled.
 
-##### Shared Context
+      ##### Debug Mode
 
-Enables shared context for all players. Performance will be improved
-while disabled but mini canvas will be disabled.
+      Shows helpful debug info for troubleshooting.
+  </Tab>
+    <Tab>
+      <ImageButBetter
+        src="/images/3D-Canvas/3D_Canvas_Scene_Settings.png"
+        alt="3D Canvas Scene Settings"
+        width={2000}
+        height={2000}
+        className={styles.wikiimage}
+      />
+      The scene configuration provides basic and advanced settings that you can tweak to
+      make your scene look the way you want. Most scene configuration options are in the
+      3D Canvas tab of scene settings.
 
-##### Debug Mode
+      #### Basics
 
-Shows helpful debug info for troubleshooting.
+      ##### Enable for Players
 
-### Scene Configuration
+      Allow players to open the 3D View
+      by clicking the 3D Mode button <FontAwesomeIcon icon={faCube} />
 
-<ImageButBetter
-  src="/images/3D-Canvas/3D_Canvas_Scene_Settings.png"
-  alt="3D Canvas Scene Settings"
-  width={2000}
-  height={2000}
-  className={styles.wikiimage}
-/>
-The scene configuration provides basic and advanced settings that you can tweak to
-make your scene look the way you want. Most scene configuration options are in the
-3D Canvas tab of scene settings.
+      ##### Enable 3D on Load
 
-#### Basics
+      When the scene is loaded, automatically enter 3D Mode
 
-##### Enable for Players
+      ##### Enable Grid
 
-Allow players to open the 3D View
-by clicking the 3D Mode button <FontAwesomeIcon icon={faCube} />
+      Show the grid in the 3D Scene
 
-##### Enable 3D on Load
+      ##### Enable Ruler
 
-When the scene is loaded, automatically enter 3D Mode
+      Show the ruler when dragging and placing objects
 
-##### Enable Grid
+      ##### Initial view position
 
-Show the grid in the 3D Scene
+      Set the default camera position when the scene loads, to properly set
+      the target for the view, use the ping option (`Shift` + `Q`)
+      to set the camera before saving the initial view position.
 
-##### Enable Ruler
+      ##### Lock Camera Perspective
 
-Show the ruler when dragging and placing objects
+      If you wish to force a certain perspective on this scene, you can lock
+      it. The camera will no longer rotate, the angle for the lock is the one
+      of the initial view position.
 
-##### Initial view position
+      #### Environment
 
-Set the default camera position when the scene loads, to properly set
-the target for the view, use the ping option (`Shift` + `Q`)
-to set the camera before saving the initial view position.
+      ##### HDRI
 
-##### Lock Camera Perspective
+      If no skybox is selected, the HDRI will be used as the background. if
+      both skybox and HDRI are selected, the skybox will be used as the
+      background and the HDRI for lighting and reflections. Having and HDRI is
+      highly suggested for Metallic and Reflective surfaces to look correct.
 
-If you wish to force a certain perspective on this scene, you can lock
-it. The camera will no longer rotate, the angle for the lock is the one
-of the initial view position.
+      ##### Skybox Image
 
-#### Environment
+      Set the skybox (or 3D background) for this scene. The file needs to be
+      in the same folder of 6 total files, files must contain
+      **`_ft`**, **`_bk`**, **`_up`**, **`_dn`**,
+      **`_rt`**, or **`_lf`** in their name.
 
-##### HDRI
+      ##### Enable Bloom
 
-If no skybox is selected, the HDRI will be used as the background. if
-both skybox and HDRI are selected, the skybox will be used as the
-background and the HDRI for lighting and reflections. Having and HDRI is
-highly suggested for Metallic and Reflective surfaces to look correct.
+      Toggles bloom effects for the scene.
 
-##### Skybox Image
+      #### Filter
 
-Set the skybox (or 3D background) for this scene. The file needs to be
-in the same folder of 6 total files, files must contain
-**`_ft`**, **`_bk`**, **`_up`**, **`_dn`**,
-**`_rt`**, or **`_lf`** in their name.
+      Adds filter effects to the scene. Available filters are
 
-##### Enable Bloom
+      `Greyscale`  
+      `Sepia`  
+      `Invert`  
+      `Contrast`  
+      `Brightness`  
+      `Hue`  
+      `Saturation`  
+      `Custom`
 
-Toggles bloom effects for the scene.
+      Custom will create an input box under filter intensity. You can create
+      your custom filter with CSS Filters and the syntax will be the same. See
+      the [MDN Page](https://developer.mozilla.org/en-US/docs/WebCSSfilter) on
+      CSS Filter for more information.
 
-#### Filter
+      #### Particles
 
-Adds filter effects to the scene. Available filters are
+      ##### Particle Preset
 
-`Greyscale`  
-`Sepia`  
-`Invert`  
-`Contrast`  
-`Brightness`  
-`Hue`  
-`Saturation`  
-`Custom`
+      Set the weather or effect for the scene, you can have up of 2 effects at the same
+      time and one of them can be custom (Particle Preset 2 has the custom option).
 
-Custom will create an input box under filter intensity. You can create
-your custom filter with CSS Filters and the syntax will be the same. See
-the [MDN Page](https://developer.mozilla.org/en-US/docs/WebCSSfilter) on
-CSS Filter for more information.
+      #### Visibility
 
-#### Particles
+      ##### Render Walls
 
-##### Particle Preset
+      Whether or not to display the 2d Canvas Walls in the 3D Mode.
 
-Set the weather or effect for the scene, you can have up of 2 effects at the same
-time and one of them can be custom (Particle Preset 2 has the custom option).
+      ##### Render Doors
 
-#### Visibility
+      Whether or not to display walls marked as doors.
 
-##### Render Walls
+      ##### Render Tiles
 
-Whether or not to display the 2d Canvas Walls in the 3D Mode.
+      Whether or not to display tiles.
 
-##### Render Doors
+      ##### Render Scene Lights
 
-Whether or not to display walls marked as doors.
+      Whether or not to display lights.
 
-##### Render Tiles
+      ##### Mirror Levels Tile Visibility
 
-Whether or not to display tiles.
+      If enabled 3D Canvas will mirror the Levels tiles visibility. This
+      option is required if you want to make a multilevel 3D Map where floors
+      above tokens disappear automatically for easier navigation.
 
-##### Render Scene Lights
+      ##### Use 3D Geometry for sight calculations
 
-Whether or not to display lights.
+      Instead of mirroring the 2D Canvas token visibility, use the 3D Geometry
+      of the scene. This means that if you simply load a 3D Model into the
+      scene, it's geometry will be used to block token visibility, meaning you
+      do not need to wall the scene and it will just work. This setting also applies to
+      [Levels - Volumetric Templates](../levels/levelsvolumetrictemplates)
+      Auto Targeting and 3D Cover Calculations.
+  </Tab>
+</Tabs>
 
-##### Mirror Levels Tile Visibility
-
-If enabled 3D Canvas will mirror the Levels tiles visibility. This
-option is required if you want to make a multilevel 3D Map where floors
-above tokens disappear automatically for easier navigation.
-
-##### Use 3D Geometry for sight calculations
-
-Instead of mirroring the 2D Canvas token visibility, use the 3D Geometry
-of the scene. This means that if you simply load a 3D Model into the
-scene, it's geometry will be used to block token visibility, meaning you
-do not need to wall the scene and it will just work. This setting also applies to
-[Levels - Volumetric Templates](../levels/levelsvolumetrictemplates)
-Auto Targeting and 3D Cover Calculations.
+### Entities in 3D
 
 ### Tiles
 
@@ -565,8 +569,6 @@ some arbitrary characters if you want to re randomize the tile.
 | isDoor        | Integer    | 012   |
 | doorId        | String     | Any   |
 | Unique Name   | ds Integer | 012   |
-
-## 3D Entities
 
 ### Lights
 
