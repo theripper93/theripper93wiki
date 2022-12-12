@@ -3,25 +3,36 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import styles from './moduleinfo.module.css'
 
+let fetchedModuleData = null;
+let forgeData = {};
+
 export default function ModuleInfo() {
 
     const router = useRouter()
     const moduleId = router.pathname.split('/').pop()
 
     async function fetchData(){
-        return await fetch(
+
+      if(forgeData[moduleId]) return forgeData[moduleId];
+      const data = await fetch(
             `https://forge-vtt.com/api/bazaar/package/${moduleId}`
           )
             .then((response) => response.json())
             .then((data) => data);
+      forgeData[moduleId] = data;
+      return data;
     }
 
     async function fetchPremium(){
-        return await fetch(
-            `https://api.theripper93.com/moduleListing/latest`
-          )
-            .then((response) => response.json())
-            .then((data) => data);
+      if(fetchedModuleData) return fetchedModuleData;
+      console.log('Fetched data for ' + moduleId)
+      const data = await fetch(
+        `https://api.theripper93.com/moduleListing/latest`
+      )
+        .then((response) => response.json())
+        .then((data) => data);
+        fetchedModuleData = data;
+        return data;
     }
 
     const [moduleData, setModuleData] = useState({ready: false});
