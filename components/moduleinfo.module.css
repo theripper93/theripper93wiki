@@ -1,10 +1,13 @@
-.infowrapper{
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+.infowrapper {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.modulebutton{
-    border-radius: 15px;
-    padding: 0.3rem 1rem;
+.modulebutton {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  padding: 0.5rem;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12),
+    0px 1px 3px rgba(0, 0, 0, 0.2);
 }
