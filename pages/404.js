@@ -10,6 +10,6 @@ export default function Custom404() {
         <h1 class="next-error-h1" style={{ textShadow: '0 0 2px black',mixBlendMode: 'overlay', borderRight: '1px solid white', display:'inline-block', margin:'0', marginRight:'20px', padding:'0 23px 0 0', fontSize:'24px', fontWeight:'500', verticalAlign:'top', lineHeight:'49px'}}>404 🙃</h1>
         <div style={{textShadow: '0 0 2px black',mixBlendMode: 'overlay',display:'inline-block', textAlign:'left', lineHeight:'49px', height:'49px', verticalAlign:'middle'}}><h2 style={{fontSize:'14px', fontWeight:'normal', lineHeight:'49px', margin:0, padding:0}}>You f*cked up lmao.</h2></div>
         </div>
-        <a href="/" style={{textShadow: '0 0 2px black',mixBlendMode: 'overlay',textDecoration: 'none', marginTop: '1rem', display:'inline-block', textAlign:'left', lineHeight:'49px', height:'49px', verticalAlign:'middle'}}><h3 style={{color: 'white !important' ,fontWeight:'normal', lineHeight:'49px', margin:0, padding:0}}>Go back home →</h3></a>
+        <a href="/" className={styles.text} style={{textShadow: '0 0 2px black',mixBlendMode: 'overlay',textDecoration: 'none', marginTop: '1rem', display:'inline-block', textAlign:'left', lineHeight:'49px', height:'49px', verticalAlign:'middle'}}><h3 style={{color: 'white !important' ,fontWeight:'normal', lineHeight:'49px', margin:0, padding:0}}>Go back home →</h3></a>
     </div>
 }

@@ -27,3 +27,20 @@
       50%{background-position:100% 19%}
       100%{background-position:0% 82%}
   }
+
+  @keyframes bounce {
+    0% {
+      transform: translateX(-100px);
+    }
+    50% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(+100px);
+    }
+  }
+
+  .text{
+    animation: bounce 2s linear infinite;
+    animation-direction: alternate;
+  }
