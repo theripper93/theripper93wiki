@@ -9,7 +9,7 @@ export default function ImageButBetter({ src, alt, ...props }) {
   return (
     <div
       className={props.className}
-      style={expanded ? { width: '100%', transform: 'scale(1)' } : {}}
+      style={expanded ? { width: '100%', transform: 'scale(1)', transitionDuration: '0ms' } : {}}
     >
       <span className={styles.wikidesc}>{alt}</span>
       <Image
