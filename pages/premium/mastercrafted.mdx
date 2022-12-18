@@ -147,6 +147,8 @@ consume: Boolean }`
   `Condition` field, but make sure your lines correctly end with `;`
   as the code will be collapsed to a single line!
 
+#### Example: Ability Test
+This macro for DnD5e shows how you can make a strength check and return the result. If the check is successful, the crafting will be successful and the ingredients will be consumed. If the check fails, the crafting will fail and the ingredients will still be consumed.
 ```javascript numberLines
 const roll = await actor.rollAbilityTest('str');
 
@@ -154,4 +156,23 @@ return {
   success: roll.total > 12,
   consume: true,
 };
+```
+
+#### Example: Require and Consume a Spellslot
+This macro for DnD5e shows how you can check if the actor has a spellslot and consume it if they do. If they don't have a spellslot, it will show an error message and prevent the crafting from happening.
+```javascript numberLines copy
+const hasSpellslot = actor.system.spells.spell1.value > 0;
+if(!hasSpellslot){
+ui.notifications.error("No Spellslot")
+    return {
+        success: false,
+        consume: false,
+    };
+}
+await actor.update({'system.spells.spell1.value': actor.system.spells.spell1.value - 1});
+
+return {
+    success: true,
+    consume: false,
+}
 ```
