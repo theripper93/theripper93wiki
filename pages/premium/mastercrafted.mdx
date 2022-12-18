@@ -122,6 +122,12 @@ Set permissions to specific players, require tools to craft and more!
 Recipes accept a time option, which is time in minutes. Keep in mind that this option will work based on world time so you will need some other module that handles time passing for it to work.
 Such modules include [Simple Calendar](https://foundryvtt.com/packages/foundryvtt-simple-calendar) and/or [Small Time](https://foundryvtt.com/packages/smalltime).
 
+If you wish to manually process timed crafting, you can use this macro.
+
+```javascript numberLines copy
+ui.RecipeApp.processDelayedCrafting(Array.from(game.actors).filter(a => a.isOwner))
+```
+
 ### Advanced: Adding conditions to crafting
 
 Adding conditions will allow you to add custom checks to crafting, for
@@ -149,7 +155,7 @@ consume: Boolean }`
 
 #### Example: Ability Test
 This macro for DnD5e shows how you can make a strength check and return the result. If the check is successful, the crafting will be successful and the ingredients will be consumed. If the check fails, the crafting will fail and the ingredients will still be consumed.
-```javascript numberLines
+```javascript numberLines copy
 const roll = await actor.rollAbilityTest('str');
 
 return {
