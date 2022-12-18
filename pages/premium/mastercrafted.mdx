@@ -113,6 +113,15 @@ Set permissions to specific players, require tools to craft and more!
   className={styles.wikiimage}
 />
 
+### Timed Crafting
+
+<Callout type='warning' emoji='⚠️'>
+  To avoid checking all actors on a regular basis which would cause network slowdowns and server strain, timed crafting will be processed whenever you open an actor sheet for that actor only.
+</Callout>
+
+Recipes accept a time option, which is time in minutes. Keep in mind that this option will work based on world time so you will need some other module that handles time passing for it to work.
+Such modules include Simple Calendar and/or Small Time.
+
 ### Advanced: Adding conditions to crafting
 
 Adding conditions will allow you to add custom checks to crafting, for
