@@ -27,7 +27,8 @@ Example:
 
 You can use the following parameters (all in the format `[param=value]`)
 
-Choice (the first line of the message)
+#### Choice Parameters
+The choice is the first line of the message
 
 | Parameter       | Type    | Details                                                                                                                                                                                                                                    |
 | --------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -41,7 +42,8 @@ Choice (the first line of the message)
 | `displayResult` | `Boolean` | determine if the result will be output to chat after the choice is made (default true)                                                                                                                                                     |
 | `resolveGM    ` | `Boolean` | determine if the resolution of the choice should run on the gm side as well (default false)                                                                                                                                                |
 
-Options
+#### Options Parameters
+The options are the lines after the first line of the message
 
 | Parameter | Type    | Details                                                                                                                                                                                                                       |
 | --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -57,6 +59,7 @@ Options
 You can use some neat tricks to get more use out of this module, for example you can create a choice with no choices to just display portraits on a background :)
 </Callout>
 
+### Basic
 
 ```txt copy
 /choice [img=https://i.pinimg.com/originals/f4/30/56/f43056ea6e34f2071621a736b6d6da36.jpg][time=60] This is a test
