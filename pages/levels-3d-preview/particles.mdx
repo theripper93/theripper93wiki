@@ -15,7 +15,7 @@ import styles from "../globals.module.css";
 
 First create a `Script Macro`, then to start creating your effect simply call
 
-```js copy
+```js
 new Particle3D(type);
 ```
 
@@ -37,7 +37,7 @@ If no type is provided the default is `"p"`
 Now you can start chaining properties, similar to how Sequencer works. Every time you call a `.method()` on a `Particle3D` it will always return the `Particle3D` object, allowing for chaining. The only exception is the `.start()` method that will return the ID if the `Particle3D`
 First we must provide an origin and a destination.
 
-```js copy
+```js
 new Particle3D(type).from(origin).to(destination);
 ```
 
@@ -55,13 +55,13 @@ A `Position` is defined by `{ x:0, y:0, z:0 }` where `z` is in elevation units.
 
 Let's set up our origin as the selected token and the destination as our targets
 
-```js copy
+```js
 new Particle3D(type).from(token).to(Array.from(game.user.targets));
 ```
 
 At this point we can `.start()` our Particle3D to play the effect and the default settings will be used (it will look like a firebolt)
 
-```js copy /start/
+```js /start/
 new Particle3D(type).from(token).to(Array.from(game.user.targets)).start();
 ```
 
@@ -89,7 +89,7 @@ Simply select a token, target some tokens and run the macros, you will see them 
 
 ### Frostbolt
 
-```js copy
+```js
 new Particle3D("p")
   .from(token)
   .to(Array.from(game.user.targets))
@@ -111,7 +111,7 @@ new Particle3D("p")
   infinite chaining.
 </Callout>
 
-```js copy /onEnd/
+```js /onEnd/
 new Particle3D("p")
   .from(canvas.tokens.controlled)
   .to(Array.from(game.user.targets))
@@ -136,7 +136,7 @@ new Particle3D("p")
   direction!
 </Callout>
 
-```js copy /arc/
+```js /arc/
 new Particle3D("p")
   .from(token)
   .to(Array.from(game.user.targets))
@@ -156,7 +156,7 @@ new Particle3D("p")
   `.rate()`
 </Callout>
 
-```js copy /rate/
+```js /rate/
 new Particle3D("r")
   .from(token)
   .to(Array.from(game.user.targets))
@@ -169,7 +169,7 @@ new Particle3D("r")
 
 ### Scorching Ray
 
-```js copy
+```js
 new Particle3D("r")
   .from(token)
   .to(Array.from(game.user.targets))
@@ -189,7 +189,7 @@ new Particle3D("r")
   The `.color()` parameter can accept Arrays of colors.
 </Callout>
 
-```js copy /color/
+```js /color/
 new Particle3D("p")
   .from(token)
   .to(Array.from(game.user.targets))
@@ -207,7 +207,7 @@ new Particle3D("p")
   Explosion effects do not need a `.from()`. This is the only exception.
 </Callout>
 
-```js copy /from/
+```js /from/
 new Particle3D("e")
   .to(Array.from(game.user.targets))
   .sprite("modules/levels-3d-preview/assets/particles/dust.png")
@@ -229,7 +229,7 @@ Notice how the new `Particle3D()` is assigned to a variable, then a set timeout
 stops the effect after 1000 milliseconds. With the same logic you could store
 the ID and stop an effect on concentration end.
 
-```js copy /Particle3D/
+```js /Particle3D/
 const effectId = new Particle3D("r")
   .from(token)
   .to(Array.from(game.user.targets))
@@ -250,7 +250,7 @@ setTimeout(() => {
 
 Once you assign a name you can stop the effect from a completely different macro.
 
-```js copy /Particle3D.stop/
+```js /Particle3D.stop/
 const effectId = new Particle3D("r")
   .from(token)
   .to(Array.from(game.user.targets))
@@ -274,7 +274,7 @@ Particle3D.stop("Wall of Fire");
   explosion plays on the target hit.
 </Callout>
 
-```js copy
+```js
 new Particle3D("p")
   .from(token)
   .to(Array.from(game.user.targets))
@@ -301,7 +301,7 @@ new Particle3D("p")
 
 ### Magic Missile (MIDI-QOL on use Macro)
 
-```js copy
+```js
 const lastArg = args[args.length - 1];
 const casterToken = canvas.tokens.get(lastArg.tokenId);
 const targets = lastArg.hitTargets;
@@ -384,7 +384,7 @@ You can pass another particle3D or an array of particle3d to the `.onEnd` method
 
 Play a 3D Animation, the animation data is formatted as follows
 
-```js copy
+```js
 {
   // The from property specifies which animation should be played
   // on the origin of the particle effect (usually the caster or attacker)

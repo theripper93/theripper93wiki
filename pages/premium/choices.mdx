@@ -10,18 +10,21 @@ Create a visual novel style choice menu with a list of choices and a title. Make
 democratic or non votes, customize colors and background image, and trigger scene
 changes or macros when a choice is resolved.
 
-
-
 ## How to use
+
 <ImageButBetter src="/images/Choices/choiceswindow.jpg" alt="Visual Novel Choices Prompt" className={styles.wikiimage}/>
 
-To create a choices prompt you will need to use the `/choice` chat command
-You can provide additional parameters to both the choice and the option with this syntax `[param=value]`
-The first line of the chat message (the one with `/choice`) is the question, every new line will be one option
+To create a choices prompt you will need to use the `/choice` chat command.
+
+You can provide additional parameters to both the choice and the option
+with this syntax: `[param=value]`.
+
+The first line of the chat message (the one with `/choice`)
+is the question. Every new line will be one option.
 
 ### Example
 
-```txt copy
+```txt //choice/ /[player=Jhon,Mary]/
 /choice [img=path/to/my/image.jpg][player=Jhon,Mary] What path will you chose?
 [scene=path1] The Woods
 [scene=rockymountains] The Mountains
@@ -32,30 +35,31 @@ The first line of the chat message (the one with `/choice`) is the question, eve
 You can use the following parameters (all in the format `[param=value]`)
 
 #### Choice Parameters
+
 The choice is the first line of the message
 
 | Parameter       | Type    | Details                                                                                                                                                                                                                                    |
 | --------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `multi        ` | `Boolean` | determines if multiple choices can be selected (default false)                                                                                                                                                                             |
-| `img          ` | `String ` | the path to the image to be displayed as the background                                                                                                                                                                                    |
-| `sound        ` | `String ` | the sound to be played when the choice is displayed (the sound will loop and stop when the choice ends)                                                                                                                                    |
-| `portraits    ` | `String ` | a comma separaded list of actor names, actor ids or image paths (you can mix an match) - these images will be displayed in the choice (theatre inserts style, if the actor has a theatre insert specific image, that will be used instead) |
-| `player       ` | `String ` | a comma separated list of player names, if not provided all players will get to chose                                                                                                                                                      |
-| `democracy    ` | `Boolean` | determine if the choice with the highest votes will be picked (if true) or resolve the choice per player (if false) (default true)                                                                                                         |
-| `default      ` | `Number ` | the default choice if no choice is made (default 0)                                                                                                                                                                                        |
+| `multi` | `Boolean` | determines if multiple choices can be selected (default false)                                                                                                                                                                             |
+| `img` | `String` | the path to the image to be displayed as the background                                                                                                                                                                                    |
+| `sound` | `String` | the sound to be played when the choice is displayed (the sound will loop and stop when the choice ends)                                                                                                                                    |
+| `portraits` | `String` | a comma separaded list of actor names, actor ids or image paths (you can mix an match) - these images will be displayed in the choice (theatre inserts style, if the actor has a theatre insert specific image, that will be used instead) |
+| `player` | `String` | a comma separated list of player names, if not provided all players will get to chose                                                                                                                                                      |
+| `democracy` | `Boolean` | determine if the choice with the highest votes will be picked (if true) or resolve the choice per player (if false) (default true)                                                                                                         |
+| `default` | `Number` | the default choice if no choice is made (default 0)                                                                                                                                                                                        |
 | `displayResult` | `Boolean` | determine if the result will be output to chat after the choice is made (default true)                                                                                                                                                     |
-| `resolveGM    ` | `Boolean` | determine if the resolution of the choice should run on the gm side as well (default false)                                                                                                                                                |
+| `resolveGM` | `Boolean` | determine if the resolution of the choice should run on the gm side as well (default false)                                                                                                                                                |
 
 #### Options Parameters
+
 The options are the lines after the first line of the message
 
 | Parameter | Type    | Details                                                                                                                                                                                                                       |
 | --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `scene`   | `String ` | a scene name or id, when the choice is resolved this scene will be viewed                                                                                                                                                     |
-| `macro`   | `String ` | a macro name or id, when the choice is resolved this macro will be executed, if you have the advanced macros module you can provide a comma separated list of args to be passed to the macro (eg `[macro=myMacro,arg0,arg1]`) |
-| `sound`   | `String ` | a sound file path, when the choice is resolved this sound will be played once                                                                                                                                                 |
+| `scene`   | `String` | a scene name or id, when the choice is resolved this scene will be viewed                                                                                                                                                     |
+| `macro`   | `String` | a macro name or id, when the choice is resolved this macro will be executed, if you have the advanced macros module you can provide a comma separated list of args to be passed to the macro (eg `[macro=myMacro,arg0,arg1]`) |
+| `sound`   | `String` | a sound file path, when the choice is resolved this sound will be played once                                                                                                                                                 |
 | `chain`   | `Boolean` | set to true if this options triggers a macro with a choice                                                                                                                                                                    |
-
 
 ## Examples
 

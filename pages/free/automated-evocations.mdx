@@ -79,7 +79,7 @@ base spell level the spell as cast at
 
 Example (Flaming Sphere auto scaling):
 
-```js copy
+```js
 // Macro name: AE_Companion_Macro(Flaming Sphere)
 
 const summon = CompanionManager.api.dnd5e.getSummonInfo(args, 2);
@@ -141,7 +141,7 @@ you want to apply it!
 
 Example: Adding your animation to the list:
 
-```js copy
+```js
 const customanims = {
   energy2: {
     fn: "light2",
@@ -159,7 +159,7 @@ game.settings.set(AECONSTS.MN, "customanimations", customanims);
 
 Example macro:
 
-```js copy
+```js
 const template = args[0]const tokenData = args[1] await new Sequence()
     .effect()
     .file("modules/automated-evocations/assets/animations/energy\_spark\_CIRCLE\_01.webm")
@@ -183,7 +183,7 @@ If you are
 on non DND5E systems you can trigger the companion manager for specific
 spells with a macro or the module Item Macro
 
-```js copy
+```js
 new SimpleCompanionManager(
   [
     {
