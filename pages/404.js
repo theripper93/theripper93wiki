@@ -1,6 +1,4 @@
-
 // Inside the "pages/404.js" file add the below code
-import { useEffect } from 'react'
 import styles from './404.module.css'
 
 const fontfamily = 'ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Cantarell,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji'
