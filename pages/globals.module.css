@@ -24,8 +24,7 @@
   width: auto;
   float: right;
   transition: all 0.2s ease-in-out;
-  border: 1px solid hsl(var(--nextra-primary-hue) 100% 45%/0.15);
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  border: 1px solid transparent;
   transform-origin: center right;
   overflow: hidden;
 }
@@ -41,9 +40,10 @@
   width: 100%;
   bottom: 0;
   color: rgb(249, 250, 251);
-  background: linear-gradient(
+  background-image: linear-gradient(
     0deg,
     rgb(17 17 17 / 90%) 0%,
+    rgb(17 17 17 / 75%) 25%,
     rgb(17 17 17 / 10%) 90%,
     rgb(17 17 17 / 0%) 100%
   );
