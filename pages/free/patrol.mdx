@@ -1,5 +1,5 @@
-import ImageButBetter from '../../components/ImageButBetter';
-import ModuleInfo from '../../components/ModuleInfo'
+import ImageButBetter from '@/components/ImageButBetter';
+import ModuleInfo from '@/components/ModuleInfo'
 import styles from '../globals.module.css';
 import { Callout } from 'nextra-theme-docs';
 
@@ -153,14 +153,14 @@ You can use Patrol's hooks to enable additional features. Use the hooks:
 
 Example:
 
-```js copy
+```js
 Hooks.on('prePatrolSpotted', (spotter, spotted) => {
   // Only actually spotted if the Spotter has a higher passive perception than the target's DC
   return spotter.passivePerception >= spotted.passiveDC;
 });
 ```
 
-```js copy
+```js
 Hooks.on('patrolSpotted', (spotter, spotted) => {
   // Start a new combat if needed, then add the spotter to the spotted with a surprise round
 });

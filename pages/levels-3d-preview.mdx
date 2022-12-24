@@ -14,10 +14,6 @@ import styles from "./globals.module.css";
 # 3D Canvas
 
 <ModuleInfo />
-
-<Callout type='info' emoji='ℹ️'>
-  The new Community Maps feature just launched! [Learn More](levels-3d-preview/communitymaps)
-</Callout>
 3D Canvas is a module for viewing and creating maps in 3D.
 
 Turn your maps into true 3D, load in 3D models, and play your games in
@@ -674,7 +670,7 @@ You can access the Token Animations by Right clicking your token to open the Tok
 
 To play an animation with a macro, first create a script macro, then use the following commands to play your desired animation.
 
-```js copy
+```js
 game.Levels3DPreview.playTokenAnimation(tokens, animationId, options);
 ```
 |Parameter|Description|
@@ -683,7 +679,7 @@ game.Levels3DPreview.playTokenAnimation(tokens, animationId, options);
 |animationId|The identifier for the animation, you can find all the animation IDs by typing `game.Levels3DPreview.CONFIG.tokenAnimations` in the console and hitting Enter.|
 |Options|This is optional, an object containing additional parameters|
 
-```js copy
+```js
 {
   repeats: 1, // How many times you want the animation to play
   resetTime: milliseconds, // Force the time that the animation takes to reset to the original position once it ends
@@ -694,7 +690,7 @@ game.Levels3DPreview.playTokenAnimation(tokens, animationId, options);
 
 This macro will play the Twirl animation, 3 Times, on all Selected Tokens
 
-```js copy
+```js
 game.Levels3DPreview.playTokenAnimation(canvas.tokens.controlled, "twirl", {
   repeats: 3,
 });

@@ -1,5 +1,5 @@
-import ImageButBetter from '../../components/ImageButBetter';
-import ModuleInfo from '../../components/ModuleInfo'
+import ImageButBetter from '@/components/ImageButBetter';
+import ModuleInfo from '@/components/ModuleInfo'
 import styles from '../globals.module.css';
 import { Callout } from 'nextra-theme-docs';
 
@@ -169,7 +169,7 @@ To avoid data duplication, Wall Height uses a data path belonging to the
 [Levels](Levels) is not enabled you can use these helpers to
 read and set the elevation of a sound or light document.
 
-```js copy
+```js
 WallHeight.setSourceElevationTop(document, value);
 WallHeight.getSourceElevationTop(document);
 
@@ -179,7 +179,7 @@ WallHeight.getSourceElevationBottom(document);
 
 Or, if you want to set/get both at the same time:
 
-```js copy
+```js
 WallHeight.setSourceElevationBounds(document, bottom, top);
 WallHeight.getSourceElevationBounds(document);
 ```
