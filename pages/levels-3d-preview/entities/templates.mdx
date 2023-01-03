@@ -10,15 +10,33 @@ import {
 import { faDiscord, faPatreon } from "@fortawesome/free-brands-svg-icons";
 import styles from "../../globals.module.css";
 
-### Measured Templates
+# Measured Templates
 
-#### Creating a Measured Template
+Placing a template will work the same way as in 2D, but because we have a third dimension we have an extra control to set the height of some shapes.
+
+## Creating a Measured Template
 
 To create a Measured Template simply drag while in the Template
-Controls, to see all the Keyboard and Mouse controls for template
-placement, check the Controls Wiki Page
+Controls with a shape selected.
 
-#### Making a Cylinder
+Creating Cones or Circles (spheres) works the same way as in 2D as the third dimension is implied.
+
+When creating a box or a ray template, you'll be able to use the scroll wheel to set the height of the template.
+
+## Making a Cylinder
 
 Since this is not obvious, to create a cylinder, head over to the Token
 Controls <FontAwesomeIcon icon={faUser} /> and click the `Set Elevation for next placed Template` button <FontAwesomeIcon icon={faSort} />. In the **Special** field, set the height of the cylinder (in grid units). Then place a circle template.
+
+## 3D Template settings
+
+3D Templates only have one extra setting compared to 2D ones (outside of the shader configuration) , you can head in the 3D Tab in the template configuration to set a template to be a Fog of War box
+
+### Fog of War box
+<Callout type="warning" emoji="⚠️">
+  Keep in mind that only Rectangle Templates can be used as Fog of War boxes.
+</Callout>
+
+Fog of War boxes are a special type of template that will hide the area they cover from the players. This is useful for hiding areas that are not yet explored by the players.
+Because Fog of War in 3D is still two dimensional and can be expensive on performance, the Fog of War box is a light and effective solution for multifloor or large dungeons.
+As a GM, you will see the Fog of War boxes as semi-transparent boxes, while the players will see them as fully opaque.

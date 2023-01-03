@@ -10,18 +10,28 @@ import {
 import { faDiscord, faPatreon } from "@fortawesome/free-brands-svg-icons";
 import styles from "../../globals.module.css";
 
-### Lights
+# Lights
 
 To create a light, simply go to the light layer and drag to create a light, all the standard foundry interactions are the same.
 
-#### Sun
+## Animations
 
-The sun's position and lighting is determined by the time of day. You can configure it in the scene settings.
+Only a select amount of light animations are supported in 3D.
+The following animations are supported:
 
-#### Limitations
+- Pulse
+- Chroma
+- Flickering Light
+
+## Particle Emitters
+
+Lights can also be used as particle emitters, to do this, simply enable the "Enable Particle Effect" option in the light settings under the 3D Tab.
+From here you can tweak the settings to your liking.
+
+## Limitations
 
 <Callout type="warning" emoji="⚠️">
-3D Lights will not be blocked by walls or cast shadows because of WebGL limitations. It's also incredibly expensive on performance.
+3D Lights will not be blocked by walls\tiles or cast shadows because of WebGL limitations. It's also incredibly expensive on performance.
 </Callout>
 
 You can enable Shadow Casting/Wall Blocking in the 3D Tab for specific lights, but it's highly suggested to not use more than 2-3 lights per scene while enabled. Enabling this option on a large number of lights
