@@ -38,3 +38,10 @@ You can enable Shadow Casting/Wall Blocking in the 3D Tab for specific lights, b
 will crash the scene.
 
 If the scene crashes because of the settings, and you are not able to access the 3D or 2D Scene, disable 3D Canvas (or launch your world in safe mode) and delete the shadow casting lights.
+
+## Freezing & Stuttering
+
+When creating a light, you will notice some freezing and\or stuttering. This is because every time a light is added to the scene, all shaders need to be recompiled.
+Unfortunately this is a limitation of WebGL, and there is nothing I can do about it.
+
+In the event that you need to create a lot of lights, i suggest creating them in 2D mode, then switch to 3D to position them as moving lights will not cause freezing or stuttering.
