@@ -1,0 +1,30 @@
+import ImageButBetter from '@/components/ImageButBetter';
+import { Callout, Tab, Tabs } from "nextra-theme-docs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCube,
+  faUser,
+  faSort,
+  faFileImport,
+} from "@fortawesome/free-solid-svg-icons";
+import { faDiscord, faPatreon } from "@fortawesome/free-brands-svg-icons";
+import styles from "../../globals.module.css";
+
+### Lights
+
+To create a light, simply go to the light layer and drag to create a light, all the standard foundry interactions are the same.
+
+#### Sun
+
+The sun's position and lighting is determined by the time of day. You can configure it in the scene settings.
+
+#### Limitations
+
+<Callout type="warning" emoji="⚠️">
+3D Lights will not be blocked by walls or cast shadows because of WebGL limitations. It's also incredibly expensive on performance.
+</Callout>
+
+You can enable Shadow Casting/Wall Blocking in the 3D Tab for specific lights, but it's highly suggested to not use more than 2-3 lights per scene while enabled. Enabling this option on a large number of lights
+will crash the scene.
+
+If the scene crashes because of the settings, and you are not able to access the 3D or 2D Scene, disable 3D Canvas (or launch your world in safe mode) and delete the shadow casting lights.

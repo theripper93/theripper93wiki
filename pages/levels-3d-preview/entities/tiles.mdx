@@ -1,0 +1,119 @@
+import ImageButBetter from '@/components/ImageButBetter';
+import { Callout, Tab, Tabs } from "nextra-theme-docs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCube,
+  faUser,
+  faSort,
+  faFileImport,
+} from "@fortawesome/free-solid-svg-icons";
+import { faDiscord, faPatreon } from "@fortawesome/free-brands-svg-icons";
+import styles from "../../globals.module.css";
+
+### Tiles
+
+#### 2D Tiles
+
+Tiles are placed at the bottom elevation set through the Levels module. While background tiles are rendered as well it's highly suggested that you instead use a single background image or you will have popping and flickering issues. The module [DF Architect](https://foundryvtt.com/packages/df-architect) has an option to merge all your background tiles and background image into a single image.
+
+#### 3D Tiles
+For props or entire 3D Maps, use the 3D Tiles!
+
+#### Placing 3D Tiles
+
+To place a 3D Tile, open the filepicker while in 3D Mode and in the Tiles Layer. The file picker will now show 3D Files instead of 2D Images.
+Drag and drop a file from the filepicker to the scene to create a 3D Tile, 3D Canvas will give your tile a placeholder 2D Image as well, required for Levels to adjust visibility when needed and to make it clear that you have 3D Tiles on the map, you can change this placeholder image but it's not suggested to leave it Blank.
+
+If you wish to see 3D Models previews in the file picker, you will need the Filepicker+ and 3D Portraits Modules (Check the home page for the Recomended Modules).
+
+#### Tile Configuration
+
+The 3D Tab contains all the settings to manipulate the tile manually through numbers, although most of these settings are self explanatory, we will focus on some that could be confusing:
+
+<Tabs items={['Vision', 'Fill Type', 'Random Seed', 'Shaders', 'Terrain', 'Heightmap' ]}>
+  <Tab>
+    This option tells 3D Canvas if the tile should be included in collision and/or vision calculations, for example, if one of your tiles represents Water, you would need to disable both options.
+  
+    **Door Options**
+    These options behave the same as core foundry. Tile Doors also do a range check against players so they will need to be no more than 1 Square away from the door to be able to open it.
+
+  </Tab>
+  <Tab>
+    This will change how the tile is displayed:
+    * Single: Will stretch the 3D Model to fill the box defined by the tile.
+    * Repeat: Will make multiple copies of this tile, "tiling" it inside the tile bounds.
+  </Tab>
+  <Tab>
+    The seed used to generate the randomization, you can change this seed to some arbitrary characters if you want to re randomize the tile.
+    The seed is used for both repeat tiles and terrain generation.
+  </Tab>
+  <Tab>
+    Tile come with options to create special effects, it's suggested that you use the included models in the `basicShapes` folder in the 3D Canvas Mapmaking Pack. Although the shaders will work on any model.
+
+    * **Water**: The water shader will create a wave effect on the 3D Geometry.
+    * **Distortion**: The distortion effect will create a "Lava" like effect on the geometry.
+    * **Wind**: Will create wind motion, this will work very well with the included grass and tree assets!
+    * **Triplanar Mapping**: Will project the texture in a way that prevents stretching, goes very well with the Terrain option.
+    * **Grid**: Will create a grid projection on the Tile.
+  </Tab>
+  <Tab>
+    This option will let you create a randomly generated terrain with some customization options, it's suggested that you use the included models in the `basicShapes` folder in the 3D Canvas Mapmaking Pack.
+  </Tab>
+  <Tab>
+    Selecting a black an white image in this slot will transform the geometry of the tile depending on the intensity oof the black color. Fully black means high terrain, while fully white is lower ground
+  </Tab>
+  <Tab></Tab>
+</Tabs>
+
+<hr/>
+
+#### Making a Multilevel 3D Map
+
+<Callout type="warning" emoji="⚠️">
+For this to work, first enable the "**Mirror Levels Tile Visibility**" in the 3D Tab in your Scene Configuration.
+</Callout>
+
+If you wish to make a multilevel 3D Map, where the 3D Objects above you are not visible, Open the Levels UI and define the amount of levels you wish, then, select a level.
+A Magenta colored Plane will appear, to indicate where you are building, start draging and dropping 3D Object onto that plane to build on that level, repeat for the other levels.
+If you now explore the map with a token selected, you will see that Objects above you will be hidden.
+
+#### Tagging 3D Models with Collision and Door data (Blender)
+
+<ImageButBetter
+  src="https://user-images.githubusercontent.com/1346839/176191860-6514a287-04b9-4cd4-b65b-74390b85f956.png"
+  alt="Blender Tagging Location"
+  className={styles.wikiimage}
+/>
+You can add metadata to your 3D Models in a way that 3D Canvas will be able to read it and automatically make parts of your Mesh Doors or set collision\sight blocking on submeshes separetly
+
+1. Select the mesh you wish to tag
+2. Head to the 'Object Properties' tab and scroll to the bottom, Expand 'Custom Properties' and add them as needed (list of supported properties below)
+3. When you are done tagging all your meshes export the file as GLTF/GLB and make sure to include the custom properties in the export
+
+<Tabs items={['Supported Properties', 'Collision and Sight', 'Doors']}>
+  <Tab>
+_The property names are case sensitive!_
+
+| Property Name | Type    | Value           |
+|---------------|---------|-----------------|
+| collision     | Integer | 0/1             |
+| sight         | Integer | 0/1             |
+| isDoor        | Integer | 0/1/2           |
+| doorId        | String  | Any Unique Name |
+| ds            | Integer | 0/1/2           |
+  </Tab>
+  <Tab>
+    
+    Setting collision and sight will tell 3D Canvas whether to block these 'senses', for example you would set on solid meshes both 'collision' and 'sight' to 1, while on a window 'collision' to 1 and 'sight' to 0. If you had an ethereal wall for example, you would set both to 0 or 'collision' to 0 and 'sight' to 1.
+
+    Note: You don't need to set collision and sight on all of your meshes. If the data is missing, 3D Canvas will use what is set globally on the tile (by default 1\1)
+
+  </Tab>
+  <Tab>
+    In order for 3D Canvas to recognize and process a door correctly, any door you want to tag must have 'isDoor' set to 1 and a 'doorId' of your choice (eg "Tavern_Door_A". Keep in mind that every doorId must be different (no duplicate Ids)
+
+    The 'ds' property tells 3D Canvas the Door State: 0 - Open, 1 - Closed, 2 - Closed and Locked 
+    The 'isDoor' property tells 3D Canvas which type of door the door is: 0 - Not a Door, 1 - Regular Door, 2 - Secret Door
+
+  </Tab>
+</Tabs>

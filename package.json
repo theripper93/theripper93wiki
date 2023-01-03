@@ -20,8 +20,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@vercel/analytics": "^0.1.6",
     "@types/node": "18.11.10",
+    "@vercel/analytics": "^0.1.6",
     "markdownlint": "^0.26.2",
     "turbo": "^1.6.3",
     "typescript": "^4.9.4"
