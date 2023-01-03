@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faDiscord, faPatreon } from "@fortawesome/free-brands-svg-icons";
 import styles from "../../globals.module.css";
+import Cards from "@/components/Cards.jsx";
 
 # Tiles
 
@@ -17,6 +18,15 @@ For this reason it's generally discouraged to use Walls when building 3D Maps.
 
 While you can use 2D Tiles in 3D, it's highly suggested that you use fully 3D Tiles for the best experience. If you still wish to use 2D Tiles, check the bottom section for more information.
 
+This page will cover many concepts, you can use this quick links to jump to the most common sections.
+
+<Cards
+    cards={[
+        { title: "Using Dynamic Meshes", href: "#dynamic-mesh" },
+        { title: "Quckly Generate a Map", href: "#map-generator" },
+        { title: "Terrain Generation", href: "#terrain" },
+    ]}
+/>
 
 ## Placing 3D Tiles
 
@@ -44,6 +54,12 @@ This is the most important option, it's the 3D Model that will be used for the T
 
 ### Dynamic Mesh
 
+<ImageButBetter
+  src="/images/3D-Canvas/dynamesh.png"
+  alt="Dynamic Mesh Shapes"
+  className={styles.wikiimage}
+/>
+
 The Dynamic Mesh option is a very powerful tool, it allows you to generate 3D Models on the fly, depending on how you configure it.
 The `Dynamic Mesh Resolution` option allows you to specify how complex the generated geometry will be, the higher the number, the more complex the geometry will be, but also the more performance it will take to render.
 
@@ -69,10 +85,22 @@ After selecting the Text option, you can input your text in the 3D Model field (
 
 ##### Map Generator
 
-This is by far the most complex and versatile option. After selecting the Map Generator option, a `Cog` button will appear to the right of the Dynamic Mesh dropdown, after clicking it you will be presented with a new window, this window allows you to configure the Map Generator to your liking.
-Since this is a very complex tool, you can watch a video tutorial on how to use it [here](https://youtu.be/XsHeONzPPlY) as it offers a more visual explanation.
+<ImageButBetter
+  src="/images/3D-Canvas/mapgenresult.png"
+  alt="A map generated using the Map Generator"
+  className={styles.wikiimage}
+/>
+
+This is by far the most versatile option. After selecting the Map Generator option, a `Cog` button will appear to the right of the Dynamic Mesh dropdown, after clicking it you will be presented with a new window, this window allows you to configure the Map Generator to your liking.
+Since this can be intimidating at first, you can watch a video tutorial on how to use it [here](https://youtu.be/XsHeONzPPlY) as it offers a more visual explanation.
+
 
 ### Material Customization
+<ImageButBetter
+  src="/images/3D-Canvas/mapgeninterface.png"
+  alt="Map Generator Interface"
+  className={styles.wikiimage}
+/>
 
 This section will include all the settings that allow you to customize the material of the 3D Model and will cover the options from `Texture` all the way down to `Sides`
 
@@ -144,6 +172,12 @@ The `Vision` section will allow you to customize how the 3D Model will interact 
 
 ### Tiling
 
+<ImageButBetter
+  src="/images/3D-Canvas/terrainrepeat.png"
+  alt="Terrain made with the Terrain Option and Grass\Trees made with the Repeat Option"
+  className={styles.wikiimage}
+/>
+
 The `Tiling` section will allow you make multiple copies of the same 3D Model in a single tile, this is usefull for things like grass or trees.
 Using the `Repeat` mode is a lot more efficient than copy pasting the same 3D Tile multiple times.
 
@@ -159,6 +193,37 @@ The `Terrain` section will allow you to generate a terrain using the 3D Model as
 
 After selecting a `Noise Type` you will be able to set all the options for the noise. There are many noise options and the best way to understand them is to play with them.
 
+
+## Merging 3D Tiles
+
+<ImageButBetter
+  src="/images/3D-Canvas/merge.png"
+  alt="Merge/Un-Merge Button Location"
+  className={styles.wikiimage}
+/>
+
+It's very common to have multiple 3D Tiles that use the same model and texture that you need to manually place one by one instead of relying on the randomized `Repeat` mode.
+As discussed above, having multiple 3D Tiles is not efficient and will slow down your game, luckly 3D Canvas will let you merge multiple 3D Tiles into a single one.
+
+To merge 3D Tiles, select multiple 3D Tiles and click the `Merge` button in the 3D Tile HUD. The button can be accessed by right clicking one of the selected tiles to bring up the HUD.
+3D Canvas will automatically figure out which of the selected tiles can be merged and will group them accordingly. The previously multi-copy tiles will be replaced by single merged tiles that are considerably more efficient.
+
+To un-merge a 3D Tile, select it and click the `Unmerge` button in the Tile HUD.
+
+<Callout type="info" emoji="">
+Un-merging a tile will restore the original tiles to their previous position, rotation and scale before merging.
+</Callout>
+
+### Auto Merging
+
+<Callout type="warning" emoji="⚠️">
+Any bulk/automated operation can inherently be dangerous, please make sure to make a duplicate of your scene before using this feature.
+</Callout>
+
+3D Canvas offers a macro that will automatically optimize your scene by merging all the tiles that can be merged.
+This operation will skip any currently selected tile and all door tiles even if they could be merged.
+
+You can find this macro in the `3D Canvas Macros` compendium and it's named `Auto Merge All Tiles`.
 
 ## Advanced
 
