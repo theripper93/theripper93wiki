@@ -164,6 +164,21 @@ return {
 };
 ```
 
+#### Example: Tool Check
+This macro for DnD5e shows how you can make a tool check and return the result. If the check is successful, the crafting will be successful and the ingredients will be consumed. If the check fails, the crafting will fail and the ingredients will still be consumed.
+
+```javascript numberLines copy
+const toolName = "Alchemist's Supplies";
+const DC = 12;
+
+const tool = actor.items.getName(toolName);
+const result = await tool.rollToolCheck();
+return  {
+    success: result.total >= DC,
+    consume: true
+};
+```
+
 #### Example: Require and Consume a Spellslot
 This macro for DnD5e shows how you can check if the actor has a spellslot and consume it if they do. If they don't have a spellslot, it will show an error message and prevent the crafting from happening.
 ```javascript numberLines copy
