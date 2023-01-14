@@ -37,6 +37,20 @@ To share a map, simply head to the `Scene Directory` and right click on a scene 
 
 You will be required to provide an `Author Name`, `Description` and `Image` for your map. If you are using assets from specific packs in your scene, select them in the `Assets Packs` section.
 
+If you don't provide a secret key, a random one will be generated for you. You can use this key to update your map at any time.
+
+## Updating a previously shared map
+
+<Callout type='info' emoji='ℹ️'>
+  Since no sensitive data is beeing stored, the secret keys are not encripted in any way. This means that anyone with the key can update your map. Please do not share your secret key with anyone.
+</Callout>
+
+Whenever you Share a map, a secret key will be generated for you, or you can provide one yourself. You can use this key to update your map at any time.
+
+Whenever you attempt to share a map with the same name as a previously shared map, it's secret key will be automatically loaded and the map will be updated upon submission.
+
+Note that the secret key is stored in your world data, a malicious player could potentially access it, do not use your own private passwords as a secret key. It's suggested you leave the secret key field empty and let 3D Canvas generate a random one for you.
+
 ## Copyright
 
 By sharing a map you aknowledge that you have the rights to share it and that you are not violating any terms of service of any of the used assets. You also agree that the map will be stored on the 3D Canvas server and that it can be removed at any time.
