@@ -17,7 +17,7 @@ import styles from '@/components/image.module.css';
 
 # Levels
 
-<ModuleInfo/>
+<ModuleInfo />
 
 Levels is a Foundry VTT module for creating maps with multiple vertical
 levels.
@@ -28,8 +28,8 @@ levels.
   <Tab>
     <>
       These modules are **required** for Levels to run.
-       - [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper) 
-       - [Wall Height](Wall-Height)
+      - [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper)
+      - [Wall Height](Wall-Height)
     </>
   </Tab>
   <Tab>
@@ -40,27 +40,20 @@ levels.
     </>
   </Tab>
   <Tab>
-    These are premium modules that extend **Levels**' features. 
-    - [Automatic Cover Calculator](/levels/levelsautocover) 
-    - [Depth Blur](/levels/levels-layer-effects) 
+    These are premium modules that extend **Levels**' features.
+    - [Automatic Cover Calculator](/levels/levelsautocover)
+    - [Depth Blur](/levels/levels-layer-effects)
     - [Volumetric Templates](/levels/levelsvolumetrictemplates)
   </Tab>
 </Tabs>
 
-## Basics
-
-<Callout type='warning' emoji='⚠️'>
-  When using Levels it's important to understand the concept of [Wall Height's
-  Token Height](../free/wall-height#token-height) make sure to read the
-  documentation about it before using Levels.
-</Callout>
-
-### Your First Levels Map
+## Your First Levels Map
 
 While Levels is capable of handling full multilevel maps, we will start
-with something simple: Adding a multilevel barn to an existing map. This
-approach is scalable to any map you might want to build in the future.
+with something simple: Adding a multilevel barn to an existing map.
 
+This approach is scalable to any map you might want to build in the future.
+<div className='steps-container-ol'>
 1. Open any scene or create a new scene and set a background. This
    tutorial assumes you have a standard grid size of 5ft, if that is
    not the case adjust the Levels size accordingly (usually 2 times the
@@ -70,7 +63,7 @@ approach is scalable to any map you might want to build in the future.
    pressing the <FontAwesomeIcon icon={faLayerGroup} /> button.
 3. Press the <FontAwesomeIcon icon={faPenToSquare} /> button to go into edit mode, extend
    the window vertically to have some extra space
-4. Press the `+` button two times to add two levels.
+4. Press the <FontAwesomeIcon icon={faPlus} /> button two times to add two levels.
 5. Set the bottom one at 0/10 elevation and the top one at 10/20. Name
    your Levels `Ground Floor` and `First Floor`. Giving a name to your
    Levels is not strictly required.
@@ -93,30 +86,42 @@ Browser` grab the `barn-lvl2.webp` file from the same folder and
     when we are on the Ground Floor. Double click the First Floor tile
     to open it's configuration, head to the Levels Tab and enable `Show
 Even When Below?` and save your changes
-12. Let's add a roof\! Toggle roof view\\placement by clicking <FontAwesomeIcon icon={faArchway} />
-13. Drag and drop the roof tile `barn-roof.webp` i the correct position
+12. Let's add a roof! Toggle roof view/placement by clicking <FontAwesomeIcon icon={faArchway} />
+13. Drag and drop the roof tile `barn-roof.webp` is in the correct position
 14. Head back to the Ground Floor with the Roof mode still enabled and
     place `barn-shed-roof.webp` on top of the shed on the left side of
     the barn.
-15. Last step is connecting the floors. Toggle the Roof View\\Placement
+15. Last step is connecting the floors. Toggle the Roof View/Placement
     off, and on the ground floor head to the `Drawings Layer`
 16. Place a square drawing where the ladder is located on the top of the
     barn. This will create a stair.
-17. Done\! Place a token and move around to explore the barn\! Remember
-    to use Tokens with vision and have vision enabled in the scene
-    settings\! Feel free to play with multiple tokens (selecting one at
-    a time) to see how floors block vision. While we don't have Stairs
-    to connect us to the roofs, you can manually change the elevation of
-    your tokens to 10 or 20 to explore them. Maybe experiment by
-    creating your own star connections to the roofs\!
+17. Done! Place a token and move around to explore the barn.
+
+</div>
+
+Remember to use Tokens with vision and have vision enabled in the scene
+settings!
+Feel free to play with multiple tokens (selecting one at
+a time) to see how floors block vision.
+
+While we don't have stairs to connect us to the roofs,
+you can manually change the elevation of your tokens to 10 or 20 to explore them.
+
+Maybe experiment by creating your own star connections to the roofs\!
+
+## Basics
+
+<Callout type='warning' emoji='⚠️'>
+  When using Levels it's important to understand the concept of [Wall Height's
+  Token Height](../free/wall-height#token-height) make sure to read the
+  documentation about it before using Levels.
+</Callout>
 
 ### Levels UI
 
 <Image
   src='/images/Levels/Levels_UI.png'
   alt='A screenshot of the Levels UI'
-  
-  
   className={styles.wikiImage}
 />
 
@@ -208,8 +213,6 @@ before using Levels.
 <Image
   src='/images/Levels/Drawing_config_menu.png'
   alt='Config Menu'
-  
-  
   className={styles.wikiImage}
 />
 In Levels, drawings are used to create stairs and elevators. Their purpose is to
@@ -286,8 +289,6 @@ in the elevator don't affect the triggering range.
 <Image
   src='/images/Levels/How_sight_work.jpg'
   alt='A simple diagram visualizing sight concepts'
-  
-  
   className={styles.wikiImage}
 />
 
@@ -347,8 +348,6 @@ toggle it per tile.
 <Image
   src='/images/Levels/Light_Masking_Fine.jpg'
   alt='In this example the lighting looks correct at first glance'
-  
-  
   className={styles.wikiImage}
 />
 
@@ -356,18 +355,16 @@ In this example the lighting looks correct at first glance. `Light Masking` can
 be toggled in the `Lighting` tab in the scene settings. By enabling this feature
 all lights below the current point of view will be visible and masked with the tiles that are above them.
 
-
-Disabling this setting will only show lights on the current level. Here we can 
-see, by moving the roof slightly, that while the roof is covering the "green" 
+Disabling this setting will only show lights on the current level. Here we can
+see, by moving the roof slightly, that while the roof is covering the "green"
 coloration of the light, the vision portion of the light is still visible.
 
-If you are **not** using the **[Perfect Vision](https://foundryvtt.com/packages/perfect-vision)** 
+If you are **not** using the **[Perfect Vision](https://foundryvtt.com/packages/perfect-vision)**
 module you will encounter the limitations listed below:
+
 <Image
   src='/images/Levels/Light_masking_broken.jpg'
   alt='the vision portion of the light is still visible in this screenshot'
-  
-  
   className={styles.wikiImage}
 />
 
@@ -422,7 +419,7 @@ different elevations.
 
 ## API
 
-The API is available for viewing by entering `CONFIG.Levels.API` in the Foundry 
+The API is available for viewing by entering `CONFIG.Levels.API` in the Foundry
 console or in [API.js](https://github.com/theripper93/Levels/blob/v9/scripts/API.js).
 
 ### Hooks
