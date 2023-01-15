@@ -1,0 +1,110 @@
+import ImageButBetter from '@/components/ImageButBetter';
+import { Callout, Tab, Tabs } from "nextra-theme-docs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCube,
+  faUser,
+  faSort,
+  faFileImport,
+} from "@fortawesome/free-solid-svg-icons";
+import { faDiscord, faPatreon } from "@fortawesome/free-brands-svg-icons";
+import styles from "../globals.module.css";
+
+# Fog of War & Vision
+
+## Quick Start
+
+To setup fog of war in 3D we will look at 4 settings, they will be referenced throughout this section. You can find them here:
+
+> - **Token Vision** in the scene settings (lighting tab)
+> - **Fog Exploration** in the scene settings (lighting tab)
+> - **Use 3D Geometry for sight calculations** in the scene settings (3D tab)
+> - **Enable Fog of War** in the scene settings (3D tab)
+
+### Default settings
+By default you will have the following settings when creating a new scene:
+
+> 1. **Token Vision** Enabled
+> 2. **Fog Exploration** Enabled
+> 3. **Use 3D Geometry for sight calculations** Disabled
+> 4. **Enable Fog of War** Disabled
+
+With these settings the 3D Map will be completely visible, tiles will not block vision and the fog of war will not be rendered.
+Token visibility will still be blocked by walls.
+
+### Full fog of war
+To have the full fog of war experience in 3D Canvas, you need to enable the following settings:
+
+> 1. **Token Vision** Enabled
+> 2. **Fog Exploration** Enabled
+> 3. **Use 3D Geometry for sight calculations** Enabled
+> 4. **Enable Fog of War** Enabled
+
+With these settings the 3D Map will be completely hidden, tiles will block vision and the fog of war will be rendered.
+Note that this is the most demanding setting and will have a negative impact on performance on scenes with large wall\tiles count.
+
+### Token Vision only
+This is a middle ground where the whole map will be visible but tokens will be blocked by walls and tiles.
+
+
+> 1. **Token Vision** Enabled
+> 2. **Fog Exploration** Disabled
+> 3. **Use 3D Geometry for sight calculations** Enabled
+> 4. **Enable Fog of War** Disabled
+
+### No Vision
+Some maps, especially battlemaps, don't really require vision and can be a better experience for the players without it.
+If your players have very weak hardware, consider disabling vision in maps that don't benefit from it.
+
+> 1. **Token Vision** Disabled
+> 2. **Fog Exploration** Disabled
+> 3. **Use 3D Geometry for sight calculations** Disabled
+> 4. **Enable Fog of War** Disabled
+
+## Use 3D Geometry for sight calculations
+
+<Callout type="warning" emoji="⚠️">
+  Enabling this setting will disable vision completely while in 2D mode since there is no 3D geometry in 2D mode.
+</Callout>
+
+This is a very important setting, enabling it will, as the name suggest, use 3D Models to calculate token visibility and sight polygons.
+Whith this setting disabled, only walls will be used to calculate visibility and you will be able to see through tiles.
+
+## Shared Context
+
+<Callout type="warning" emoji="⚠️">
+  It is **not recommended** to disable Shared Context.
+</Callout>
+
+Shared Context is a global setting. If enabled, it allows for fog of war
+to be rendered in real-time with better performance and better quality. The downside is that you will lose access to the Mini-Canvas
+
+## Fog Exploration
+
+If you have both **Token Vision** and **Fog Exploration** enabled in the
+scene settings, 3D Canvas will mirror the 2D Canvas fog. This means that
+fog bounds are solely determined by walls in the scene.
+
+If you have **Token Vision** enabled but **Fog Exploration** disabled, the whole scene will be revealed but walls and geometry (if set in the scene settings) will prevent tokens from seeing each other if blocked by
+obstacles.
+
+## Fog Limitations
+
+<Callout type="info" emoji="ℹ️">
+  **Fog is not 3D!** Fog exploration is 2 dimensional.
+</Callout>
+
+Exploring any space will explore the full vertical space of that location. There are no current plans for 'true' 3D fog exploration because of performance costs.
+
+## Manual Fog of War
+
+If you wish to have some semblance of a 3D Fog, you can use Box Measure
+templates to create Fog of War boxes. It will mimic the use a piece of
+paper to cover the map table experience—but in 3D.
+
+Simply place a Box Measured Template, open it's configuration, and
+enable `Is Fog of War Box`
+
+Players will see this box as solid black. GMs will see it semi
+transparent. Moving the camera inside the box will obscure the view. The GM can move or remove these boxes during the exploration.
+

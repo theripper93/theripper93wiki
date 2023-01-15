@@ -1,7 +1,10 @@
-import ImageButBetter from '../../components/ImageButBetter'
+import ImageButBetter from '@/components/ImageButBetter'
+import ModuleInfo from '@/components/ModuleInfo'
 import styles from '../globals.module.css'
 
 # Levels - Auto Cover
+
+<ModuleInfo/>
 
 **Automatic Cover Calculator** _(Levels - Automatic Cover Calculator in
 releases)_ is a submodule for [Levels](Levels). It calculates
@@ -13,7 +16,9 @@ more. Preconfigured for dnd5e but works with all systems. Also adds the
 ability to duck\!
 
 ## How to use
+
 ### Quick configuration (DND5E)
+
 <ImageButBetter
   src='/images/Levels-Auto-Cover/Autocovernocover.png'
   alt='Ignore Active Effect example'
@@ -37,6 +42,7 @@ ability to duck\!
   height={2000}
   className={styles.wikiimage}
 />
+
 - Make sure the combat is started and that you are targeting with the
   current turn creature.
 - As a GM, Targeting from a Player's token will not calculate cover to
@@ -45,7 +51,6 @@ ability to duck\!
 - You can test this easly by placing a wall that completely obstructs
   vision, then, disable vision on the token (so that it can see tokens
   beyond the wall) and try targeting (you should get 3\\4 cover)
-
 
 ### Ignoring Cover
 
@@ -60,13 +65,13 @@ on the specific feature, the necessary flag to ignore cover is
   height={2000}
   className={styles.wikiimage}
 />
+
 ### Custom Configuration and other settings
 
 The Automatic Cover Calculator can be heavly customized, head to the
 module settings to see all the customization options.
 
 All settings are described in details in the Settings hints.
-
 
 ## Ducking
 

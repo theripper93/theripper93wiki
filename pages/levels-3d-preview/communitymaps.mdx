@@ -1,0 +1,60 @@
+import ImageButBetter from '@/components/ImageButBetter';
+import styles from '../globals.module.css';
+import { Callout } from 'nextra-theme-docs';
+
+# Community Maps
+<ImageButBetter
+  src='/images/communitymaps/mapbrowser.jpg'
+  alt='Community Map Browser'
+  className={styles.wikiimagesmall}
+/>
+
+**Community Maps** is a new 3D Canvas feature that lets you share and access maps 
+made by the community directly in Foundry.
+
+<br/>
+<br/>
+<br/>
+## Downloading Community Maps
+
+<ImageButBetter
+  src='/images/communitymaps/sharebrowse.jpg'
+  alt='Buttons Locations'
+  className={styles.wikiimagesmall}
+/>
+To download community maps, simply head to the `Scene Directory` and click the `Browse Community 3D Maps` button at the top.
+From here you can search for maps by name, description or packs and download them by clicking the `Cloud` button located on the top right of the map cards.
+
+
+## Sharing a Map
+<ImageButBetter
+  src='/images/communitymaps/share.jpg'
+  alt='Share Window'
+  className={styles.wikiimagesmall}
+/>
+
+To share a map, simply head to the `Scene Directory` and right click on a scene to open the context menu, then click the `Share Scene` button at the bottom of the list.
+
+You will be required to provide an `Author Name`, `Description` and `Image` for your map. If you are using assets from specific packs in your scene, select them in the `Assets Packs` section.
+
+If you don't provide a secret key, a random one will be generated for you. You can use this key to update your map at any time.
+
+## Updating a previously shared map
+
+<Callout type='info' emoji='ℹ️'>
+  Since no sensitive data is beeing stored, the secret keys are not encripted in any way. This means that anyone with the key can update your map. Please do not share your secret key with anyone.
+</Callout>
+
+Whenever you Share a map, a secret key will be generated for you, or you can provide one yourself. You can use this key to update your map at any time.
+
+Whenever you attempt to share a map with the same name as a previously shared map, it's secret key will be automatically loaded and the map will be updated upon submission.
+
+Note that the secret key is stored in your world data, a malicious player could potentially access it, do not use your own private passwords as a secret key. It's suggested you leave the secret key field empty and let 3D Canvas generate a random one for you.
+
+## Copyright
+
+By sharing a map you aknowledge that you have the rights to share it and that you are not violating any terms of service of any of the used assets. You also agree that the map will be stored on the 3D Canvas server and that it can be removed at any time.
+
+## Reporting a Map
+
+If you find a map that violates the terms of service of any of the used assets, reach out to me on Discord `theripper93#3276` and I will remove it as soon as possible.

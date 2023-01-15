@@ -1,8 +1,11 @@
-import ImageButBetter from '../../components/ImageButBetter'
+import ImageButBetter from '@/components/ImageButBetter'
+import ModuleInfo from '@/components/ModuleInfo'
 import styles from '../globals.module.css'
 import { Callout } from 'nextra-theme-docs';
 
 # Lightswitch
+
+<ModuleInfo/>
 
 Allow players to turn on and off lights and customize icons for the
 switches
@@ -12,6 +15,7 @@ lightswitch
 </Callout>
 
 ## How to use
+
 <ImageButBetter src="/images/Lightswitch/Lsconfig.png" alt="Lightswitch Configuration" width={2000} height={2000} className={styles.wikiimage}/>
 
 ### Creating a lightswitch
@@ -22,13 +26,10 @@ lightswitch
 - If you want, select an image to use as the icon, otherwise the
   default lightbulb will be used.
 
-
 ### Interacting with the lightswitch
+
 <ImageButBetter src="/images/Lightswitch/Lscustomicon.png" alt="Lightswitch with custom icon" width={2000} height={2000} className={styles.wikiimage}/>
 
 Once you created a lightswitch, **<u>select a token</u>**, if the center
 of the light is in view of the token, you will see the clickable icon,
 simply click it to toggle the light
-
-
-

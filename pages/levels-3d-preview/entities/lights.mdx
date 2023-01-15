@@ -1,0 +1,47 @@
+import ImageButBetter from '@/components/ImageButBetter';
+import { Callout, Tab, Tabs } from "nextra-theme-docs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCube,
+  faUser,
+  faSort,
+  faFileImport,
+} from "@fortawesome/free-solid-svg-icons";
+import { faDiscord, faPatreon } from "@fortawesome/free-brands-svg-icons";
+import styles from "../../globals.module.css";
+
+# Lights
+
+To create a light, simply go to the light layer and drag to create a light, all the standard foundry interactions are the same.
+
+## Animations
+
+Only a select amount of light animations are supported in 3D.
+The following animations are supported:
+
+- Pulse
+- Chroma
+- Flickering Light
+
+## Particle Emitters
+
+Lights can also be used as particle emitters, to do this, simply enable the "Enable Particle Effect" option in the light settings under the 3D Tab.
+From here you can tweak the settings to your liking.
+
+## Limitations
+
+<Callout type="warning" emoji="⚠️">
+3D Lights will not be blocked by walls\tiles or cast shadows because of WebGL limitations. It's also incredibly expensive on performance.
+</Callout>
+
+You can enable Shadow Casting/Wall Blocking in the 3D Tab for specific lights, but it's highly suggested to not use more than 2-3 lights per scene while enabled. Enabling this option on a large number of lights
+will crash the scene.
+
+If the scene crashes because of the settings, and you are not able to access the 3D or 2D Scene, disable 3D Canvas (or launch your world in safe mode) and delete the shadow casting lights.
+
+## Freezing & Stuttering
+
+When creating a light, you will notice some freezing and\or stuttering. This is because every time a light is added to the scene, all shaders need to be recompiled.
+Unfortunately this is a limitation of WebGL, and there is nothing I can do about it.
+
+In the event that you need to create a lot of lights, i suggest creating them in 2D mode, then switch to 3D to position them as moving lights will not cause freezing or stuttering.

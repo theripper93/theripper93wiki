@@ -1,4 +1,4 @@
-import ImageButBetter from '../../components/ImageButBetter';
+import ImageButBetter from '@/components/ImageButBetter';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCube, faUser } from '@fortawesome/free-solid-svg-icons';
 import styles from '../globals.module.css';
@@ -6,20 +6,23 @@ import { Callout} from 'nextra-theme-docs';
 
 # 3D Canvas Getting Started
 
-A guide for quickly getting started with [3D Canvas](./3D-Canvas).
+A guide for quickly getting started with [3D Canvas](./).
 
 ## First Steps
 
-Ensure you have all the [required modules](3D-Canvas#Required_Modules) enabled and installed.
+Ensure you have all the [required modules](./#modules) enabled and installed.
 
-Once you have [3D Canvas](3D-Canvas) and its required modules
-enabled, you will now be able to create and view 3D Scenes in Foundry.
+Once you have [3D Canvas](./) and its required modules
+enabled, you will now be able to create and view 3D Scenes in Foundry. <br/>
 You can enable 3D on any map by pressing the Toggle 3D Mode button <FontAwesomeIcon icon={faCube} /> located under the Token Controls <FontAwesomeIcon icon={faUser} />
 
 This also works for preexisting maps. Enabling 3D Mode will not make any
 changes to your original 2D Scene.
 
-_Lost with how to navigate in 3D? Check the [controls section](3D-Canvas#controls)\!_
+<Callout type="info" emoji="ℹ️">
+_Lost with how to navigate in 3D? Check the [controls section](./#controls)\!_
+</Callout>
+
 
 ## Your First 3D Scene
 
@@ -33,14 +36,8 @@ as an example for the guide. You can use any other model for this
 tutorial.
 
 1. Download the model above or a model of your choice for the scene.
-2. Ensure the model is downloaded in or converted to the **GLTF**
-   format.
-3. Extract the downloaded folder and copy (or upload if on remote
-   hosting) the folder to your Foundry VTT user data
-   - At the moment it's not possible to upload 3D Models directly in
-     Foundry, but this should be possible with V10.
-   - If using the model linked above, the folder will be named
-     _`arena_-_game_level_design`_
+2. Ensure the model is downloaded in or converted to the **GLB** format.
+3. When you open the **Tile Browser** while in 3D Mode you will be able to upload 3D Models the same way you would upload an image 
 
 ### Creating a 3D Scene
 
@@ -52,34 +49,41 @@ tutorial.
 2. In the Scene Configuration, under the 3D Tab, enable "**Enable for
    Players**" and "**Enable 3D on Load**" and "**Use 3D Geometry for
    Sight Calculations**" and Save the scene configuration.
-3. Enter 3D Mode and navigate to the Tiles Layer, click the Folder icon
-   and browse to the `scene.gltf` file. Drag n Drop it onto the scene.
+3. Enter 3D Mode and navigate to the Tiles Layer, click the Folder icon, browse to your preferred directory
+   and upload the downloaded GLB file then Drag n Drop it onto the scene.
    **If you open the File Browser while in 2D Mode it will show images
    instead of 3D Models\!**
 4. In your compendiums, in the sidebar, locate the _3D Canvas Macro
    Compendium_, select your tile by clicking on it (a gizmo and an
-   orange box will appear) then run the _Fit Tile To Scene_ Macro.
+   orange box or an outline will appear) then run the _Fit Tile To Scene_ Macro.
 5. Drag some tokens from the sidebar to the scene and start playing in
    3D\!
 
 ## What next?
 
-Now that you are familiar with basic 3D Canvas functionality, it's
-highly suggested that you install [3D Canvas Mapmaking](https://github.com/theripper93/canvas3dcompendium) and [3D Canvas Token Selection](https://github.com/theripper93/canvas3dtokencompendium) so you have some tiles, tokens and premade scenes to play around with\!
+<Callout type="info" emoji="ℹ️">
+The [3D Canvas Mapmaking Pack](./canvas3dcompendium) will give you access to both assets and tools to make map building way easier!
+It's highly suggested that you install it if you plan to do any map building! Check out the wiki page for all it's features!
+</Callout>
 
-It's also suggested that you install [3D Portraits](three-actor-portrait) and
+Now that you are familiar with basic 3D Canvas functionality, it's
+highly suggested that you install [3D Canvas Mapmaking Pack](./canvas3dcompendium) and [3D Canvas Token Compendium](./canvas3dtokencompendium) so you have some tiles, tokens and premade scenes to play around with\!
+
+It's also suggested that you install [3D Portraits](./three-actor-portrait) and
 [Filepicker+](../premium/filepicker-plus) to get 3D Previews when you hover
-over files\! Once that is setup, you can start building your own scenes
-by using 3D Tiles\! To get started:
+over files and [Heroforge](https://www.heroforge.com/) integration! Once that is setup, you can start building your own scenes
+by using 3D Tiles!
+
+To get started:
 
 1. Create a new scene, with the same settings as above.
 2. Head to the Tiles Layer
 3. You will see a controller icon, this will show you a quick reference
    of the tile builder controls, click it.
 4. Open the File Browser by clicking the Folder icon and navigate to
-   `modules/canvas3dcompendium/assets/Tiles`
+   `modules/canvas3dcompendium/assets/Tiles` or use the [Asset Browser](./canvas3dcompendium#asset-browser)
 5. Choose your preferred assets, drag and drop them onto the scene and
    start building\!
 
 To further enhance your 3D Canvas Experience, you can check the
-[Recommended Modules](3D-Canvas#recommended-modules).
+[Recommended Modules](./#modules).

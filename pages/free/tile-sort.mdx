@@ -1,0 +1,50 @@
+import ImageButBetter from '@/components/ImageButBetter'
+import ModuleInfo from '@/components/ModuleInfo'
+import styles from '../globals.module.css'
+
+# Tile Sort
+
+<ModuleInfo/>
+
+Easily sort how tiles are stacked, hide tiles for easier management of
+stacked tiles and highlight tiles on hover.
+
+## How to use
+
+<ImageButBetter
+  src='/images/Tile-Sort/Tsoverview.png'
+  alt='The Tile Sort Interface'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+
+### Sorting Tiles
+
+To sort the tiles, simply drag and drop in the list
+
+### Hiding Tiles
+
+Hovering over the image of the tile in the tile sort window an eye icon
+will appear, clicking it will hide the tile until you close the tile
+sort window or click the button again. This will allow you to work and
+move tiles that are overlapping the hidden tile more easily.
+
+### Opening the tile configuration
+
+<ImageButBetter
+  src='/images/Tile-Sort/Tsbtn.png'
+  alt='The Button to open Tile Sort'
+  width={2000}
+  height={2000}
+  className={styles.wikiimagesmall}
+/>
+
+Double clicking a tile in the Tile Sort interface will open it's config,
+this will allow you to open a tile configuration without moving other
+tiles that could overlap it.
+
+### Highlihting
+
+Hovering over a tile in Tile Sort will create a colored highlight of the
+tile that will make spotting overlapping tiles easier

@@ -1,4 +1,5 @@
 import ImageButBetter from '../components/ImageButBetter';
+import ModuleInfo from '../components/ModuleInfo';
 import { Callout, Tab, Tabs } from 'nextra-theme-docs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -15,6 +16,8 @@ import {
 import styles from './globals.module.css';
 
 # Levels
+
+<ModuleInfo/>
 
 Levels is a Foundry VTT module for creating maps with multiple vertical
 levels.
@@ -37,13 +40,10 @@ levels.
     </>
   </Tab>
   <Tab>
-    These modules are developed by theripper93 himself that extend **Levels**'
-    features. 
-    - [Automatic Cover Calculator](Levels-Auto-Cover) 
-    - [Depth
-    Blur](Levels-Depth-Blur) 
-    - [Volumetric
-    Templates](Levels-Volumetric-Templates)
+    These are premium modules that extend **Levels**' features. 
+    - [Automatic Cover Calculator](/levels/levelsautocover) 
+    - [Depth Blur](/levels/levels-layer-effects) 
+    - [Volumetric Templates](/levels/levelsvolumetrictemplates)
   </Tab>
 </Tabs>
 
@@ -356,13 +356,6 @@ In this example the lighting looks correct at first glance. `Light Masking` can
 be toggled in the `Lighting` tab in the scene settings. By enabling this feature
 all lights below the current point of view will be visible and masked with the tiles that are above them.
 
-<ImageButBetter
-  src='/images/Levels/Light_masking_broken.jpg'
-  alt='the vision portion of the light is still visible in this screenshot'
-  width={2000}
-  height={2000}
-  className={styles.wikiimage}
-/>
 
 Disabling this setting will only show lights on the current level. Here we can 
 see, by moving the roof slightly, that while the roof is covering the "green" 
@@ -370,6 +363,13 @@ coloration of the light, the vision portion of the light is still visible.
 
 If you are **not** using the **[Perfect Vision](https://foundryvtt.com/packages/perfect-vision)** 
 module you will encounter the limitations listed below:
+<ImageButBetter
+  src='/images/Levels/Light_masking_broken.jpg'
+  alt='the vision portion of the light is still visible in this screenshot'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
 
 - Light masking will mask the "visual" part of the light, as in it's
   color and animation. Unfortunately the "vision" part of the light

@@ -1,18 +1,22 @@
-import ImageButBetter from '../../components/ImageButBetter'
+import ImageButBetter from '@/components/ImageButBetter'
+import ModuleInfo from '@/components/ModuleInfo'
 import styles from '../globals.module.css'
 import { Callout } from 'nextra-theme-docs';
 
 # RPG Damage Numbers
+
+<ModuleInfo/>
+
 Damage numbers, with style.
 
 ## How to use
 
 ### With Midi-QoL
+
 <ImageButBetter src="/images/RPG-Damage-Numbers/Rdnsettings.png" alt="Module Settings" width={2000} height={2000} className={styles.wikiimage}/>
 
 If you have Midi-QoL in use, RPG Damage Numbers will automatically show
 colored damage numbers whenever a creature is damaged.
-
 
 ### Without Midi-QoL
 
@@ -23,5 +27,3 @@ settings
 If you are not using Midi-QoL, RPG Damage numbers will still display
 it's own custom animation for status effects and damage numbers, but
 color will not be shown for different damage types.
-
-

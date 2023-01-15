@@ -1,13 +1,18 @@
-import ImageButBetter from '../../components/ImageButBetter';
+import ImageButBetter from '@/components/ImageButBetter';
+import ModuleInfo from '@/components/ModuleInfo'
 import styles from '../globals.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faPatreon } from '@fortawesome/free-brands-svg-icons';
 
 # Combat Booster
 
+<ModuleInfo/>
+
 Speed up your combat with recent actions, turn markers, and other
 smaller tweaks. **D\&D5** only.
 
+
+## Features
 <ImageButBetter
   src='/images/Combat-Booster/Cbrecentactions.png'
   alt='Recent Actions'
@@ -16,13 +21,13 @@ smaller tweaks. **D\&D5** only.
   className={styles.wikiimagesmall}
 />
 
-## Features
-
 ### Recent actions
 
 Show the latest used actions, customize, how many, how many columns and
 more.
 
+
+### Turn Marker
 <ImageButBetter
   src='/images/Combat-Booster/Cbturnmarker.png'
   alt='Turn Marker'
@@ -30,8 +35,6 @@ more.
   height={2000}
   className={styles.wikiimagesmall}
 />
-
-### Turn Marker
 
 Show a turn marker on the current combatant, customize size,
 transparency, rotation - animated webms supported

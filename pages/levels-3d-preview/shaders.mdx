@@ -1,0 +1,46 @@
+import ImageButBetter from "@/components/ImageButBetter";
+import { Callout, Tab, Tabs } from "nextra-theme-docs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCube,
+  faUser,
+  faSort,
+  faFileImport,
+} from "@fortawesome/free-solid-svg-icons";
+import styles from "../globals.module.css";
+
+# Shaders
+
+Shaders are a way to create great visual effects, these tend to be easier on performance than using animated 3D Models or Animated Textures.
+Still, keep in mind that shaders are not free, they will cost you performance, so use them wisely. It's always possible to disable shader effects per client.
+
+## Configuring Shaders
+
+You can configure shaders in the `Configure Shaders` window. This window can be opened by clicking the `Configure Shaders` button in the 3D Tab of Tiles, Templates and Tokens.
+The window will be the same for all of these.
+
+Once you have opened the window, you will see an interface with a Tab for each shader. Each tab will have a list of options that you can configure for that shader and a description that will explain what the effect does.
+
+To enable a shader, simply head to the corresponding tab and check the `Enabled` checkbox.
+
+## Quick Shaders
+
+On tokens, it's possible to quickly enable shaders, for example if you are in the middle of a fight and you want to set a token on fire.
+To do so, simply right click on the token to bring up the Token HUD, locate the Magic Wand button on the right and click it, A panel will open where you can quickly toggle shaders on that token.
+
+## DnD 5e integration
+
+If you are using Dnd 5e, shaders will be automatically applied to Measured Templates when casting a spell depending on the type of damage of the spell. You can disable this in the module settings.
+
+## Performance
+
+Some effects are almost free, while others can be very expensive depending on the usage.
+
+The more expensive effects are marked with a warning sign in their description. If you are experiencing performance issues, try disabling these effects.
+
+Effects that are not marked with a warning can generally be used freely even on low-end devices.
+
+## Freezing & Stuttering
+
+When enabling a shader for the first time, after the scene has been loaded, you may experience some freezing or stuttering. This is normal and will go away after a few seconds.
+This is due to the fact that the shader needs to be compiled and the browser needs to cache the compiled shader. Unfortunately this is a WebGL limitation, there is no way to avoid this as it's not possible to fully precompile the shaders.

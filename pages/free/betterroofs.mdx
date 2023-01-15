@@ -1,10 +1,11 @@
-import ImageButBetter from '../../components/ImageButBetter'
+import ImageButBetter from '@/components/ImageButBetter'
+import ModuleInfo from '@/components/ModuleInfo';
 import { Callout } from 'nextra-theme-docs'
 
 import styles from '../globals.module.css'
 
 # Betters Roofs
-
+<ModuleInfo/>
 **Betters Roofs** is a module for enhancing Foundry's overhead tile
 functionality.
 
@@ -62,10 +63,6 @@ enable Occlusion link source on the trees as well, going under one tree
 will make all trees and the roof occluded.
 
 ### Occlusion Radius
-
-This token setting will determine the size of the revealed radius when a
-token is under a tile with "Radial" occlusion mode.
-
 <ImageButBetter
   src='/images/Better-Roofs/Occlusion_Radius.png'
   alt='Occlusion Radius settings'
@@ -73,6 +70,10 @@ token is under a tile with "Radial" occlusion mode.
   height={2000}
   className={styles.wikiimagesmall}
 />
+
+This token setting will determine the size of the revealed radius when a
+token is under a tile with "Radial" occlusion mode.
+
 
 ## External Links
 

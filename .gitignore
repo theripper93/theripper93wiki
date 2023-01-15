@@ -2,3 +2,6 @@
 .next
 .turbo
 node_modules
+.yarn
+.pnp
+.pnp.*

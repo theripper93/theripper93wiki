@@ -1,0 +1,102 @@
+import ImageButBetter from '@/components/ImageButBetter';
+import styles from '../globals.module.css';
+
+# Terrascape
+
+**Terrascape** is a 3D Terrain Sculpting and Painting Tool, you can use it
+as a web app at
+[https://terrascape.theripper93.com/](https://terrascape.theripper93.com/)
+
+## Getting Started
+
+This section will guide you through setting up a basic project.
+
+### Setting up a New Project
+
+- Open the Terrascape Web-App
+  ([https://terrascape.theripper93.com/](https://terrascape.theripper93.com/))
+- You will see the `New File` window already opened, set the options
+  as desired or leave them as default and press `Confirm`
+
+### Sculpting
+
+- You will be welcomed by the Sculpting interface. To sculpt simply
+  click and drag on the Terrain or Right click and drag to invert the
+  sculpting direction.
+- To switch between the available Sculpting tools, click the
+  corresponding icon in the bottom section of the left side Controls
+- If you wish to change the view mode of your terrain, click the Top
+  button in the left side Controls.
+
+### Painting
+
+- Click the second button from the top in the left side Controls to
+  switch to Painting mode
+- Before painting you will need to add a texture or material, for this
+  example let's use
+  [This](https://drive.google.com/file/d/1_GivszWvrKMMhqiGaNNvJBodve_4ErIC/view?usp=sharing)
+  file. Download it and unzip it somewhere on your device.
+- Click the `Add Texture` button (the first button in the Painting
+  Tools). A window will open.
+- You can click on each individual material channel to upload the
+  texture or drag and drop every file individually to each channel. To
+  speed up the process, open the folder you downloaded previously,
+  select all the textures and drag all of them in any of the channels,
+  Terrascape will automatically map them to the correct channel. Once
+  the upload is complete, press the `Confirm` button
+- Now that a texture has been added, the `Texture panel` will appear
+  on the Right side of the interface, you can click any texture to set
+  it as the active texture or the trash can to remove it.
+- Click and drag on your terrain to paint.
+- You can use the 3 Sliders to change some brush settings, in order
+  from top to bottom: Brush Strength, Texture Size and Brush Opacity.
+- Clicking the `white square` right under the `Add Texture` button
+  will let you set a Tint for the texture.
+
+### Saving, Loading and Exporting the Project
+
+Keep in mind that refreshing the page will result in a loss of all your
+progress\!
+
+#### New
+
+This button will create a new project, if you confirm a new project
+creation, all your current progress will be overwritten but the imported
+textures will remain.
+
+#### Open
+
+Use this button to load a previously saved project.
+
+#### Save
+
+This button will save your project in the `JSON` format. **You cannot
+use this file in 3D Canvas**, this file is meant to save your progress
+if you wish to continue later, use the `Open` button to open this saved
+file.
+
+#### Export
+
+Export your project to a `glb` file. This file can be directly imported
+into 3D Canvas or used in other 3D Software.
+
+## Controls
+
+While the brush is visible
+
+| Control      | Action                                                        |
+| ------------ | ------------------------------------------------------------- |
+| Left Click   | Sculpt/Pain                                                   |
+| Right Click  | Sculpt(inverse)/Paint                                         |
+| Middle Hold  | Rotate Camera                                                 |
+| Scroll Wheel | Change Brush Size                                             |
+| ALT          | Hold to disable the brush and enable full camera interactions |
+| Ctrl+Z       | Undo last action                                              |
+
+While the brush is not visible
+
+| Control      | Action        |
+| ------------ | ------------- |
+| Right Click  | Pan Camera    |
+| Middle Hold  | Rotate Camera |
+| Scroll Wheel | Zoom Camera   |

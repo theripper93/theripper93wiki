@@ -1,0 +1,235 @@
+import ImageButBetter from '@/components/ImageButBetter';
+import ModuleInfo from '@/components/ModuleInfo'
+import styles from '../globals.module.css';
+import { Callout } from 'nextra-theme-docs';
+
+# Wall Height
+
+<ModuleInfo/>
+
+Wall Height is a module that allows setting vertical heights to walls.
+It allows tokens to look over or under walls and to move over or under
+them according to relative heights as well.
+
+## Basics
+
+<ImageButBetter
+  src='/images/Wall-Height/Token_Height_Adjustment.gif'
+  alt='Token Height Adjustment Menu'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+
+### Required Modules
+
+- [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper)
+
+### Tokens
+
+Tokens are able to see over walls which are below them in elevation. Likewise, tokens
+cannot see through walls that are higher than them in.
+
+To change a token's elevation, right-click the token. You will see an
+input box in the top left of the token HUD. This is the token's
+elevation. Modify it by selecting the box and entering the desired
+elevation for the token.
+
+#### Token Height
+
+<Callout type='warning' emoji='⚠️'>
+  If you are using the [Levels](../levels) module, remember that if the
+  height of a token pushes it's head through a ceiling, you will see the floor
+  above you!
+</Callout>
+<ImageButBetter
+  src='/images/Wall-Height/Token_Height_Setting.png'
+  alt='Token height input in token settings'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+The height of a token, which is different than the elevation of it. It represents
+how tall a token is and is used in sight calculation.
+
+To modify the height of a specific token, go to token settings and
+change its value. All non-0 values will override the default settings
+for the token.
+
+`Automatic Token Height` and `Default Token Height` in module settings
+determine the default for all tokens.
+
+If you wish to double check what is the computed value for a specifi token when it's height is set to 0 (thus triggering the automatic calculation), you can check it in the text displayed below the Token Height in the Token Configuration
+
+### Walls
+
+<ImageButBetter
+  src='/images/Wall-Height/Wall_Config_Menu.png'
+  alt='The wall configuration menu'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+Walls can be assigned a top elevation and a bottom elevation, representing the highest
+and lowest point of the wall respectively.
+
+Their values can be edited in the wall configuration menu. To access the
+wall configuration menu, double click the wall you wish to modify.
+
+You will now see the Wall Height section at the bottom of the wall
+configuration menu. There are two inputs available: `Wall Height (Top)`
+and `Wall Height (Bottom)`. The default values are `Infinity` and
+`-Infinity` respectively.
+
+## Settings
+
+<ImageButBetter
+  src='/images/Wall-Height/Scene_Config_Wall_Height.png'
+  alt='The scene setting for Wall Height'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+`Enable Wall Height for Scene` in scene settings is enabled by default. If you wish
+to disable it, it can be done in scene settings. However, this will mean Wall Height's
+features cannot be used in the scene.
+
+### Enable Tooltip
+
+<ImageButBetter
+  src='/images/Wall-Height/Wall_Height_Tooltip.png'
+  alt='The wall height tooltip'
+  width={2000}
+  height={2000}
+  className={styles.wikiimage}
+/>
+The tooltip will display when a wall is hovered, showing its lowest and highest elevation.
+
+### Display Height on Walls
+
+While enabled, displays the elevation values of a wall on the wall itself.
+<ImageButBetter
+  src='/images/Wall-Height/Wall_Height_Display_Value.png'
+  alt='Display Height on Walls'
+  width={115}
+  height={115}
+  className={styles.wikiimage}
+/>
+
+### Vaulting
+
+Allows for tokens to move over walls at a lower elevation than their
+height.
+
+#### Example
+
+Imagine a token at 0 elevation, with a token height of 5, and a 0, 3
+Wall
+
+- **Vaulting Enabled**: The movement of the token is not blocked
+  because with a height of 5 the token can see over the wall.
+- **Vaulting Disabled**: The movement of the token is blocked because
+  its elevation (or its feet if you will) is at 0 and the wall blocks
+  movement at 0 elevation.
+
+### Automatic Token Height
+
+Calculates the token's height by via token size and scale.
+
+#### Example Heights
+
+A 1x1 token on a 5ft grid would be 5ft tall, a 2x2 token would be 10ft,
+and a 1x1 token with a 0.75 scale would be 3.75 ft.
+
+### Default Token Height
+
+The default height of all tokens. Default height is 6. This value is
+only used if `Automatic Token Height` is disabled.
+
+### Enable Constrained by Elevation Globally
+
+Area of effect sources will be constrained by walls corresponding the
+elevation the source instead of the elevation of the controlled token
+while enabled.
+
+### Migrate Wall-Height Data On Startup
+
+Migrates wall-height data from the old wall-height data (pre-4.0)
+structure to the new one (4.0+) for users migrating from older versions.
+
+This is only necessary once but you can enable this settings and refresh
+the page if you need to run it again.
+
+## Developers
+
+### Elevation Helpers
+
+To avoid data duplication, Wall Height uses a data path belonging to the
+[Levels](Levels) module to store it's elevation. If
+[Levels](Levels) is not enabled you can use these helpers to
+read and set the elevation of a sound or light document.
+
+```js
+WallHeight.setSourceElevationTop(document, value);
+WallHeight.getSourceElevationTop(document);
+
+WallHeight.setSourceElevationBottom(document, value);
+WallHeight.getSourceElevationBottom(document);
+```
+
+Or, if you want to set/get both at the same time:
+
+```js
+WallHeight.setSourceElevationBounds(document, bottom, top);
+WallHeight.getSourceElevationBounds(document);
+```
+
+## Other
+
+### Migration to 4.0
+
+Data structures were rewritten in version 4.0 of Wall Height. Scenes and
+other entities from pre-4.0 Wall Height require migration.
+
+During the first launch of Wall Height v4.0+, the module will auto
+migrate the data on all your scenes and compendiums (this includes token
+attacher data).
+
+If you need to migrate the data again, you can always do so by enabling
+the setting in the module settings and refreshing. Macros are also
+included to run migrations if needed.
+
+#### Content Creator Maps and Prefabs
+
+To manually migrate content with the old data structure:
+
+1. Enable the modules that you wish to migrate (e.g. Baileywiki Maps
+   Towns )
+2. Unlock **all** the actor compendiums containing Token Attacher
+   Prefabs
+3. In the Wall Height Macro compendium `Wall Height Macros` run the
+   `Wall Height - Migrate Everything` macro
+4. In the Token Attacher Macro compendium `Example Macros` run `(TA)
+Migrate Actors for Wall Height` and `(TA) Migrate Compendiums for
+Wall Height` macros
+5. It is now migrated to the new data structure
+
+### Modules
+
+Wall Height is very likely to incompatible with modules which modify
+token vision.
+
+#### Compatible
+
+- Perfect Vision
+
+## Credits
+
+- **Cole Schultz** (cole\#9640) for the original implementation of the
+  module
+- **Erithtotl** (Erithtotl\#5139) for maintaining the module
+- **dev7355608** (EBER\#7243) for help on the 4.0 update
+
+## External
+
+- [Github Page](https://github.com/theripper93/wall-height)
