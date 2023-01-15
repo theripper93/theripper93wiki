@@ -11,7 +11,7 @@ export default function Cards({ cards }) {
   );
 }
 
-function Card({ icon, title, href }) {
+function Card({ title, href }) {
   return (
     <Link href={href ?? './'} className={styles.card}>
       {title}
