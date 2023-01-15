@@ -1,6 +1,6 @@
-import ImageButBetter from '@/components/ImageButBetter';
+import Image from '@/components/Image';
 import ModuleInfo from '@/components/ModuleInfo'
-import styles from '../globals.module.css';
+import styles from '@/components/image.module.css';
 import { Callout } from 'nextra-theme-docs';
 
 # Wall Height
@@ -13,11 +13,11 @@ them according to relative heights as well.
 
 ## Basics
 
-<ImageButBetter
+<Image
   src='/images/Wall-Height/Token_Height_Adjustment.gif'
   alt='Token Height Adjustment Menu'
-  width={2000}
-  height={2000}
+  
+  
   className={styles.wikiimage}
 />
 
@@ -42,11 +42,11 @@ elevation for the token.
   height of a token pushes it's head through a ceiling, you will see the floor
   above you!
 </Callout>
-<ImageButBetter
+<Image
   src='/images/Wall-Height/Token_Height_Setting.png'
   alt='Token height input in token settings'
-  width={2000}
-  height={2000}
+  
+  
   className={styles.wikiimage}
 />
 The height of a token, which is different than the elevation of it. It represents
@@ -63,11 +63,11 @@ If you wish to double check what is the computed value for a specifi token when 
 
 ### Walls
 
-<ImageButBetter
+<Image
   src='/images/Wall-Height/Wall_Config_Menu.png'
   alt='The wall configuration menu'
-  width={2000}
-  height={2000}
+  
+  
   className={styles.wikiimage}
 />
 Walls can be assigned a top elevation and a bottom elevation, representing the highest
@@ -83,11 +83,11 @@ and `Wall Height (Bottom)`. The default values are `Infinity` and
 
 ## Settings
 
-<ImageButBetter
+<Image
   src='/images/Wall-Height/Scene_Config_Wall_Height.png'
   alt='The scene setting for Wall Height'
-  width={2000}
-  height={2000}
+  
+  
   className={styles.wikiimage}
 />
 `Enable Wall Height for Scene` in scene settings is enabled by default. If you wish
@@ -96,11 +96,11 @@ features cannot be used in the scene.
 
 ### Enable Tooltip
 
-<ImageButBetter
+<Image
   src='/images/Wall-Height/Wall_Height_Tooltip.png'
   alt='The wall height tooltip'
-  width={2000}
-  height={2000}
+  
+  
   className={styles.wikiimage}
 />
 The tooltip will display when a wall is hovered, showing its lowest and highest elevation.
@@ -108,7 +108,7 @@ The tooltip will display when a wall is hovered, showing its lowest and highest 
 ### Display Height on Walls
 
 While enabled, displays the elevation values of a wall on the wall itself.
-<ImageButBetter
+<Image
   src='/images/Wall-Height/Wall_Height_Display_Value.png'
   alt='Display Height on Walls'
   width={115}

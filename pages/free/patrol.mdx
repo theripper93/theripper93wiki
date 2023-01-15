@@ -1,6 +1,6 @@
-import ImageButBetter from '@/components/ImageButBetter';
+import Image from '@/components/Image';
 import ModuleInfo from '@/components/ModuleInfo'
-import styles from '../globals.module.css';
+import styles from '@/components/image.module.css';
 import { Callout } from 'nextra-theme-docs';
 
 # Patrol
@@ -11,11 +11,11 @@ Automatic Patrol Routes for NPCs.
 
 ## Basics
 
-<ImageButBetter
+<Image
   src='/images/Patrol/Patrolmulti.gif'
   alt='Multi Path Patrol'
-  width={2000}
-  height={2000}
+  
+  
   className={styles.wikiimage}
 />
 
@@ -27,11 +27,11 @@ Automatic Patrol Routes for NPCs.
   This option is mutually exclusive to "Enable Path patrol"
 </Callout>
 If enabled the token will patrol randomly.
-<ImageButBetter
+<Image
   src='/images/Patrol/Single_Path_Patrol.gif'
   alt='Single Path Patrol'
-  width={2000}
-  height={2000}
+  
+  
   className={styles.wikiimage}
 />
 
@@ -44,11 +44,11 @@ panning on the token when spotting. Only works for Random Patrol
   This feature only works with Random Patrol, with Path Patrol the spotting will
   not work
 </Callout>
-<ImageButBetter
+<Image
   src='/images/Patrol/Patrol_Toggle.png'
   alt='Patrol Toggle'
-  width={2000}
-  height={2000}
+  
+  
   className={styles.wikiimage}
 />
 
@@ -70,11 +70,11 @@ The name(s) of the path(s) the token will follow if patrolling paths.
 The node of the path at which the token is currently on. This setting
 can be changed to start tokens mid-way through paths.
 
-<ImageButBetter
+<Image
   src='/images/Patrol/Patrol_Token_Config.png'
   alt='Patrol Token Config'
-  width={2000}
-  height={2000}
+  
+  
   className={styles.wikiimage}
 />
 

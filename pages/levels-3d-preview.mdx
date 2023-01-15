@@ -1,10 +1,10 @@
-import ImageButBetter from "../components/ImageButBetter";
+import Image from "../components/Image";
 import ModuleInfo from "../components/ModuleInfo";
 import { Callout, Tab, Tabs } from "nextra-theme-docs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCube, faUser, faSort, faFileImport } from "@fortawesome/free-solid-svg-icons";
 import { faDiscord, faPatreon } from "@fortawesome/free-brands-svg-icons";
-import styles from "./globals.module.css";
+import styles from "./image.module.css";
 import Cards from "@/components/Cards.jsx";
 
 # 3D Canvas
@@ -197,11 +197,11 @@ Actions marked GC are only available when Game Camera is enabled.
 
   </Tab>
     <Tab>
-      <ImageButBetter
+      <Image
         src="/images/3D-Canvas/Global_3D_Canvas_Settings.png"
         alt="Global 3D Canvas Settings"
-        width={2000}
-        height={2000}
+        
+        
         className={styles.wikiimage}
       />
       Global 3D Canvas settings are accessed from the module settings.
@@ -343,11 +343,11 @@ Actions marked GC are only available when Game Camera is enabled.
 
   </Tab>
   <Tab>
-      <ImageButBetter
+      <Image
         src="/images/3D-Canvas/3D_Canvas_Scene_Settings.png"
         alt="3D Canvas Scene Settings"
-        width={2000}
-        height={2000}
+        
+        
         className={styles.wikiimage}
       />
       The scene configuration provides basic and advanced settings that you can tweak to
@@ -499,7 +499,7 @@ To learn more about how to use Shaders, check the [Shaders](levels-3d-preview/sh
 
 You can access the Token Animations by Right clicking your token to open the Token Hud, you will see a Magic Wand icon on the right, click it to open the available animations. Clicking on an animation will play the animation for all clients. Some animations might not work if the token is Prone or Defeated.
 
-<ImageButBetter src='https://user-images.githubusercontent.com/1346839/168579135-4b6137f7-05a5-4371-9d24-3e0454cf42ab.png' alt='3D Tile Menu' width={2000} height={2000} className={styles.wikiimage} />
+<Image src='https://user-images.githubusercontent.com/1346839/168579135-4b6137f7-05a5-4371-9d24-3e0454cf42ab.png' alt='3D Tile Menu'   className={styles.wikiimage} />
 
 #### Start animation with macros
 
@@ -538,7 +538,7 @@ game.Levels3DPreview.playTokenAnimation(canvas.tokens.controlled, "twirl", {
 
 #### No Scripting usage
 
-<ImageButBetter src='https://user-images.githubusercontent.com/1346839/168579424-7dd2436b-7503-46f4-8ea5-ff9a0925d610.png' alt='Automated Animations UI' className={styles.wikiimage} />
+<Image src='https://user-images.githubusercontent.com/1346839/168579424-7dd2436b-7503-46f4-8ea5-ff9a0925d610.png' alt='Automated Animations UI' className={styles.wikiimage} />
 If you don't want to dig into the scripting aspect, the module [Automated Animations](https://foundryvtt.com/packages/autoanimations) provides a graphical interface to setup 3D Canvas Particle Effects.
 
 #### Advanced usage
@@ -569,14 +569,14 @@ You can find the full documentation in the [Particles API Wiki Page](./levels-3d
   </Tab>
   <Tab>
     **Material Browser**
-    <ImageButBetter
+    <Image
       src="/images/3D-Canvas/Material_Browser_Icon.png"
       alt="Material Browser Button"
       className={styles.wikiimage}
     />
 
     If you installed the 3D Canvas Mapmaking Pack, you will have access to more than 1000 Materials and the Material Browser.
-    <ImageButBetter
+    <Image
       src="/images/3D-Canvas/Material_Browser.png"
       alt="Material Browser Interface"
       className={styles.wikiimage}

@@ -1,6 +1,6 @@
-import ImageButBetter from '@/components/ImageButBetter'
+import Image from '@/components/Image'
 import ModuleInfo from '@/components/ModuleInfo'
-import styles from '../globals.module.css'
+import styles from '@/components/image.module.css'
 
 # Quickdraw
 
@@ -10,7 +10,7 @@ Create whiteboard style temporary drawings
 
 ## How to use
 
-<ImageButBetter src="/images/Quickdraw/Quickdraw.png" alt="Quickdraw in action" width={2000} height={2000} className={styles.wikiimage}/>
+<Image src="/images/Quickdraw/Quickdraw.png" alt="Quickdraw in action"   className={styles.wikiimage}/>
 
 Simply hold `Q` while moving the mouse on the canvas to draw freehand,
 the drawing will be in your user color and will be displayed live to all
@@ -20,7 +20,7 @@ The drawing will disappear after a set time.
 
 ## Configuration
 
-<ImageButBetter src="/images/Quickdraw/Qdsett.png" alt="Quickdraw Settings" width={2000} height={2000} className={styles.wikiimage}/>
+<Image src="/images/Quickdraw/Qdsett.png" alt="Quickdraw Settings"   className={styles.wikiimage}/>
 
 In the module settings you can set the time after a drawing fades out.
 By default it's 10 Seconds. You can also tweak some other parameters

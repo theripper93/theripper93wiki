@@ -1,4 +1,4 @@
-import ImageButBetter from '../components/ImageButBetter';
+import Image from '../components/Image';
 import ModuleInfo from '../components/ModuleInfo';
 import { Callout, Tab, Tabs } from 'nextra-theme-docs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,7 +13,7 @@ import {
   faTrash,
   faMap,
 } from '@fortawesome/free-solid-svg-icons';
-import styles from './globals.module.css';
+import styles from './image.module.css';
 
 # Levels
 
@@ -112,11 +112,11 @@ Even When Below?` and save your changes
 
 ### Levels UI
 
-<ImageButBetter
+<Image
   src='/images/Levels/Levels_UI.png'
   alt='A screenshot of the Levels UI'
-  width={2000}
-  height={2000}
+  
+  
   className={styles.wikiimage}
 />
 
@@ -205,11 +205,11 @@ before using Levels.
 
 ### Drawings
 
-<ImageButBetter
+<Image
   src='/images/Levels/Drawing_config_menu.png'
   alt='Config Menu'
-  width={2000}
-  height={2000}
+  
+  
   className={styles.wikiimage}
 />
 In Levels, drawings are used to create stairs and elevators. Their purpose is to
@@ -283,11 +283,11 @@ in the elevator don't affect the triggering range.
   selected a token without vision, you might experience undesired effects\!
 </Callout>
 
-<ImageButBetter
+<Image
   src='/images/Levels/How_sight_work.jpg'
   alt='A simple diagram visualizing sight concepts'
-  width={2000}
-  height={2000}
+  
+  
   className={styles.wikiimage}
 />
 
@@ -344,11 +344,11 @@ toggle it per tile.
 
 #### Light Masking
 
-<ImageButBetter
+<Image
   src='/images/Levels/Light_Masking_Fine.jpg'
   alt='In this example the lighting looks correct at first glance'
-  width={2000}
-  height={2000}
+  
+  
   className={styles.wikiimage}
 />
 
@@ -363,11 +363,11 @@ coloration of the light, the vision portion of the light is still visible.
 
 If you are **not** using the **[Perfect Vision](https://foundryvtt.com/packages/perfect-vision)** 
 module you will encounter the limitations listed below:
-<ImageButBetter
+<Image
   src='/images/Levels/Light_masking_broken.jpg'
   alt='the vision portion of the light is still visible in this screenshot'
-  width={2000}
-  height={2000}
+  
+  
   className={styles.wikiimage}
 />
 
