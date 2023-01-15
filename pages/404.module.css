@@ -1,8 +1,8 @@
 .heading {
+  display: inline-block;
   text-shadow: 0 0 2px black;
   mix-blend-mode: overlay;
   border-right: 1px solid white;
-  display: inline-block;
   margin: 0;
   margin-right: 20px;
   padding: 0 23px 0 0;
@@ -12,17 +12,52 @@
   line-height: 49px;
 }
 
-.subheading-container {
+.subheading {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 49px;
+  margin: 0;
+  padding: 0;
+}
+
+.subheadingContainer {
+  display: inline-block;
   text-shadow: 0 0 2px black;
   mix-blend-mode: overlay;
-  display: inline-block;
   text-align: left;
   line-height: 49px;
   height: 49px;
   vertical-align: middle;
 }
 
+.returnContainer {
+  display: inline-block;
+  animation: bounce 2s linear infinite;
+  animation-direction: alternate;
+  text-shadow: 0 0 2px black;
+  mix-blend-mode: overlay;
+  text-decoration: none;
+  margin-top: 1rem;
+  text-align: left;
+  line-height: 49px;
+  height: 49px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.return {
+  color: white !important;
+  font-weight: normal;
+  line-height: 49px;
+  margin: 0;
+  padding: 0;
+}
+
 .rainbow {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
   background: linear-gradient(
     124deg,
     #ff2400,
@@ -37,12 +72,8 @@
   );
   background-size: 1800% 1800%;
   color: white;
-  position: absolute;
-  left: 0;
-  top: 0;
   width: 100vw;
   height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -112,9 +143,4 @@
   100% {
     transform: translateX(+100px);
   }
-}
-
-.text {
-  animation: bounce 2s linear infinite;
-  animation-direction: alternate;
 }
