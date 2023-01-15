@@ -391,18 +391,24 @@ Play a 3D Animation, the animation data is formatted as follows
   from: {
     // The id of the animation to play
     id: "twirl",
-    //If the animation should be played on start of the effect
-    start: true,
-    // If the animation should be played when the effect ends (like a projectile reaching it's target)
-    end: false,
+    options: {
+      //If the animation should be played on start of the effect
+      start: true,
+      // If the animation should be played when the effect ends (like a projectile reaching it's target)
+      end: false,
+    },
   },
   // The from property specifies which animation should be played
   // on the origin of the particle effect
   // (usually the caster or attacker)
   to: {
     id: "shake",
-    start: true,
-    end: false,
+    options: {
+      //If the animation should be played on start of the effect
+      start: true,
+      // If the animation should be played when the effect ends (like a projectile reaching it's target)
+      end: false,
+    },
   },
 }
 ```
