@@ -14,7 +14,7 @@ export default function Image({ src, alt, className, width = 2000, height = 2000
           : {}
       }
     >
-      <span className={styles.wikidesc}>{alt}</span>
+      <span className={styles.wikiDesc}>{alt}</span>
       <NextImage
         src={src}
         alt={alt}
@@ -27,7 +27,7 @@ export default function Image({ src, alt, className, width = 2000, height = 2000
             : {}
         }
         className={
-          className == styles.wikiimage ? styles.wikiimg : styles.wikiimgsmall
+          className == styles.wikiImage ? styles.wikiImg : styles.wikiImgSmall
         }
       />
     </div>

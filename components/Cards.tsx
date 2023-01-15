@@ -3,7 +3,7 @@ import styles from './cards.module.css';
 
 export default function Cards({ cards }) {
   return (
-    <div className={styles.cardcontainer}>
+    <div className={styles.container}>
       {cards.map((card) => (
         <Card key={card.title} {...card} />
       ))}

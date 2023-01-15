@@ -1,4 +1,4 @@
-.wikiimage {
+.wikiImage {
   position: relative;
   border-radius: 2px;
   margin: 1rem;
@@ -11,12 +11,12 @@
   overflow: hidden;
 }
 
-.wikiimage:hover {
+.wikiImage:hover {
   transform: scale(2);
   z-index: 5;
 }
 
-.wikiimagesmall {
+.wikiImageSmall {
   position: relative;
   border-radius: 2px;
   margin: 1rem;
@@ -29,12 +29,12 @@
   overflow: hidden;
 }
 
-.wikiimagesmall:hover {
+.wikiImageSmall:hover {
   transform: scale(2);
   z-index: 5;
 }
 
-.wikidesc {
+.wikiDesc {
   position: absolute;
   bottom: 0;
   font-size: smaller;
@@ -53,18 +53,18 @@
   pointer-events: none;
 }
 
-.wikiimg {
+.wikiImg {
   object-fit: contain;
   width: auto;
   max-width: 20vw;
   max-height: 30vh;
-  min-width: max(150px,15vh);
+  min-width: max(150px, 15vh);
 }
 
-.wikiimgsmall {
+.wikiImgSmall {
   object-fit: contain;
   width: auto;
   max-width: 10vw;
   max-height: 20vh;
-  min-width: max(200px,10vh);
+  min-width: max(200px, 10vh);
 }

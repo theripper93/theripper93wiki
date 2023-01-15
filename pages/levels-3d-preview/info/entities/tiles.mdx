@@ -8,8 +8,8 @@ import {
   faFileImport,
 } from "@fortawesome/free-solid-svg-icons";
 import { faDiscord, faPatreon } from "@fortawesome/free-brands-svg-icons";
-import styles from "../@/components/image.module.css";
-import Cards from "@/components/Cards.jsx";
+import styles from "@/components/image.module.css";
+import Cards from "@/components/Cards.tsx";
 
 # Tiles
 
@@ -58,7 +58,7 @@ It operates the same way as the core Foundry VTT image fields (such as the Token
 <Image
   src="/images/3D-Canvas/dynamesh.png"
   alt="Dynamic Mesh Shapes"
-  className={styles.wikiimage}
+  className={styles.wikiImage}
 />
 
 The Dynamic Mesh option is a very powerful tool, it allows you to generate 3D Models on the fly, depending on how you configure it.
@@ -89,7 +89,7 @@ After selecting the Text option, you can input your text in the 3D Model field (
 <Image
   src="/images/3D-Canvas/mapgenresult.png"
   alt="A map generated using the Map Generator"
-  className={styles.wikiimage}
+  className={styles.wikiImage}
 />
 
 This is by far the most versatile option. After selecting the Map Generator option, a `Cog` button will appear to the right of the Dynamic Mesh dropdown, after clicking it you will be presented with a new window, this window allows you to configure the Map Generator to your liking.
@@ -100,7 +100,7 @@ Since this can be intimidating at first, you can watch a video tutorial on how t
 <Image
   src="/images/3D-Canvas/mapgeninterface.png"
   alt="Map Generator Interface"
-  className={styles.wikiimage}
+  className={styles.wikiImage}
 />
 
 This section will include all the settings that allow you to customize the material of the 3D Model and will cover the options from `Texture` all the way down to `Sides`
@@ -176,7 +176,7 @@ The `Vision` section will allow you to customize how the 3D Model will interact 
 <Image
   src="/images/3D-Canvas/terrainrepeat.png"
   alt="Terrain made with the Terrain Option and Grass\Trees made with the Repeat Option"
-  className={styles.wikiimage}
+  className={styles.wikiImage}
 />
 
 The `Tiling` section will allow you make multiple copies of the same 3D Model in a single tile, this is usefull for things like grass or trees.
@@ -200,7 +200,7 @@ After selecting a `Noise Type` you will be able to set all the options for the n
 <Image
   src="/images/3D-Canvas/merge.png"
   alt="Merge/Un-Merge Button Location"
-  className={styles.wikiimage}
+  className={styles.wikiImage}
 />
 
 It's very common to have multiple 3D Tiles that use the same model and texture that you need to manually place one by one instead of relying on the randomized `Repeat` mode.
@@ -244,7 +244,7 @@ If you now explore the map with a token selected, you will see that Objects abov
 <Image
   src="https://user-images.githubusercontent.com/1346839/176191860-6514a287-04b9-4cd4-b65b-74390b85f956.png"
   alt="Blender Tagging Location"
-  className={styles.wikiimage}
+  className={styles.wikiImage}
 />
 You can add metadata to your 3D Models in a way that 3D Canvas will be able to read it and automatically make parts of your Mesh Doors or set collision\sight blocking on submeshes separetly
 

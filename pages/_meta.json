@@ -1,8 +1,5 @@
 {
-  "index": "Home",
-  "levels3d-separator": {
-    "type": "separator"
-  },
+  "index": { "title": "Home", "display": "hidden" },
   "levels": "Levels",
   "levels-3d-preview": "3D Canvas",
   "other-separator": {

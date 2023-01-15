@@ -1,13 +1,10 @@
 {
   "3D-Canvas-Getting-Started": "Getting Started",
+  "info": "Additional Info",
   "three-actor-portrait": "3D Portraits",
   "canvas3dcompendium": "Mapmaking Pack",
   "canvas3dtokencompendium": "Token Collection",
-  "entities": "Entities",
-  "fow": "Fog of War & Vision",
   "communitymaps": "Community Maps",
-  "shaders": "Shaders",
-  "particles": "Particles API",
   "townscaper": {
     "display": "hidden"
   }

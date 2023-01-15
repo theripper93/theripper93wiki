@@ -2,10 +2,10 @@ import Image from "../components/Image";
 import ModuleInfo from "../components/ModuleInfo";
 import { Callout, Tab, Tabs } from "nextra-theme-docs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCube, faUser, faSort, faFileImport } from "@fortawesome/free-solid-svg-icons";
+import { faCube, faUser, faSort, faFileImport, faQuestion } from "@fortawesome/free-solid-svg-icons";
 import { faDiscord, faPatreon } from "@fortawesome/free-brands-svg-icons";
-import styles from "./image.module.css";
-import Cards from "@/components/Cards.jsx";
+import styles from "@/components/image.module.css";
+import Cards from "@/components/Cards.tsx";
 
 # 3D Canvas
 
@@ -76,7 +76,7 @@ effects to 3D. Other types of modules will likely be compatible with 3D Canvas.
 ## Controls
 
 While loading into a 3D scene, you will see a pop-up of the basic controls.
-It can be closed or re-opened by selecting the **?** button on the left of the
+It can be closed or re-opened by selecting the <FontAwesomeIcon icon={faQuestion} /> button on the left of the
 Foundry sidebar. All controls can be rebinded in the configure controls menu.
 
 Actions marked GC are only available when Game Camera is enabled.
@@ -202,7 +202,7 @@ Actions marked GC are only available when Game Camera is enabled.
         alt="Global 3D Canvas Settings"
         
         
-        className={styles.wikiimage}
+        className={styles.wikiImage}
       />
       Global 3D Canvas settings are accessed from the module settings.
       <Tabs items={['Canvas', 'Token', 'Base', 'Permissions', 'Game Camera', 'Misc']}>
@@ -348,7 +348,7 @@ Actions marked GC are only available when Game Camera is enabled.
         alt="3D Canvas Scene Settings"
         
         
-        className={styles.wikiimage}
+        className={styles.wikiImage}
       />
       The scene configuration provides basic and advanced settings that you can tweak to
       make your scene look the way you want. Most scene configuration options are in the
@@ -494,12 +494,12 @@ Shaders allow you to create many procedural effects on Tiles, Tokens, Templates 
 To learn more about how to use Shaders, check the [Shaders](levels-3d-preview/shaders) page.
 
 ### Token Animations
+<Image src='https://user-images.githubusercontent.com/1346839/168579135-4b6137f7-05a5-4371-9d24-3e0454cf42ab.png' alt='3D Tile Menu'   className={styles.wikiImage} />
 
 #### Start an animation through the UI
 
 You can access the Token Animations by Right clicking your token to open the Token Hud, you will see a Magic Wand icon on the right, click it to open the available animations. Clicking on an animation will play the animation for all clients. Some animations might not work if the token is Prone or Defeated.
 
-<Image src='https://user-images.githubusercontent.com/1346839/168579135-4b6137f7-05a5-4371-9d24-3e0454cf42ab.png' alt='3D Tile Menu'   className={styles.wikiimage} />
 
 #### Start animation with macros
 
@@ -538,7 +538,7 @@ game.Levels3DPreview.playTokenAnimation(canvas.tokens.controlled, "twirl", {
 
 #### No Scripting usage
 
-<Image src='https://user-images.githubusercontent.com/1346839/168579424-7dd2436b-7503-46f4-8ea5-ff9a0925d610.png' alt='Automated Animations UI' className={styles.wikiimage} />
+<Image src='https://user-images.githubusercontent.com/1346839/168579424-7dd2436b-7503-46f4-8ea5-ff9a0925d610.png' alt='Automated Animations UI' className={styles.wikiImage} />
 If you don't want to dig into the scripting aspect, the module [Automated Animations](https://foundryvtt.com/packages/autoanimations) provides a graphical interface to setup 3D Canvas Particle Effects.
 
 #### Advanced usage
@@ -572,14 +572,14 @@ You can find the full documentation in the [Particles API Wiki Page](./levels-3d
     <Image
       src="/images/3D-Canvas/Material_Browser_Icon.png"
       alt="Material Browser Button"
-      className={styles.wikiimage}
+      className={styles.wikiImage}
     />
 
     If you installed the 3D Canvas Mapmaking Pack, you will have access to more than 1000 Materials and the Material Browser.
     <Image
       src="/images/3D-Canvas/Material_Browser.png"
       alt="Material Browser Interface"
-      className={styles.wikiimage}
+      className={styles.wikiImage}
     />
 
     To access the material browser simply click the circular icon left of the [Filepicker+](Filepicker) icon (<FontAwesomeIcon icon={faFileImport} />).
