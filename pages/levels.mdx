@@ -462,9 +462,12 @@ If you wish to Override or Wrap the overrides you can do so in the
 ### Broken Vision \ Non working Walls
 
 A rare occurence can happen where the vision completely breaks in the scene, producing "ghost" walls and\or non functional walls.
+
+Note that his issue can happen without Levels as well, but the way we build overlapping walls with Levels makes it more likely.
+
 If you encounter this issue, disabling Levels will show that the issue persists.
 This issue is under investigation, the running theory is that the Foundry wall optimization algorithm is not working properly when the scene has a lot of stacked walls.
-You can atteempt to solve this issue by enaabling Levels, then offsetting all the walls on each layer by a small amount so that their end points don't overlap with other walls on other levels.
+First, remove any walls around the edges of the map if you have any. If the issue is not fixed, enaable Levels, then offset all the walls on each layer by a small amount so that their end points don't overlap with other walls on other levels.
 I'm currently in contact with the developer that wrote the wall optimization algorithm to see if there is a way to fix this issue.
 
 ### Foundry V9 to V10 Changes
