@@ -128,6 +128,18 @@ If you wish to manually process timed crafting, you can use this macro.
 ui.RecipeApp.processDelayedCrafting(Array.from(game.actors).filter(a => a.isOwner))
 ```
 
+### Document Links
+
+At the moment it's not possible to create links in journals\chat to recipes by drag and dropping them. The current Foundry API requires heavy core code modifications to achieve this, so it's on hold until the API is improved.
+
+You can however manually create links to recipes by using the following syntax:
+
+```txt copy
+@mastercrafted[BookName.RecipeName]
+```
+
+Replace `BookName` and `RecipeName` with the name of the book and recipe you want to link to. If the recipe name is omitted, the link will point to the book instead.
+
 ### Advanced: Adding conditions to crafting
 
 Adding conditions will allow you to add custom checks to crafting, for
