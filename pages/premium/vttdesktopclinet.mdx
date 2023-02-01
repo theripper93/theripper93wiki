@@ -1,1 +1,47 @@
-Under Construction
+# VTT Desktop Client
+
+A simple and lightweight, chromium based, desktop client for your virtual tabletop games.
+
+## Usage
+
+Simply download the zip file from the Patron post, extract it, and run the executable (vtt-desktop-client.exe).
+
+## Customization
+
+You can pre-configure and customize the client by editing the `config.json` file. From where the executable is located, you can find the `config.json` file by navigating to the `resources/app` folder. You can edit the file with any text editor.
+
+### Config Options
+
+This is an example configuration file:
+
+```json
+{
+    "games": [
+        {
+            "name": "This is the name of my game",
+            "url": "https://url-to-my-game.com",
+        }
+    ],
+    "background": "https://url-to-my-img.com/img.jpg",
+    "backgroundColor": "#000000",
+    "textColor": "white",
+    "accentColor": "hsl(0, 100%, 50%)",
+}
+
+```
+
+#### Games
+
+The games array is where you can add your games. Each game object has a name and url property. The name is what will be displayed on the button, and the url is where the client will navigate to when the button is clicked. These preconfigured games cannot be deleted from the client.
+
+#### Background
+
+The background property is where you can set a background image for the client. This can be a url to an image, i suggest using imgur to host custom images.
+
+#### Background Color, Text Color, Accent Color
+
+These properties are where you can set the background color, text color, and accent color of the client. These can be any valid css color value.
+
+## Packaging
+
+If you created a custom configuration file and want to share it with your players, you can simply zip the whole `vtt-desktop-client-win32-x64` folder and send it to them. They can then extract the zip file and run the executable.
