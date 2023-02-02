@@ -1,4 +1,4 @@
-import { Callout } from 'nextra-theme-docs';
+import { Callout } from "nextra-theme-docs";
 
 # VTT Desktop Client
 
@@ -7,7 +7,7 @@ A simple and lightweight, chromium based, desktop client for your virtual tablet
 ## Usage
 
 <Callout type='warning' emoji='⚠️'>
-The client requires a secure connection (https) to work. If you are hosting your game on a local network, you can use a service like ngrok to create a secure tunnel to your game.
+    The client requires a secure connection (https) to work. If you are hosting your game on a local network, you can use a service like ngrok to create a secure tunnel to your game. In the same way, self signed certificates will not work.
 </Callout>
 
 Simply download the zip file from the Patron post, extract it, and run the executable (vtt-desktop-client.exe).
@@ -18,6 +18,10 @@ You can pre-configure and customize the client by editing the `config.json` file
 
 ### Config Options
 
+<Callout type="info" emoji="ℹ️">
+Be mindful of trailing commas, they are not allowed in JSON. If you want, you can use an editor such as VSCode or an online tool such as <a href="https://jsonformatter.org/" target="_blank">JSON Formatter</a> to validate your JSON.
+</Callout>
+
 This is an example configuration file:
 
 ```json
@@ -25,15 +29,14 @@ This is an example configuration file:
     "games": [
         {
             "name": "This is the name of my game",
-            "url": "https://url-to-my-game.com",
+            "url": "https://url-to-my-game.com"
         }
     ],
     "background": "https://url-to-my-img.com/img.jpg",
     "backgroundColor": "#000000",
     "textColor": "white",
-    "accentColor": "hsl(0, 100%, 50%)",
+    "accentColor": "hsl(0, 100%, 50%)"
 }
-
 ```
 
 #### Games
@@ -48,6 +51,18 @@ The background property is where you can set a background image for the client. 
 
 These properties are where you can set the background color, text color, and accent color of the client. These can be any valid css color value.
 
+## Keyboard Shortcuts
+
+| Control                                  | Action            |
+| ---------------------------------------- | ----------------- |
+| `Ctrl` + `R`                             | Reload            |
+| `Ctrl` + `⇧ Shift` + `R`                 | Hard Reload       |
+| `Ctrl` + `+` or `Ctrl` + `⇧ Shift` + `+` | Zoom In           |
+| `Ctrl` + `-`                             | Zoom Out          |
+| `Ctrl` + `0`                             | Reset Zoom        |
+| `F11`                                    | Fullscreen        |
+| `Ctrl` + `⇧ Shift` + `I`                 | Developer Console |
+
 ## Pop Outs
 
 If you are using the PopOut! module, you will have to do a small modification for it to work, the developer has been contacted for a fix. In the meantime:
@@ -55,20 +70,23 @@ If you are using the PopOut! module, you will have to do a small modification fo
 Open the `popout.js` (lines 460-463) file in the PopOut! module folder, and remove or comment the following lines:
 
 Before
+
 ```js
-    // Check if popout in Electron window
-    if (navigator.userAgent.toLowerCase().indexOf(" electron/") !== -1) {
-      ui.notifications.warn(game.i18n.localize("POPOUT.electronWarning")); // eslint-disable-line no-undef
-      return;
-    }
+// Check if popout in Electron window
+if (navigator.userAgent.toLowerCase().indexOf(" electron/") !== -1) {
+    ui.notifications.warn(game.i18n.localize("POPOUT.electronWarning")); // eslint-disable-line no-undef
+    return;
+}
 ```
+
 After
+
 ```js
-    // Check if popout in Electron window
-    // if (navigator.userAgent.toLowerCase().indexOf(" electron/") !== -1) {
-    //   ui.notifications.warn(game.i18n.localize("POPOUT.electronWarning")); // eslint-disable-line no-undef
-    //   return;
-    // }
+// Check if popout in Electron window
+// if (navigator.userAgent.toLowerCase().indexOf(" electron/") !== -1) {
+//   ui.notifications.warn(game.i18n.localize("POPOUT.electronWarning")); // eslint-disable-line no-undef
+//   return;
+// }
 ```
 
 ## Packaging
