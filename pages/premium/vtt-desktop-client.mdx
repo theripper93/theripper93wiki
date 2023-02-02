@@ -76,6 +76,17 @@ While it's suggested to setup a valid SSL certificate for your VTT, if you are u
 4. In the `Target` field, add the following at the end of the path: ` --ignore-certificate-errors`.
 5. Click `Apply` and `OK`.
 
+If you wish to embed the flag directly in the application, you can follow this procedure:
+
+1. Locate the `vtt-desktop-client.exe` file.
+2. Navigate to the `resources/app` folder.
+3. Open the `main.js` file with a text editor.
+4. Locate the `app.commandLine.appendSwitch("force_high_performance_gpu");` line at the beginning of the file.
+5. Add this new line below it `app.commandLine.appendSwitch("ignore-certificate-errors");`.
+6. Save the file.
+
+If you distribute this modified version of the application to your players they won't have to follow the shortcut procedure.
+
 ## Pop Outs
 
 If you are using the PopOut! module, you will have to do a small modification for it to work, the developer has been contacted for a fix. In the meantime:
