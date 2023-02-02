@@ -48,6 +48,29 @@ The background property is where you can set a background image for the client. 
 
 These properties are where you can set the background color, text color, and accent color of the client. These can be any valid css color value.
 
+## Pop Outs
+
+If you are using the PopOut! module, you will have to do a small modification for it to work, the developer has been contacted for a fix. In the meantime:
+
+Open the `popout.js` (lines 460-463) file in the PopOut! module folder, and remove or comment the following lines:
+
+Before
+```js
+    // Check if popout in Electron window
+    if (navigator.userAgent.toLowerCase().indexOf(" electron/") !== -1) {
+      ui.notifications.warn(game.i18n.localize("POPOUT.electronWarning")); // eslint-disable-line no-undef
+      return;
+    }
+```
+After
+```js
+    // Check if popout in Electron window
+    // if (navigator.userAgent.toLowerCase().indexOf(" electron/") !== -1) {
+    //   ui.notifications.warn(game.i18n.localize("POPOUT.electronWarning")); // eslint-disable-line no-undef
+    //   return;
+    // }
+```
+
 ## Packaging
 
 If you created a custom configuration file and want to share it with your players, you can simply zip the whole `vtt-desktop-client-win32-x64` folder and send it to them. They can then extract the zip file and run the executable.
