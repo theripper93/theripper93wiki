@@ -169,7 +169,9 @@ game.settings.set(AECONSTS.MN, "customanimations", customanims);
 Example macro:
 
 ```js
-const template = args[0]const tokenData = args[1] await new Sequence()
+const template = args[0]const tokenData = args[1];
+const tokenScale = (Math.abs(tokenData.texture.scaleX) + Math.abs(tokenData.texture.scaleY)) / 2;
+await new Sequence()
     .effect()
     .file("modules/automated-evocations/assets/animations/energy\_spark\_CIRCLE\_01.webm")
     .belowTokens()
@@ -177,12 +179,12 @@ const template = args[0]const tokenData = args[1] await new Sequence()
     .atLocation(template)
     .randomOffset()
     .repeats(6,50, 25, 75, 60,20)
-    .scale(Math.max(tokenData.width,tokenData.height) tokenData.scale * 0.15)
+    .scale(Math.max(tokenData.width,tokenData.height) * tokenScale * 0.15)
     .wait(500)
     .effect()
     .file("modules/automated-evocations/assets/animations/energy\_pulse\_yellow\_CIRCLE.webm")
     .belowTokens().atLocation(template)
-    .scale(Math.max(tokenData.width,tokenData.height) * tokenData.scale * 0.35)
+    .scale(Math.max(tokenData.width,tokenData.height) * tokenScale * 0.35)
     .play()
 ```
 
