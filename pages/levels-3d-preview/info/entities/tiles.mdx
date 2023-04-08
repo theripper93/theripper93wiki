@@ -243,9 +243,8 @@ If you now explore the map with a token selected, you will see that Objects abov
 
 <Image
   src="https://user-images.githubusercontent.com/1346839/176191860-6514a287-04b9-4cd4-b65b-74390b85f956.png"
-  alt="Blender Tagging Location"
-  className={styles.wikiImage}
-/>
+  alt="Blender Tagging Location" className={styles.wikiImage}
+ />
 You can add metadata to your 3D Models in a way that 3D Canvas will be able to read it and automatically make parts of your Mesh Doors or set collision\sight blocking on submeshes separetly
 
 1. Select the mesh you wish to tag
@@ -256,13 +255,16 @@ You can add metadata to your 3D Models in a way that 3D Canvas will be able to r
   <Tab>
 _The property names are case sensitive!_
 
-| Property Name | Type    | Value           |
-|---------------|---------|-----------------|
-| collision     | Integer | 0/1             |
-| sight         | Integer | 0/1             |
-| isDoor        | Integer | 0/1/2           |
-| doorId        | String  | Any Unique Name |
-| ds            | Integer | 0/1/2           |
+| Property Name    | Type    | Value           |
+| ---------------- | ------- | --------------- |
+| collision        | Integer | 0/1             |
+| sight            | Integer | 0/1             |
+| isDoor           | Integer | 0/1/2           |
+| doorId           | String  | Any Unique Name |
+| ds               | Integer | 0/1/2           |
+| doorStyle        | Integer | 0/1             |
+| doorAnimateAngle | Integer | Degrees         |
+
   </Tab>
   <Tab>
     
@@ -274,9 +276,9 @@ _The property names are case sensitive!_
   <Tab>
     In order for 3D Canvas to recognize and process a door correctly, any door you want to tag must have 'isDoor' set to 1 and a 'doorId' of your choice (eg "Tavern_Door_A". Keep in mind that every doorId must be different (no duplicate Ids)
 
-    The 'ds' property tells 3D Canvas the Door State: 0 - Open, 1 - Closed, 2 - Closed and Locked 
+    The 'ds' property tells 3D Canvas the Door State: 0 - Open, 1 - Closed, 2 - Closed and Locked
     The 'isDoor' property tells 3D Canvas which type of door the door is: 0 - Not a Door, 1 - Regular Door, 2 - Secret Door
-
+    The 'doorStyle' property tells 3D Canvas which style of door the door is: 0 - Transparent, 1 - Animated
   </Tab>
 </Tabs>
 
