@@ -1,12 +1,7 @@
-import Image from '@/components/Image';
+import Image from "@/components/Image";
 import { Callout, Tab, Tabs } from "nextra-theme-docs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCube,
-  faUser,
-  faSort,
-  faFileImport,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCube, faUser, faSort, faFileImport } from "@fortawesome/free-solid-svg-icons";
 import { faDiscord, faPatreon } from "@fortawesome/free-brands-svg-icons";
 import styles from "@/components/image.module.css";
 import Cards from "@/components/Cards.tsx";
@@ -55,11 +50,7 @@ It operates the same way as the core Foundry VTT image fields (such as the Token
 
 ### Dynamic Mesh
 
-<Image
-  src="/images/3D-Canvas/dynamesh.png"
-  alt="Dynamic Mesh Shapes"
-  className={styles.wikiImage}
-/>
+<Image src='/images/3D-Canvas/dynamesh.png' alt='Dynamic Mesh Shapes' className={styles.wikiImage} />
 
 The Dynamic Mesh option is a very powerful tool, it allows you to generate 3D Models on the fly, depending on how you configure it.
 The `Dynamic Mesh Resolution` option allows you to specify how complex the generated geometry will be, the higher the number, the more complex the geometry will be, but also the more performance it will take to render.
@@ -86,22 +77,14 @@ After selecting the Text option, you can input your text in the 3D Model field (
 
 ##### Map Generator
 
-<Image
-  src="/images/3D-Canvas/mapgenresult.png"
-  alt="A map generated using the Map Generator"
-  className={styles.wikiImage}
-/>
+<Image src='/images/3D-Canvas/mapgenresult.png' alt='A map generated using the Map Generator' className={styles.wikiImage} />
 
 This is by far the most versatile option. After selecting the Map Generator option, a `Cog` button will appear to the right of the Dynamic Mesh dropdown, after clicking it you will be presented with a new window, this window allows you to configure the Map Generator to your liking.
 Since this can be intimidating at first, you can watch a video tutorial on how to use it [here](https://youtu.be/XsHeONzPPlY) as it offers a more visual explanation.
 
-
 ### Material Customization
-<Image
-  src="/images/3D-Canvas/mapgeninterface.png"
-  alt="Map Generator Interface"
-  className={styles.wikiImage}
-/>
+
+<Image src='/images/3D-Canvas/mapgeninterface.png' alt='Map Generator Interface' className={styles.wikiImage} />
 
 This section will include all the settings that allow you to customize the material of the 3D Model and will cover the options from `Texture` all the way down to `Sides`
 
@@ -129,11 +112,11 @@ If your tile is in `Repeat` mode, the hightmap will be used as a Heatmap instead
 
 The rest of the options will let you customize the appearance of the material further.
 
-- The `Roughness` option will set the roughness of the material, this is usefull to make the material look more or less shiny.
-- The `Reflectivity` option will set the metalness of the material, this is usefull to make the material look more or less reflective.
-- The `Opacity` option will set the opacity of the material, this is usefull to make the material look more or less transparent.
-- The `Shading` option will set the shading of the material, this is usefull to make the material look more or less smooth.
-- The `Sides` option will set the sides of the material, generally this should be correct by default, but if you are using (for example) a dynamesh cylinder you will not see the 3D Model when looking at it from the insde. In this situation you might want to change this option to "Double side"
+-   The `Roughness` option will set the roughness of the material, this is usefull to make the material look more or less shiny.
+-   The `Reflectivity` option will set the metalness of the material, this is usefull to make the material look more or less reflective.
+-   The `Opacity` option will set the opacity of the material, this is usefull to make the material look more or less transparent.
+-   The `Shading` option will set the shading of the material, this is usefull to make the material look more or less smooth.
+-   The `Sides` option will set the sides of the material, generally this should be correct by default, but if you are using (for example) a dynamesh cylinder you will not see the 3D Model when looking at it from the insde. In this situation you might want to change this option to "Double side"
 
 ### Positioning
 
@@ -165,19 +148,15 @@ The `Random Seed` option is used by the Repeat mode and the Terrain generation, 
 
 The `Vision` section will allow you to customize how the 3D Model will interact with sight and collisions.
 
-- The `Block Movement` option will allow you to set if the 3D Model will block movement, disabling this option will let tokens pass through it. An obvious usecase would be disabling this on Grass.
-- The `Block Sight` option will allow you to set if the 3D Model will block sight. It's recommended to disable this option on any tile that does not requires it as it will improve performance. Things like grass, trees, or even floors don't need to block sight!
-- The `Camera Collider` option will allow you to set if the 3D Model will prevent the camera from going through it, this is only relevant if Game Camera is enabled.
-- The `is Door` option will allow you to set if the 3D Model will be treated as a door, this will allow you to open and close it with the regular Foundry interactions (Left click to open\close, right click to Lock\Unlock). A secret door can only be opened by a GM.
-- The `Door State` option will allow you to set the initial state of the door, this is only relevant if the `is Door` option is enabled.
+-   The `Block Movement` option will allow you to set if the 3D Model will block movement, disabling this option will let tokens pass through it. An obvious usecase would be disabling this on Grass.
+-   The `Block Sight` option will allow you to set if the 3D Model will block sight. It's recommended to disable this option on any tile that does not requires it as it will improve performance. Things like grass, trees, or even floors don't need to block sight!
+-   The `Camera Collider` option will allow you to set if the 3D Model will prevent the camera from going through it, this is only relevant if Game Camera is enabled.
+-   The `is Door` option will allow you to set if the 3D Model will be treated as a door, this will allow you to open and close it with the regular Foundry interactions (Left click to open\close, right click to Lock\Unlock). A secret door can only be opened by a GM.
+-   The `Door State` option will allow you to set the initial state of the door, this is only relevant if the `is Door` option is enabled.
 
 ### Tiling
 
-<Image
-  src="/images/3D-Canvas/terrainrepeat.png"
-  alt="Terrain made with the Terrain Option and Grass\Trees made with the Repeat Option"
-  className={styles.wikiImage}
-/>
+<Image src='/images/3D-Canvas/terrainrepeat.png' alt='Terrain made with the Terrain Option and Grass\Trees made with the Repeat Option' className={styles.wikiImage} />
 
 The `Tiling` section will allow you make multiple copies of the same 3D Model in a single tile, this is usefull for things like grass or trees.
 Using the `Repeat` mode is a lot more efficient than copy pasting the same 3D Tile multiple times.
@@ -194,14 +173,9 @@ The `Terrain` section will allow you to generate a terrain using the 3D Model as
 
 After selecting a `Noise Type` you will be able to set all the options for the noise. There are many noise options and the best way to understand them is to play with them.
 
-
 ## Merging 3D Tiles
 
-<Image
-  src="/images/3D-Canvas/merge.png"
-  alt="Merge/Un-Merge Button Location"
-  className={styles.wikiImage}
-/>
+<Image src='/images/3D-Canvas/merge.png' alt='Merge/Un-Merge Button Location' className={styles.wikiImage} />
 
 It's very common to have multiple 3D Tiles that use the same model and texture that you need to manually place one by one instead of relying on the randomized `Repeat` mode.
 As discussed above, having multiple 3D Tiles is not efficient and will slow down your game, luckly 3D Canvas will let you merge multiple 3D Tiles into a single one.
@@ -211,14 +185,14 @@ To merge 3D Tiles, select multiple 3D Tiles and click the `Merge` button in the 
 
 To un-merge a 3D Tile, select it and click the `Unmerge` button in the Tile HUD.
 
-<Callout type="info" emoji="">
-Un-merging a tile will restore the original tiles to their previous position, rotation and scale before merging.
+<Callout type='info' emoji=''>
+    Un-merging a tile will restore the original tiles to their previous position, rotation and scale before merging.
 </Callout>
 
 ### Auto Merging
 
-<Callout type="warning" emoji="⚠️">
-Any bulk/automated operation can inherently be dangerous, please make sure to make a duplicate of your scene before using this feature.
+<Callout type='warning' emoji='⚠️'>
+    Any bulk/automated operation can inherently be dangerous, please make sure to make a duplicate of your scene before using this feature.
 </Callout>
 
 3D Canvas offers a macro that will automatically optimize your scene by merging all the tiles that can be merged.
@@ -230,14 +204,13 @@ You can find this macro in the `3D Canvas Macros` compendium and it's named `Aut
 
 ### Making a Multilevel 3D Map
 
-<Callout type="warning" emoji="⚠️">
-For this to work, first enable the "**Mirror Levels Tile Visibility**" in the 3D Tab in your Scene Configuration.
+<Callout type='warning' emoji='⚠️'>
+    For this to work, first enable the "**Mirror Levels Tile Visibility**" in the 3D Tab in your Scene Configuration.
 </Callout>
 
 If you wish to make a multilevel 3D Map, where the 3D Objects above you are not visible, Open the Levels UI and define the amount of levels you wish, then, select a level.
 A Magenta colored Plane will appear, to indicate where you are building, start draging and dropping 3D Object onto that plane to build on that level, repeat for the other levels.
 If you now explore the map with a token selected, you will see that Objects above you will be hidden.
-
 
 ### Tagging 3D Models with Collision and Door data (Blender)
 
@@ -281,7 +254,6 @@ _The property names are case sensitive!_
     The 'doorStyle' property tells 3D Canvas which style of door the door is: 0 - Transparent, 1 - Animated
   </Tab>
 </Tabs>
-
 
 ## 2D Tiles
 
