@@ -72,7 +72,7 @@ export default function ModuleInfo() {
           <ModuleInfoButton
             name={'Installs: ' + moduleData.module.installs + '%'}
           />
-          <ModuleInfoButton name={'FVTT: V10'} />
+          <ModuleInfoButton name={'FVTT: V11'} />
           <ModuleInfoButton
             name={'Download'}
             color={
@@ -85,7 +85,7 @@ export default function ModuleInfo() {
         <>
           <ModuleInfoButton name={'Premium'} color={'hsl(10deg 100% 50%)'} />
           <ModuleInfoButton name={'Version: ' + moduleData.premium?.version} />
-          <ModuleInfoButton name={'FVTT: V10'} />
+          <ModuleInfoButton name={'FVTT: V11'} />
           <ModuleInfoButton
             name={'Download'}
             color={
