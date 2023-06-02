@@ -1,6 +1,10 @@
 import Image from '@/components/Image'
 import ModuleInfo from '@/components/ModuleInfo';
 import styles from '@/components/image.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faCog,
+} from '@fortawesome/free-solid-svg-icons';
 
 # Carousel Combat Tracker
 <ModuleInfo/>
@@ -25,6 +29,18 @@ Hovering over the portraits will reveal the Portrait Controls, these include Tog
 Hovering over the portraits will also reveal a tooltip, if you have ownership (or are GM) you will see the full informations, otherwise only the Name, Initiative and Status Effects will be visible.
 
 You can customize what Attributes are shown in the modules settings.
+
+### Configuration & Customization
+<Image src="/images/combat-tracker-dock/carouselconfig.png" alt="Carousel Configuration" className={styles.wikiImage}/>
+To open the configuration menu, click on the <FontAwesomeIcon icon={faCog} /> button on the top right of the Carousel.
+
+#### Attributes
+
+Here you can configure the two Tracked Resource, which will be shown on the portrait as text and bars.
+
+#### Customization
+
+To access the advanced configuration, where you can customize the look and feel of the Carousel, click on the `Configure Carousel` button.
 
 ## System Support
 
