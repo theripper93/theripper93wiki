@@ -21,4 +21,12 @@ You can configure compression and downscaling in the module settings. By default
 
 The module also has an experimental audio converter that will convert audio files to OGG (note EXPERIMENTAL, might not work)
 
+### Audio Conversion
 
+For the audio conversion to work, you need to create a shortcut to the chrome browser and add the ` --enable-features=SharedArrayBuffer` flag at the end of it.
+
+The `target` of your shortcut should look something like this:
+
+```
+"C:\Program Files\Google\Chrome\Application\chrome.exe" --enable-features=SharedArrayBuffer
+```
