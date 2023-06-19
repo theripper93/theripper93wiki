@@ -13,4 +13,50 @@ The first time you activate the module, a `Soundscape` folder will be created. A
 
 ### Opening the interface
 
-To open the interface, click on the `Dynamic Soundscapes` button in the Sidebar Playlist tab.
+To open the interface, click on the `Dynamic Soundscapes` button in the Sidebar Playlist tab. Alternatively, you can use the `Shift + S` shortcut.
+
+### Creating a soundscape
+
+Soundscapes are just regular playlists with some extra processing done by the module, you can simply create a playlist in the `Soundscape` folder or use the `New Soundscape` button in the interface.
+
+### Adding sounds to a soundscape
+
+To add sounds to a soundscape, click on the `Cog` button in the interface to open the Playlist configuration where you can Bulk Import, or click on the `+` button to add a single sound.
+
+### Blocks
+Blocks are an imporant part of Dynamic Soundscapes, they are container for your sounds and can be configured in different ways, by default sounds will be placed in the `Orphaned` block.
+
+#### Creating a Block
+
+To create a block, simply click on an empty space in the interface. A new block will be created.
+
+#### Organizing
+
+You can drag and drop blocks to organize them, you can also drag and drop sounds from one block to another.
+
+#### Configuring
+
+To open the Block configuration, click on the `Cog` button in the block header. In this window you can configure the block name, type and color.
+
+#### Enabling Sounds
+
+`Ambient` and `Random` blocks require sounds to be enabled, in order to enable a sound, simply click on it. You can click again to disable it.
+
+#### Block types
+
+There are 3 types of blocks:
+
+- `Ambient` - Ambient blocks will play all enabled sounds inside them at the same time, they are useful for creating a background ambience.
+- `Random` - Random blocks will play a random sound inside them chosen between the enabled sounds, they are useful for creating a more dynamic soundscape. You can set the frequency of the random sounds by setting the Time in the Block configuration.
+- `Soundboard` - Soundboard blocks will play a single sound inside them, you cannot enable sounds in a soundboard block, instead, clicking a sound will play it.
+ 
+### Playing a soundscape
+
+When a Soundscape is in the `Stopped` state, all sounds from that soundscape will be stopped, and none can be played.
+To play a soundscape click on the `Play` button to the right of the soundscape name.
+
+When a soundscape is in the `Playing` state, the following will happen:
+
+- All enabled sounds from `Ambient` blocks will be played at the same time and loop.
+- Random sounds from `Random` blocks will be played at the frequency set in the block configuration.
+- You will be able to play sounds from `Soundboard` blocks by clicking on them.
