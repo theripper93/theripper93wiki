@@ -343,11 +343,14 @@ toggle it per tile.
 
 ### Scene Settings
 
-#### Light Masking
+#### Don't disable lights
 
 <Callout type='warning' emoji='⚠️'>
-  Due to V11 changes that locked down some APIs and Methods, Light Masking is no longer working as of V11.
+  Due to V11 changes that locked down some APIs and Methods, the old Light Masking is no longer working as of V11.
+  The setting has been replaced with a new `Don't disable lights` setting.
 </Callout>
+
+If you don't wish to read below or you find it confusing, the short version is: In scenes that use Levels, you should disable this setting, otherwise leave it as is (enabled by default).
 
 <Image
   src='/images/Levels/Light_Masking_Fine.jpg'
@@ -355,16 +358,14 @@ toggle it per tile.
   className={styles.wikiImage}
 />
 
-In this example the lighting looks correct at first glance. `Light Masking` can
+In this example the lighting looks correct at first glance. `Don't disable lights` can
 be toggled in the `Lighting` tab in the scene settings. By enabling this feature
-all lights below the current point of view will be visible and masked with the tiles that are above them.
+all lights will be visible and pass through all levels.
 
 Disabling this setting will only show lights on the current level. Here we can
 see, by moving the roof slightly, that while the roof is covering the "green"
 coloration of the light, the vision portion of the light is still visible.
 
-If you are **not** using the **[Perfect Vision](https://foundryvtt.com/packages/perfect-vision)**
-module you will encounter the limitations listed below:
 
 <Image
   src='/images/Levels/Light_masking_broken.jpg'
@@ -372,10 +373,8 @@ module you will encounter the limitations listed below:
   className={styles.wikiImage}
 />
 
-- Light masking will mask the "visual" part of the light, as in it's
-  color and animation. Unfortunately the "vision" part of the light
-  cannot be masked at this point without radical changes to Foundry
-  codebase. See images for an example.
+- With this option enabled, lights will be visible and pass through all
+  levels.
 - While this visual "glitch" will reveal the map in those locations,
   it will not reveal tokens.
 
