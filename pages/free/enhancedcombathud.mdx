@@ -1,6 +1,7 @@
 import Image from '@/components/Image'
 import ModuleInfo from '@/components/ModuleInfo'
 import styles from '@/components/image.module.css'
+import { Callout } from 'nextra-theme-docs';
 
 # Argon Combat HUD
 
@@ -109,6 +110,11 @@ are client side settings.
 
 ### Target Picker
 
+<Callout type='warning' emoji='⚠️'>
+  In order for players to target using the Left mouse button, you'll need to install the [Smart Target](./smarttarget) module.
+As an alternative, players can still use the T key to target.
+</Callout>
+
 When this feature is enabled, whenever you click on an action in the HUD, you will be prompted with a target selection mode.
 While in target selection:
 
@@ -128,10 +134,6 @@ browsers.
 If your image path has parenthesis "(" or ")" the image will fail to
 load, this might be true for other special characters as well
 
-### Target Picker is not letting players target
-
-In order for players to target using the Left mouse button, you'll need to install the [Smart Target](./smarttarget) module.
-As an alternative, players can still use the T key to target.
 
 ## FAQs
 
