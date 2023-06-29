@@ -60,3 +60,40 @@ When a soundscape is in the `Playing` state, the following will happen:
 - All enabled sounds from `Ambient` blocks will be played at the same time and loop.
 - Random sounds from `Random` blocks will be played at the frequency set in the block configuration.
 - You will be able to play sounds from `Soundboard` blocks by clicking on them.
+
+### API
+
+#### Setting a mood
+
+You can set a mood for a soundscape by using the `setMood` function.
+
+```js
+ui.dynamicSoundscapes.setMood(MOOD);
+```
+Example:
+```js
+ui.dynamicSoundscapes.setMood('A');
+ui.dynamicSoundscapes.setMood('a');
+ui.dynamicSoundscapes.setMood('moodA');
+```
+
+#### Playing a soundscape
+
+You can set the currently active soundscape by using the `setPlaylist` function.
+
+```js
+ui.dynamicSoundscapes.setPlaylist(PLAYLISTID);
+```
+
+Example:
+```js
+ui.dynamicSoundscapes.setPlaylist('sZVMukj7bSQreGvF');
+```
+or, using the playlist name:
+```js
+ui.dynamicSoundscapes.setPlaylist('My Soundscape');
+```
+To stop the currently active soundscape:
+```js
+ui.dynamicSoundscapes.setPlaylist(null);
+```
