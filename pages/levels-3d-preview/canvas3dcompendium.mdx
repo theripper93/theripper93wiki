@@ -146,6 +146,12 @@ If you wish to retrive just a single result as a string, you can use the followi
 game.canvas3D.CONFIG.UI.TokenBrowser.findByName("goblin", {returnFirst: true})
 ```
 
+By default the API will execute a fuzzy search, if you wish to disable this behavior you can use the following code:
+
+```js
+game.canvas3D.CONFIG.UI.TokenBrowser.findByName("goblin", {fuzzy: false})
+```
+
 ## License/Credits
 
 ### Beautiful-Sky
