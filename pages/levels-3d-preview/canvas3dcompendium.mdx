@@ -116,6 +116,36 @@ Simply head to the Token Configuration, select the 3D Tab and click on the Token
 
 Once the window is open you can click on any token to apply it as your mini!
 
+### API
+
+The Token browser allows for matching minis by name with some APIs:
+
+First make sure the list of assets is loaded, to do so you can use the following code:
+
+```js
+await game.canvas3D.CONFIG.UI.TokenBrowser.preloadData()
+```
+
+Then you can use the following code to get the assets matching a name:
+
+```js
+game.canvas3D.CONFIG.UI.TokenBrowser.findByName("goblin")
+```
+
+If you haven't preloaded the data, you can run the async version of the function which will automatically load the data if it's not already loaded:
+
+```js
+await game.canvas3D.CONFIG.UI.TokenBrowser.findByName("goblin", {async: true})
+```
+
+The function will return an array of matches, the path of the asset will be in the `output` property of the object.
+
+If you wish to retrive just a single result as a string, you can use the following code:
+
+```js
+game.canvas3D.CONFIG.UI.TokenBrowser.findByName("goblin", {returnFirst: true})
+```
+
 ## License/Credits
 
 ### Beautiful-Sky
