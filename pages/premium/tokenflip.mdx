@@ -23,7 +23,7 @@ Switch between different token images and actors on a single token.
 
 ### Switching between faces
 
-There are two ways to flip to a different face
+There are three ways to flip to a different face
 
 #### Using the token HUD
 
@@ -42,3 +42,13 @@ the token flip menu, then click on the desired face.
 <br/>
 <br/>
 
+#### Using a Macro
+
+You can also use a macro to flip to a specific face. The macro command is:
+
+```js
+token.flip(ID)
+```
+
+Where `ID` is the ID of the face you want to flip to. You can find the ID of a face in the token flip configuration window.
+`token` is a PlaceableToken object, which is available in the `token` variable in the macro editor.
