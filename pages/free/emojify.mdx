@@ -1,0 +1,37 @@
+import Image from '@/components/Image';
+import ModuleInfo from '@/components/ModuleInfo'
+import styles from '@/components/image.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDiscord, faPatreon } from '@fortawesome/free-brands-svg-icons';
+
+# Emojify
+
+<ModuleInfo/>
+
+Emojify is a dynamic Foundry VTT module that adds a touch of visual expression to your virtual tabletop experience. With a user-friendly menu, this module allows you to effortlessly select from a wide range of emojis, instantly bringing them to life on tokens within the canvas. Whether you want to convey emotions, reactions, or simply add a fun element to your game, Emojify provides an intuitive and convenient way to infuse your virtual tabletop sessions with colorful and expressive symbols. Let your tokens do the talking with Emojify!
+
+
+## How to use
+
+<Image
+  src='/images/emojify/emojify.png'
+  alt='Emojify Interface'
+  className={styles.wikiImage}
+/>
+
+- Press `Shift + V` (rebindable) to bring up the Emojify menu.
+- Click on an emoji to make the selected tokens display it.
+- Type in the search bar to filter emojis, press `Enter` to display the fist result.
+- Click on the `1x` button to cycle through the available sizes.
+- Click anywhere outside the menu to close it.
+- For players: if no token is selected, the emoji will be displayed on the tokens you own.
+
+## Macros
+
+### Open Emojify
+
+If you wish to use a macro to open the Emojify menu, you can use the following code:
+
+```js
+ui.emojify.open()
+```
