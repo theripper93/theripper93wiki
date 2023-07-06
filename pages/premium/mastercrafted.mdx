@@ -209,3 +209,13 @@ return {
     consume: true,
 }
 ```
+
+#### Advanced Macros
+For the ones adventurous enough, more information than just the actor is provided to the macro. While no examples will be provided, here is a list with the available variables:
+
+- `actor` - The actor doing the crafting
+- `componentsToConsume` - An array of items that will be consumed
+  after the crafting is done (it's highly suggested to treat this data as read only)
+- `product` - The product of the crafting (it's highly suggested to
+  treat this data as read only)
+- `productData` - The data of items that will be crated by the crafting. You can modify these objects and the changes will be reflected in the final product. Note that if you wish to customize the crafting result, Items will still be merged by name, so change the name of the item if you wish to create unique crafting results.
