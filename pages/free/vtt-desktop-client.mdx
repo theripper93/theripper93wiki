@@ -103,6 +103,19 @@ If you distribute this modified version of the application to your players they 
 
 If you are using the PopOut! module, you will have to do a small modification for it to work, the developer has been contacted for a fix. In the meantime:
 
+### With a macro
+
+Running this as a script macro will fix the issue:
+
+```js
+Object.defineProperty(navigator, "userAgent", {value: navigator.userAgent.replace("Electron", "")})
+```
+
+You can also add this as a [World Script](https://foundryvtt.wiki/en/basics/world-scripts) to automatically run it when the world is loaded.
+
+
+### Modifing the module
+
 Open the `popout.js` (lines 460-463) file in the PopOut! module folder, and remove or comment the following lines:
 
 Before
