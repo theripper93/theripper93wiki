@@ -425,6 +425,17 @@ different elevations.
 The API is available for viewing by entering `CONFIG.Levels.API` in the Foundry
 console or in [API.js](https://github.com/theripper93/Levels/blob/v9/scripts/API.js).
 
+While most APIs are developer focused, there are a few that can be used by users listed below.
+
+### Rescaling grid size
+
+This API can be used when changing the grid distance for the scene (for example changing each square from 5ft to 1.5m)
+The number passed to the function is the old grid distance.
+
+```js copy
+CONFIG.Levels.API.rescaleGridDistance(5)
+```
+
 ### Hooks
 
 `levelsInit(levelsConfig)`
