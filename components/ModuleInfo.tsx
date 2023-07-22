@@ -1,11 +1,62 @@
 import { useState, useLayoutEffect } from 'react';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 import styles from './moduleinfo.module.css';
-import spinner from '../public/static/images/loading.svg';
 
 let fetchedModuleData = null;
 let forgeData = {};
+
+const repositoryOwner = 'theripper93';
+const repositoryIndex = {
+  "megapack": "megapack",
+  "vtt-desktop-client": "vtt-desktop-client",
+  "levels": "Levels",
+  "enhancedcombathud": "enhancedcombathud",
+  "automated-evocations": "automated-evocations",
+  "betterroofs": "Better-Roofs",
+  "combat-tracker-dock": "combat-tracker-dock",
+  "bossbar": "Boss-Bar",
+  "combatbooster": "Combat-Booster",
+  "fuzzy-foundry": "fuzzy-foundry",
+  "hover-distance": "hover-distance",
+  "hurry-up": "hurry-up",
+  "levelsautocover": "levelsautocover",
+  "levelsvolumetrictemplates": "levelsvolumetrictemplates",
+  "patrol": "Patrol",
+  "damage-numbers": "damage-numbers",
+  "smarttarget": "smarttarget",
+  "splatter": "splatter",
+  "dnd-randomizer": "dnd-randomizer",
+  "tile-sort": "tile-sort",
+  "tile-scroll": "tile-scroll",
+  "token-z": "token-z",
+  "foundry-taskbar": "foundry-taskbar",
+  "quickdraw": "quickdraw",
+  "config-presets": "config-presets",
+  "light-switch": "light-switch",
+  "filepicker-plus": "filepicker-plus",
+  "progress-tracker": "progress-tracker",
+  "situational-shortcuts": "situational-shortcuts",
+  "quick-doors": "quick-doors",
+  "image-context": "image-context",
+  "inactive-tokens-lmao": "inactive-tokens-lmao",
+  "levels-3d-preview": "levels-3d-preview",
+  "choices": "choices",
+  "mmm": "Maxwell-s-Manual-of-Malicious-Maladies",
+  "socketmacros": "socketmacros",
+  "tokenflip": "tokenflip",
+  "token-notes": "token-notes",
+  "wall-height": "wall-height",
+  "canvas3dcompendium": "canvas3dcompendium",
+  "canvas3dtokencompendium": "canvas3dtokencompendium",
+  "theripper-premium-hub": "theripper-premium-hub",
+  "levels-layer-effects": "levels-layer-effects",
+  "three-actor-portrait": "three-actor-portrait",
+  "mastercrafted": "mastercrafted",
+  "gatherer": "gatherer",
+  "camera-dock": "camera-dock",
+  "macro-wheel": "macro-wheel",
+
+}
 
 interface IModuleData {
   ready: boolean;
@@ -17,6 +68,9 @@ interface IModuleData {
     version: number;
     downloadURL: string;
   };
+  releases: {
+    [key: string]: string;
+  }
 }
 
 export default function ModuleInfo() {
@@ -33,6 +87,8 @@ export default function ModuleInfo() {
     )
       .then((response) => response.json())
       .then((data) => data);
+    const releases = await getAllReleasesFromGitHub(repositoryOwner, repositoryIndex[moduleId] ?? moduleId) ?? {};
+    data.releases = releases;
     forgeData[moduleId] = data;
     return data;
   }
@@ -55,6 +111,7 @@ export default function ModuleInfo() {
       ready: true,
       module: modData.success ? modData.package : null,
       premium: premData[moduleId],
+      releases: modData.releases ?? {},
     };
     return data;
   }
@@ -64,6 +121,7 @@ export default function ModuleInfo() {
   }, []);
 
   return (
+    <div>
     <div className={styles.info} style={moduleData.ready ? {} : { opacity: 0 }}>
       {moduleData.module ? (
         <>
@@ -95,6 +153,18 @@ export default function ModuleInfo() {
           />
         </>
       )}
+      </div>
+      <details>
+        <summary style={Object.keys(moduleData?.releases ?? {}).length ? {} : {display: "none"}}>Changelog</summary>
+      <ol>
+          {moduleData.releases && Object.keys(moduleData.releases).filter(r => moduleData.releases[r]).map((release) => (
+            <li key={release}>
+              <h1>{release}</h1>
+              <p>{moduleData.releases[release]}</p>
+            </li>
+          ))}
+      </ol>
+      </details>
     </div>
   );
 }
@@ -127,4 +197,35 @@ function ModuleInfoButton({
       )}
     </>
   );
+}
+
+async function getAllReleasesFromGitHub(owner, repo) {
+  const releasesPerPage = 100; // Maximum allowed by GitHub API
+  const apiUrl = `https://api.github.com/repos/${owner}/${repo}/releases?per_page=${releasesPerPage}`;
+
+  try {
+    let compiledReleases = {};
+
+    let currentPage = 1;
+    let hasMorePages = true;
+
+    while (hasMorePages) {
+      const response = await fetch(`${apiUrl}&page=${currentPage}`);
+      const releases = await response.json();
+
+      if (releases.length === 0) {
+        // No more releases, break the loop
+        hasMorePages = false;
+      } else {
+        releases.forEach((release) => {
+          compiledReleases[release.tag_name] = release.body;
+        });
+        currentPage++;
+      }
+    }
+
+    return compiledReleases;
+  } catch (error) {
+    return null;
+  }
 }
