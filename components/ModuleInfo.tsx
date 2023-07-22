@@ -104,6 +104,8 @@ export default function ModuleInfo() {
 
   const [moduleData, setModuleData] = useState<IModuleData>(placeholder);
 
+  const [showChangelog, setShowChangelog] = useState(false);
+
   async function setData(): Promise<IModuleData> {
     const modData = await fetchData();
     const premData = (await fetchPremium()) ?? {};
@@ -137,7 +139,8 @@ export default function ModuleInfo() {
               'hsl(var(--nextra-primary-hue)100% 45%/var(--tw-text-opacity))'
             }
             link={`https://foundryvtt.com/packages/${moduleId}`}
-          />
+            />
+            <ModuleInfoButton name={'Changelog'} color='#7db8f4' onClick={() => { setShowChangelog(!showChangelog) }} />
         </>
       ) : (
         <>
@@ -154,29 +157,34 @@ export default function ModuleInfo() {
         </>
       )}
       </div>
-      <details>
-        <summary style={Object.keys(moduleData?.releases ?? {}).length ? {} : {display: "none"}}>Changelog</summary>
-      <ol>
+      <ol style={showChangelog && Object.keys(moduleData?.releases ?? {}).length ? {margin: "1rem 0px",padding: "0.5rem",borderRadius: "5px",backgroundColor: "#80808026"} : {display: "none"}}>
           {moduleData.releases && Object.keys(moduleData.releases).filter(r => moduleData.releases[r]).map((release) => (
-            <li key={release}>
-              <h1>{release}</h1>
-              <p>{moduleData.releases[release]}</p>
+            <li key={release} style={{borderBottom: "1px solid #8080802e"}}>
+              <h1 style={{fontSize: "x-large", fontWeight: 700}} >{release}</h1>
+              <ol style={{listStyle: "disc", margin: "0.5rem 1rem"}}>{
+                moduleData.releases[release].split("- ").filter(l => l).map((line, i) => {
+                  return <li key={i}>{line}</li>
+                })
+              }</ol>
             </li>
           ))}
       </ol>
-      </details>
     </div>
   );
 }
+
+
 
 function ModuleInfoButton({
   name,
   color,
   link,
+  onClick,
 }: {
   name?: string;
   color?: string;
-  link?: string;
+    link?: string;
+    onClick?: () => void;
 }) {
 
   return (
@@ -191,7 +199,7 @@ function ModuleInfoButton({
           {name}
         </a>
       ) : (
-        <div style={color ? { color: color } : {}} className={styles.button}>
+        <div onClick={onClick} style={color ? { color: color, cursor: onClick ? "pointer" : "default" } : {cursor: onClick ? "pointer" : "default"}} className={styles.button}>
           {name}
         </div>
       )}
