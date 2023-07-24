@@ -1,6 +1,7 @@
 import { useState, useLayoutEffect } from 'react';
 import { useRouter } from 'next/router';
 import styles from './moduleinfo.module.css';
+import TextConverter from './TextConverter';
 
 let fetchedModuleData = null;
 let forgeData = {};
@@ -161,9 +162,9 @@ export default function ModuleInfo() {
           {moduleData.releases && Object.keys(moduleData.releases).filter(r => moduleData.releases[r]).map((release) => (
             <li key={release} style={{borderBottom: "1px solid #8080802e"}}>
               <h1 style={{fontSize: "x-large", fontWeight: 700}} >{release}</h1>
-              <ol style={{listStyle: "disc", margin: "0.5rem 1rem"}}>{
-                moduleData.releases[release].split("- ").filter(l => l).map((line, i) => {
-                  return <li key={i}>{line}</li>
+              <ol style={{listStyle: "disc", margin: "0.5rem 1rem", lineBreak: "anywhere"}}>{
+                moduleData.releases[release].split(/- |##|\* /).filter(l => l).map((line, i) => {
+                  return <li key={i} ><TextConverter text={line}></TextConverter></li> // <li key={i}>{line}</li>
                 })
               }</ol>
             </li>
