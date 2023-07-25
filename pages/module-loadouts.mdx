@@ -8,9 +8,12 @@ import styles from '@/components/image.module.css';
   If you decide to use one or more modules from this list, it's highly recommended that you install one at a time and learn what each one does!
 </Callout>
 
+## Introduction
+
 This page is a list of all the modules I use in my live games, and a brief description of what they do.
 I've divided them into chunks so you can grab modules by the category you are interested in. Even though the modules are separated in multiple categories i use all these modules in my live game.
 
+### Why not use module X?
 If you are asking, why are you not using module X? The answer is that I carefully select the modules. Generally i follow this rules:
 
 - Do I really need this module or does it add a very minor convinience I can live without? (I try to keep the number of modules to a minimum)
@@ -22,7 +25,36 @@ For these reasons you won't see any newly released modules in my list, I prefer 
 
 __Note: This is not a dig at developers that release new modules, nor at developers that don't have the time to maintain their modules since most do it for free. Since I like to be on the latest FVTT version I want to make sure that modules won't prevent me from updating.__
 
-## The Basics
+### How many modules should I use?
+There is no exact magic number of modules, but the more you have, the more issues you might experience. However, here are some guidelines based on personal experience to maintain a balanced module composition.
+
+Note that only modules adding functionality are considered, excluding items like Music packs, map packs, and asset packs as they don't affect system load.
+
+#### The Magic Number
+After telling you that there is no magic number, I will now tell you that there is a magic number. The magic number is ~50.
+Of curse this magic number works under some assumptions:
+
+- Your module loadout composition is roughly 25% heavy modules and 75% light/medium modules.
+- This number is based on my own experience and it's not a hard limit.
+- By sticking to this number you will most likely experience minimum issues with your game.
+- When using this as a reference, you will need to do a minimal amount of troubleshooting if something goes wrong.
+- Sticking to the magic number will let you consider heavly if you really really need a module before adding it to your game.
+
+#### The Cleanup
+If you ended up with a ton of modules and don't know where to start to do some cleanup here are some tips:
+
+- Remove any module that does not indicate explicit compatibility with the latest FVTT version.
+- Go through your list of modules, and ask yourself `Do I know on top of my head what this module does?`. If the answer is no, remove it.
+- Go through your list of modules a second time, and ask yourself `How frequently do I use this module's functionality? How much time does it save?`. If you find out that you don't use it that often, remove it.
+- Double check any modules that you feel are critical for your game. Check when they were last updated and if they are currently mantained. If they are not, consider removing them and changing your workflow now instead of suffering a bigger headache later.
+
+After this cleanup, test out your game and see if there is anything you miss. If you find out that you really need a module you removed, you can always add it back.
+
+All this said, let's get to the list.
+
+## Modules
+
+### The Basics
 This first section contains modules that add to the game without drastically changing it. Because of this, I consider these modules to be essential to my game and I would use them in any game I run.
 
 Notice how all the modules in this list will work `out of the box` without any configuration (or a very minor one). I try to keep the number of modules that require configuration to a minimum.
@@ -40,21 +72,23 @@ Notice how all the modules in this list will work `out of the box` without any c
 - [Splatter](https://theripper93.com/module/splatter) - Add blood and gore to your games.
 - [Token Z](https://theripper93.com/module/token-z) - Automatically fix issues with token z-ordering, for example when a small token is overlapping a large token, the small token will be rendered on top of the large token at all times.
 
-## Make it more like a videogame
+### Make it more like a videogame
 These modules will add substantial features to your game, giving you some of the quality of life features you are used to in RPGs.
 Note that these modules will require configuration and making content specifically for them, they will generally increase your prep time.
 
 - [Boss Bar](https://theripper93.com/module/bossbar) - Create a Dark Souls Like boss healthbar on top of the screen for epic boss fights.
 - [Forien's Quest Log](https://foundryvtt.com/packages/forien-quest-log) - A quest log for your players. Track quests and progres, reward players with XP, items and more.
+- [Gatherer](https://theripper93.com/module/gatherer) - Gather, Hunt and Scavenge with a simple to use, Rollable Table based custom Journal Page. With skill/tool checks, automated uses reset based on time and a minigame option!
 - [Item Piles](https://foundryvtt.com/packages/item-piles) - Player trading, merchants, loot chests and more. This module will satisfy all your item storage and transfer needs.
+- [Mastercrafted](https://theripper93.com/module/mastercrafted) - A simple yet effective crafting module for any system, create books, recipes, export and share! Make recipes with different outcomes or that can require alternate ingredients! Set permissions to specific players, require tools to craft and more!
 
-## Keeping track of time
+### Keeping track of time
 These collection of modules will add time related utilities to keep track of effects expiration, calendar and more.
 
 - [Simple Calendar](https://foundryvtt.com/packages/foundryvtt-simple-calendar) - A calendar and time tracking module.
 - [Time's Up](https://foundryvtt.com/packages/times-up) - Automatically expire active effects as time passes.
 
-## Make your life easier (as a GM)
+### Make your life easier (as a GM)
 These modules will make your life easier as a GM, they will help you manage your game and your content. In general they don't require much configuration and will save you a lot of time bot in and out of game in the long run.
 
 - [Filepicker +](https://theripper93.com/module/filepicker-plus) - Expands the default filepicker to add favourite folders, image and video preview tooltips, audio tooltips and a new layout, add a filepicker sidebar, folders/subfolders uploading and more.
@@ -63,14 +97,14 @@ These modules will make your life easier as a GM, they will help you manage your
 - [Taskbar](https://theripper93.com/module/foundry-taskbar) - A fully functional Windows-style taskbar for Foundry. Manage your stuff the easy way! Includes a Windows-like Start menu and utility icons.
 - [TheRipper93's Module Hub](https://theripper93.com/module/theripper-premium-hub) - If you use a lot of my modules, this module will keep track of updates, direct you to documentation with one click and warn you of important or critical updates.
 
-## Eye Candy
+### Eye Candy
 These modules will add animations to your game, they are not essential but they will make your game look better.
 
 - [Automated Animations](https://foundryvtt.com/packages/autoanimations) - Adds animations to your game. This module is a beast and will require some configuration to get it working, but it's worth it if you want the nice visuals.
 - [Emojify](https://theripper93.com/module/emojify) - Let your creatures express themselves with emojis. Sounds stupid but it's actually pretty fun.
 - [JB2A - Jules&Ben's Animated Assets](https://foundryvtt.com/packages/JB2A_DnD5e) - An asset pack required for Automated Animations.
 
-## Utility
+### Utility
 These modules will add utility to your game, they are not essential but they will make your game better.
 
 - [Automated Evocations - Companion Manager](https://theripper93.com/module/automated-evocations) - Create and manage companions for your players. If you want, you can also use it to automate summoning spells.
@@ -78,7 +112,7 @@ These modules will add utility to your game, they are not essential but they wil
 - [Situational Shortcuts](https://theripper93.com/module/situational-shortcuts) - Whatever you use is, sometimes applying active effects slows down the game. This modules adds quick custom button near the 'Situational Bonus' field. This is perfect for low automation users and for those things that are to annoying to automate with active effects! Currently dnd5e and whfrp only - more systems coming on request.
 - [Smart Target](https://theripper93.com/module/smarttarget) - Target with Alt+Click, For players, target by just left clicking a non-owned token, Show portraits instead of colored pips to indicate targets, fulldesc/offset and size of the icons can be configured in the module settings, Customize color/shape of the targeting reticule.
 
-## Mapmaking
+### Mapmaking
 These modules will enhance combat and exploration by adding three-dimensional maps and other features. The modules are not ordered alphabetically in this section but in steps, as each module can be added on top of the previous one to add more three dimensional features.
 
 - [Better Roofs](https://theripper93.com/module/betterroofs) - Improve overhead tiles by adding functionality to show them through the fog of war as well as linking together multiple tiles so they disappear at the same time.
@@ -92,7 +126,7 @@ These modules will enhance combat and exploration by adding three-dimensional ma
     - [3D Portraits](https://theripper93.com/module/three-actor-portrait) - Extend the 3D Aspect to actor portaits and add Heroforge Integration to 3D Canvas.
 
 
-## Automation/DnD5e
+### Automation/DnD5e
 These modules will add automation and improvements to the DnD5e system. If you don't play DnD5e you can skip this section, but it's my main system so I use all of these modules.
 
 - [Argon - Combat HUD](https://theripper93.com/module/enhancedcombathud) - Show a Solasta inspired combat hud for easy accessibility of actions and bonus actions etc. Replaces a lot of the character sheet functionality during combat so that you don't need to open it. Basically, token action HUD on steroids.
@@ -103,7 +137,7 @@ These modules will add automation and improvements to the DnD5e system. If you d
 - [Tidy5e Sheet](https://foundryvtt.com/packages/tidy5e-sheet/) - A complete rework of the default Character Sheet. Note that this module is on life support, so it's not guaranteed to work with future versions of Foundry. Luckly it's non-essential so you can just disable it if it breaks.
 
 
-## Library
+### Library
 These modules are libraries that are required by other modules. They don't do anything by themselves but they are required by other modules. They will be installed automatically if a module requires one or more of them.
 
 - [libWrapper](https://foundryvtt.com/packages/lib-wrapper) - A library that allows other modules to patch core game functions.
