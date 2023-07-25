@@ -1,0 +1,112 @@
+import { Callout, Tab, Tabs } from 'nextra-theme-docs';
+import styles from '@/components/image.module.css';
+
+# Module Loadout
+
+<Callout type='warning' emoji='⚠️'>
+  Note that this is my personal module list for my live games, you should review each module and decide if it's right for your games.
+  If you decide to use one or more modules from this list, it's highly recommended that you install one at a time and learn what each one does!
+</Callout>
+
+This page is a list of all the modules I use in my live games, and a brief description of what they do.
+I've divided them into chunks so you can grab modules by the category you are interested in. Even though the modules are separated in multiple categories i use all these modules in my live game.
+
+If you are asking, why are you not using module X? The answer is that I carefully select the modules. Generally i follow this rules:
+
+- Do I really need this module or does it add a very minor convinience I can live without? (I try to keep the number of modules to a minimum)
+- Is this module stable and well maintained? (I check the github repo and the issues)
+- Is this module compatible with the other modules I use? (I check the module documentation and the issues)
+- Will this module be essential to run my game if I decide to use it? (I try to avoid modules that are essential to run my game unless they are from a trusted developer, I prefer to use modules that add convinience or improve the experience)
+
+For these reasons you won't see any newly released modules in my list, I prefer to wait for them to mature a bit before adding them to my list, unless the module is from a developer I trust (because I have other modules from them in my list).
+
+__Note: This is not a dig at developers that release new modules, nor at developers that don't have the time to maintain their modules since most do it for free. Since I like to be on the latest FVTT version I want to make sure that modules won't prevent me from updating.__
+
+## The Basics
+This first section contains modules that add to the game without drastically changing it. Because of this, I consider these modules to be essential to my game and I would use them in any game I run.
+
+Notice how all the modules in this list will work `out of the box` without any configuration (or a very minor one). I try to keep the number of modules that require configuration to a minimum.
+
+- [Auto Rotate](https://foundryvtt.com/packages/autorotate) - Automatically rotates tokens to face the direction they are moving. If you don't use top-down tokens, you can skip this one.
+- [Camera Dock](https://theripper93.com/module/camera-dock) - Restores the V9 cameras UI. I personally feel the new interface takes up way more space than the old setup.
+- [Carousel Combat Tracker](https://theripper93.com/module/combat-tracker-dock) - A carousel style combat tracker. Spiritual successor of Combat Carousel. Inspired by games such as Solasta and Baldurs Gate 3 it will give you and your players a videogame style combat experience.
+- [Combat Booster](https://theripper93.com/module/combatbooster) - Speed up your combat with recent actions, turn marker and other smaller tweaks like Pan to combatant, body pile, mark defeated and more. Note that the recent action feature is only dnd5e compatible.
+- [Dice So Nice!](https://foundryvtt.com/packages/dice-so-nice) - Adds 3D dice to your game.
+- [Hover Distance](https://theripper93.com/module/hover-distance) - Show distance to a token on hover without the need to use the ruler. Optionally supports inclusion of vertical distance.
+- [Image Context](https://theripper93.com/module/image-context) - Add a context menu when you right click on any image in foundry. From this menu, show a pop-out of the image or send it to chat with the ability to whisper it only to some players and more.
+- [LiveKit AVClient](https://foundryvtt.com/packages/avclient-livekit) - A library that allows you to use LiveKit for video and audio chat which is miles better than the core P2P system. Keep in mind that if you are not ok with paying a small monthly fee, configuring and maintaining your own LiveKit server is not trivial.
+- [Media Optimizer](https://theripper93.com/module/media-optimizer) - This module will automatically convert any images, audio and video you upload into foundry to WEBP, WEBM and OGG, it also has the ability to downscale the image. You can configure compression and downscaling in the module settings. By default images will be compressed with a 0.75 ratio and kept at a maximum resolution of 8K, images above that resolution are not downscaled.
+- [SmallTime](https://foundryvtt.com/packages/smalltime) - A small module for displaying and controlling the current time of day.
+- [Splatter](https://theripper93.com/module/splatter) - Add blood and gore to your games.
+- [Token Z](https://theripper93.com/module/token-z) - Automatically fix issues with token z-ordering, for example when a small token is overlapping a large token, the small token will be rendered on top of the large token at all times.
+
+## Make it more like a videogame
+These modules will add substantial features to your game, giving you some of the quality of life features you are used to in RPGs.
+Note that these modules will require configuration and making content specifically for them, they will generally increase your prep time.
+
+- [Boss Bar](https://theripper93.com/module/bossbar) - Create a Dark Souls Like boss healthbar on top of the screen for epic boss fights.
+- [Forien's Quest Log](https://foundryvtt.com/packages/forien-quest-log) - A quest log for your players. Track quests and progres, reward players with XP, items and more.
+- [Item Piles](https://foundryvtt.com/packages/item-piles) - Player trading, merchants, loot chests and more. This module will satisfy all your item storage and transfer needs.
+
+## Keeping track of time
+These collection of modules will add time related utilities to keep track of effects expiration, calendar and more.
+
+- [Simple Calendar](https://foundryvtt.com/packages/foundryvtt-simple-calendar) - A calendar and time tracking module.
+- [Time's Up](https://foundryvtt.com/packages/times-up) - Automatically expire active effects as time passes.
+
+## Make your life easier (as a GM)
+These modules will make your life easier as a GM, they will help you manage your game and your content. In general they don't require much configuration and will save you a lot of time bot in and out of game in the long run.
+
+- [Filepicker +](https://theripper93.com/module/filepicker-plus) - Expands the default filepicker to add favourite folders, image and video preview tooltips, audio tooltips and a new layout, add a filepicker sidebar, folders/subfolders uploading and more.
+- [Dig Down - Advanced Search](https://theripper93.com/module/fuzzy-foundry) - Search inside folders in the file picker, use special search terms to filter your sidebars and many other advanced search filters. Use the excavate functionality to automatically find images for tokens.
+- [Module Management+](https://foundryvtt.com/packages/module-credits) - Module Management+ improves upon foundry's vtt Manage Module and Configure Settings windows by adding additional features and functionalities to both managing modules and their settings. A beast of a module that will make your package management a breeze.
+- [Taskbar](https://theripper93.com/module/foundry-taskbar) - A fully functional Windows-style taskbar for Foundry. Manage your stuff the easy way! Includes a Windows-like Start menu and utility icons.
+- [TheRipper93's Module Hub](https://theripper93.com/module/theripper-premium-hub) - If you use a lot of my modules, this module will keep track of updates, direct you to documentation with one click and warn you of important or critical updates.
+
+## Eye Candy
+These modules will add animations to your game, they are not essential but they will make your game look better.
+
+- [Automated Animations](https://foundryvtt.com/packages/autoanimations) - Adds animations to your game. This module is a beast and will require some configuration to get it working, but it's worth it if you want the nice visuals.
+- [Emojify](https://theripper93.com/module/emojify) - Let your creatures express themselves with emojis. Sounds stupid but it's actually pretty fun.
+- [JB2A - Jules&Ben's Animated Assets](https://foundryvtt.com/packages/JB2A_DnD5e) - An asset pack required for Automated Animations.
+
+## Utility
+These modules will add utility to your game, they are not essential but they will make your game better.
+
+- [Automated Evocations - Companion Manager](https://theripper93.com/module/automated-evocations) - Create and manage companions for your players. If you want, you can also use it to automate summoning spells.
+- [Quickdraw](https://theripper93.com/module/quickdraw) - A rapid drawing tool to make quick drawings in-game by holding a hotkey (default q) with live preview for all clients. No more going to the drawing tools, and then deleting stuff! After a set timeout they will automatically fade out.
+- [Situational Shortcuts](https://theripper93.com/module/situational-shortcuts) - Whatever you use is, sometimes applying active effects slows down the game. This modules adds quick custom button near the 'Situational Bonus' field. This is perfect for low automation users and for those things that are to annoying to automate with active effects! Currently dnd5e and whfrp only - more systems coming on request.
+- [Smart Target](https://theripper93.com/module/smarttarget) - Target with Alt+Click, For players, target by just left clicking a non-owned token, Show portraits instead of colored pips to indicate targets, fulldesc/offset and size of the icons can be configured in the module settings, Customize color/shape of the targeting reticule.
+
+## Mapmaking
+These modules will enhance combat and exploration by adding three-dimensional maps and other features. The modules are not ordered alphabetically in this section but in steps, as each module can be added on top of the previous one to add more three dimensional features.
+
+- [Better Roofs](https://theripper93.com/module/betterroofs) - Improve overhead tiles by adding functionality to show them through the fog of war as well as linking together multiple tiles so they disappear at the same time.
+- [Wall Height](https://theripper93.com/module/wall-height) - Adds height to walls and lights allowing tokens'vision to differ based on their elevation.
+- [Levels](https://theripper93.com/module/levels) - Adds the ability to create multiple levels in a scene. Extend three-dimensionality to tiles, drawings and everyhting else, allowing you to make fully three-dimensional maps in 2D.
+    - [Levels - Automatic Cover Calculator](https://theripper93.com/module/levelsautocover) - Calculate cover automatically in the 3D Space. Works both with Levels and 3D Canvas.
+    - [Levels - Volumetric Templates](https://theripper93.com/module/levelsvolumetrictemplates) - Compute templates in 3D with autotargeting. Automatic mode to dynamically switch between 2d and 3d depending on the information provided. Works with all systems, MIDI QOL compatible.
+- [3D Canvas](https://theripper93.com/module/levels-3d-preview) - Turn Foundry VTT into real 3D, load 3D Models, build in 3D and more.
+    - [3D Canvas Mapmaking Pack](https://theripper93.com/module/canvas3dcompendium) - A collection of 3D tiles and mapmaking tools for easy 3D Map creation.
+    - [3D Canvas Token Collection](https://theripper93.com/module/canvas3dtokencompendium) - A collection of 3D tokens for use with 3D Canvas.
+    - [3D Portraits](https://theripper93.com/module/three-actor-portrait) - Extend the 3D Aspect to actor portaits and add Heroforge Integration to 3D Canvas.
+
+
+## Automation/DnD5e
+These modules will add automation and improvements to the DnD5e system. If you don't play DnD5e you can skip this section, but it's my main system so I use all of these modules.
+
+- [Argon - Combat HUD](https://theripper93.com/module/enhancedcombathud) - Show a Solasta inspired combat hud for easy accessibility of actions and bonus actions etc. Replaces a lot of the character sheet functionality during combat so that you don't need to open it. Basically, token action HUD on steroids.
+- [DFreds Convenient Effects](https://foundryvtt.com/packages/dfreds-convenient-effects) - Adds premade automated effects for various spells and items.
+- [Dynamic Active Effects](https://foundryvtt.com/packages/dae) - Improvements to the DnD5e active effects system.
+- [Midi QOL](https://foundryvtt.com/packages/midi-qol) - A module that adds automation to DnD5e. It's a beast of a module and it will require some configuration to get it working, but it's worth it if you want the automation. I personally just use the basic automation (Attacks/Saves/Damage) and i don't go out of my way to automate every single thing, but it's up to you. Keep in mind that the returns on having every spell automated perfectly are very little and i suggest to let the automation handle the basics while you handle the rest.
+- [Maxwell's Manual of Malicious Maladies](https://theripper93.com/module/mmm) - A module for all your lingering injuries needs. 208 lingering injuries all with different severities, durations, and consequences, based on the 13 different damage types. Includes application automation, durations and item creation to keep track of injuries!
+- [Tidy5e Sheet](https://foundryvtt.com/packages/tidy5e-sheet/) - A complete rework of the default Character Sheet. Note that this module is on life support, so it's not guaranteed to work with future versions of Foundry. Luckly it's non-essential so you can just disable it if it breaks.
+
+
+## Library
+These modules are libraries that are required by other modules. They don't do anything by themselves but they are required by other modules. They will be installed automatically if a module requires one or more of them.
+
+- [libWrapper](https://foundryvtt.com/packages/lib-wrapper) - A library that allows other modules to patch core game functions.
+- [Sequencer](https://foundryvtt.com/packages/sequencer) - The library powering the animations.
+- [Socketlib](https://foundryvtt.com/packages/socketlib) - A library that allows easier interfacing between clients.
+- [Warp Gate](https://foundryvtt.com/packages/warpgate) - A library module that provides API functions to make programmatically spawning tokens and modifying those tokens easier for both players and GMs.
