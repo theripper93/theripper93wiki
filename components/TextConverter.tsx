@@ -26,7 +26,7 @@ const TextConverter = ({ text }) => {
         );
 
       const finalText = replacedBoldText.replaceAll("What's Changed", "<h1 style='font-size: large; font-weight: 500'>What's Changed</h1>")
-        .replaceAll("New Contributors", "<h1 style='font-size: large; font-weight: 500'>New Contributors</h1>")
+        .replaceAll("New Contributors", "<h1 style='margin-top: 0.5rem; font-size: large; font-weight: 500'>New Contributors</h1>")
       
     // Render the HTML
     return <div dangerouslySetInnerHTML={{ __html: finalText }} />;

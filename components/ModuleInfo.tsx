@@ -82,14 +82,23 @@ export default function ModuleInfo() {
   const moduleId = router.pathname.split('/').pop();
 
   async function fetchData() {
-    if (forgeData[moduleId]) return forgeData[moduleId];
+    if (forgeData[moduleId]) {
+      setChangelogLoaded(true);
+      return forgeData[moduleId];
+    }
     const data = await fetch(
       `https://forge-vtt.com/api/bazaar/package/${moduleId}`
     )
       .then((response) => response.json())
       .then((data) => data);
-    const releases = await getAllReleasesFromGitHub(repositoryOwner, repositoryIndex[moduleId] ?? moduleId) ?? {};
+    /*const releases = await getAllReleasesFromGitHub(repositoryOwner, repositoryIndex[moduleId] ?? moduleId) ?? {};
     data.releases = releases;
+    forgeData[moduleId] = data;*/
+    getAllReleasesFromGitHub(repositoryOwner, repositoryIndex[moduleId] ?? moduleId).then((releases) => {
+      forgeData[moduleId].releases = releases ?? {};
+      setChangelogLoaded(true);
+      setData().then((data) => setModuleData(data));
+    });
     forgeData[moduleId] = data;
     return data;
   }
@@ -106,6 +115,8 @@ export default function ModuleInfo() {
   const [moduleData, setModuleData] = useState<IModuleData>(placeholder);
 
   const [showChangelog, setShowChangelog] = useState(false);
+
+  const [changelogLoaded, setChangelogLoaded] = useState(false);
 
   async function setData(): Promise<IModuleData> {
     const modData = await fetchData();
@@ -141,7 +152,7 @@ export default function ModuleInfo() {
             }
             link={`https://foundryvtt.com/packages/${moduleId}`}
             />
-            <ModuleInfoButton name={'Changelog'} color='#7db8f4' onClick={() => { setShowChangelog(!showChangelog) }} />
+            {<ModuleInfoButton name={'Changelog'} color='#7db8f4' onClick={() => { setShowChangelog(!showChangelog) }} />}
         </>
       ) : (
         <>
@@ -164,7 +175,8 @@ export default function ModuleInfo() {
               <h1 style={{fontSize: "x-large", fontWeight: 700}} >{release}</h1>
               <ol style={{listStyle: "disc", margin: "0.5rem 1rem", lineBreak: "anywhere"}}>{
                 moduleData.releases[release].split(/- |##|\* /).filter(l => l).map((line, i) => {
-                  return <li key={i} ><TextConverter text={line}></TextConverter></li> // <li key={i}>{line}</li>
+                  const isTitle = line.includes("What's Changed") || line.includes("What's New") || line.includes("New Contributors");
+                  return <li key={i} style={{listStyle: isTitle ? "none" : "disc", margin: isTitle ? "0 -1rem" : ""}} ><TextConverter text={line}></TextConverter></li> // <li key={i}>{line}</li>
                 })
               }</ol>
             </li>
