@@ -9,3 +9,37 @@ import styles from '@/components/image.module.css'
 Say goodbye to data loss mishaps with Recycle Bin! It's got your back when it comes to undoing any document deletion. That includes all the important stuff like Actors, Scenes, Tokens, Tiles, Active Effects, items owned by actors, roll table results, journal pages and everything else. You won't have to stress about accidentally losing data ever again! This module's got you covered and ensures you can easily bring back anything you need.
 
 ## How to use
+
+### Opening the Recycle Bin
+
+<Image src="/images/recycle-bin/recycleBinButton.png" alt="Recycle Bin Button" className={styles.wikiImage}/>
+
+The Recycle Bin can be opened by clicking the `Recycle Bin` button in the Sidebar's Settings tab. This is availeble to all users, including players.
+
+### Handling deleted items
+
+Three actions are availeble for each deleted item:
+
+- **Restore**: Restores the item.
+- **Preview**: Opens a preview of the item. Note that not all items can be previewed.
+- **Delete**: Permanently deletes the item.
+
+### Permanent VS Temporary storage
+
+<Image src="/images/recycle-bin/recycleBinWindow.png" alt="Recycle Bin Window" className={styles.wikiImage}/>
+
+The Recycle Bin has two storage Levels:
+
+#### Permanent
+Items in this storage level will persist between refreshes. You can manually delete them by clicking the `Delete` button. Recycle bin will automatically set the most recently deleted X items to permanent storage, where X is the number of items you have set to be stored permanently. (This can be configured in the module settings)
+
+#### Temporary
+Items in this storage level will be deleted automatically after the page is refreshed. This amount of items can be configured in the module settings.
+
+When opening the Recycle Bin, if you have items that exceed the Permanent storage, those items will be marked in `red`. In the Recycle Bin title bar you will also see a `red exclamation mark` indicating that you have items that will be deleted automatically upon refresh.
+
+### GM vs Player storage
+
+Both GMs and Players can use the Recycle Bin. However, while GMs will see and be able to restore all deleted items, Players will only see and be able to restore items that they have deleted themselves.
+
+In the event that you wish to restore something, but it has exceeded the Temporary storage limit, it's possible that a Player (which will have less items in their Recycle Bin) will be able to restore it for you.
