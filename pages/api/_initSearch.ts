@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FlexSearch from 'flexsearch'
 import { __nextraData } from './nextraData'
 

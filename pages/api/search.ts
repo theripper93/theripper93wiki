@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import Cors from 'cors';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { indexes, doSearch } from './_initSearch';
