@@ -37,11 +37,21 @@ export default async function handler(
 		if(!query) return res.status(400).json({ status: 'error', error: 'Query is required' });
 		//search inside documentation using nextra
 		let results = doSearch(query).map((r) => {
-			return "https://wiki.theripper93.com" + r.route;
+			return {
+				route: "https://wiki.theripper93.com" + r.route,
+				title: r.title,
+				content: r.content,
+			}
 		});
 		//remove duplicates
-		results = [...new Set(results)];
-		res.status(200).json({ status: 'success', results });
+		const finalResults = [];
+		for (const result of results) { 
+			if (!finalResults.find(r => r.route === result.route)) {
+				finalResults.push(result);
+			}
+			if(finalResults.length >= 5) break;
+		}
+		res.status(200).json({ status: 'success', finalResults });
 	} else {
 		res.status(405).json({ status: 'error', error: 'Method not allowed' });
 	}

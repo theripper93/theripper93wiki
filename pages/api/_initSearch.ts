@@ -146,7 +146,9 @@ export const doSearch = (search: string) => {
                 _section_rk: j,
                 route: url,
                 prefix: "",
-                children: "",
+              children: "",
+              title: title,
+              content: content,
             })
     }
 
@@ -163,7 +165,9 @@ export const doSearch = (search: string) => {
             })
             .map(res => ({
                 id: `${res._page_rk}_${res._section_rk}`,
-                route: res.route,
+              route: res.route,
+              title: res.title,
+              content: res.content,
             }))
     }
 }
