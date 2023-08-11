@@ -51,7 +51,7 @@ export default async function handler(
 			}
 			if(finalResults.length >= 5) break;
 		}
-		res.status(200).json({ status: 'success', finalResults });
+		res.status(200).json({ status: 'success', results: finalResults });
 	} else {
 		res.status(405).json({ status: 'error', error: 'Method not allowed' });
 	}
