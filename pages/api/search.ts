@@ -36,10 +36,11 @@ export default async function handler(
 	if (req.method === 'GET') {
 		if(!query) return res.status(400).json({ status: 'error', error: 'Query is required' });
 		//search inside documentation using nextra
-		const results = doSearch(query).map((r) => {
+		let results = doSearch(query).map((r) => {
 			return "https://wiki.theripper93.com" + r.route;
 		});
-		console.log(indexes)
+		//remove duplicates
+		results = [...new Set(results)];
 		res.status(200).json({ status: 'success', results });
 	} else {
 		res.status(405).json({ status: 'error', error: 'Method not allowed' });
