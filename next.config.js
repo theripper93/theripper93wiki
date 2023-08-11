@@ -4,6 +4,12 @@ const withNextra = require('nextra')({
   defaultShowCopyCode: true,
 });
 
+const n = withNextra({
+  images: {
+    domains: ['user-images.githubusercontent.com'],
+  },
+});
+
 module.exports = withNextra({
   images: {
     domains: ['user-images.githubusercontent.com'],
