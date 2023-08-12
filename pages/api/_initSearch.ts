@@ -103,7 +103,7 @@ const localeDef = 'en-US';
 loadIndexes("", localeDef)
 
 export const doSearch = (search: string) => {
-    if (!search) return
+    if (!search) return [];
     const [pageIndex, sectionIndex] = indexes[localeDef]
 
     // Show the results for the top 5 pages
@@ -151,7 +151,6 @@ export const doSearch = (search: string) => {
               content: content,
             })
     }
-
         return results
             .sort((a, b) => {
                 // Sort by number of matches in the title.
