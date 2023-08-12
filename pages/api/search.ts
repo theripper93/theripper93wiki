@@ -54,7 +54,7 @@ export default async function handler(
 				}
 				if (finalTitleResults.length >= 3) break;
 			}
-			results.push(finalTitleResults);
+			results.push(...finalTitleResults);
 		}
 
 		if (query) {
@@ -72,7 +72,7 @@ export default async function handler(
 				}
 				if (finalQueryResults.length >= (5-results.length)) break;
 			}
-			results.push(finalQueryResults);
+			results.push(...finalQueryResults);
 		}
 		res.status(200).json({ status: 'success', results });
 	} else {
