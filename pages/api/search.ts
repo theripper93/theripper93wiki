@@ -31,27 +31,50 @@ export default async function handler(
 	res: NextApiResponse
 ) {
 	await runMiddleware(req, res, cors);
-	const { query } = req.query;
+	const { query, title } = req.query;
 
 	if (req.method === 'GET') {
 		if(!query) return res.status(400).json({ status: 'error', error: 'Query is required' });
 		//search inside documentation using nextra
-		let results = doSearch(query).map((r) => {
-			return {
-				route: "https://wiki.theripper93.com" + r.route,
-				title: r.title,
-				content: r.content,
+
+		const results = [];
+
+		if (title) {
+			const titleResults = doSearch(title).map((r) => {
+				return {
+					route: "https://wiki.theripper93.com" + r.route,
+					title: r.title,
+					content: r.content,
+				}
+			});
+			const finalTitleResults = [];
+			for (const result of titleResults) {
+				if (!finalTitleResults.find(r => r.route === result.route)) {
+					finalTitleResults.push(result);
+				}
+				if (finalTitleResults.length >= 3) break;
 			}
-		});
-		//remove duplicates
-		const finalResults = [];
-		for (const result of results) { 
-			if (!finalResults.find(r => r.route === result.route)) {
-				finalResults.push(result);
-			}
-			if(finalResults.length >= 5) break;
+			results.push(finalTitleResults);
 		}
-		res.status(200).json({ status: 'success', results: finalResults });
+
+		if (query) {
+			const queryResults = doSearch(query).map((r) => {
+				return {
+					route: "https://wiki.theripper93.com" + r.route,
+					title: r.title,
+					content: r.content,
+				}
+			});
+			const finalQueryResults = [];
+			for (const result of queryResults) {
+				if (!finalQueryResults.find(r => r.route === result.route)) {
+					finalQueryResults.push(result);
+				}
+				if (finalQueryResults.length >= 2) break;
+			}
+			results.push(finalQueryResults);
+		}
+		res.status(200).json({ status: 'success', results });
 	} else {
 		res.status(405).json({ status: 'error', error: 'Method not allowed' });
 	}
