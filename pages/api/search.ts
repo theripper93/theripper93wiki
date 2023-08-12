@@ -40,7 +40,9 @@ export default async function handler(
 	if (req.method === 'GET') {
 		if(!query) return res.status(400).json({ status: 'error', error: 'Query is required' });
 		//search inside documentation using nextra
-
+		try {
+			
+		
 		const results = [];
 
 		if (title) {
@@ -78,7 +80,10 @@ export default async function handler(
 			}
 			results.push(...finalQueryResults);
 		}
-		res.status(200).json({ status: 'success', results });
+			res.status(200).json({ status: 'success', results });
+		} catch (error) {
+			res.status(500).json({ status: 'error', error: error.message });
+		}
 	} else {
 		res.status(405).json({ status: 'error', error: 'Method not allowed' });
 	}
