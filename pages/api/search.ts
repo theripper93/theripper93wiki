@@ -4,6 +4,8 @@ import Cors from 'cors';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { indexes, doSearch } from './_initSearch';
 
+const MAX_RESULT_LENGTH = 150;
+
 
 const cors = Cors({
 	methods: ['GET', 'HEAD', 'POST', 'OPTIONS'],
@@ -31,7 +33,9 @@ export default async function handler(
 	res: NextApiResponse
 ) {
 	await runMiddleware(req, res, cors);
-	const { query, title } = req.query;
+	const { query, title, conlen } = req.query;
+
+	const contentLength = parseInt(conlen ?? "") || MAX_RESULT_LENGTH;
 
 	if (req.method === 'GET') {
 		if(!query) return res.status(400).json({ status: 'error', error: 'Query is required' });
@@ -44,7 +48,7 @@ export default async function handler(
 				return {
 					route: "https://wiki.theripper93.com" + r.route,
 					title: r.title,
-					content: r.content,
+					content: shortenString(r.content, contentLength),
 				}
 			});
 			const finalTitleResults = [];
@@ -62,7 +66,7 @@ export default async function handler(
 				return {
 					route: "https://wiki.theripper93.com" + r.route,
 					title: r.title,
-					content: r.content,
+					content: shortenString(r.content, contentLength),
 				}
 			});
 			const finalQueryResults = [];
@@ -78,4 +82,9 @@ export default async function handler(
 	} else {
 		res.status(405).json({ status: 'error', error: 'Method not allowed' });
 	}
+}
+
+function shortenString(str, maxLen) {
+	if (str.length <= maxLen) return str;
+	return str.slice(0, maxLen - 3) + '...';
 }
