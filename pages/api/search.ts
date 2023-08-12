@@ -70,7 +70,7 @@ export default async function handler(
 				if (!finalQueryResults.find(r => r.route === result.route)) {
 					finalQueryResults.push(result);
 				}
-				if (finalQueryResults.length >= 2) break;
+				if (finalQueryResults.length >= (5-results.length)) break;
 			}
 			results.push(finalQueryResults);
 		}
