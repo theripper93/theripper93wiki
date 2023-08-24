@@ -202,8 +202,24 @@ The `Animation Function` option will allow you to set a custom function that wil
 
 - `delta`: The time in milliseconds since the last frame
 - `tile3d`: The Tile3D object (you should not need to use this, but it's there if you need it - use only if you know what you are doing)
+- `this`: The 3D Object (this is the object you will be animating)
 
+#### Example
 
+This example will rotate the 3D Model on the Y axis every frame.
+```js
+this.rotation.y += delta;
+```
+
+This example will make the 3D Model move up and down every frame.
+```js
+this.position.y = Math.sin(delta / 1000) * 0.5;
+```
+
+This example will make the 3D Model scale up and down every frame.
+```js
+this.scale.y = Math.sin(delta / 1000) * 0.5;
+```
 
 ## Merging 3D Tiles
 
