@@ -194,6 +194,16 @@ The `Terrain` section will allow you to generate a terrain using the 3D Model as
 
 After selecting a `Noise Type` you will be able to set all the options for the noise. There are many noise options and the best way to understand them is to play with them.
 
+### Animation Function
+
+Note that this is a very advanced feature and you should not need to use it unless you know what you are doing.
+
+The `Animation Function` option will allow you to set a custom function that will be called every frame to animate the 3D Model. This function will be called with the following arguments:
+
+- `delta`: The time in milliseconds since the last frame
+- `tile3d`: The Tile3D object (you should not need to use this, but it's there if you need it - use only if you know what you are doing)
+
+
 
 ## Merging 3D Tiles
 
