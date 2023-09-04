@@ -1,11 +1,41 @@
 import Image from '@/components/Image'
 import ModuleInfo from '@/components/ModuleInfo'
 import styles from '@/components/image.module.css'
+import { Callout } from 'nextra-theme-docs';
 
 # Tidbits
 
 <ModuleInfo/>
 
-
+Automatically show helpful tips to your players when they join the game, during load screens and when the game is paused. Customize tips and loading screen images to your liking!
 
 ## How to use
+
+The module will be ready to use from the get go, but you can head to the module settings to decide when to show tidbits, you can:
+
+- Show tidbits when the game is paused in place of the "Paused" text
+- Show tidbits while a scene is loading
+- Show tidbits when a player joins the game as a whisper chat message
+
+## Customization
+
+### Customizing the loading screen images
+
+To customize the loading screen images, simply point the corresponding setting to a folder containing your images. The module will automatically pick a random image from the folder to display.
+
+### Customizing the tidbits
+
+<Callout type='warning' emoji='⚠️'>
+When dealing with `.json` files, make sure to use double quotes (`"`) and not single quotes (`'`) and don't forget the commas! You can use [JSONLint](https://jsonlint.com/) to validate your files.
+</Callout>
+
+In order to create a custom list of tidbits, simply create a `.json` file containing your tidbits and point the corresponding setting to it. The file should be formatted as follows:
+
+```json
+[
+    "This is a tidbit",
+    "This is another tidbit",
+    "This is a third tidbit"
+]
+```
+
