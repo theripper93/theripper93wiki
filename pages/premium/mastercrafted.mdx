@@ -128,6 +128,33 @@ If you wish to manually process timed crafting, you can use this macro.
 ui.RecipeApp.processDelayedCrafting(Array.from(game.actors).filter(a => a.isOwner))
 ```
 
+### The Cauldron
+
+The Cauldron is a special feature that will let your players discover recipes.
+
+#### Accessing the Cauldron
+The Cauldron is disabled by default. To access the Cauldron follow these steps:
+
+- Open the Mastercrafted Module Settings
+- Enable the Cauldron option
+- Open the Mastercrafted Recipe Manager from a Character Sheet
+- Click the Cauldron button on the top right, next to the close button
+
+#### Using the Cauldron
+To use the Cauldron, simply drop two or more items in the Cauldron window and click the `Mix Ingredients` button. Depending on how close you are to a recipe match, you will get a different result.
+
+Depending on the match, you will get a different number of Shakes during the mixing animation and a different chat message.
+
+| Match Type                      | Shakes | Message                                                                                                                     |
+|---------------------------------|--------|-----------------------------------------------------------------------------------------------------------------------------|
+| Exact Match                     | 4      | A chat message will ask for the GM confirmation of the discovery                                                            |
+| One Extra Item                  | 3      | It was so close! You almost had it! Maybe you added a little too much.                                                      |
+| One Missing Item                | 3      | It was so close! You almost had it! Maybe it needs a little bit more.                                                       |
+|  Two Extra Items                | 2      | It looked like it was going to work, but it didn't. Maybe you added too much.                                               |
+| Two Missing Items               | 2      | It looked like it was going to work, but it didn't. Maybe it needs more of something.                                       |
+| One Extra, One Missing          | 2      | It looked like it was going to work, but it didn't. Maybe you added too much of something and not enough of something else. |
+| Two or more Missing\Extra Items | 1      | Brewing failed! Your concoction did not mix well. The ingredients were consumed.                                            |
+
 ### Document Links
 
 At the moment it's not possible to create links in journals\chat to recipes by drag and dropping them. The current Foundry API requires heavy core code modifications to achieve this, so it's on hold until the API is improved.
