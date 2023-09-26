@@ -1,6 +1,7 @@
 import Image from '@/components/Image'
 import ModuleInfo from '@/components/ModuleInfo';
 import styles from '@/components/image.module.css'
+import { Callout } from 'nextra-theme-docs';
 
 # Epic Rolls 5e
 <ModuleInfo/>
@@ -8,6 +9,10 @@ import styles from '@/components/image.module.css'
 A module to make group rolls more engaging with some flair and sound effects. Let your other players spectate the roll and see the results in real time!
 
 ## How to use
+
+<Callout type='warning' emoji='⚠️'>
+  Note that this module does not support multiple GMs connected at the same time!
+</Callout>
 
 ### Starting a new roll
 <Image src="/images/epic-rolls-5e/epicrollsbutton.png" alt="Epic Rolls button location" className={styles.wikiImageSmall}/>
