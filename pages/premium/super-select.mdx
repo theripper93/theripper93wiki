@@ -1,0 +1,50 @@
+import Image from '@/components/Image'
+import ModuleInfo from '@/components/ModuleInfo'
+import styles from '@/components/image.module.css'
+import { Callout } from 'nextra-theme-docs';
+
+# Super Select
+
+<ModuleInfo/>
+
+Toolbelt of Selection Powertools. Selection Everywhere, Lazo Select, Search tool, Quick selection macros
+
+## Features
+
+### Selection Everywhere
+
+This module includes the functionality of enabling the Select tool in any layer. This will allow your, for example
+to select and move\copy multiple lights at once. This feature is the same provided by the Select Tool Anywhere module and has been added for convinience.
+
+### Lazo Select
+
+In order to enable the Lazo Select, identify the Lazo icon under the Select tool, once toggled on you can click and drag to start the lazo select. The same shortcuts as the regular select apply (Eg. Hold Shift to add to selection)
+
+### Search Tool
+
+In order to open the search tool, press the `Shift + S` key combination (rebindable).
+
+#### Quick Search
+Whithout diving into the advanced features of the tool you can execute a quick search by typing something in the box and hitting `Enter`.
+The default filter is quite generic and will find most things. For example you can search for a specific image, or a specific tint color to select certain tiles. The `Select` button will show you the number of matches that will be seclected if you press `Enter` or the button.
+
+#### Negating a search
+
+If you start a search with the `!` character, the search will be negated. This means that the search will select everything that does not match the search criteria. For example, if you search for `!door` you will select everything that is not a door.
+
+#### Filters
+
+You can connect multiple filters together. In order to add the current search to the filters list, ether type `+` in the search box or press the `+` button. This will add the current search to the filters list and clear the search box.
+
+#### Text/JSON
+
+This filter will search directly in the data of the placeables. This means that you can search for an image name, the name of a token, the content of a drawing textbox.
+This fiter also includes some special keywords listed below:
+
+`hidden`, `owner`, `player`, `combat`, `door`, `open`
+
+#### Tagger
+
+This filter requires the `Tagger` module to be enabled. It will allow you to select tiles based on their tags. For example, you can select all tiles that have the `tree` tag.
+
+##### Condition
