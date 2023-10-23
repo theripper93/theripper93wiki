@@ -32,6 +32,10 @@ The default filter is quite generic and will find most things. For example you c
 
 If you start a search with the `!` character, the search will be negated. This means that the search will select everything that does not match the search criteria. For example, if you search for `!door` you will select everything that is not a door.
 
+#### Save to Macro
+
+You can save the current search to a macro by pressing the `Save` button. This will open a dialog where you can enter the name of the macro. When running the macro it will execute the search and select the results.
+
 #### Filters
 
 You can connect multiple filters together. In order to add the current search to the filters list, ether type `+` in the search box or press the `+` button. This will add the current search to the filters list and clear the search box.
@@ -48,3 +52,9 @@ This fiter also includes some special keywords listed below:
 This filter requires the `Tagger` module to be enabled. It will allow you to select tiles based on their tags. For example, you can select all tiles that have the `tree` tag.
 
 ##### Condition
+
+This will execute a macro string to verify a certain condition. In the string you can use the `@` character to refer to the current placeable. For example, you can use `@.document.width > 400` to select all tiles that are wider than 400 pixels.
+
+### Quick Selection Macros
+
+Super Select will add 10 Keybindings (by default `Shift + 0-9`) that will execute a macro which includes `SuperSelectN` in the name, where `N` is the number of the keybinding. You can use the Export to Macro feature of the selection tool to create these macros.
