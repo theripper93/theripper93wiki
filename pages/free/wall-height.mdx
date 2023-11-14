@@ -57,7 +57,17 @@ change its value. All non-0 values will override the default settings
 for the token.
 
 `Automatic Token Height` and `Default Token Height` in module settings
-determine the default for all tokens.
+determine the default for all tokens. If `Automatic Token Height` is enabled, `Default Token Height` is ignored. Otherwise, `Default Token Height` is used as the default height for all tokens.
+
+#### Automatic Token Height Calculation
+
+`Automatic Token Height` is enabled by default. When enabled, the token height is calculated by the token's size and scale. The formula is as follows:
+
+`[Dimension in units of 1 Grid Square]` * `[Highest between width and height of the token]` * `[Average of the token's scale]` * `[Token Height Multiplier (setting)]`
+
+Example: A 1x1 token on a 5ft grid would be 5ft tall, a 2x2 token would be 10ft, and a 1x1 token with a 0.75 scale would be 3.75 ft. These values are then multiplied by the `Token Height Multiplier` setting.
+
+By default the `Token Height Multiplier` is set to 0.89. This means that a 1x1 token on a 5ft grid would be 4.45ft tall, a 2x2 token would be 8.9ft, and a 1x1 token with a 0.75 scale would be 3.34 ft.
 
 If you wish to double check what is the computed value for a specifi token when it's height is set to 0 (thus triggering the automatic calculation), you can check it in the text displayed below the Token Height in the Token Configuration
 
