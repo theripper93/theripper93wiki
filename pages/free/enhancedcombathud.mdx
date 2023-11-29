@@ -17,9 +17,18 @@ import { Callout } from 'nextra-theme-docs';
 
 A Solasta
 inspired HUD to make your games easier for your players and for teaching
-new players without a hitch. It is only D&D 5e compatible.
+new players without a hitch. Compatible with multiple systems.
+
+Note that Dungeons & Dragons 5e is the only `First Party` supported system, other systems are supported by the community.
+This page includes some general information about the module as well as information about the D&D 5e system version.
+Note that other systems may have different features and/or different ways of using the module.
+
 
 ## Basics
+
+<Callout type='warning' emoji='⚠️'>
+Argon was made for Chrome. If you experience weird UI issues, consider switching browsers.
+</Callout>
 
 ### Opening the HUD
 
@@ -32,8 +41,35 @@ new players without a hitch. It is only D&D 5e compatible.
 />
 To open the HUD, click the
 crossed swords icon in the token controls (top left buttons) or click
-the same button in the token hud (right click on a token). A macro is
-also included to toggle the hud.
+the same button in the token hud (right click on a token).
+You can also use the keybind SHIFT+A to toggle the hud.
+
+
+### Target Picker
+
+<Callout type='warning' emoji='⚠️'>
+  In order for players to target using the Left mouse button, you'll need to install the [Smart Target](./smarttarget) module.
+As an alternative, players can still use the T key to target.
+</Callout>
+
+When this feature is enabled, whenever you click on an action in the HUD, you will be prompted with a target selection mode.
+While in target selection:
+
+ - The number of Selected/Required targets will follow your cursor
+ - Left click (or T) to target a token
+ - Right click to cancel target selection
+ - Click `+` or `-` to increase/decrease the number of maximum targets manually
+
+
+ ### Macros
+
+ You can use the Argon API to toggle the HUD, you can do so with the following macro:
+
+ ```js
+ ui.ARGON.toggle()
+  ```
+
+## Dungeons & Dragons 5e
 
 ### Spells
 
@@ -108,62 +144,18 @@ Tooltips provide useful information on the items, you can change which
 tooltips are shown (including no tooltips) in the module settings, these
 are client side settings.
 
-### Target Picker
+## Supported Systems
 
-<Callout type='warning' emoji='⚠️'>
-  In order for players to target using the Left mouse button, you'll need to install the [Smart Target](./smarttarget) module.
-As an alternative, players can still use the T key to target.
-</Callout>
-
-When this feature is enabled, whenever you click on an action in the HUD, you will be prompted with a target selection mode.
-While in target selection:
-
- - The number of Selected/Required targets will follow your cursor
- - Left click (or T) to target a token
- - Right click to cancel target selection
- - Click `+` or `-` to increase/decrease the number of maximum targets manually
-
-
- ### Macros
-
- You can use the Argon API to toggle the HUD, you can do so with the following macro:
-
- ```js
- ui.ARGON.toggle()
-  ```
-
-## Common Issues
-
-Argon was made
-for Chrome. If you experience weird UI issues, consider switching
-browsers.
-
-### Portraits not showing
-
-If your image path has parenthesis "(" or ")" the image will fail to
-load, this might be true for other special characters as well
+- [Dungeons & Dragons 5e](https://foundryvtt.com/packages/enhancedcombathud-dnd5e)
+- [Vaesen](https://foundryvtt.com/packages/enhancedcombathud-vaesen)
 
 
 ## FAQs
 
 ### Can you add compatibility for X system?
 
-No, Argon is hardcoded for dnd5e. If you want you can make a fork for a
-specific system. You have to include the licence section and credit the
-original authors (**theripper93**, **Mouse0270**) and include links to our
-patreon page\website (if provided).
-
-### Why is xyz type of item not in the HUD?
-
-We had to make a choice on what to include, anything that's not on those
-categories is not included (a 1 minute cast time spell for example, or a
-consumable that is used as bonus action). Those items will not be added.
-You can use Sets for any item.
-
-### Why the items in the HUD are not updating correctly?
-
-Only a select number of elements are dynamically updated. To manually
-update the HUD simply close and reopen the Argon HUD.
+System other than D&D 5e are supported by the community, you can try asking in your system's discord server or channel if someone is willing to add support for it.
+If you are a developer and want to add support for a system, feel free to contact me on discord for help. You can also use any of the existing systems as a template.
 
 ## Other
 
