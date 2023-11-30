@@ -13,7 +13,6 @@
   "macro-wheel": "Macro Wheel",
   "mastercrafted": "Mastercrafted",
   "media-optimizer": "Media Optimizer",
-  "mobile-sheet": "Mobile Sheet",
   "party-monitor-dock": "Party HUD",
   "power-select-toolkit" : "Power Select Toolkit",
   "progress-tracker": "Progress Tracker",
@@ -23,10 +22,8 @@
   "rich-info-tooltips": "Rich Info Tooltips",
   "damage-numbers": "RPG Damage Numbers",
   "situational-shortcuts": "Situational Shortcuts",
-  "socketmacros": "Socket Macros",
   "foundry-taskbar": "Taskbar",
   "tidbits": "Tidbits",
   "tokenflip": "Token Flip",
-  "token-notes": "Token Notes",
-  "choices": "Visual Novel Choices"
+  "token-notes": "Token Notes"
 }
