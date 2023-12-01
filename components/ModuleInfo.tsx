@@ -164,7 +164,7 @@ export default function ModuleInfo() {
             color={
               'hsl(var(--nextra-primary-hue)100% 45%/var(--tw-text-opacity))'
             }
-            link={moduleData.premium?.downloadURL}
+            link={`https://foundryvtt.com/packages/${moduleId}`}
           />
         </>
       )}
