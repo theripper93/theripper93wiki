@@ -65,10 +65,7 @@ interface IModuleData {
     latest: string;
     installs: number;
   };
-  premium: {
-    version: number;
-    downloadURL: string;
-  };
+  premium: boolean;
   releases: {
     [key: string]: string;
   }
@@ -91,9 +88,6 @@ export default function ModuleInfo() {
     )
       .then((response) => response.json())
       .then((data) => data);
-    /*const releases = await getAllReleasesFromGitHub(repositoryOwner, repositoryIndex[moduleId] ?? moduleId) ?? {};
-    data.releases = releases;
-    forgeData[moduleId] = data;*/
     getAllReleasesFromGitHub(repositoryOwner, repositoryIndex[moduleId] ?? moduleId).then((releases) => {
       forgeData[moduleId].releases = releases ?? {};
       setChangelogLoaded(true);
@@ -120,11 +114,10 @@ export default function ModuleInfo() {
 
   async function setData(): Promise<IModuleData> {
     const modData = await fetchData();
-    const premData = (await fetchPremium()) ?? {};
     const data: IModuleData = {
       ready: true,
       module: modData.success ? modData.package : null,
-      premium: premData[moduleId],
+      premium: modData.package.premium == "protected",
       releases: modData.releases ?? {},
     };
     return data;
@@ -137,12 +130,11 @@ export default function ModuleInfo() {
   return (
     <div>
     <div className={styles.info} style={moduleData.ready ? {} : { opacity: 0 }}>
-      {moduleData.module ? (
         <>
-          <ModuleInfoButton name={'Free'} color={'hsl(150deg 100% 40%)'} />
-          <ModuleInfoButton name={'Version: ' + moduleData.module.latest} />
+          {moduleData.premium ? <ModuleInfoButton name={'Premium'} color={'hsl(10deg 100% 50%)'} /> : <ModuleInfoButton name={'Free'} color={'hsl(150deg 100% 40%)'} />}
+          <ModuleInfoButton name={'Version: ' + (moduleData.module?.latest ?? "V11")} />
           <ModuleInfoButton
-            name={'Installs: ' + moduleData.module.installs + '%'}
+            name={'Installs: ' + (moduleData.module?.installs ?? "?") + '%'}
           />
           <ModuleInfoButton name={'FVTT: V11'} />
           <ModuleInfoButton
@@ -154,20 +146,6 @@ export default function ModuleInfo() {
             />
             {<ModuleInfoButton name={'Changelog'} color='#7db8f4' onClick={() => { setShowChangelog(!showChangelog) }} />}
         </>
-      ) : (
-        <>
-          <ModuleInfoButton name={'Premium'} color={'hsl(10deg 100% 50%)'} />
-          <ModuleInfoButton name={'Version: ' + moduleData.premium?.version} />
-          <ModuleInfoButton name={'FVTT: V11'} />
-          <ModuleInfoButton
-            name={'Download'}
-            color={
-              'hsl(var(--nextra-primary-hue)100% 45%/var(--tw-text-opacity))'
-            }
-            link={`https://foundryvtt.com/packages/${moduleId}`}
-          />
-        </>
-      )}
       </div>
       <ol style={showChangelog && Object.keys(moduleData?.releases ?? {}).length ? {margin: "1rem 0px",padding: "0.5rem",borderRadius: "5px",backgroundColor: "#80808026"} : {display: "none"}}>
           {moduleData.releases && Object.keys(moduleData.releases).filter(r => moduleData.releases[r]).map((release) => (
