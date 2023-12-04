@@ -134,7 +134,7 @@ export default function ModuleInfo() {
           {moduleData.premium ? <ModuleInfoButton name={'Premium'} color={'hsl(10deg 100% 50%)'} /> : <ModuleInfoButton name={'Free'} color={'hsl(150deg 100% 40%)'} />}
           <ModuleInfoButton name={'Version: ' + (moduleData.module?.latest ?? "V11")} />
           <ModuleInfoButton
-            name={'Installs: ' + (moduleData.module?.installs ?? "?") + '%'}
+            name={'Installs: ' + ((moduleData.module?.installs ?? 0 >= 1 ? moduleData.module?.installs : undefined) ?? "?") + '%'}
           />
           <ModuleInfoButton name={'FVTT: V11'} />
           <ModuleInfoButton
