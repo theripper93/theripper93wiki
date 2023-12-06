@@ -88,7 +88,10 @@ export default function ModuleInfo() {
     )
       .then((response) => response.json())
       .then((data) => data);
-    getAllReleasesFromGitHub(repositoryOwner, repositoryIndex[moduleId] ?? moduleId).then((releases) => {
+    
+    const isPremium = data.package.premium == "protected";
+    
+    getAllReleasesFromGitHub(repositoryOwner, repositoryIndex[moduleId] ?? moduleId, isPremium).then((releases) => {
       forgeData[moduleId].releases = releases ?? {};
       setChangelogLoaded(true);
       setData().then((data) => setModuleData(data));
@@ -198,33 +201,59 @@ function ModuleInfoButton({
   );
 }
 
-async function getAllReleasesFromGitHub(owner, repo) {
-  const releasesPerPage = 100; // Maximum allowed by GitHub API
-  const apiUrl = `https://api.github.com/repos/${owner}/${repo}/releases?per_page=${releasesPerPage}`;
-
-  try {
-    let compiledReleases = {};
-
-    let currentPage = 1;
-    let hasMorePages = true;
-
-    while (hasMorePages) {
-      const response = await fetch(`${apiUrl}&page=${currentPage}`);
-      const releases = await response.json();
-
-      if (releases.length === 0) {
-        // No more releases, break the loop
-        hasMorePages = false;
-      } else {
-        releases.forEach((release) => {
-          compiledReleases[release.tag_name] = release.body;
-        });
-        currentPage++;
+async function getAllReleasesFromGitHub(owner, repo, isPremium) {
+  if (isPremium) {
+    const changelogURL = `https://raw.githubusercontent.com/theripper93/theripper-premium-hub/master/premium-changelogs/${repo}.md`
+    try {
+      const response = await fetch(changelogURL);
+      if(!response.ok) return { "Error": "Changelog for this module is not available yet." };
+      const changelog = await response.text();
+      const releases = {};
+      //parse changelog
+      const changelogLines = changelog.split(/\r?\n/);
+      let currentVersion = "";
+      for(const line of changelogLines) {
+        if (line.startsWith("##")) {
+          const version = line.replace("## Version ", "");
+          releases[version] = "";
+          currentVersion = version;
+        } else {
+          const trimmed = line.trim();
+          if(trimmed != "") releases[currentVersion] += line + "\n";
+        }
       }
+      return releases;
+    } catch (error) {
+      return null;
     }
-
-    return compiledReleases;
-  } catch (error) {
-    return null;
+  } else {    
+    const releasesPerPage = 100; // Maximum allowed by GitHub API
+    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/releases?per_page=${releasesPerPage}`;
+  
+    try {
+      let compiledReleases = {};
+  
+      let currentPage = 1;
+      let hasMorePages = true;
+  
+      while (hasMorePages) {
+        const response = await fetch(`${apiUrl}&page=${currentPage}`);
+        const releases = await response.json();
+  
+        if (releases.length === 0) {
+          // No more releases, break the loop
+          hasMorePages = false;
+        } else {
+          releases.forEach((release) => {
+            compiledReleases[release.tag_name] = release.body;
+          });
+          currentPage++;
+        }
+      }
+  
+      return compiledReleases;
+    } catch (error) {
+      return null;
+    }
   }
 }
