@@ -9,7 +9,7 @@ let forgeData = {};
 const repositoryOwner = 'theripper93';
 const repositoryIndex = {
   "megapack": "megapack",
-  "vtt-desktop-client": "vtt-desktop-client",
+  "vtt-desktop-client": "fvtt-player-client",
   "levels": "Levels",
   "enhancedcombathud": "enhancedcombathud",
   "automated-evocations": "automated-evocations",
@@ -68,7 +68,8 @@ interface IModuleData {
   premium: boolean;
   releases: {
     [key: string]: string;
-  }
+  },
+  download?: string;
 }
 
 export default function ModuleInfo() {
@@ -89,7 +90,7 @@ export default function ModuleInfo() {
       .then((response) => response.json())
       .then((data) => data);
     
-    const isPremium = data.package.premium == "protected";
+    const isPremium = data.package?.premium == "protected";
     
     getAllReleasesFromGitHub(repositoryOwner, repositoryIndex[moduleId] ?? moduleId, isPremium).then((releases) => {
       forgeData[moduleId].releases = releases ?? {};
@@ -117,12 +118,26 @@ export default function ModuleInfo() {
 
   async function setData(): Promise<IModuleData> {
     const modData = await fetchData();
+    debugger;
     const data: IModuleData = {
       ready: true,
       module: modData.success ? modData.package : null,
-      premium: modData.package.premium == "protected",
+      premium: modData.package?.premium == "protected",
       releases: modData.releases ?? {},
     };
+    if (moduleId == "vtt-desktop-client") {
+      const specialData: IModuleData = {
+        ready: true,
+        module: {
+          latest: Object.keys(modData.releases ?? {})[0],
+          installs: 0,
+        },
+        premium: false,
+        releases: modData.releases,
+        download: "https://github.com/theripper93/fvtt-player-client/releases/latest"
+      };
+      return specialData;
+    }
     return data;
   }
 
@@ -136,16 +151,16 @@ export default function ModuleInfo() {
         <>
           {moduleData.premium ? <ModuleInfoButton name={'Premium'} color={'hsl(10deg 100% 50%)'} /> : <ModuleInfoButton name={'Free'} color={'hsl(150deg 100% 40%)'} />}
           <ModuleInfoButton name={'Version: ' + (moduleData.module?.latest ?? "V11")} />
-          <ModuleInfoButton
+          {(moduleData.module?.installs ?? 0) >= 1 && <ModuleInfoButton
             name={'Installs: ' + ((moduleData.module?.installs ?? 0 >= 1 ? moduleData.module?.installs : undefined) ?? "?") + '%'}
-          />
+          />}
           <ModuleInfoButton name={'FVTT: V11'} />
           <ModuleInfoButton
             name={'Download'}
             color={
               'hsl(var(--nextra-primary-hue)100% 45%/var(--tw-text-opacity))'
             }
-            link={`https://foundryvtt.com/packages/${moduleId}`}
+            link={moduleData.download ?? `https://foundryvtt.com/packages/${moduleId}`}
             />
             {<ModuleInfoButton name={'Changelog'} color='#7db8f4' onClick={() => { setShowChangelog(!showChangelog) }} />}
         </>
