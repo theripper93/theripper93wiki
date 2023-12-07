@@ -223,6 +223,7 @@ async function getAllReleasesFromGitHub(owner, repo, isPremium) {
       const response = await fetch(changelogURL);
       if(!response.ok) return { "Error": "Changelog for this module is not available yet." };
       const changelog = await response.text();
+      if(!changelog) return { "Error": "Changelog for this module is not available yet." };
       const releases = {};
       //parse changelog
       const changelogLines = changelog.split(/\r?\n/);
