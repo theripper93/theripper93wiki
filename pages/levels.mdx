@@ -457,8 +457,25 @@ This guide assumes all the different levels of the map are the same size, if thi
 
 8. Repeat the previous step for the other levels, first selecting the level in the UI, then dragging and dropping the corresponding scene from the `Scenes Directory` onto the Levels UI.
 
-9. You should now have all the levels imported into the Levels UI. You can delete the per-floor scenes now.
+9. If you have any `Roofs` you will need to manually set them up in the same way you did in the [Your First Levels Map](#your-first-levels-map) guide.
 
+10. You should now have all the levels imported into the Levels UI. You can delete the per-floor scenes now.
+
+</div>
+
+### Setting existing scene objects to a level
+
+It's highly recommended to make a backup of your scene before doing this.
+If you have a scene with existing objects that you want to set to a specific level, follow these steps:
+
+<div className='steps-container-ol'>
+1. Select all the objects you want to set to a level.
+2. Delete them.
+3. Open the Levels UI (also known as the _Levels Layer Tool_) by
+   pressing the <FontAwesomeIcon icon={faLayerGroup} /> button.
+4. Select the level you want to set the objects to.
+5. Press `Ctrl + Z` to undo the deletion.
+6. The objects should now be set to the selected level.
 </div>
 
 ## API
