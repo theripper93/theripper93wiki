@@ -59,6 +59,9 @@ Set permissions to specific players, require tools to craft and more!
   ingredient
 - Left click an ingredient to inspect, right click to remove it from
   the recipe
+- If you wish to use a Resource (such as Gold Coins) as an ingredient,
+  you will need to create a Resource Item, see the [Creating Resource
+  Items](#creating-resource-items) section for more information.
 
 #### Creating a crafting result
 
@@ -90,6 +93,16 @@ Set permissions to specific players, require tools to craft and more!
     
     className={styles.wikiImageSmall}
   />
+
+#### Creating Resource Items
+
+If you wish to use Resources as ingredients, you will need to create a `Resource Item`, this will allow for a recipe to require resources such as Gold Coins, Spell Slots or other resources that are not items.
+
+- Create a new item
+- Give a name and an image to the item, what you chose here is to your preference
+- In the Header Buttons of the Item Sheet, click on the Duotone Hammer icon
+- In the `Attribute Path` field, enter the path to the resource you wish to use, the path is relative to the `system` data path. For example, if you wish to use the `Gold Coins` resource in the DnD5e system, you would enter `currency.gp`
+- Keep this item in your Sidebar or in a Compendium, then drag and drop it as any other ingredient in your recipes.
 
 ### Crafting
 
