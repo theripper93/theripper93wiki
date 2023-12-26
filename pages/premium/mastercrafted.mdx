@@ -104,6 +104,18 @@ If you wish to use Resources as ingredients, you will need to create a `Resource
 - In the `Attribute Path` field, enter the path to the resource you wish to use, the path is relative to the `system` data path. For example, if you wish to use the `Gold Coins` resource in the DnD5e system, you would enter `currency.gp`
 - Keep this item in your Sidebar or in a Compendium, then drag and drop it as any other ingredient in your recipes.
 
+#### Using Tags
+
+Tags are a way to categorize ingridients, by using tags you can have multiple items with different names to be used as a specific ingredient. For example:
+
+- Create a `Gem` item
+- In the Header Buttons of the Item Sheet, click on the Duotone Hammer icon
+- Edit the tags to `gem`
+- Create a `Diamond`, `Ruby`, `Sapphire` items, all with the `gem` tag
+- In your recipe, set one of the ingridients to be the `Gem` item - require quantity of 5
+- If the crafting actor has 2 Diamonds 2 Ruby and 5 Sapphire, they will be able to craft and be left with 4 Sapphire
+- An item can have multiple tags separated by a comma
+
 ### Crafting
 
 - Open an Actor Sheet
