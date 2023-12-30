@@ -20,3 +20,13 @@ import { Callout } from 'nextra-theme-docs';
 
 Any dice left empty will be rolled automatically.
 
+## API
+
+If your module overrides the `roll` function, you can manually call the `Real Dice` API to roll dice manually.
+
+```js
+await CONFIG.Dice.RealRoll.prompt(this.terms);
+```
+
+Where `this.terms` is your Array of `RollTerm`
+
