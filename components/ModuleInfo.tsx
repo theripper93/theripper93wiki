@@ -64,7 +64,7 @@ interface IModuleData {
   module: {
     latest: string;
     installs: number;
-    system?: [string];
+    systems?: [string];
   };
   premium: boolean;
   releases: {
@@ -155,7 +155,7 @@ export default function ModuleInfo() {
             name={'Installs: ' + ((moduleData.module?.installs ?? 0 >= 1 ? moduleData.module?.installs : undefined) ?? "?") + '%'}
           />}
           <ModuleInfoButton name={'FVTT: V11'} />
-          <ModuleInfoButton name={moduleData.module?.system?.length ? moduleData.module.system.join(", ") : "Any System"} color='#009688' />
+          <ModuleInfoButton name={moduleData.module?.systems?.length ? moduleData.module.systems.join(", ") : "Any System"} color='#009688' />
           <ModuleInfoButton
             name={'Download'}
             color={

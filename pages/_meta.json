@@ -2,9 +2,6 @@
   "index": { "title": "Home", "display": "hidden" },
   "levels": "Levels",
   "levels-3d-preview": "3D Canvas",
-  "other-separator": {
-    "type": "separator"
-  },
   "free": "Free",
   "premium": "Premium",
   "contact": {
