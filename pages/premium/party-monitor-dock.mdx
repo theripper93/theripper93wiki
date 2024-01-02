@@ -11,9 +11,26 @@ A system agnostic HUD that shows party members and their summons/companions in a
 
 ## How to use
 
+<Callout type='warning' emoji='⚠️'>
+  Only actors assigned to players will be available for selection! If you don't know what this means, see the [Assigning Player Characters](#assigning-player-characters) section.
+</Callout>
+
+<Image src="/images/party-monitor-dock/party-hud-controls" alt="Party HUD Interface" className={styles.wikiImage}/>
+
 The module requires [Carousel Combat Tracker](../free/carousel-combat-tracker) to be installed and enabled.
-All the information for tooltips and resources is pulled and mirrored from the combat tracker.
+All the information for tooltips and resources is pulled and mirrored from the Carousel Combat Tracker Configuration.
 
 - Hover over the HUD to show the buttons.
 - Toggle the HUD on/off with the button on top of the HUD.
 - Toggle the Scene Controls with the button on top of the HUD.
+- Change the size of the HUD with the buttons on the bottom of the HUD.
+
+### Configuration
+
+<Callout type='warning' emoji='⚠️'>
+  By default the module will only show Connected Players. If you want to show all players, you need to disable the `Only Show Connected Players` option in the module settings.
+</Callout>
+
+The module has a few configuration options that can be found in the module settings.
+
+You can customize the Images used for the edges of the HUD. Some images are included. Leave those fields blank to not display the border.
