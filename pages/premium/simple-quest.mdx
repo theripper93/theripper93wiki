@@ -1,0 +1,50 @@
+import Image from '@/components/Image'
+import ModuleInfo from '@/components/ModuleInfo'
+import styles from '@/components/image.module.css'
+import { Callout } from 'nextra-theme-docs';
+
+# Simple Quest
+
+<ModuleInfo/>
+
+A simple and clean quest management interface with personal and shared notes.
+
+## How to use
+
+### Setting up the quest log
+When you first enable the module, basic journals will be created automatically.
+
+1. Head to your Journals sidebar tab
+2. Open the `Quests` folder
+3. You will see your quest categories (and the `Party` journal which will be explained later)
+4. You can add a Journal Page to these journals to create a new quest, any Ordered or Unordered list will be displayed as a checklist in the Simple Quest interface
+5. Congratulations, you are done! Create all the quests you want and they will be displayed in the Simple Quest interface
+
+### Using the quest log
+
+You can open the Simple Quest interface by clicking the `Simple Quest` button in the `Notes` scene controls or with the `J` hotkey.
+
+If you wish you can create a macro with the following code to toggle the Simple Quest interface:
+
+```js
+ui.simpleQuest.toggle()
+```
+
+### Simple Quest interface
+
+There are 3 main areas in the Simple Quest interface:
+
+1. Navigation bar
+2. Quest list
+3. Quest details
+
+#### Navigation bar
+Here you can select which tab you want to view, the main Quests tab will display your quests while the `My Notes` and `Party Journal` tabs will display your personal and shared notes respectively.
+You can edit your notes by clicking the `Edit` button in the top right corner of the notes area.
+
+#### Quest list
+Here you can see all your quests, you can click on a quest to view its details and click the Arrow button to collapse or expand a category.
+
+#### Quest details
+Here you can see the details of the selected quest, you can edit the quest name and description by clicking the `Edit` button in the top right corner of the details area.
+If your quest has a checklist, you can check or uncheck items by clicking on them. As the GM you can also hide a quest objective by clicking the `Hide` located to the Left of the checkbox. Note that this button is hidden and only displays on Hover.
