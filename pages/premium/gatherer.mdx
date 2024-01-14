@@ -134,3 +134,32 @@ If you have the Better Rolltables module installed, and you set `Better
 Tables Type` to `Better Table` you will be able to set a `formula` for
 each item. In this instance, Gatherer will use that formula instead of
 the quantity specified in the Gatherer Sheet.
+
+## API
+This section contains APIs for advanced users and developers.
+
+### Hooks
+
+#### gathererGather
+
+The `gathererGather` hook, fires just before the items are gathered from the table. It receives the following parameters:
+
+```js
+/**
+ * Object representing gathered data.
+ * @typedef {Object} gathererData
+ * @property {Actor} actor - The actor associated with the gathered data.
+ * @property {Item[]} items - An array of items associated with the gathered data.
+ * @property {number} quantity - The quantity of items in the gathered data.
+ */
+```
+
+Example:
+
+```js
+Hooks.on("gathererGather", (gathererData) => {
+    gathererData.quantity *= 2;
+    gathererData.actor.update({ "data.attributes.hp.value": 0 });
+    gathererData.items = gathererData.items.filter((item) => item.name !== "Rope");
+});
+```
