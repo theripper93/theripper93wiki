@@ -107,6 +107,21 @@ To streamline your experience, the Maps Tab supports several hotkeys for quick a
 
   - **Right Click:** Edit an existing marker.
 
+#### Super Resolution Maps
+Even though the process requires some work, it's possible to get very high resolution maps working smoothly with the Multi Resolution Feature.
+
+In this instance we are talking about maps that are 10000x10000 pixels or more. If you attempt to use a map of this size without the Multi Resolution Feature, you will experience a lot of lag and stuttering when moving around the map.
+
+In order to create a Super Resolution map, follow these steps:
+
+1. Get your source image split into a power of 2 grid (2x2, 3x3, 4x4 etc.). You can do so using image editing software or with an [online tool](https://www.imgonline.com.ua/eng/cut-photo-into-pieces.php).
+2. Make sure the order of your images is left to right, top to bottom. The above online tool will do this automatically.
+3. Close Simple Quest, head to the Journals Sidebar tab and open the `Maps` Journal within the `Quests` folder.
+4. Create a new Journal Page of the type `text`
+5. Add every image in order to the Journal Page, you can do so with the `Insert Image` button in the toolbar.
+6. Save the Journal Page and close the Journal.
+7. Open Simple Quest and head to the Maps tab, you should see your map there.
+
 
 ### Notifications
 By default, Simple Quest will send a toast notification to all users whenever a non secret quest or objective is updated. You can disable this in the module settings.
