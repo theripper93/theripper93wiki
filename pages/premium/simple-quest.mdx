@@ -89,6 +89,21 @@ Welcome to the Maps Tab! This feature is designed to enhance your navigation exp
 - **Open Marker:**
   - Left-click on a marker to open its associated notes or quest details. This feature provides a convenient way to access additional information about specific locations.
 
+#### Fog of War
+
+<Callout type='warning' emoji='⚠️'>
+  Simple quest utilizes a Poligonal fog of war implementation. Compared to the Scene image based one, this implementation is much more performant but comes with some limitations. Mainly Holes with holes will produce unexpected results. Try to avoid using them.
+</Callout>
+
+The Maps Tab also supports the Fog of War feature, allowing you to hide certain areas of the map from players. This feature is especially useful for revealing new areas as players explore the map.
+To use the Fog of War feature, follow these steps:
+
+- Click the `Reset fog of war` button to initialize the fog of war for the current map.
+- Shift + Left-click on the map to hide areas on the map.
+- Shift + Right-click on the map to reveal areas on the map.
+- Use the brush size slider to adjust the size of the brush used to hide or reveal areas on the map.
+
+
 #### Hotkeys
 
 To streamline your experience, the Maps Tab supports several hotkeys for quick and efficient navigation:
