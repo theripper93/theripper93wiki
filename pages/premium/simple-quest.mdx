@@ -129,6 +129,57 @@ For maps this large, you can take an extra step to make the experience even smoo
 After following the steps above, create a low resolution version (4K or less) of your map and set it as the first image in the Journal Page.
 This image will be used when the zoom level is low and will be replaced by the high resolution version when zooming in.
 
+If you are technical enough, you can also use this Python script to automate the process of splitting the image into a grid and creating the low resolution version.
+
+<details>
+<summary>Python script</summary>
+
+Note that the script requires the [Pillow](https://pillow.readthedocs.io/en/stable/) library.
+You can install it with:
+
+```bash
+pip install Pillow
+```
+
+
+```python
+from PIL import Image
+import os
+
+Image.MAX_IMAGE_PIXELS = None
+
+def split_and_resize_image(image_path, num_splits):
+    original_image = Image.open(image_path)
+    width, height = original_image.size
+    sub_image_width = width // num_splits
+    sub_image_height = height // num_splits
+    output_folder = 'sub_images'
+    os.makedirs(output_folder, exist_ok=True)
+
+    shorter_side = min(width, height)
+    new_width = 2048 * width // shorter_side
+    new_height = 2048 * height // shorter_side
+    low_resolution = original_image.resize((new_width, new_height))
+    low_resolution.save(os.path.join(output_folder, 'sub_image_0.png'))
+
+    for i in range(num_splits):
+        for j in range(num_splits):
+            left = j * sub_image_width
+            upper = i * sub_image_height
+            right = left + sub_image_width
+            lower = upper + sub_image_height
+            sub_image = original_image.crop((left, upper, right, lower))
+            filename = f"sub_image_{i * num_splits + j + 1}.png"
+            sub_image.save(os.path.join(output_folder, filename))
+
+if __name__ == "__main__":
+    image_path = input("Enter the image file name - The image should be in the same folder as this script: ")
+    num_splits = int(input("Enter the number of splits (same vertically and horizontally): "))
+    split_and_resize_image(image_path, num_splits)
+```
+
+</details>
+
 
 ### Notifications
 By default, Simple Quest will send a toast notification to all users whenever a non secret quest or objective is updated. You can disable this in the module settings.
