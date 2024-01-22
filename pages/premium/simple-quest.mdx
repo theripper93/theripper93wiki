@@ -235,6 +235,35 @@ You can replace `quest` with any of the additional callout types:
 - `event`
 - `time`
 
+### Custom Page Inserts
+
+Simple Quest adds custom page inserts you can add to your journals, for example to make some text contained within a Book page, a parchement note or a scroll.
+
+To use a custom page insert, edit the html of the journal page and add a page insert as follows:
+
+```html
+<p class="parchment-note-1">
+  This is the content of the page insert
+</p>
+```
+You can also add `initial` to make the first letter of the text larger:
+
+```html
+<p class="parchment-note-1 initial">
+  This is the content of the page insert
+</p>
+```
+
+You can replace `parchment-note-1` with any of the additional page inserts:
+
+- `parchment-note-1`
+- `parchment-note-2`
+- `parchment-note-3`
+- `parchment-note-4`
+- `parchment-book-1`
+- `parchment-book-2`
+- `parchment-scroll-1`
+
 ### 3D Portraits Integration
 
 If you have 3D Portraits enabled, 3D Models can be rendered within Quests, to do so, follow these steps:
