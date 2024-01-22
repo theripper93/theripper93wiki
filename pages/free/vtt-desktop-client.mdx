@@ -22,7 +22,7 @@ So, what i can say for certain is. If you are using chrome with a lot of extensi
 ## Customization
 
 <Callout type="info" emoji="ℹ️">
-If you used the Setup to install the client, you can find the `config.json` file in the `C:\Users\%your_user_name%\AppData\Local\vtt_player_client\app-%version%` folder.
+If you used the Setup to install the client, you can find the `config.json` file in the `C:\Users\%your_user_name%\AppData\Local\vtt_player_client\app-%version%\resources` folder.
 </Callout>
 
 You can pre-configure and customize the client by editing the `config.json` file. From where the executable is located, you can find the `config.json` file by navigating to the `resources/app` folder. You can edit the file with any text editor.
@@ -46,7 +46,8 @@ This is an example configuration file:
     "background": "https://url-to-my-img.com/img.jpg",
     "backgroundColor": "#000000",
     "textColor": "white",
-    "accentColor": "hsl(0, 100%, 50%)"
+    "accentColor": "hsl(0, 100%, 50%)",
+    "ignoreCertificateErrors": false
 }
 ```
 
@@ -82,22 +83,8 @@ While this flag could be directly added to the application, therefore avoiding t
 
 While it's suggested to setup a valid SSL certificate for your VTT, if you are using a self-signed certificate or your certificate is invalid, you can follow this procedure:
 
-1. Locate the `vtt-desktop-client.exe` file.
-2. Create a shortcut to the executable.
-3. Right click on the shortcut and select `Properties`.
-4. In the `Target` field, add the following at the end of the path: ` --ignore-certificate-errors`.
-5. Click `Apply` and `OK`.
-
-If you wish to embed the flag directly in the application, you can follow this procedure:
-
-1. Locate the `vtt-desktop-client.exe` file.
-2. Navigate to the `resources/app` folder.
-3. Open the `main.js` file with a text editor.
-4. Locate the `app.commandLine.appendSwitch("force_high_performance_gpu");` line at the beginning of the file.
-5. Add this new line below it `app.commandLine.appendSwitch("ignore-certificate-errors");`.
-6. Save the file.
-
-If you distribute this modified version of the application to your players they won't have to follow the shortcut procedure.
+1. Locate the Configuration File or use the Configuration Menu within the application
+2. Set the `ignoreCertificateErrors` property to `true`
 
 ## Pop Outs
 
