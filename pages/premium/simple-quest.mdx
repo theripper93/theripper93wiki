@@ -210,6 +210,31 @@ Simple Quest adds a custom enricher to display time left on a journal. Simply us
 @time[yyyy/mm/dd, hh:mm]
 ```
 
+### Custom Callouts
+
+<Image
+  src='/images/simple-quest/simple-quest-callouts.png'
+  alt='Simple Quest Callouts'
+  className={styles.wikiImage}
+/>
+
+Simple quest adds CSS styles for custom callouts as shown in the image. To use a custom callout, edit the html of the journal page and add a callout as follows:
+
+```html
+<p class="notification quest">
+  This is the content of the callout
+</p>
+```
+
+You can replace `quest` with any of the additional callout types:
+
+- `quest`
+- `creature`
+- `magic`
+- `item`
+- `event`
+- `time`
+
 ### 3D Portraits Integration
 
 If you have 3D Portraits enabled, 3D Models can be rendered within Quests, to do so, follow these steps:
