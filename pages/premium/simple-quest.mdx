@@ -209,3 +209,18 @@ Simple Quest adds a custom enricher to display time left on a journal. Simply us
 @time[1430/02/05, 03:29]
 @time[yyyy/mm/dd, hh:mm]
 ```
+
+### 3D Portraits Integration
+
+If you have 3D Portraits enabled, 3D Models can be rendered within Quests, to do so, follow these steps:
+
+- Create an image element in your quest, you can use any image (for example a static image of the model)
+- The size of the image will determine the 3D view port
+- Click the Edit HTML button in the journal page toolbar
+- Add the data-model3d attribute to the image element and set it to the path of the model
+
+Your image element should look like this:
+
+```html
+<img data-model3d="path/to/3dModel.glb" src="path/to/static/image.png">
+```
