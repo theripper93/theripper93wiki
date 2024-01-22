@@ -83,6 +83,14 @@ While this flag could be directly added to the application, therefore avoiding t
 
 While it's suggested to setup a valid SSL certificate for your VTT, if you are using a self-signed certificate or your certificate is invalid, you can follow this procedure:
 
+From the Configuration Menu:
+
+1. Open the Configuration Menu
+2. Enable the `Ignore Certificate Errors` option
+3. Save the configuration and restart the client
+
+From the Configuration File:
+
 1. Locate the Configuration File
 2. Set the `ignoreCertificateErrors` property to `true`
 3. Save the file and restart the client
