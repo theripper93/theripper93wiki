@@ -1,7 +1,7 @@
 import Image from '@/components/Image'
 import ModuleInfo from '@/components/ModuleInfo'
 import styles from '@/components/image.module.css'
-import { Callout } from 'nextra-theme-docs';
+import { Callout, Tab, Tabs } from "nextra-theme-docs";
 
 # Simple Quest
 
@@ -9,20 +9,11 @@ import { Callout } from 'nextra-theme-docs';
 
 A simple and clean quest management interface with personal and shared notes.
 
-## How to use
+## Basics
 
 <Callout type='warning' emoji='⚠️'>
     Note that players should not have Ownership of the quests journals - if you give them ownership they will be able to edit the quests but they will also see hidden objectives.
 </Callout>
-
-### Setting up the quest log
-When you first enable the module, basic journals will be created automatically.
-
-1. Head to your Journals sidebar tab
-2. Open the `Quests` folder
-3. You will see your quest categories (and the `Party` journal which will be explained later)
-4. You can add a Journal Page to these journals to create a new quest, any Ordered or Unordered list will be displayed as a checklist in the Simple Quest interface
-5. Congratulations, you are done! Create all the quests you want and they will be displayed in the Simple Quest interface
 
 ### Using the quest log
 
@@ -32,7 +23,7 @@ When you first enable the module, basic journals will be created automatically.
   className={styles.wikiImage}
 />
 
-You can open the Simple Quest interface by clicking the `Simple Quest` button in the `Notes` scene controls or with the `J` hotkey.
+You can open the Simple Quest interface by clicking the `Simple Quest` button in the `Notes` scene controls or with the `J` hotkey. A button in the Journals sidebar tab is also added for convenience.
 
 If you wish you can create a macro with the following code to toggle the Simple Quest interface:
 
@@ -40,29 +31,43 @@ If you wish you can create a macro with the following code to toggle the Simple 
 ui.simpleQuest.toggle()
 ```
 
-### Simple Quest interface
+### Setting up the quest log
+When you first enable the module, basic journals will be created automatically.
 
-There are 3 main areas in the Simple Quest interface:
+1. Open Simple Quest
+2. Click the `Add Quest` button in the top right corner of the Quests List section
+3. Enter a name for the quest and add the text you desire, it's just a regular Journal Page.
+4. Ordered and unordered lists will be converted to checklists in the quest log.
+5. Save the Journal Page and you are done! You created your first quest.
 
-1. Navigation bar
-2. Quest list
-3. Quest details
-
-#### Navigation bar
-Here you can select which tab you want to view, the main Quests tab will display your quests while the `My Notes` and `Party Journal` tabs will display your personal and shared notes respectively.
+### Navigation bar
+Here you can select which tab you want to view, the main `Quests` tab will display your quests while the `My Notes` and `Party Journal` tabs will display your personal and shared notes respectively.
 You can edit your notes by clicking the `Edit` button in the top right corner of the notes area.
 
-#### Quest list
+The `Maps` tab will be discussed in the Maps section below.
+
+
+## Quests Tab
+
+There are 2 main areas in the Quests Tab interface:
+
+1. Quest list
+2. Quest details
+
+
+### Quest list
 Here you can see all your quests, you can click on a quest to view its details and click the Arrow button to collapse or expand a category.
 
-##### Hiding a quest
+On the Top Right corner of the quest list you can find buttons to add a new quest or category.
+
+#### Hiding a quest
 As the GM you can hide a quest from the players by clicking the `Hide` located to the Left of the quest name. Note that this button is hidden and only displays on Hover.
 
-#### Quest details
+### Quest details
 Here you can see the details of the selected quest, you can edit the quest name and description by clicking the `Edit` button in the top right corner of the details area.
 This area also includes a `Delete` and `Duplicate` buttons as well as a dropdown to move the quest to a different journal.
 
-##### Objectives
+#### Objectives
 If your quest has a checklist, you can check or uncheck items by clicking on them.
 
 - Left click to check or uncheck an item
@@ -70,7 +75,7 @@ If your quest has a checklist, you can check or uncheck items by clicking on the
 
 As the GM you can also hide a quest objective by clicking the `Hide` located to the Left of the checkbox. Note that this button is hidden and only displays on Hover.
 
-### Maps Tab
+## Maps Tab
 
 <Image
   src='/images/simple-quest/simple-quest-map.png'
@@ -80,31 +85,30 @@ As the GM you can also hide a quest objective by clicking the `Hide` located to 
 
 Welcome to the Maps Tab! This feature is designed to enhance your navigation experience and help you keep track of important locations in a user-friendly manner. The Maps Tab provides various functionalities, making it a valuable tool for organizing, annotating, and exploring maps.
 
-#### Basic Navigation
+### Basic Navigation
 
-- **Pan the Map:**
-  - Click and drag on the map to move around and explore different areas.
+- **Pan the Map:** Click and drag on the map to move around and explore different areas.
 
-- **Zoom In/Out:**
-  - Use the scroll wheel on your mouse to zoom in and out of the map for a more detailed or broader view.
+- **Zoom In/Out:** Use the scroll wheel on your mouse to zoom in and out of the map for a more detailed or broader view.
 
-#### Adding Markers
+### Configuring Markers
 
-- **Add Marker:**
-  - Right-click on the map to add a marker at the selected location.
+- **Add Marker:** Right-click on the map to add a marker at the selected location.
 
-- **Edit Marker:**
-  - Right-click on an existing marker to edit its details. This feature allows you to modify the marker's name, description, or any other relevant information.
+- **Edit Marker:** Right-click on an existing marker to edit its details.
 
-#### Interacting with Markers
+- **Move Marker:** Hold the Right-click button on an existing marker to drag it to a different location.
 
-- **Open Marker:**
-  - Left-click on a marker to open its associated notes or quest details. This feature provides a convenient way to access additional information about specific locations.
+### Interacting with Markers
 
-#### Fog of War
+- **Open Marker:** Left-click on a marker to open its associated notes or quest details. If you associated a Scene to the marker, the scene will be viewed by the user.
+
+- **Toggle Hidden Status:** Hold the Alt key and Left-click on an existing marker to toggle its hidden status.
+
+### Fog of War
 
 <Callout type='warning' emoji='⚠️'>
-  Simple quest utilizes a Poligonal fog of war implementation. Compared to the Scene image based one, this implementation is much more performant but comes with some limitations. Mainly Holes with holes will produce unexpected results. Try to avoid using them.
+  Markers will be visible through the Fog of War, make sure to hide them if you want to keep them hidden from players.
 </Callout>
 
 The Maps Tab also supports the Fog of War feature, allowing you to hide certain areas of the map from players. This feature is especially useful for revealing new areas as players explore the map.
@@ -113,28 +117,12 @@ To use the Fog of War feature, follow these steps:
 - Click the `Reset fog of war` button to initialize the fog of war for the current map.
 - Shift + Left-click on the map to hide areas on the map.
 - Shift + Right-click on the map to reveal areas on the map.
-- Use the brush size slider to adjust the size of the brush used to hide or reveal areas on the map.
+- Use the brush size slider or Shift + Mouse Wheel to adjust the size of the brush used to hide or reveal areas on the map.
 
+### Super Resolution Maps
 
-#### Hotkeys
-
-To streamline your experience, the Maps Tab supports several hotkeys for quick and efficient navigation:
-
-- **Pan the Map:**
-  - **Click + Drag:** Hold down the left mouse button and drag to pan the map.
-
-- **Zoom In/Out:**
-  - **Scroll:** Use the scroll wheel on your mouse to zoom in and out of the map.
-
-- **Adding Markers:**
-  - **Right Click:** Add a marker at the location where you right-click on the map.
-
-- **Interacting with Markers:**
-  - **Left Click:** Open a marker's notes or quest details.
-
-  - **Right Click:** Edit an existing marker.
-
-#### Super Resolution Maps
+<details>
+<summary>This is an advanced feature, click to expand</summary>
 Even though the process requires some work, it's possible to get very high resolution maps working smoothly with the Multi Resolution Feature.
 
 In this instance we are talking about maps that are 10000x10000 pixels or more. If you attempt to use a map of this size without the Multi Resolution Feature, you will experience a lot of lag and stuttering when moving around the map.
@@ -149,7 +137,7 @@ In order to create a Super Resolution map, follow these steps:
 6. Save the Journal Page and close the Journal.
 7. Open Simple Quest and head to the Maps tab, you should see your map there.
 
-##### Very large maps (16k+)
+**For Very large maps (16k+)**
 
 For maps this large, you can take an extra step to make the experience even smoother.
 
@@ -207,13 +195,15 @@ if __name__ == "__main__":
 
 </details>
 
+</details>
 
-### Notifications
+
+## Notifications
 By default, Simple Quest will send a toast notification to all users whenever a non secret quest or objective is updated. You can disable this in the module settings.
 
-### Custom Enrichers
+## Custom Enrichers
 
-#### @time (Requires Simple Calendar)
+### @time (Requires Simple Calendar)
 
 Simple Quest adds a custom enricher to display time left on a journal. Simply use the time enricher as in the example:
 
@@ -222,7 +212,7 @@ Simple Quest adds a custom enricher to display time left on a journal. Simply us
 @time[yyyy/mm/dd, hh:mm]
 ```
 
-### Custom Callouts
+## Custom Journal Elements
 
 <Image
   src='/images/simple-quest/simple-quest-callouts.png'
@@ -230,59 +220,13 @@ Simple Quest adds a custom enricher to display time left on a journal. Simply us
   className={styles.wikiImage}
 />
 
-Simple quest adds CSS styles for custom callouts as shown in the image. To use a custom callout, edit the html of the journal page and add a callout as follows:
+Simple Quest adds custom Journal Elements you can use to style your quests. You can find them in the Journal Editor toolbar under the `Format` dropdown.
 
-```html
-<p class="notification quest">
-  This is the content of the callout
-</p>
-```
+- **Callouts:** Callouts are used to highlight important information in your quests.
+- **Inserts:** Inserts are used to frame paragraphs with a Parchment, Scroll, or Book style. It will dynamically scale to fit the content.
+- **Large initial letter:** This will make the first letter of a paragraph larger and more prominent.
 
-You can replace `quest` with any of the additional callout types:
-
-- `quest`
-- `creature`
-- `magic`
-- `item`
-- `event`
-- `time`
-
-### Custom Page Inserts
-
-<Image
-  src='/images/simple-quest/simple-quest-insert.png'
-  alt='Simple Quest Insert'
-  className={styles.wikiImage}
-/>
-
-Simple Quest adds custom page inserts you can add to your journals, for example to make some text contained within a Book page, a parchement note or a scroll.
-
-To use a custom page insert, edit the html of the journal page and add a page insert as follows:
-
-```html
-<p class="parchment-note-1">
-  This is the content of the page insert
-</p>
-```
-You can also add `initial` to make the first letter of the text larger:
-
-```html
-<p class="parchment-note-1 initial">
-  This is the content of the page insert
-</p>
-```
-
-You can replace `parchment-note-1` with any of the additional page inserts:
-
-- `parchment-note-1`
-- `parchment-note-2`
-- `parchment-note-3`
-- `parchment-note-4`
-- `parchment-book-1`
-- `parchment-book-2`
-- `parchment-scroll-1`
-
-### 3D Portraits Integration
+## 3D Portraits Integration
 
 If you have 3D Portraits enabled, 3D Models can be rendered within Quests, to do so, follow these steps:
 
