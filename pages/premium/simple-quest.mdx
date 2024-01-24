@@ -240,3 +240,20 @@ Your image element should look like this:
 ```html
 <img data-model3d="path/to/3dModel.glb" src="path/to/static/image.png">
 ```
+
+## Macros
+
+### Open Simple Quest on a specific quest or map
+
+```js
+ui.simpleQuest.openToPage(uuid)
+```
+
+### Open Simple Quest on a specific tab
+
+Valid tabs are `quests`, `map`, `my-journal`, `party-journal`
+
+```js
+ui.simpleQuest.toggle()
+Hooks.once("renderSimpleQuest",()=>{ui.simpleQuest.activateTab("party-journal")})
+```
