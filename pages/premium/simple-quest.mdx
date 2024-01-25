@@ -219,6 +219,20 @@ Simple Quest adds a custom enricher to display time left on a journal. Simply us
 @time[yyyy/mm/dd, hh:mm]
 ```
 
+### @QUEST
+
+The quest enricher will, instead of opening a journal page, open the Simple quest interface on that specific quest.
+
+To create this enricher, the easy way is to drag the quest journal page onto anything then replace the `UUID` part of the content link with `QUEST`.
+
+For example, if your quest journal page has the following content link:
+
+```
+@QUEST[UUID]{Quest Name}
+```
+
+Clicking on the link will open the Simple Quest interface on that specific quest.
+
 ## Custom Journal Elements
 
 <Image
