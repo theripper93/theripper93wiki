@@ -31,6 +31,13 @@ If you wish you can create a macro with the following code to toggle the Simple 
 ui.simpleQuest.toggle()
 ```
 
+or to open it directly to a specific tab:
+
+```js
+ui.simpleQuest.openToTab('quests')
+```
+Valid tabs are `quests`, `map`, `my-journal`, `party-journal`
+
 ### Setting up the quest log
 When you first enable the module, basic journals will be created automatically.
 
@@ -247,13 +254,4 @@ Your image element should look like this:
 
 ```js
 ui.simpleQuest.openToPage(uuid)
-```
-
-### Open Simple Quest on a specific tab
-
-Valid tabs are `quests`, `map`, `my-journal`, `party-journal`
-
-```js
-ui.simpleQuest.toggle()
-Hooks.once("renderSimpleQuest",()=>{ui.simpleQuest.activateTab("party-journal")})
 ```
