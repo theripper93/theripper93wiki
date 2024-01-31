@@ -25,19 +25,6 @@ A simple and clean quest management interface with personal and shared notes.
 
 You can open the Simple Quest interface by clicking the `Simple Quest` button in the `Notes` scene controls or with the `J` hotkey. A button in the Journals sidebar tab is also added for convenience.
 
-If you wish you can create a macro with the following code to toggle the Simple Quest interface:
-
-```js
-ui.simpleQuest.toggle()
-```
-
-or to open it directly to a specific tab:
-
-```js
-ui.simpleQuest.openToTab('quests')
-```
-Valid tabs are `quests`, `map`, `my-journal`, `party-journal`
-
 ### Setting up the quest log
 When you first enable the module, basic journals will be created automatically.
 
@@ -264,8 +251,30 @@ Your image element should look like this:
 
 ## Macros
 
+### Toggle the Simple Quest interface:
+
+```js
+ui.simpleQuest.toggle()
+```
+
 ### Open Simple Quest on a specific quest or map
 
 ```js
 ui.simpleQuest.openToPage(uuid)
 ```
+
+### Open Simple Quest on a specific tab
+
+```js
+ui.simpleQuest.openToTab('quests')
+```
+Valid tabs are `quests`, `map`, `my-journal`, `party-journal`
+
+### Convert Scene to Map
+You can convert the currently viewed scene to a map by running the following macro:
+
+```js
+ui.simpleQuest.sceneToMap()
+```
+
+Notes on the map will be converted to Markers.
