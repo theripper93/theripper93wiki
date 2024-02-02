@@ -279,6 +279,37 @@ ui.simpleQuest.sceneToMap()
 
 Notes on the map will be converted to Markers.
 
+### Macro-Linked Markers
+
+If a marker is linked to a macro, the macro will be executed when the marker is clicked.
+The macro will receive the marker data as an argument.
+
+```js
+/*log the marker data*/
+console.log(scope)
+```
+
+```js
+/**
+ * Represents a marker used in a mapping or journaling system.
+ * @typedef {Object} Marker
+ * @property {string} title - The user-defined name for the marker.
+ * @property {boolean} displayLabel - Determines whether to display a label for the marker.
+ * @property {string} description - A brief description providing additional information about the marker.
+ * @property {string} journal - Identifies the entity associated with the marker. (in this case the Macro being executed)
+ * @property {string} color - Specifies the color of the marker.
+ * @property {boolean} hidden - Indicates whether the marker is hidden.
+ * @property {number} scale - Defines the scale of the marker.
+ * @property {string} icon - Specifies the icon or image used to represent the marker on the map.
+ * @property {number} x - The X coordinate of the marker's position on the map. 0 to 1 in relation to the map size.
+ * @property {number} y - The Y coordinate of the marker's position on the map. 0 to 1 in relation to the map size.
+ * @property {string} id - A unique identifier for the marker.
+ * @property {JournalEntryPage} map - The map journal page associated with the marker.
+ */
+```
+
+
+
 ## Known issues
 
 - Due to a [Core Foundry VTT bug](https://github.com/foundryvtt/foundryvtt/issues/10354) journals might randomly pop up while editing a page. Unfortunately this is scheduled to be fixed in V12. In the mean time you can minimize the Journal to somewhat sidestep the issue.
