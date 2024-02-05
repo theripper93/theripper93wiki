@@ -206,7 +206,7 @@ Simple Quest adds a custom enricher to display time left on a journal. Simply us
 @time[yyyy/mm/dd, hh:mm]
 ```
 
-### @QUEST
+### @QUEST / @LORE / @MAP
 
 The quest enricher will, instead of opening a journal page, open the Simple quest interface on that specific quest.
 
@@ -219,6 +219,20 @@ For example, if your quest journal page has the following content link:
 ```
 
 Clicking on the link will open the Simple Quest interface on that specific quest.
+
+The other enrichers work the same way, just replace `QUEST` with `LORE` or `MAP`.
+
+### @COUNT
+
+Creates a counter within the Journal page that can be incremented or decremented by left and right clicking on it.
+
+Create this enricher using the following syntax:
+
+```
+@COUNT[counterId]{maxValue}
+```
+
+Where `counterId` is a unique identifier for the counter and `maxValue` is the maximum value the counter can reach. Note that you can use the same id for multiple counters, they will all share the same value. Using same IDs on different pages will not share the value.
 
 ## Custom Journal Elements
 
