@@ -1,6 +1,5 @@
 {
   "config-presets": "Config Presets",
-  "dnd5e-system-customizer": "DnD5e - System Customizer",
   "dynamic-soundscapes": "Dynamic Soundscapes",
   "epic-rolls-5e": "Epic Rolls 5e",
   "filepicker-plus": "Filepicker+",
@@ -23,6 +22,7 @@
   "damage-numbers": "RPG Damage Numbers",
   "simple-quest": "Simple Quest",
   "situational-shortcuts": "Situational Shortcuts",
+  "dnd5e-system-customizer": "System Customizer",
   "foundry-taskbar": "Taskbar",
   "tidbits": "Tidbits",
   "tokenflip": "Token Flip",

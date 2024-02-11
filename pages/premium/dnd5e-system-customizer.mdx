@@ -3,24 +3,42 @@ import ModuleInfo from '@/components/ModuleInfo'
 import styles from '@/components/image.module.css'
 import { Callout } from 'nextra-theme-docs';
 
-# DnD5e - System Customizer
+# System Customizer
 
 <ModuleInfo/>
 
-Customize the D&D5e system to your liking.
+Customize your system to your liking. Note that this is an advanced tool, you'll be able to customize most aspect of your system but the specific things you can change will depend on the system you are using.
+
+## Is my system supported?
+
+This module uses a generic implementation to allow customization of many systems, however it's not guaranteed that a specific system is setup to accept customizations.
+
+If you want to check in advance if and how your system can be customized, do the following:
+
+- Open the developer console in your browser (usually by pressing F12)
+- Go to the `Console` tab
+- Type `CONFIG.[SystemId]` and press enter (for example `CONFIG.DND5E`)
+- If the system is supported, you will see a list of settings that you can customize
+
+## What can I customize?
+
+The settings you can customize will depend on the system you are using.
+Generally, most of the things availeble in the System Customizer interface will be editable, but depending on how the system has been developed some might not have any effect.
 
 ## How to use
 
-Simply head to the `Configure Settings` menu, then head to the 'DnD5e - System Customizer' customization menu.
+Simply head to the `Configure Settings` menu, then head to the `System Customizer` tab then open the `JSON Editor`.
 
-## Limitations
+### Using the JSON Editor
 
-None currently known.
+The JSON editor allows you to edit the settings of your system in a more advanced way.
 
-## Incompatibilities
+To add a customization, the best way is to duplicate an existing setting and then modify it to your liking:
 
-### Token Magic FX
-
-There is currently an unknown incompatibility with the Token Magic FX module. When the module is enabled you will be unable to save/edit your settings.
-
-There is a simple workaround for this issue. Simply disable the Token Magic FX module, save your settings, then re-enable the Token Magic FX module.
+- Navigate the Tree View to find the setting you want to modify. For example in the D&D 5e system, you can find the `abilities` key and expand it.
+- This entry will contain a list of properties, in our example `str`, `dex`, `con` etc...
+- Duplicate one of the entries by clicking the `Actions Menu` button (a window looking icon) on the left of the entry and selecting `Duplicate`.
+- Rename the duplicated key of the entry, for example `str` to `wts`.
+- Expand the duplicated entry and modify the properties to your liking.
+- Click the `Save Changes` button to save your changes.
+- Refresh the page to see the changes.
