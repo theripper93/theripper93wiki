@@ -22,11 +22,13 @@ A simple widget to play youtube videos in Foundry VTT with playlist functionalit
 ## FAQ
 
 ### Can I hide the video?
-No, the video is always visible to all players, hiding it is against Youtube's terms of service. The module can't support this feature.
-Note that if you were to hide the video using CSS, the audio would still be played, so it's not a good solution.
+Unfortunately, hiding the video is not an option as it contravenes YouTube's terms of service. For this reason, the module does not accommodate this feature.
+
+It's worth noting that attempting to hide the video using CSS would not fully resolve the issue as the audio would still be audible, rendering it an inadequate solution.
 
 ### How do ADs work?
-The module uses the youtube API to play videos, if the video has ADs, they will be played as well. If you are logged in in the same browser and you have Youtube Premium, the ADs will be skipped.
-Note that ADs are handled indipendently for each user, so if a user has Youtube Premium and another doesn't, the ADs will be skipped only for the user with Premium.
+The module utilizes the YouTube API to stream videos, which includes any accompanying advertisements. If the video contains ads, they will be displayed during playback. However, if you are logged into the same browser with a YouTube Premium subscription, ads will be automatically skipped.
 
-Note that due to the fact that the module autoplays the video, it's possible that the ADs are not played at all. But this is not an intended feature.
+It's important to understand that ad handling is user-specific. Therefore, if one user has YouTube Premium while another does not, ads will only be bypassed for the Premium user.
+
+Furthermore, it's worth noting that since the module autoplays videos, there's a possibility that ads might not play at all. However, this is not an intended feature of the module.
