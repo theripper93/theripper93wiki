@@ -19,6 +19,19 @@ A simple widget to play youtube videos in Foundry VTT with playlist functionalit
 - Click the Playlist button to open the playlist interface
 - Hover over buttons to see their functionality
 
+## Enrichers
+
+### @YT
+
+You can use the @YT enricher to add a youtube video link to a Journal, description, or any other field that supports enrichers.
+Note that you need to use the video ID and not the full URL otherwise foundry won't be able to parse it correctly.
+
+```
+@YT[videoId]{Video Title}
+```
+
+Clicking on the link will start the video in the youtube player widget.
+
 ## FAQ
 
 ### Can I hide the video?
