@@ -2,6 +2,7 @@ import Image from '@/components/Image'
 import ModuleInfo from '@/components/ModuleInfo'
 import styles from '@/components/image.module.css'
 import { Callout } from 'nextra-theme-docs';
+import {freemem} from 'os';
 
 # Youtube Player Widge
 
@@ -59,6 +60,11 @@ Furthermore, it's worth noting that since the module autoplays videos, there's a
 ## API
 
 ### Using your own YouTube API Key
+
+<Callout type='info' emoji='ℹ️'>
+  Note that the API Key is free and will allow up to 100 searches per day!
+</Callout>
+
 The module utilizes a public API key to process search and playlist fetch requests. However, this key is subject to usage limits, which can lead you to not be able to perform these actions. To avoid this, you can use your own YouTube API key.
 
 1. **Sign in to Google**: If you don't have a Google account, you'll need to create one. If you already have one, proceed to sign in to your Google account.
