@@ -58,10 +58,36 @@ Furthermore, it's worth noting that since the module autoplays videos, there's a
 
 ## API
 
+### Using your own YouTube API Key
+The module utilizes a public API key to process search and playlist fetch requests. However, this key is subject to usage limits, which can lead you to not be able to perform these actions. To avoid this, you can use your own YouTube API key.
+
+1. **Sign in to Google**: If you don't have a Google account, you'll need to create one. If you already have one, proceed to sign in to your Google account.
+
+2. **Go to Google Cloud Console**: Open your web browser and navigate to the [Google Cloud Console](https://console.cloud.google.com/).
+
+3. **Create a new project (if necessary)**: If you don't have any projects listed or if you want to create a new one, click on the project drop-down menu at the top of the page, then select "New Project". Follow the prompts to create a new project and give it a name.
+
+4. **Enable the YouTube Data API v3**: In the Cloud Console, navigate to the "APIs & Services" > "Library" page using the sidebar menu.
+
+5. **Search for YouTube Data API v3**: In the search bar, type "YouTube Data API v3" and select it from the search results.
+
+6. **Enable the API**: On the YouTube Data API v3 page, click the "Enable" button. This will enable the API for use with your project.
+
+7. **Create API Key**: After enabling the API, go to "APIs & Services" > "Credentials" using the sidebar menu.
+
+8. **Create Credentials**: Click on the "Create Credentials" drop-down menu and select "API key".
+
+9. **Copy your API Key**: Once your API key is created, you will see it displayed on the screen. Copy the API key.
+
+10. **Set up your API Key in Foundry VTT**: In Foundry VTT, navigate to the "Settings" > "Module Settings" > "YouTube Player Widget" page. Paste your API key into the API field.
+
+That's it! You are no longer limited by the public API key usage limits.
+
+
+### CSS
 The module offers some classes you can use to customize the player if you wish to do so. Note that it's against YouTube's terms of service to hide the video, but you can customize other things such as it's border.
 
-
-### Customizing the border for GMs and Players
+#### Customizing the border for GMs and Players
 ```css
 .fvtt-youtube-player-is-gm-true{
     border: 1px solid red;
