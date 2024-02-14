@@ -59,6 +59,16 @@ Furthermore, it's worth noting that since the module autoplays videos, there's a
 
 ## API
 
+### Resetting the Widget position
+
+In the event the window is placed in and undesirable position, you can reset it to the default position by running the following command in the console:
+
+```js
+game.settings.set("fvtt-youtube-player", "windowPosition", { x:0 ,y:0 } )
+```
+
+Refresh the page to see the changes.
+
 ### Using your own YouTube API Key
 
 <Callout type='info' emoji='ℹ️'>
