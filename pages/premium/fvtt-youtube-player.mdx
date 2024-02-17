@@ -59,13 +59,21 @@ It's important to understand that ad handling is user-specific. Therefore, if on
 
 ### Resetting the Widget position
 
-In the event the window is placed in and undesirable position, you can reset it to the default position by running the following command in the console:
+In the event the window is placed in and undesirable position, you can reset it to the default position by running the following command in the console or as a macro:
 
 ```js
 game.settings.set("fvtt-youtube-player", "windowPosition", { x:0 ,y:0 } )
 ```
 
 Refresh the page to see the changes.
+
+### Setting the current video
+
+You can set the current video by running the following macro (GM only):
+
+```js
+game.settings.set("fvtt-youtube-player", "currentVideo", "videoURL")
+```
 
 ### Using your own YouTube API Key
 
