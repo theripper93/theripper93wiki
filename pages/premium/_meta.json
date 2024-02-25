@@ -28,6 +28,6 @@
   "tokenflip": "Token Flip",
   "token-notes": "Token Notes",
   "fvtt-youtube-player": "Youtube Player Widget",
-  "ripper-premium-dice": "Wave Dice",
-  "ripper-premium-dice-ea": "Animated Dice Pack (EA)"
+  "ripper-premium-dice": "Premium Dice",
+  "ripper-premium-dice-ea": {"display": "hidden"}
 }
