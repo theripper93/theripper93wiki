@@ -60,3 +60,19 @@ the top left corner, 1,1 along the bottom right and so on.
 
 The offset is also percentage based and works with the same logic as the
 pivot.
+
+## Macros
+
+### Toggling the Scroll
+
+You can toggle the scroll via macro using this command:
+```js
+tile.document.setFlag("tile-scroll", "enableScroll", !tile.document.getFlag("tile-scroll", "enableScroll"))
+```
+
+### Toggling the Rotation
+
+You can toggle the rotation via macro using this command:
+```js
+tile.document.setFlag("tile-scroll", "enableRotate", !tile.document.getFlag("tile-scroll", "enableRotate"))
+```
