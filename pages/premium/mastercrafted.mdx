@@ -233,6 +233,8 @@ consume: Boolean }`
   `Condition` field, but make sure your lines correctly end with `;`
   as the code will be collapsed to a single line!
 
+### DND5E Condition Examples 
+
 #### Example: Ability Test
 This macro for DnD5e shows how you can make a strength check and return the result. If the check is successful, the crafting will be successful and the ingredients will be consumed. If the check fails, the crafting will fail and the ingredients will still be consumed.
 ```javascript numberLines copy
@@ -278,7 +280,21 @@ return {
 }
 ```
 
-#### Advanced Macros
+### PF2E Condition Examples
+
+#### Example: Crafting Check
+This macro will execute a crafting check using the Crafting skill. If the check is successful, the crafting will be successful and the ingredients will be consumed. If the check fails, the crafting will fail and the ingredients will still be consumed.
+
+```javascript numberLines copy
+const roll = await actor.skills.crafting.roll();
+
+return  {
+    success: roll.total >= 12,
+    consume: true
+};
+```
+
+### Advanced Macros
 For the ones adventurous enough, more information than just the actor is provided to the macro. While no examples will be provided, here is a list with the available variables:
 
 - `actor` - The actor doing the crafting
