@@ -536,6 +536,19 @@ overrides them as well, there could be conflicts.
 If you wish to Override or Wrap the overrides you can do so in the
 `levelsInit(levelsConfig)` hook.
 
+### Elevation updates Flag
+
+When a token's elevation changes, Levels will prevent it if the change causes a collision with a floor (GMs will get a warning but the update will go through). If you want to perform a player side elevation update bypassing this check you need to pass a special flag to the update:
+
+Without the flag:
+```js
+tokenDocument.update({elevation: 10})
+```
+With the flag:
+```js
+tokenDocument.update({elevation: 10, flags: { levels: { stairUpdate: true } } })
+```
+
 ## Other
 
 ### Broken Vision \ Non working Walls
