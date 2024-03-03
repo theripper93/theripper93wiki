@@ -234,6 +234,26 @@ Create this enricher using the following syntax:
 
 Where `counterId` is a unique identifier for the counter and `maxValue` is the maximum value the counter can reach. Note that you can use the same id for multiple counters, they will all share the same value. Using same IDs on different pages will not share the value.
 
+### @TTM
+
+Crates a `Theater of the Mind` display button:
+- Left click to open the Theater of the Mind display for all users, this will display a fullscreen image above the canvas but under the UI.
+- Left click the image to minimize it or maximize it.
+- As a GM, you can right click the image to close it for all users.
+
+Create this enricher using the following syntax:
+
+```
+@TTM[imageUrl]{Title}
+```
+or
+```
+@TTM[imageUrl]{Title|Visible title}
+```
+
+Where `imageUrl` is the path to the image you want to display, `Title` is the title displayed in the button and `Visible title` is the title displayed in the Theater of the Mind display (optional).
+
+
 ## Custom Journal Elements
 
 <Image
