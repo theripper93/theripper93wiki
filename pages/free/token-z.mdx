@@ -8,6 +8,19 @@ import styles from '@/components/image.module.css';
 
 Easily manage the Z-Index of tokens.
 
+## Features
+
+### The Problem
+
+In Foundry VTT tokens are sorted by 2 parameters: Elevation and Z-Index. Is possible to change elevation via the token hud but the z-index field is internal and can't be changed. Token-Z handles this problem.
+
+- Elevation always has priority over Z-Index, tokens with higher elevation will always be on top.
+- Z-Index comes into play when tokens are at the same elevation. In core Foundry whatever token was selected last will be on top. This can be a problem because smaller tokens can end up being covered by larger tokens, making them hard or impossible to select.
+
+### The Solution
+
+Token-Z solves this problem by forcing a token order based on some parameters so that tokens never end up beeing covered by others.
+
 ## Auto Sorting
 
 <Image
