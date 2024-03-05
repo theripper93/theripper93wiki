@@ -252,9 +252,7 @@ This macro for DnD5e shows how you can make a tool check and return the result. 
 ```javascript numberLines copy
 const toolName = "Alchemist's Supplies";
 const DC = 12;
-
-const tool = actor.items.getName(toolName);
-const result = await tool.rollToolCheck();
+const result = await actor.rollToolCheck(toolName);
 return  {
     success: result.total >= DC,
     consume: true
