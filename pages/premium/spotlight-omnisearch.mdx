@@ -16,6 +16,12 @@ A powerful search tool that allows you to search for anything in your game, incl
     This module is currently in Early Access but it will become free for everyone once it's done.
 </Callout>
 
+<Image
+  src='/images/spotlight-omnisearch/spotlight-search1.png'
+  alt='Spotlight Omnisearch'
+  className={styles.wikiImage}
+/>
+
 Spotlight Omnisearch is a powerful tool designed to streamline your search experience. Follow these simple steps to make the most of its features:
 
 - **Opening the Omnisearch**: Use the shortcut `Shift + Space` to quickly open the Spotlight Omnisearch window.
@@ -29,8 +35,107 @@ Spotlight Omnisearch is a powerful tool designed to streamline your search exper
 - **Filtering Results**: You can filter search results by type using the syntax `!item` or `!actor` by appending `!` before your search query.
 
 - **Special Commands**: Spotlight Omnisearch offers special commands for various tasks:
-  - `help`: Access help documentation.
-  - `note`: Create a note or reminder.
-  - `roll`: Roll dice.
-  - `timer`: Set a timer.
-  - Type a mathematical expression directly into the search bar to calculate it.
+  - See the [Applets](#applets) section for more information on how to use applets.
+
+### Document Searches
+
+<Image
+  src='/images/spotlight-omnisearch/spotlight-search2.png'
+  alt='Spotlight Omnisearch'
+  className={styles.wikiImage}
+/>
+
+When searching Spotlight Omnisearch will show first documents imported in your world, then it will show documents in compendiums
+
+#### Special Actions
+
+Some documents will have special actions, for example, Scenes will have Activate and View actions or Journal Entries will have actions to open specific pages.
+
+#### Filtering
+
+<Callout Callout type = 'info' emoji = 'ℹ️' >
+    You don't need to type the full category name when filtering! For example, `!sc` will filter scenes without needing to type `!scene`.
+</Callout>
+
+When you search, you will see that each category of result is separated by a line which also contains it's header or category.
+You can filter using those same words to only show results of that category. In order to filter, you can use the `!` character followed by the category name. For example, `!scene` will only show scenes.
+
+### Applets
+
+Spotlight Omnisearch includes many applets that can be used to perform various tasks. To use an applet simply type it's corresponding keyword (listed below) and then the query (if needed) separated by a space.
+
+#### Calculator
+
+<Image
+  src='/images/spotlight-omnisearch/spotlight-calc.png'
+  alt='Calculator Applet'
+  className={styles.wikiImage}
+/>
+
+To use the calculator applet, you don't need any special keyword, simply type a math expression (e.g. `5 * 3 + (2**5)`) and the result will be calculated. Press Enter or click on the result to copy it to your clipboard.
+
+#### Dice Roller
+
+<Image
+  src='/images/spotlight-omnisearch/spotlight-roll.png'
+  alt='Dice Roller Applet'
+  className={styles.wikiImage}
+/>
+
+- **Keywords:** `roll`, `r:`, `r `
+- **Usage:** `roll 2d6` or `r 1d20 + 5`
+
+Click on the applet or press `Enter` to roll the dice and see the result.
+
+#### Note
+
+<Image
+  src='/images/spotlight-omnisearch/spotlight-note.png'
+  alt='Note Applet'
+  className={styles.wikiImage}
+/>
+
+- **Keywords:** `note`, `n:`, `n `
+- **Usage:** `note This is a note`
+
+Click on the applet or press `Enter` to save the note. It will be saved in a Journal Entry called `Omnisearch Notes [UserName]`.
+A new page will be created for the current Date and every note in that page will be saved with a timestamp.
+
+#### Timer
+
+<Image
+  src='/images/spotlight-omnisearch/spotlight-timer.png'
+  alt='Timer Applet'
+  className={styles.wikiImage}
+/>
+
+- **Keywords:** `timer`, `t:`, `t `, `time`
+- **Usage:** `timer 5m` or `t 1h 30m` or `time 5 30` or `t 30`
+
+Click on the applet or press `Enter` to start the timer. The timer will be always displayed in the Spotlight Omnisearch window if it's running.
+
+#### Tracker
+
+<Image
+  src='/images/spotlight-omnisearch/spotlight-tracker.png'
+  alt='Tracker Applet'
+  className={styles.wikiImage}
+/>
+
+- **Keywords:** `tracker`, `track`, `t:`
+- **Usage:** No text needs to be added
+
+Click on the success or fail squares to interact with the tracker.
+
+#### Counter
+
+<Image
+  src='/images/spotlight-omnisearch/spotlight-counter.png'
+  alt='Counter Applet'
+  className={styles.wikiImage}
+/>
+
+- **Keywords:** `counter`, `c:`, `c `, `count`
+- **Usage:** No text needs to be added
+
+The Counter will give you 4 separate numbers that you can increase or decrease by clicking on the up/down arrows or typing the number directly.
