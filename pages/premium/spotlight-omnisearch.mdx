@@ -60,6 +60,42 @@ Some documents will have special actions, for example, Scenes will have Activate
 When you search, you will see that each category of result is separated by a line which also contains it's header or category.
 You can filter using those same words to only show results of that category. In order to filter, you can use the `!` character followed by the category name. For example, `!scene` will only show scenes.
 
+### What can I search for?
+
+Spotlight Omnisearch can search for a wide variety of things, including:
+
+Certainly! Here's the updated markdown table with the additional information:
+
+| Category                     | Description                                                                                                                                                                                                                              |
+|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Documents**                | Scenes, Journal Entries, Roll Tables, Playlists, Macros, and more.                                                                                                                                                                       |
+|                              | **Journals**: Include Pages as action buttons.                                                                                                                                                                                           |
+|                              | **Journal Pages**: Include actions to jump to a specific header in the table of contents. Images include the `Show Players` action.                                                                                                      |
+|                              | **Scenes**: Include Activate and View actions.                                                                                                                                                                                            |
+|                              | **Roll Tables**: Include Roll action.                                                                                                                                                                                                     |
+|                              | **Playlists**: Include Play action.                                                                                                                                                                                                       |
+|                              | **Macros**: Include Execute action.                                                                                                                                                                                                       |
+| **Compendiums**              | Items, Actors, Scenes, Journals, and more.                                                                                                                                                                                                 |
+| **Documents in Compendiums** | Scenes, Journal Entries, Roll Tables, Playlists, Macros, and more.                                                                                                                                                                         |
+| **Effects**                  | You can search for your System's active effects (e.g. Paralyzed, Blinded, etc).                                                                                                                                                            |
+| **Weather Effects**          | You can search for Weather Effects and click to toggle them on the current Scene (if you have the FX Master module those weathers will also be added).                                                                                    |
+| **Settings**                 | You can search for Foundry settings and click to go to them.                                                                                                                                                                                |
+|                              | **Boolean Settings**: Include actions to toggle the setting.                                                                                                                                                                               |
+|                              | **Menu Settings**: Will open the corresponding menu.                                                                                                                                                                                       |
+| **Owned Items**              | You can search for owned items on your assigned actor and the actors currently selected as tokens on the scene. This includes a Use Item action if your system supports it.                                                              |
+| **Special Commands**         | Helpers to do some common tasks.                                                                                                                                                                                                           |
+|                              | **Index**: Re-index the spotlight search.                                                                                                                                                                                                 |
+|                              | **Lights**: Enable specific light effects on selected tokens (such as torch, flashlights, etc). Search `!light` to see the available options.                                                                                          |
+|                              | **Darkness**: Set the scene darkness level to specific values.                                                                                                                                                                            |
+| **Applets**                  | Special tools to perform specific tasks. See the [Applets](#applets) section for more information.                                                                                                                                         |
+|                              | **Calculator**: Perform math operations.                                                                                                                                                                                                  |
+|                              | **Dice Roller**: Roll dice.                                                                                                                                                                                                               |
+|                              | **Note**: Save a note.                                                                                                                                                                                                                    |
+|                              | **Timer**: Start a timer.                                                                                                                                                                                                                 |
+|                              | **Tracker**: A simple tracker.                                                                                                                                                                                                            |
+|                              | **Counter**: A simple counter.                                                                                                                                                                                                            |
+
+
 ### Applets
 
 Spotlight Omnisearch includes many applets that can be used to perform various tasks. To use an applet simply type it's corresponding keyword (listed below) and then the query (if needed) separated by a space.
@@ -73,6 +109,8 @@ Spotlight Omnisearch includes many applets that can be used to perform various t
 />
 
 To use the calculator applet, you don't need any special keyword, simply type a math expression (e.g. `5 * 3 + (2**5)`) and the result will be calculated. Press Enter or click on the result to copy it to your clipboard.
+
+**Unit Conversion** : You can also convert units by typing `10m` to convert 10 meters to feet, for example.
 
 #### Dice Roller
 
@@ -139,3 +177,21 @@ Click on the success or fail squares to interact with the tracker.
 - **Usage:** No text needs to be added
 
 The Counter will give you 4 separate numbers that you can increase or decrease by clicking on the up/down arrows or typing the number directly.
+
+### Module Integration
+
+#### Splatter
+
+With the Splatter module you get access to the HP related actions: `heal`, `damage`, `kill`, `restore`
+
+#### Item Piles
+
+With the Item Piles module you get access to the `trade` action and special filters for Piles, Merchants and other Item Piles specific actors.
+
+#### Dfreds Convinient Effects
+
+With the Dfreds Convinient Effects module you can search for DFred effects and click to toggle them on selected tokens.
+
+#### Dig Down
+
+With the Dig Down module you can search for files indexed by the module and drag images to the canvas.
