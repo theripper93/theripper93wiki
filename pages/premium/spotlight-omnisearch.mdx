@@ -205,14 +205,11 @@ Spotlight Omnisearch offers a simple API to integrate with other modules. You ca
 To register a search term, you can use the following code:
 
 ```js
-Hooks.on("spotlightOmnisearch.indexBuilt", (INDEX, promises) => {
-  const mySearchTerms = await getMySearchTerms();
+Hooks.on("spotlightOmnisearch.indexBuilt", (INDEX) => {
+  const mySearchTerms = getMySearchTerms();
   INDEX.push(...mySearchTerms);
-  promises.push(...myPromises);
 });
 ```
-
-If the process to create your searchterms is async, you can push a promise to the promises array and it will be awaited before the search is available.
 
 ### Creating a Search Term
 
