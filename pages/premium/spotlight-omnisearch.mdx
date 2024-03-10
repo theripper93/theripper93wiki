@@ -195,3 +195,96 @@ With the Dfreds Convinient Effects module you can search for DFred effects and c
 #### Dig Down
 
 With the Dig Down module you can search for files indexed by the module and drag images to the canvas.
+
+## Developer API
+
+Spotlight Omnisearch offers a simple API to integrate with other modules. You can register your own actions that will be searchable within the Omnisearch.
+
+### Registering a Search Term
+
+To register a search term, you can use the following code:
+
+```js
+Hooks.on("spotlightOmnisearch.indexBuilt", (INDEX, promises) => {
+  const mySearchTerms = await getMySearchTerms();
+  INDEX.push(...mySearchTerms);
+  promises.push(...myPromises);
+});
+```
+
+If the process to create your searchterms is async, you can push a promise to the promises array and it will be awaited before the search is available.
+
+### Creating a Search Term
+
+A search term is an object with the following properties:
+
+```js
+    /**
+     * Creates an instance of BaseSearchTerm.
+     * @constructor
+     * @param {Object} options - The options for creating the search term.
+     * @param {string|Function} options.name - The name or function returning the name of the search term. This will be used to match the search term against a query.
+     * @param {string|Function} [options.nameExtra=""] - The additional name or function returning the additional name of the search term. This will be added to the name but will not be used to match the search term against a query.
+     * @param {string|Function} [options.description=""] - The description or function returning the description of the search term.
+     * @param {Array<string>} [options.keywords=[]] - The array of keywords associated with the search term. This will be used to match the search term against a query.
+     * @param {Array<Function>} [options.actions=[]] - The array of actions associated with the search term.
+     * @param {*} options.dragData - The data associated with the drag action.
+     * @param {string} options.type - The type of the search term. This will be split by space and used to match !type filters.
+     * @param {Object} [options.data={}] - Additional data associated with the search term.
+     * @param {string} options.img - The image URL associated with the search term.
+     * @param {string|Array<string>} options.icon - The icon URL associated with the search term. If 2 icons are provided, they will be rendered on the right of the search term.
+     * @param {Function} [options.onClick=null] - The function to handle click events.
+     * @param {Function} [options.onDragStart=null] - The function to handle drag start events.
+     * @param {Function} [options.onDragEnd=null] - The function to handle drag end events.
+     * @param {Function} [options.match=null] - The function to match the search term against a query. If not provided, the name and keywords will be used to match the search term against a query.
+     * @param {Function} [options.activateListeners=null] - The function to activate listeners for the search term.
+     */
+
+```
+
+Here's an example of a search term, note that every parameter except `name` and `type` is optional:
+
+```js
+    const BaseSearchTerm = CONFIG.SpotlightOmniseach.SearchTerm;
+    const mySearchTerm = new BaseSearchTerm({
+        name: "My Search Term",
+        nameExtra: "<i class='fas fa-dice'></i>",
+        description: "My Search Term Description",
+        keywords: ["my", "search", "term"],
+        actions: [...myActions],
+        dragData: { type: "myType", data: "myData" },
+        type: "myType",
+        data: { myData: "myData" },
+        img: "path/to/image",
+        icon: "fas fa-dice",
+        onClick: (event) => console.log("Clicked", event),
+        onDragStart: (event) => console.log("Drag Start", event),
+        onDragEnd: (event) => console.log("Drag End", event),
+        match: (query) => query === "my search term",
+        activateListeners: (html) => console.log("Activated", html)
+    });
+```
+
+### Creating an Action
+
+An action is an object with the following properties:
+
+```js
+/**
+ * Represents an action associated with a search term.
+ * @typedef {Object} Action
+ * @property {string} name - The name of the action.
+ * @property {string} icon - The icon HTML associated with the action.
+ * @property {Function} callback - The callback function to execute when the action is triggered.
+ */
+```
+
+Here's an example of an action:
+
+```js
+    const myAction = {
+        name: "My Action",
+        icon: "<i class='fas fa-dice'></i>"
+        callback: (event) => console.log("Action Triggered", event)
+    };
+```
