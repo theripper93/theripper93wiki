@@ -236,6 +236,12 @@ Where `counterId` is a unique identifier for the counter and `maxValue` is the m
 
 ### @TTM
 
+<Callout type='info' emoji='ℹ️'>
+Note that the TTM enricher has a couple quirks due to how enricher parsing works: Files that are in the root folder (eg `@TTM[myImage.png]{Title}`) will not work, you need to put them in a subfolder (eg `@TTM[images/myImage.png]{Title}`).
+Remote URLs, such as `@TTM[https://example.com/myImage.png]{Title}` will not work, you need to remove the `https://` part. (eg `@TTM[example.com/myImage.png]{Title}`)
+</Callout>
+
+
 Crates a `Theater of the Mind` display button:
 - Left click to open the Theater of the Mind display for all users, this will display a fullscreen image above the canvas but under the UI.
 - Left click the image to minimize it or maximize it.
