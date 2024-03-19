@@ -1,19 +1,13 @@
-import Image from '@/components/Image'
-import ModuleInfo from '@/components/ModuleInfo'
-import styles from '@/components/image.module.css'
-import { Callout } from 'nextra-theme-docs';
+import Image from "@/components/Image";
+import ModuleInfo from "@/components/ModuleInfo";
+import styles from "@/components/image.module.css";
+import { Callout } from "nextra-theme-docs";
 
 # Argon Combat HUD
 
-<ModuleInfo/>
+<ModuleInfo />
 
-<Image
-  src='/images/Argon/Argon_main_hud.png'
-  alt='Argon Main HUD'
-  
-  
-  className={styles.wikiImageSmall}
-/>
+<Image src='/images/Argon/Argon_main_hud.png' alt='Argon Main HUD' className={styles.wikiImageSmall} />
 
 A Solasta
 inspired HUD to make your games easier for your players and for teaching
@@ -23,60 +17,68 @@ Note that Dungeons & Dragons 5e is the only `First Party` supported system, othe
 This page includes some general information about the module as well as information about the D&D 5e system version.
 Note that other systems may have different features and/or different ways of using the module.
 
-
 ## Basics
 
 <Callout type='warning' emoji='⚠️'>
-Argon was made for Chrome. If you experience weird UI issues, consider switching browsers.
+    Argon was made for Chrome. If you experience weird UI issues, consider switching browsers.
 </Callout>
 
 ### Supported Systems
 
-- [Dungeons & Dragons 5e](https://foundryvtt.com/packages/enhancedcombathud-dnd5e)
-- [Coriolis] (https://foundryvtt.com/packages/enhancedcombathud-yzecoriolis)
-- [Mutant Year Zero](https://foundryvtt.com/packages/enhancedcombathud-mutant-year-zero)
-- [Vaesen](https://foundryvtt.com/packages/enhancedcombathud-vaesen)
-- [Starfinder](https://foundryvtt.com/packages/enhancedcombathud-sfrpg)
-- [Star Wars 5e](https://github.com/sw5e-foundry/enhancedcombathud-sw5e)
+-   [Dungeons & Dragons 5e](https://foundryvtt.com/packages/enhancedcombathud-dnd5e)
+-   [Coriolis] (https://foundryvtt.com/packages/enhancedcombathud-yzecoriolis)
+-   [Dragonbane](https://foundryvtt.com/packages/enhancedcombathud-dragonbane)
+-   [Mutant Year Zero](https://foundryvtt.com/packages/enhancedcombathud-mutant-year-zero)
+-   [Pathfinder 2nd Edition](https://foundryvtt.com/packages/enhancedcombathud-pf2e)
+-   [Vaesen](https://foundryvtt.com/packages/enhancedcombathud-vaesen)
+-   [Starfinder](https://foundryvtt.com/packages/enhancedcombathud-sfrpg)
+-   [Star Wars 5e](https://github.com/sw5e-foundry/enhancedcombathud-sw5e)
+-   [Twilight:2000](https://foundryvtt.com/packages/enhancedcombathud-t2k4e)
+
+
+<Callout type='warning' emoji='⚠️'>
+    Not all systems support all the features listed below. Check the system specific documentation for more information.
+</Callout>
 
 ### Opening the HUD
 
-<Image
-  src='/images/Argon/Hudspells.png'
-  alt='The Spells HUD'
-  
-  
-  className={styles.wikiImageSmall}
-/>
-To open the HUD, click the
-crossed swords icon in the token controls (top left buttons) or click
-the same button in the token hud (right click on a token).
-You can also use the keybind SHIFT+A to toggle the hud.
-
+<Image src='/images/Argon/Hudspells.png' alt='The Spells HUD' className={styles.wikiImageSmall} />
+To open the HUD, click the crossed swords icon in the token controls (top left buttons) or click the same button in the token hud (right click on a token). You can also use the keybind SHIFT+A to toggle the hud.
 
 ### Target Picker
-
-<Callout type='warning' emoji='⚠️'>
-  In order for players to target using the Left mouse button, you'll need to install the [Smart Target](./smarttarget) module.
-As an alternative, players can still use the T key to target.
-</Callout>
 
 When this feature is enabled, whenever you click on an action in the HUD, you will be prompted with a target selection mode.
 While in target selection:
 
- - The number of Selected/Required targets will follow your cursor
- - Left click (or T) to target a token
- - Right click to cancel target selection
- - Press the `+` or `-` key to increase/decrease the number of maximum targets manually
+-   The number of Selected/Required targets will follow your cursor
+-   Left click (or T) to target a token
+-   Right click to cancel target selection
+-   Press the `+` or `-` key to increase/decrease the number of maximum targets manually
 
+### Actor Configuration
 
- ### Macros
+Hover over the Top-Right of the Portrait image in the HUD to reveal the configuration button. This button will allow you to configure the HUD for the actor.
 
- You can use the Argon API to toggle the HUD, you can do so with the following macro:
+### Movement Tracker
 
- ```js
- ui.ARGON.toggle()
-  ```
+A basic movement tracker will track remaining squares of movement during a round. The tracker will turn yellow when getting to dash and turn red when it's exceeded. The implementation may vary between systems.
+
+<Image src='/images/Argon/Argontooltips.png' alt='Tooltips' className={styles.wikiImageSmall} />
+
+### Weapon Sets
+
+Above the portrait are 3 sets of 2 boxes representing equipment loadouts.
+
+-   To add an item to a set, drag & drop it from the character sheet to the weapon sets boxes.
+-   To remove an item, drag it from the weapon sets box to any other location OR right click the item.
+
+### Macros
+
+You can use the Argon API to toggle the HUD, you can do so with the following macro:
+
+```js
+ui.ARGON.toggle();
+```
 
 ## Dungeons & Dragons 5e
 
@@ -85,13 +87,8 @@ While in target selection:
 Expanding the spells panel will show you how many maximum and remaining
 spell slots you have for each level. You can customize visibility of
 prepared spells in the module settings.
-<Image
-  src='/images/Argon/Argonactiontracking.png'
-  alt='Action Tracking'
-  
-  
-  className={styles.wikiImageSmall}
-/>
+
+<Image src='/images/Argon/Argonactiontracking.png' alt='Action Tracking' className={styles.wikiImageSmall} />
 
 ### Action Tracking
 
@@ -102,13 +99,7 @@ actions.
 
 ### Save/Skills/Tools
 
-<Image
-  src='/images/Argon/Weapon_Sets.png'
-  alt='A screenshot of the weapon sets menu'
-  
-  
-  className={styles.wikiImageSmall}
-/>
+<Image src='/images/Argon/Weapon_Sets.png' alt='A screenshot of the weapon sets menu' className={styles.wikiImageSmall} />
 
 This panel provides easy access to the respective checks and tools.
 
@@ -120,32 +111,10 @@ action and the right boxes represents bonus actions.
 NPCs will have their sets created automatically. For PCs simply drag &
 drop items from the character sheet to the weapon sets boxes.
 
-<Image
-  src='/images/Argon/Saveskilltoolshud.png'
-  alt='Saves/Skills/Tools Panel'
-  
-  
-  className={styles.wikiImageSmall}
-/>
-To remove an item drag it from the weapon sets box to the character
-portrait (a trash can will appear). Weapon sets are not limited to
-weapons, for example a caster could use it for frequently used cantrips.
+<Image src='/images/Argon/Saveskilltoolshud.png' alt='Saves/Skills/Tools Panel' className={styles.wikiImageSmall} />
+Weapon sets are not limited to weapons, for example a caster could use it for frequently used cantrips.
 
 By default switching sets will also equip or unequip the items.
-
-### Movement Tracker
-
-A basic movement tracker will track remaining squares of movement during
-<Image
-  src='/images/Argon/Argontooltips.png'
-  alt='Tooltips'
-  
-  
-  className={styles.wikiImageSmall}
-/>
-a round. The tracker will turn yellow when getting to dash and turn red
-when it's exceeded (the third red bar could be used for the rogue double
-dash as well)
 
 ### Tooltips
 
@@ -159,8 +128,8 @@ are client side settings.
 
 To streamline detecting and directing users, there should be an agreed upon naming scheme for the system specific modules:
 
-- Module `id`: `enhancedcombathud-systemid`
-- Module `title`: `Argon - Combat HUD (SYSTEMID)`
+-   Module `id`: `enhancedcombathud-systemid`
+-   Module `title`: `Argon - Combat HUD (SYSTEMID)`
 
 Where one is lowercase and the other is upper case.
 
@@ -177,9 +146,9 @@ If you are a developer and want to add support for a system, feel free to contac
 
 ### Credits
 
-- UI/UX Design by [mouse0270](https://github.com/mouse0270)
+-   UI/UX Design by [mouse0270](https://github.com/mouse0270)
 
 ### Licensing
 
-- All images used are from
-[ttps://game-icons.net/](https://game-icons.net/)
+-   All images used are from
+    [ttps://game-icons.net/](https://game-icons.net/)
