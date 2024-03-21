@@ -1,11 +1,11 @@
-import Image from '@/components/Image'
-import ModuleInfo from '@/components/ModuleInfo'
-import styles from '@/components/image.module.css'
+import Image from "@/components/Image";
+import ModuleInfo from "@/components/ModuleInfo";
+import styles from "@/components/image.module.css";
 import { Callout, Tab, Tabs } from "nextra-theme-docs";
 
 # Simple Quest
 
-<ModuleInfo/>
+<ModuleInfo />
 
 A simple and clean quest management interface with personal and shared notes.
 
@@ -17,15 +17,12 @@ A simple and clean quest management interface with personal and shared notes.
 
 ### Using the quest log
 
-<Image
-  src='/images/simple-quest/simple-quest.png'
-  alt='Simple Quest Interface'
-  className={styles.wikiImage}
-/>
+<Image src='/images/simple-quest/simple-quest.png' alt='Simple Quest Interface' className={styles.wikiImage} />
 
 You can open the Simple Quest interface by clicking the `Simple Quest` button in the `Notes` scene controls or with the `J` hotkey. A button in the Journals sidebar tab is also added for convenience.
 
 ### Setting up the quest log
+
 When you first enable the module, basic journals will be created automatically.
 
 1. Open Simple Quest
@@ -35,11 +32,11 @@ When you first enable the module, basic journals will be created automatically.
 5. Save the Journal Page and you are done! You created your first quest.
 
 ### Navigation bar
+
 Here you can select which tab you want to view, the main `Quests` tab will display your quests while the `My Notes` and `Party Journal` tabs will display your personal and shared notes respectively.
 You can edit your notes by clicking the `Edit` button in the top right corner of the notes area.
 
 The `Maps` tab will be discussed in the Maps section below.
-
 
 ## Quests Tab
 
@@ -48,70 +45,69 @@ There are 2 main areas in the Quests Tab interface:
 1. Quest list
 2. Quest details
 
-
 ### Quest list
+
 Here you can see all your quests, you can click on a quest to view its details and click the Arrow button to collapse or expand a category.
 
 On the Top Right corner of the quest list you can find buttons to add a new quest or category.
 
 #### Hiding a quest
+
 As the GM you can hide a quest from the players by clicking the `Hide` located to the Left of the quest name. Note that this button is hidden and only displays on Hover.
 
 ### Quest details
+
 Here you can see the details of the selected quest, you can edit the quest name and description by clicking the `Edit` button in the top right corner of the details area.
 This area also includes a `Delete` and `Duplicate` buttons as well as a dropdown to move the quest to a different journal.
 
 #### Objectives
+
 If your quest has a checklist, you can check or uncheck items by clicking on them.
 
-- Left click to check or uncheck an item
-- Right click to check as failed
+-   Left click to check or uncheck an item
+-   Right click to check as failed
 
 As the GM you can also hide a quest objective by clicking the `Hide` located to the Left of the checkbox. Note that this button is hidden and only displays on Hover.
 
 ## Maps Tab
 
-<Image
-  src='/images/simple-quest/simple-quest-map.png'
-  alt='Simple Quest Map Tab'
-  className={styles.wikiImage}
-/>
+<Image src='/images/simple-quest/simple-quest-map.png' alt='Simple Quest Map Tab' className={styles.wikiImage} />
 
 Welcome to the Maps Tab! This feature is designed to enhance your navigation experience and help you keep track of important locations in a user-friendly manner. The Maps Tab provides various functionalities, making it a valuable tool for organizing, annotating, and exploring maps.
 
 ### Basic Navigation
 
-- **Pan the Map:** Click and drag on the map to move around and explore different areas.
+-   **Pan the Map:** Click and drag on the map to move around and explore different areas.
 
-- **Zoom In/Out:** Use the scroll wheel on your mouse to zoom in and out of the map for a more detailed or broader view.
+-   **Zoom In/Out:** Use the scroll wheel on your mouse to zoom in and out of the map for a more detailed or broader view.
 
 ### Configuring Markers
 
-- **Add Marker:** Right-click on the map to add a marker at the selected location.
+-   **Add Marker:** Right-click on the map to add a marker at the selected location.
 
-- **Edit Marker:** Right-click on an existing marker to edit its details.
+-   **Edit Marker:** Right-click on an existing marker to edit its details.
 
-- **Move Marker:** Hold the Right-click button on an existing marker to drag it to a different location.
+-   **Move Marker:** Hold the Right-click button on an existing marker to drag it to a different location.
 
 ### Interacting with Markers
 
-- **Open Marker:** Left-click on a marker to open its associated notes or quest details. If you associated a Scene to the marker, the scene will be viewed by the user.
+-   **Open Marker:** Left-click on a marker to open its associated notes or quest details. If you associated a Scene to the marker, the scene will be viewed by the user.
 
-- **Toggle Hidden Status:** Hold the Alt key and Left-click on an existing marker to toggle its hidden status.
+-   **Toggle Hidden Status:** Hold the Alt key and Left-click on an existing marker to toggle its hidden status.
 
 ### Fog of War
 
 <Callout type='warning' emoji='⚠️'>
-  Markers will be visible through the Fog of War, make sure to hide them if you want to keep them hidden from players.
+    Markers will be visible through the Fog of War, make sure to hide them if you want to keep them hidden from players.
 </Callout>
 
 The Maps Tab also supports the Fog of War feature, allowing you to hide certain areas of the map from players. This feature is especially useful for revealing new areas as players explore the map.
 To use the Fog of War feature, follow these steps:
 
-- Click the `Reset fog of war` button to initialize the fog of war for the current map.
-- Shift + Left-click on the map to hide areas on the map.
-- Shift + Right-click on the map to reveal areas on the map.
-- Use the brush size slider or Shift + Mouse Wheel to adjust the size of the brush used to hide or reveal areas on the map.
+-   Click the `Reset fog of war` button to initialize the fog of war for the current map.
+-   Shift + Left-click on the map to hide areas on the map.
+-   Shift + Right-click on the map to reveal areas on the map.
+-   Use the brush size slider or Shift + Mouse Wheel to adjust the size of the brush used to hide or reveal areas on the map.
 
 ### Super Resolution Maps
 
@@ -149,7 +145,6 @@ You can install it with:
 ```bash
 pip install Pillow
 ```
-
 
 ```python
 from PIL import Image
@@ -191,13 +186,43 @@ if __name__ == "__main__":
 
 </details>
 
-
 ## Notifications
+
 By default, Simple Quest will send a toast notification to all users whenever a non secret quest or objective is updated. You can disable this in the module settings.
 
 ## Mindmaps and Charts
 
+Simple Quest supports the use of the [Mermaid](https://mermaid-js.github.io/mermaid/#/) library to create mindmaps and charts in your journal pages.
+If you wish to learn this markdown style charting system, you can find the documentation on the website and use the [Live Editor](https://mermaid.live/) to test your charts.
 
+Once you have your chart, you can include it into a journal as follows:
+
+-   Create a new Journal Page or edit an existing one
+-   Make sure the page is set to the Markdown type
+-   Add the chart to the page using the following syntax:
+
+```markdown
+
+<div class="mermaid">
+
+your chart here
+
+</div>
+
+```
+
+### Example
+
+```markdown
+<div class="mermaid">
+graph TD
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    C -->|One| D[<img style="object-fit: contain;" src='https://iconscout.com/ms-icon-310x310.png' width='40' height='40' />]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[fa:fa-car Car]
+</div>
+```
 
 ## Custom Enrichers
 
@@ -241,56 +266,52 @@ Where `counterId` is a unique identifier for the counter and `maxValue` is the m
 ### @TTM
 
 <Callout type='info' emoji='ℹ️'>
-Note that the TTM enricher has a couple quirks due to how enricher parsing works: Files that are in the root folder (eg `@TTM[myImage.png]{Title}`) will not work, you need to put them in a subfolder (eg `@TTM[images/myImage.png]{Title}`).
-Remote URLs, such as `@TTM[https://example.com/myImage.png]{Title}` will not work, you need to remove the `https://` part. (eg `@TTM[example.com/myImage.png]{Title}`)
+    Note that the TTM enricher has a couple quirks due to how enricher parsing works: Files that are in the root folder (eg `@TTM[myImage.png]{Title}`) will not work, you need to put them in a subfolder (eg `@TTM[images/myImage.png]{Title}`). Remote URLs, such as `@TTM[https://example.com/myImage.png]{Title}` will not work, you need to remove the `https://` part. (eg `@TTM[example.com/myImage.png]{Title}`)
 </Callout>
 
-
 Crates a `Theater of the Mind` display button:
-- Left click to open the Theater of the Mind display for all users, this will display a fullscreen image above the canvas but under the UI.
-- Left click the image to minimize it or maximize it.
-- As a GM, you can right click the image to close it for all users.
+
+-   Left click to open the Theater of the Mind display for all users, this will display a fullscreen image above the canvas but under the UI.
+-   Left click the image to minimize it or maximize it.
+-   As a GM, you can right click the image to close it for all users.
 
 Create this enricher using the following syntax:
 
 ```
 @TTM[imageUrl]{Title}
 ```
+
 or
+
 ```
 @TTM[imageUrl]{Title|Visible title}
 ```
 
 Where `imageUrl` is the path to the image you want to display, `Title` is the title displayed in the button and `Visible title` is the title displayed in the Theater of the Mind display (optional).
 
-
 ## Custom Journal Elements
 
-<Image
-  src='/images/simple-quest/simple-quest-callouts.png'
-  alt='Simple Quest Callouts'
-  className={styles.wikiImage}
-/>
+<Image src='/images/simple-quest/simple-quest-callouts.png' alt='Simple Quest Callouts' className={styles.wikiImage} />
 
 Simple Quest adds custom Journal Elements you can use to style your quests. You can find them in the Journal Editor toolbar under the `Format` dropdown.
 
-- **Callouts:** Callouts are used to highlight important information in your quests.
-- **Inserts:** Inserts are used to frame paragraphs with a Parchment, Scroll, or Book style. It will dynamically scale to fit the content.
-- **Large initial letter:** This will make the first letter of a paragraph larger and more prominent.
+-   **Callouts:** Callouts are used to highlight important information in your quests.
+-   **Inserts:** Inserts are used to frame paragraphs with a Parchment, Scroll, or Book style. It will dynamically scale to fit the content.
+-   **Large initial letter:** This will make the first letter of a paragraph larger and more prominent.
 
 ## 3D Portraits Integration
 
 If you have 3D Portraits enabled, 3D Models can be rendered within Quests, to do so, follow these steps:
 
-- Create an image element in your quest, you can use any image (for example a static image of the model)
-- The size of the image will determine the 3D view port
-- Click the Edit HTML button in the journal page toolbar
-- Add the data-model3d attribute to the image element and set it to the path of the model
+-   Create an image element in your quest, you can use any image (for example a static image of the model)
+-   The size of the image will determine the 3D view port
+-   Click the Edit HTML button in the journal page toolbar
+-   Add the data-model3d attribute to the image element and set it to the path of the model
 
 Your image element should look like this:
 
 ```html
-<img data-model3d="path/to/3dModel.glb" src="path/to/static/image.png">
+<img data-model3d="path/to/3dModel.glb" src="path/to/static/image.png" />
 ```
 
 ## Macros
@@ -298,27 +319,29 @@ Your image element should look like this:
 ### Toggle the Simple Quest interface:
 
 ```js
-ui.simpleQuest.toggle()
+ui.simpleQuest.toggle();
 ```
 
 ### Open Simple Quest on a specific quest or map
 
 ```js
-ui.simpleQuest.openToPage(uuid)
+ui.simpleQuest.openToPage(uuid);
 ```
 
 ### Open Simple Quest on a specific tab
 
 ```js
-ui.simpleQuest.openToTab('quests')
+ui.simpleQuest.openToTab("quests");
 ```
+
 Valid tabs are `quests`, `map`, `my-journal`, `party-journal`
 
 ### Convert Scene to Map
+
 You can convert the currently viewed scene to a map by running the following macro:
 
 ```js
-ui.simpleQuest.sceneToMap()
+ui.simpleQuest.sceneToMap();
 ```
 
 Notes on the map will be converted to Markers.
@@ -330,7 +353,7 @@ The macro will receive the marker data as an argument.
 
 ```js
 /*log the marker data*/
-console.log(scope)
+console.log(scope);
 ```
 
 ```js
@@ -352,8 +375,6 @@ console.log(scope)
  */
 ```
 
-
-
 ## Known issues
 
-- Due to a [Core Foundry VTT bug](https://github.com/foundryvtt/foundryvtt/issues/10354) journals might randomly pop up while editing a page. Unfortunately this is scheduled to be fixed in V12. In the mean time you can minimize the Journal to somewhat sidestep the issue.
+-   Due to a [Core Foundry VTT bug](https://github.com/foundryvtt/foundryvtt/issues/10354) journals might randomly pop up while editing a page. Unfortunately this is scheduled to be fixed in V12. In the mean time you can minimize the Journal to somewhat sidestep the issue.
