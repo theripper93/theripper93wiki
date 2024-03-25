@@ -281,6 +281,22 @@ Create this enricher using the following syntax:
 
 Where `counterId` is a unique identifier for the counter and `maxValue` is the maximum value the counter can reach. Note that you can use the same id for multiple counters, they will all share the same value. Using same IDs on different pages will not share the value.
 
+### @REPUTATION
+
+Creates a counter within the Journal page that can be incremented or decremented by left and right clicking on it.
+
+Create this enricher using the following syntax:
+
+```
+@REPUTATION[counterId]{maxValue}
+```
+or (Color can be any valid CSS color)
+```
+@REPUTATION[counterId,color]{maxValue}
+```
+
+Where `counterId` is a unique identifier for the counter and `maxValue` is the maximum value the counter can reach. Note that you can use the same id for multiple counters, they will all share the same value. Using same IDs on different pages will not share the value.
+
 ### @TTM
 
 <Callout type='info' emoji='ℹ️'>
