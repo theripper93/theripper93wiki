@@ -285,6 +285,8 @@ Where `counterId` is a unique identifier for the counter and `maxValue` is the m
 
 Creates a counter within the Journal page that can be incremented or decremented by left and right clicking on it.
 
+#### Basic
+
 Create this enricher using the following syntax:
 
 ```
@@ -294,6 +296,8 @@ or (Color can be any valid CSS color)
 ```
 @REPUTATION[counterId,color]{maxValue}
 ```
+
+#### Icons
 
 If you wish, you can also use (font awesome) icons instead of the default boxes by using the following syntax:
 
@@ -312,6 +316,42 @@ Examples:
 @REPUTATION[stars,fas fa-star]{-20,20}
 ```
 * Note how you can leave the color blank to use the default gradient color.
+
+#### Bar
+
+If you wish, you can also have a single bar instead of multiple pips by using the following syntax:
+
+```
+@REPUTATION[$barcounterId,color,color2]{maxValue}
+```
+
+Examples:
+
+```
+@REPUTATION[$barreputation,green,red]{10}
+@REPUTATION[$barmyrep,green]{20}
+@REPUTATION[$baraffection,pink,blue]{100}
+```
+
+Note that the second color is optional and will create a gradient
+
+#### Customizing text and borders
+
+If you wish, you can also customize the text and border colors by wrapping the enricher in a div. Enter html editing mode in the journal editor and add the following:
+
+```html
+<div style="color: white;">
+@REPUTATION[$barmyrep,green]{20}
+</div>
+```
+
+in the same way you can limit the bar to a specific width
+
+```html
+<div style="width: 200px;">
+@REPUTATION[$barmyrep,green]{20}
+</div>
+```
 
 Where `counterId` is a unique identifier for the counter, `maxValue` is the maximum value the counter can reach, `color` is the color of the counter and `icon` is the font awesome icon to use. Note that you can use the same id for multiple counters, they will all share the same value. Using same IDs on different pages will not share the value.
 
