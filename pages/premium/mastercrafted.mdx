@@ -301,3 +301,4 @@ For the ones adventurous enough, more information than just the actor is provide
 - `product` - The product of the crafting (it's highly suggested to
   treat this data as read only)
 - `productData` - The data of items that will be crated by the crafting. You can modify these objects and the changes will be reflected in the final product. Note that if you wish to customize the crafting result, Items will still be merged by name, so change the name of the item if you wish to create unique crafting results. Note that you cannot change the length of the array or add new items to it but only modify the existing ones.
+- `macroArgs` - An array of arguments passed to the macro - to pass arguments use the `|` separator in the `Condition` field of the recipe. For example, if you have a macro that requires a number, you can pass it like this: `MyMacro|5` and then access it in the macro as `macroArgs[0]` which will be `5`.
